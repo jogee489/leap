@@ -10,8 +10,7 @@ URL = "http://realfitrealfoodmom.com/2014/11/30/spiced-cocoa-smoothie/"
 
 def scrape_recipe():
 	recipeData = {}
-	recipeJson = []
-	ingredientJSON = []
+	recipeList = []
 	# Grab the required sections of the html page
 	html = urlopen(URL).read()
 	soup = BeautifulSoup(html, "lxml")
@@ -25,9 +24,9 @@ def scrape_recipe():
 	recipeData["title"] = title
 	recipeData["ingredients"] = ingredients
 	recipeData["directions"] = directions
+	recipeList.append(recipeData)
 	# Place data into a JSONObject and output
-	recipeJson.append(recipeData)
-	output = json.dumps(recipeData)
+	output = json.dumps(recipeList)
 	print output
 
 scrape_recipe()

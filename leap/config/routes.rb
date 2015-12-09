@@ -57,7 +57,8 @@ Leap::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 
-  resources :search
   # root page
   get '/', to: "search#index"
+  get '/search/list', controller: :search, action: :list
+  get '/search/show', controller: :search, action: :show
 end
