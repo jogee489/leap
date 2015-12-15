@@ -61,4 +61,6 @@ Leap::Application.routes.draw do
   get '/', to: "search#index"
   get '/search/list', controller: :search, action: :list
   get '/search/show', controller: :search, action: :show
+  get '/search/saveRecipe', controller: :search, action: :saveRecipe
+  #get '/search/show?:searchString', controller: :search, action: :show
 end

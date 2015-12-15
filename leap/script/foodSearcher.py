@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from urllib2 import urlopen
 import re
 import json
+import sys
 
 class Recipe:
     def __init__(self,recipeName):
@@ -105,7 +106,7 @@ class RecipeFinder:
         soup = BeautifulSoup(plain_text,"lxml")
 
         # Instantiate a Recipe object.
-        recipe = Recipe(partialRecipeURL)
+        recipe = Recipe(soup.find('h1', 'recipe-summary__h1').string)
         for link in soup.findAll('span',class_=re.compile('recipe-ingred_txt')):
             recipe.addIngredients(link.string)
         for link in soup.findAll('span',class_=re.compile('recipe-directions__list--item')):
@@ -119,7 +120,10 @@ class RecipeFinder:
 ##################################### Actual Execution #############################################
 
 # Food Items
-foodItems = ['pumpkin','pie','milk','egg','beef']
+#foodItems = ['pumpkin','pie','milk','egg','beef']
+foodString = sys.argv[1]
+foodItems = [x.strip() for x in foodString.split(' ')]
+
 
 # Make crawler.
 spider = RecipeFinder(foodItems)
@@ -131,8 +135,8 @@ spider.constructInitialURL()
 spider.getRecipePartialLinks(1)
 
 # Make recipes.
-for url in spider.recipePartialLinks:
-    spider.extractRecipeInfo(url)
+for x in range (0,5):
+    spider.extractRecipeInfo(spider.recipePartialLinks[x])
 
 # Printings...
 recipeList = []
