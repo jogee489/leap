@@ -62,5 +62,8 @@ Leap::Application.routes.draw do
   get '/search/list', controller: :search, action: :list
   get '/search/show', controller: :search, action: :show
   get '/search/saveRecipe', controller: :search, action: :saveRecipe
+
+  resources :tags
+
   #get '/search/show?:searchString', controller: :search, action: :show
 end

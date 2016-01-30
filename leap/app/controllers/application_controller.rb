@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   #protect_from_forgery
+  helper :all
+  
   rescue_from Exception, with: :render_error
   rescue_from ActionController::RoutingError, with: :render_404
   rescue_from ActionController::UnknownAction, with: :render_404
