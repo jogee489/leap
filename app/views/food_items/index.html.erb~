@@ -1,0 +1,27 @@
+<div class="food_items index">
+  <h2>Food Items</h2>
+
+  <%= link_to("Add New Food Item", '#', :class => 'action new') %>
+
+  <table class="listing" summary="Food Items list">
+    <tr class="header">
+      <th>&nbsp;</th>
+      <th>Food Item</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Actions</th>
+    </tr>
+    <% @foodItems.each do |fi| %>
+    <tr>
+      <td><%= fi.index %></td>
+      <td><%= fi.name %></td>
+      <td class="center"><%= fi.category == nil ? 'None' : fi.category.name %></td>
+      <td class="actions">
+	<%= link_to("Show", {:action => 'show', :id => fi.id}, :class => 'action show') %>
+	<%= link_to("Edit", '#', :class => 'action edit') %>
+	<%= link_to("Delete", '#', :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  </div>

@@ -1,0 +1,7 @@
+<div class="title"><%= @recipe.title.inspect %></div>
+<ul>
+	<% @recipe.ingredients.each do |ingredient| %>
+		<li><%= ingredient.inspect %></li>
+	<% end %>
+</ul>
+
