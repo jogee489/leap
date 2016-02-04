@@ -1,1 +1,7 @@
 ./ignore
+*.bok
+*.log
+.project
+*.bundle
+*.sqlite3
+

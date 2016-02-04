@@ -1,5 +1,0 @@
-class FoodItem < ActiveRecord::Base
-
-  belongs_to :categoryz
-
-end

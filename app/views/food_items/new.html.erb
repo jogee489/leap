@@ -3,7 +3,7 @@
 <div class="food_items new">
   <h2>Create Food Items</h2>
 
-  <%= form_for(:foodItem, :url => {:action => 'create'}) do |f| %>
+  <%= form_for(@foodItem, :url => {:action => 'create'}) do |f| %>
 
   <table summary="Food Item form fields">
     <tr>
@@ -12,7 +12,7 @@
     </tr>
     <tr>
       <th>Category</th>
-     <!-- <td><%= f.text_field(f.category.name) %></td>  -->
+      <td><%= f.collection_select(:category_id, Category.all, :id, :name, { :prompt => 'Select a Category', :selected => @foodItem.category_id }, { class: 'form-control' }) %></td>
     </tr>
   </table>
   
