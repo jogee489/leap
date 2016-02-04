@@ -1,7 +1,8 @@
-./ignore
+
 *.bok
 *.log
 .project
 *.bundle
 *.sqlite3
+leap.war
 
