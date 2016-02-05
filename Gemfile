@@ -30,7 +30,7 @@ gem 'activerecord-jdbcsqlite3-adapter'
 # group :development, :test do
 #   gem 'webrat'
 
-
+gem 'sass', '3.4.21', :platforms => :jruby
 gem 'warbler', '1.4.8', :platforms => :jruby
 gem 'jruby-jars', '1.7.17', :platforms => :jruby
 # end
