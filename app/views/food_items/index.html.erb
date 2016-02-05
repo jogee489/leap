@@ -1,7 +1,7 @@
 <div class="food_items index">
   <h2>Food Items</h2>
 
-  <%= link_to("Add New Food Item", '#', :class => 'action new') %>
+  <%= link_to("Add New Food Item", {:action => 'new'}, :class => 'action new') %>
 
   <table class="listing" summary="Food Items list">
     <tr class="header">
@@ -18,8 +18,8 @@
       <td class="center"><%= fi.category == nil ? 'None' : fi.category.name %></td>
       <td class="actions">
 	<%= link_to("Show", {:action => 'show', :id => fi.id}, :class => 'action show') %>
-	<%= link_to("Edit", '#', :class => 'action edit') %>
-	<%= link_to("Delete", '#', :class => 'action delete') %>
+	<%= link_to("Edit", {:action => 'edit', :id => fi.id}, :class => 'action edit') %>
+	<%= link_to("Delete", {:action => 'delete', :id => fi.id}, :class => 'action delete') %>
       </td>
     </tr>
     <% end %>

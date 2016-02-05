@@ -9,6 +9,7 @@ Leap::Application.routes.draw do
 
   get "food_items/delete"
 
+  
   get "categories/index"
 
   get "categories/show"
@@ -85,7 +86,7 @@ Leap::Application.routes.draw do
   # root page
   get '/', to: "search#index"
 
-  match ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id))', :via => [:get, :post]
   # get '/search/list', controller: :search, action: :list
  # get '/search/show', controller: :search, action: :show
  # get '/search/saveRecipe', controller: :search, action: :saveRecipe

@@ -1,2 +1,19 @@
-<h1>FoodItems#delete</h1>
-<p>Find me in app/views/food_items/delete.html.erb</p>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="food_item delete">
+  <h2>Delete Food Item</h2>
+
+  <%= form_for(:food_item, :url => {:action => 'destroy', :id => @foodItem.id}) do |f| %>
+
+  <p>Are you sure you want to permanently delete this item?</p>
+
+  <p class="reference-name"><%= @foodItem.name %></p>
+
+  <div class="form-buttons">
+    <%= submit_tag("Delete Food Item") %>
+
+  </div>
+
+  <% end %>
+
+  </div>
