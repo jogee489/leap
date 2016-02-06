@@ -830,3 +830,2914 @@ ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js
   Rendered /Users/Aaron/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
   Rendered /Users/Aaron/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
   Rendered /Users/Aaron/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (20.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 16:57:47 -0800
+  [1m[36m (43.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (19.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (7.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (100.0ms)
+  Rendered common/_navigation_bar.html.erb (62.0ms)
+Completed 200 OK in 80610ms (Views: 70148.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2016-02-05 16:59:13 -0800
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (55.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (294.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (150.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3015.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 16:59:17 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (121.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (330.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (77.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1814.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 16:59:20 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (65.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (113.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (45.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (700.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 16:59:21 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 16:59:22 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 16:59:22 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 16:59:23 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 16:59:23 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (35.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (168.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (149.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (772.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 17:04:55 -0800
+  [1m[36m (13.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (3.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (6.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (154.0ms)
+  Rendered common/_navigation_bar.html.erb (6.0ms)
+Completed 200 OK in 6427ms (Views: 1782.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2016-02-05 17:05:04 -0800
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (43.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (126.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (153.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (731.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 17:05:05 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (68.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (187.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (84.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1002.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:05:07 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (32.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (52.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (35.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (362.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 17:05:08 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 17:05:08 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 17:05:08 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 17:05:08 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:05:09 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (48.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (49.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (54.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (362.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 17:10:19 -0800
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (8.0ms)
+  Rendered common/_navigation_bar.html.erb (6.0ms)
+Completed 200 OK in 684ms (Views: 630.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:10:20 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (122.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (146.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (40.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (850.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 17:10:21 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 17:10:22 -0800
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2016-02-05 17:10:22 -0800
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (39.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (83.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (64.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (687.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 17:10:23 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (51.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (52.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (22.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (294.0ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 17:10:24 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 17:10:24 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:10:24 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (41.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (57.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (58.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (423.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:10:25 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (38.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (53.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (26.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (591.0ms)
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:10:26 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (70.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (127.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (31.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (634.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 17:12:08 -0800
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (29.0ms)
+  Rendered common/_navigation_bar.html.erb (0.0ms)
+Completed 200 OK in 879ms (Views: 833.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 17:12:09 -0800
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2016-02-05 17:12:09 -0800
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (21.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (31.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (20.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (278.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 17:12:11 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (34.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (85.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (26.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (434.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:12:11 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (83.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (33.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (336.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 17:12:12 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 17:12:12 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 17:12:12 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:12:12 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (28.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (84.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (17.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (291.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 17:14:39 -0800
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (18.0ms)
+  Rendered common/_navigation_bar.html.erb (1.0ms)
+Completed 200 OK in 5044ms (Views: 4986.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/base/_fonts.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:44 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:44 -0800
+
+
+Started GET "/assets/base/_base.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:45 -0800
+
+
+Started GET "/assets/base/_helpers.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:45 -0800
+
+
+Started GET "/assets/components/_buttons.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:45 -0800
+
+
+Started GET "/assets/base/_typography.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:45 -0800
+
+
+Started GET "/assets/layout/_footer.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:46 -0800
+
+
+Started GET "/assets/layout/_header.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:46 -0800
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:46 -0800
+
+
+Started GET "/assets/pages/_home.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:46 -0800
+
+
+Started GET "/assets/themes/_default.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:46 -0800
+
+
+Started GET "/assets/utils/_functions.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:47 -0800
+
+
+Started GET "/assets/utils/_mixins.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:47 -0800
+
+
+Started GET "/assets/utils/_variables.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:47 -0800
+
+
+Started GET "/assets/vendor/_normalize.css?body=1" for 127.0.0.1 at 2016-02-05 17:14:47 -0800
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 17:14:48 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (19.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (47.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (18.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (258.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:14:48 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (18.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (91.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (48.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (350.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 17:14:49 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 17:14:49 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 17:14:49 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 17:14:50 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:14:50 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (24.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (82.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (64.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (479.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 17:15:03 -0800
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (48.0ms)
+  Rendered common/_navigation_bar.html.erb (0.0ms)
+Completed 200 OK in 569ms (Views: 543.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:04 -0800
+
+
+Started GET "/assets/base/_base.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:04 -0800
+
+
+Started GET "/assets/base/_fonts.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:05 -0800
+
+
+Started GET "/assets/base/_typography.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:05 -0800
+
+
+Started GET "/assets/base/_helpers.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:05 -0800
+
+
+Started GET "/assets/components/_buttons.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:05 -0800
+
+
+Started GET "/assets/layout/_footer.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:05 -0800
+
+
+Started GET "/assets/layout/_header.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:06 -0800
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:06 -0800
+
+
+Started GET "/assets/pages/_home.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:06 -0800
+
+
+Started GET "/assets/themes/_default.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:06 -0800
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 17:15:06 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (37.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (58.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (35.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (354.0ms)
+
+
+Started GET "/assets/utils/_functions.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:07 -0800
+
+
+Started GET "/assets/utils/_mixins.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:07 -0800
+
+
+Started GET "/assets/utils/_variables.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:07 -0800
+
+
+Started GET "/assets/vendor/_normalize.css?body=1" for 127.0.0.1 at 2016-02-05 17:15:07 -0800
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:15:07 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (28.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (82.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (17.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (300.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 17:15:08 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 17:15:08 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 17:15:08 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 17:15:08 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:15:08 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:72:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:181:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (16.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (32.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (25.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (259.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 17:32:43 -0800
+  [1m[36m (16.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (11.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (44.0ms)
+  Rendered common/_navigation_bar.html.erb (14.0ms)
+Completed 200 OK in 4223ms (Views: 928.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 17:32:49 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (27.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (96.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (58.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (452.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2016-02-05 17:32:50 -0800
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (50.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (169.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (57.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (801.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:32:51 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (25.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (42.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (33.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (283.0ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 17:32:52 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 17:32:52 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 17:32:52 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 17:32:52 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:32:52 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (13.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (52.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (41.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (239.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 17:33:45 -0800
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (9.0ms)
+  Rendered common/_navigation_bar.html.erb (3.0ms)
+Completed 200 OK in 605ms (Views: 537.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2016-02-05 17:33:46 -0800
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (35.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (100.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (30.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (544.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:33:47 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (33.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (129.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (66.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (600.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 17:33:48 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 17:33:48 -0800
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 17:33:48 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (24.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (34.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (198.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 17:33:49 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 17:33:49 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:33:49 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (13.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (30.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (30.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (228.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:33:49 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (44.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (79.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (386.0ms)
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:33:50 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (48.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (65.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (29.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (371.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 17:33:56 -0800
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (20.0ms)
+  Rendered common/_navigation_bar.html.erb (0.0ms)
+Completed 200 OK in 650ms (Views: 631.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2016-02-05 17:33:57 -0800
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (36.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (30.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (242.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 17:33:57 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (18.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (88.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (21.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (433.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 17:33:58 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 17:33:58 -0800
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:33:58 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (44.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (39.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (217.0ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 17:33:59 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 17:33:59 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:33:59 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (17.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (44.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (50.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (284.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 17:35:25 -0800
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (14.0ms)
+  Rendered common/_navigation_bar.html.erb (1.0ms)
+Completed 200 OK in 594ms (Views: 579.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:35:26 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (14.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (44.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (29.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (323.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2016-02-05 17:35:27 -0800
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (71.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (21.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (255.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 17:35:27 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (25.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (154.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 17:35:28 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 17:35:28 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 17:35:28 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 17:35:28 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:35:28 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (24.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (153.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:35:28 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (22.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (60.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (22.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (322.0ms)
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:35:29 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (9.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (18.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (138.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 17:40:20 -0800
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (15.0ms)
+  Rendered common/_navigation_bar.html.erb (1.0ms)
+Completed 200 OK in 915ms (Views: 898.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2016-02-05 17:40:22 -0800
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (9.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (27.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (147.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:40:22 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (44.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (17.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (200.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 17:40:22 -0800
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 17:40:22 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (17.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (47.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (56.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (366.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 17:40:23 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 17:40:23 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 17:40:23 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:40:23 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (14.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (81.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (38.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (331.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:40:24 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (65.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (32.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (399.0ms)
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:40:25 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (22.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (17.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (164.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 17:41:11 -0800
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (6.0ms)
+  Rendered common/_navigation_bar.html.erb (1.0ms)
+Completed 200 OK in 276ms (Views: 271.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 17:41:12 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (14.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (21.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (149.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:41:12 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (9.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (22.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (13.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (138.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2016-02-05 17:41:12 -0800
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (29.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (22.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (210.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 17:41:13 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 17:41:13 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 17:41:13 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 17:41:13 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:41:13 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (12.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (26.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (144.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 17:42:47 -0800
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (5.0ms)
+  Rendered common/_navigation_bar.html.erb (1.0ms)
+Completed 200 OK in 225ms (Views: 216.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2016-02-05 17:42:47 -0800
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (24.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (137.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:42:48 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (9.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (28.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (16.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (243.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 17:42:48 -0800
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 17:42:48 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (9.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (26.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (247.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 17:42:49 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 17:42:49 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 17:42:49 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:42:49 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (30.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (153.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:42:49 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (35.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (22.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (231.0ms)
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:42:50 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (44.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (32.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (282.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 17:44:08 -0800
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (52.0ms)
+  Rendered common/_navigation_bar.html.erb (1.0ms)
+Completed 200 OK in 330ms (Views: 318.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2016-02-05 17:44:09 -0800
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (36.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (13.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (210.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 17:44:09 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (49.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (44.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (372.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 17:44:10 -0800
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:44:10 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (22.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (16.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (190.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 17:44:10 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 17:44:10 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 17:44:10 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:44:10 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (26.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (116.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2016-02-05 17:57:19 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 17:58:12 -0800
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (8.0ms)
+  Rendered common/_navigation_bar.html.erb (0.0ms)
+Completed 200 OK in 321ms (Views: 301.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2016-02-05 17:58:12 -0800
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:72:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:181:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (30.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (51.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (61.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (355.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:58:13 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:72:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:181:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (40.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (23.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (215.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 17:58:13 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:72:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:181:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (31.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (267.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 17:58:14 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 17:58:14 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 17:58:14 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 17:58:14 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:58:14 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:72:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:181:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (12.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (44.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (38.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (226.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 17:58:15 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:72:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:181:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (33.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (166.0ms)
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 17:58:15 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:72:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:181:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (16.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (13.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (130.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 18:01:26 -0800
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (14.0ms)
+  Rendered common/_navigation_bar.html.erb (0.0ms)
+Completed 200 OK in 377ms (Views: 370.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-05 18:01:26 -0800
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 18:01:27 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:72:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:181:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (18.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (56.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (24.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (254.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-05 18:01:27 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:72:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:181:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (32.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (18.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (265.0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2016-02-05 18:01:28 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-05 18:01:28 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-05 18:01:28 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-05 18:01:28 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-05 18:01:28 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 18:01:28 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:72:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:181:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (17.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (33.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (16.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (212.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-05 18:01:29 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:72:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:181:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (14.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (43.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (39.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (343.0ms)
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-05 18:01:30 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:72:in `run'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+  /home/fiorfe01/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:181:in `start_thread'
+
+
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (37.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (42.0ms)
+  Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (250.0ms)
