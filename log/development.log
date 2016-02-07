@@ -3741,3 +3741,253 @@ ActionController::RoutingError (No route matches [GET] "/javascripts/search.js")
   Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (37.0ms)
   Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (42.0ms)
   Rendered /home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (250.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-07 08:05:43 -0800
+  [1m[36m (17.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (2.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (14.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+Processing by SearchController#index as HTML
+  Rendered search/index.html.erb within layouts/application (22.0ms)
+  Rendered common/_navigation_bar.html.erb (11.0ms)
+Completed 200 OK in 12390ms (Views: 11231.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-07 08:05:57 -0800
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2016-02-07 08:05:57 -0800
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-07 08:05:57 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (31.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (30.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (191.0ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2016-02-07 08:05:58 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (12.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (40.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (27.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (204.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-07 08:05:58 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-07 08:05:58 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-07 08:05:58 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-07 08:05:58 -0800
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-07 08:05:58 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (23.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (20.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (162.0ms)
+
+
+Started GET "/javascripts/jquery/jquery.min.js" for 127.0.0.1 at 2016-02-07 08:05:59 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/jquery/jquery.min.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (36.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (22.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (197.0ms)
+
+
+Started GET "/javascripts/search.js" for 127.0.0.1 at 2016-02-07 08:05:59 -0800
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/search.js"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:138:in `service'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/httpserver.rb:94:in `run'
+  /home/lingxiwu/.rvm/rubies/jruby-1.7.19/lib/ruby/1.9/webrick/server.rb:191:in `start_thread'
+
+
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (13.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (38.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (28.0ms)
+  Rendered /home/lingxiwu/.rvm/gems/jruby-1.7.19/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (208.0ms)
+  [1m[36m (4.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (10.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  SELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.0ms)[0m  SELECT name FROM sqlite_master WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36m (0.0ms)[0m  [1mSELECT sqlite_version(*)[0m
+  [1m[36m (11.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+  [1m[35m (15.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mSELECT sqlite_version(*)[0m
+  [1m[35m (5.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRecipes (20151209031406)
+  [1m[35m (3.0ms)[0m  CREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "ingredients" varchar(255), "directions" varchar(255), "tag_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mCREATE INDEX "index_recipes_on_tag_id" ON "recipes" ("tag_id")[0m
+  [1m[35m (5.0ms)[0m  SELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"
+  [1m[36mSQL (6.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20151209031406')[0m
+Migrating to CreateTags (20160127173323)
+  [1m[35m (0.0ms)[0m  CREATE TABLE "tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "recipe_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mCREATE INDEX "index_tags_on_recipe_id" ON "tags" ("recipe_id")[0m
+  [1m[35mSQL (17.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20160127173323')
+Migrating to CreateFoodItems (20160202044844)
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "food_items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "category_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.0ms)[0m  CREATE INDEX "index_food_items_on_category_id" ON "food_items" ("category_id")
+  [1m[36m (0.0ms)[0m  [1mCREATE INDEX "index_food_items_on_name" ON "food_items" ("name")[0m
+  [1m[35mSQL (11.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20160202044844')
+Migrating to CreateCategories (20160202044905)
+  [1m[36m (9.0ms)[0m  [1mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20160202044905')
+  [1m[36m (0.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (3.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (9.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND NOT name = 'sqlite_sequence'[0m
+  [1m[36m (8.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+  [1m[35m (12.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mSELECT sqlite_version(*)[0m
+  [1m[35m (13.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRecipes (20151209031406)
+  [1m[35m (2.0ms)[0m  CREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "ingredients" varchar(255), "directions" varchar(255), "tag_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mCREATE INDEX "index_recipes_on_tag_id" ON "recipes" ("tag_id")[0m
+  [1m[35m (14.0ms)[0m  SELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20151209031406')[0m
+Migrating to CreateTags (20160127173323)
+  [1m[35m (0.0ms)[0m  CREATE TABLE "tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "recipe_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (1.0ms)[0m  [1mCREATE INDEX "index_tags_on_recipe_id" ON "tags" ("recipe_id")[0m
+  [1m[35mSQL (6.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20160127173323')
+Migrating to CreateFoodItems (20160202044844)
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "food_items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "category_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.0ms)[0m  CREATE INDEX "index_food_items_on_category_id" ON "food_items" ("category_id")
+  [1m[36m (0.0ms)[0m  [1mCREATE INDEX "index_food_items_on_name" ON "food_items" ("name")[0m
+  [1m[35mSQL (17.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20160202044844')
+Migrating to CreateCategories (20160202044905)
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20160202044905')
+  [1m[36m (1.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (10.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND NOT name = 'sqlite_sequence'[0m

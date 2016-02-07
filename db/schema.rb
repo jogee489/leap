@@ -33,14 +33,20 @@ ActiveRecord::Schema.define(version: 20160202044905) do
     t.string   "title"
     t.string   "ingredients"
     t.string   "directions"
+    t.integer  "tag_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "recipes", ["tag_id"], name: "index_recipes_on_tag_id"
+
   create_table "tags", force: true do |t|
     t.string   "title"
+    t.integer  "recipe_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tags", ["recipe_id"], name: "index_tags_on_recipe_id"
 
 end
