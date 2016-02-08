@@ -1,21 +1,22 @@
 /*
-Errno::ENOENT: No such file or directory @ rb_sysopen - main.scss
+Errno::ENOENT: No such file or directory - /home/fiorfe01/Documents/CS465/leap/main.scss
 
 Backtrace:
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:360:in `read'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:360:in `update_stylesheet'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:201:in `each'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:201:in `update_stylesheets'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:235:in `watch'
-/usr/lib/ruby/vendor_ruby/sass/plugin.rb:107:in `method_missing'
-/usr/lib/ruby/vendor_ruby/sass/exec.rb:459:in `watch_or_update'
-/usr/lib/ruby/vendor_ruby/sass/exec.rb:326:in `process_result'
-/usr/lib/ruby/vendor_ruby/sass/exec.rb:41:in `parse'
-/usr/lib/ruby/vendor_ruby/sass/exec.rb:21:in `parse!'
-/usr/bin/sass:8:in `<main>'
+org/jruby/RubyIO.java:3783:in `read'
+org/jruby/RubyIO.java:3966:in `read'
+/home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:360:in `update_stylesheet'
+/home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:203:in `update_stylesheets'
+org/jruby/RubyArray.java:1613:in `each'
+/home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:283:in `watch'
+org/jruby/RubyProc.java:271:in `call'
+/home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/sass-3.2.19/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
+/home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/sass-3.2.19/vendor/listen/lib/listen/multi_listener.rb:117:in `initialize_adapter'
+org/jruby/RubyProc.java:271:in `call'
+/home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/sass-3.2.19/vendor/listen/lib/listen/adapters/polling.rb:56:in `poll'
+/home/fiorfe01/.rvm/gems/jruby-1.7.19/gems/sass-3.2.19/vendor/listen/lib/listen/adapters/polling.rb:32:in `start'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Errno::ENOENT: No such file or directory @ rb_sysopen - main.scss"; }
+  content: "Errno::ENOENT: No such file or directory - /home/fiorfe01/Documents/CS465/leap/main.scss"; }
