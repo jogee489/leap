@@ -1,9 +1,9 @@
 class CreateRecipes < ActiveRecord::Migration
   def self.up
     create_table :recipes do |t|
-      t.string :title
-      t.string :ingredients
-      t.string :directions
+      t.string :title, null: false
+      t.string :ingredients, null: false
+      t.string :directions, null:false
       t.integer :tag_id
 
       t.timestamps

@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 20160202044905) do
   add_index "food_items", ["name"], name: "index_food_items_on_name"
 
   create_table "recipes", force: true do |t|
-    t.string   "title"
-    t.string   "ingredients"
-    t.string   "directions"
+    t.string   "title",       null: false
+    t.string   "ingredients", null: false
+    t.string   "directions",  null: false
     t.integer  "tag_id"
     t.datetime "created_at"
     t.datetime "updated_at"

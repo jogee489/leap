@@ -1,14 +1,41 @@
-<h1>Recipes List</h1>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-<% @recipeList.each do |recipe| %>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
-	<h2><%= recipe.title %></h2>
-	<strong>Ingredients:</strong>
-	<div><%= recipe.ingredients %></div>
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-	</br>
+<div class="container">
+	<h1>Recipes List</h1>
+
+
+		<div class="well">
+		  <h3>Recipes List</h3>
+		  <p>this portion of page contains all of our recipes stored in the database.</p>
+			<a href="#" class="btn btn-success"  data-toggle="modal" data-target="#myRecipeModal">Quick Add</a>
+		</div>
+<div class="container">
+	<% @recipeList.each do |recipe| %>
+
+		<h2><%= recipe.title %></h2>
+		<strong>Ingredients:</strong>
+		<div><%= recipe.ingredients %></div>
+
+		</br>
 	
-	<strong>Directions:</strong>
-	<div><%= recipe.directions %></div>
+		<strong>Directions:</strong>
+		<div><%= recipe.directions %></div>
 
-<% end %>
+	<% end %>
+</div>
+ 
+
+
+		<% if @recipeList.empty? %>
+	    	<div class="alert alert-info">No recipes in the database.</div>
+	  	<% end %>
+		<%= render 'recipe/new_recipe_form' %>
+
+</div>

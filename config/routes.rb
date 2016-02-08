@@ -20,9 +20,14 @@ Leap::Application.routes.draw do
 
   get "categories/delete"
 
+	
+  #get "recipes/list"
+
   resources :categories
 
   resources :food_items
+
+  resources :recipes
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
