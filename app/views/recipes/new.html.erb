@@ -1,0 +1,7 @@
+<%= page_title "Create new Recipe" %> 
+
+<%= form_for [@recipe] do |f| %>
+  <%= render partial: 'form', locals: { f: f } %>
+  <%= form_buttons 'Create', 'Cancel' %>
+  <!-- Need to add a button for document processing.  -->
+<% end %>

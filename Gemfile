@@ -42,3 +42,9 @@ end
 # gem 'capistrano', group: :development
 
 gem 'will_paginate', '> 3.0'
+
+group :test do
+	gem 'mocha' # Used for mocking and stubbing. Documentation at: https://github.com/freerange/mocha
+	gem 'factory_girl' # Replaces fixtures with factories making it easier to read. https://github.com/thoughtbot/factory_girl
+	gem 'factory_girl_rails' , "~> 4.0" # Rails support for factory_girl https://github.com/thoughtbot/factory_girl_rails
+end
