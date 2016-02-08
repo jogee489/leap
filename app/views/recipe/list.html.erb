@@ -16,6 +16,8 @@
 		  <p>this portion of page contains all of our recipes stored in the database.</p>
 			<a href="#" class="btn btn-success"  data-toggle="modal" data-target="#myRecipeModal">Quick Add</a>
 		</div>
+<%= will_paginate @recipeList %>
+
 <div class="container">
 	<% @recipeList.each do |recipe| %>
 

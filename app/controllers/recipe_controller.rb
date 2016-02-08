@@ -12,7 +12,7 @@ class RecipeController < ApplicationController
 	end
 
 	def list
-		@recipeList = Recipe.all
+		@recipeList = Recipe.all.page(params[:page]).per_page(3)
 	end
 
 	def show
