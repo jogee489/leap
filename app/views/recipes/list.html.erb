@@ -20,16 +20,9 @@
 
 <div class="container">
 	<% @recipeList.each do |recipe| %>
-
-		<h2><%= recipe.title %></h2>
-		<strong>Ingredients:</strong>
-		<div><%= recipe.ingredients %></div>
-
-		</br>
-	
-		<strong>Directions:</strong>
-		<div><%= recipe.directions %></div>
-
+	<%= render :partial => "common/box.html.erb", :object => recipe, :as => "recipe" %>
+	  
+	  
 	<% end %>
 </div>
  

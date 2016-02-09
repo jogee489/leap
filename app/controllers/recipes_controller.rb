@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
 	end
 
 	def list
-		@recipeList = Recipe.all.page(params[:page]).per_page(3)
+		@recipeList = Recipe.all.page(params[:page]).per_page(4)
 	end
 
 	def show
@@ -49,6 +49,12 @@ class RecipesController < ApplicationController
 		@recipe = Recipe.find(params[:id]).destroy
     	redirect_to(:action => 'index')
 	end
+
+	def popup
+		@recipe = Recipe.find(params[:id])
+		render :partial => "common/modal_box.html.erb"
+	end
+
 
   private
     def recipe_params                                                                                                                         

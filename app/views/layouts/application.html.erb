@@ -11,13 +11,12 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-  <div class="navigation">
+  <header id="navigation">
   	<%= render :partial => 'common/navigation_bar' %>
-  </div>
-
-  <div class="main_content">
+  </header>
+  <section cid="main_content">
 	<%= yield %>
-  </div>
+  </section>
+  <footer></footer>
 </body>
 </html>

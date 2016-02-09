@@ -1,12 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,200,600);
-body, h1 {
-  margin: 0;
-  padding: 0;
-  background-color: #C2CFB2;
-}
 
 nav {
-  //z-index: 9000;
+  z-index: 9001;
+  position: fixed;
+  top: 0;
+  width: inherit;
   a {
     font-family: Raleway, sans-serif;
     font-weight: 550;
@@ -20,13 +18,11 @@ nav {
 	}
 	  
   #dropdown-container {
+    margin: 0;
     padding-top: 1.25em;
     background: #F4FDD9;
-    width: 100%;
 	  box-shadow: 0px 2px 2px rgba(0,0,0,0.15);
-	  //margin-right: 60px;
 	  list-style: none;
-	  //position: relative;
 	  display: fixed;
 	  
 	  &:after {
@@ -43,27 +39,18 @@ nav {
   }
   
   .dropdown-component {
-    //border-bottom: 3px solid #ffffff;
-    //background: red;
     float: right;
     min-width: 10.8em;
     
-    //margin-right: 50px;
     &:hover {
       
       font-weight: bold;
-      //border-color: #575f6a;
-      //border-bottom: 3px solid #575f6a;
       
       ul {
         font-weight: normal;
         display: block;
-        //background-color: #f9f9f9;
-        //box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         
         a {
-          //font-weight: bold;
-          //color: #757575;
          
         }
       }
@@ -77,17 +64,13 @@ nav {
 	    list-style: none;
 	    position: absolute;
 	    padding: 0;
-	    //margin: inherit;
 	    
 	    li {
 	      display: block;
 		    position: relative;
-		    //border-bottom: 1px solid white;
 		    
 		    &:hover {
-		      background: darken(#F4FDD9, 10%);;
-		      //border-color: rgba(0,0,0,0.2);
-		      //border-bottom-length: 15px;
+		      background: darken(#F4FDD9, 10%);
 		    }
 	    }
     }
