@@ -21,7 +21,7 @@ Leap::Application.routes.draw do
   get "categories/delete"
 
 	
-  #get "recipes/list"
+  get "recipes/list", controller: :recipes, action:  :list
 
   resources :categories
 

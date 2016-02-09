@@ -13,7 +13,7 @@ class FoodItemsController < ApplicationController
 
   def create
     # Instantiate a new object using form parameters
-    @foodItem = FoodItem.new(params[:food_item])
+    @foodItem = FoodItem.new(food_items_params)
     # Save the object
     if @foodItem.save
       # If save succeeds, redirect to the index action
@@ -32,7 +32,7 @@ class FoodItemsController < ApplicationController
     # Instantiate a new object using form parameters
     @foodItem = FoodItem.find(params[:id])
     # update the object
-    if @foodItem.update_attributes(params[:food_item])
+    if @foodItem.update_attributes(food_items_params)
       # If save succeeds, redirect to the index action
       redirect_to(:action => 'show', :id => @foodItem.id)
     else
@@ -50,5 +50,13 @@ class FoodItemsController < ApplicationController
     foodItem = FoodItem.find(params[:id]).destroy
     redirect_to(:action => 'index')
   end
+
+  private
+    def food_items_params
+      # same as using "params[:subject]", except that it:                                                                                                                       
+      # - raises an error if :subject is not present                                                                                                                            
+      # - allows listed attributes to be mass-assigned                                                                                                                          
+      params.require(:food_item).permit(:name, :category_id)
+    end
   
 end

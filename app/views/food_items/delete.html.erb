@@ -10,7 +10,7 @@
   <p class="reference-name"><%= @foodItem.name %></p>
 
   <div class="form-buttons">
-    <%= submit_tag("Delete Food Item") %>
+    <%= button_to("Delete Food Item", {:controller => :foodItem, :action => :destroy, :id => @foodItem.id}, :method => :delete) %>
 
   </div>
 
