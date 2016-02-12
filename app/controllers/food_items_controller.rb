@@ -52,10 +52,7 @@ class FoodItemsController < ApplicationController
   end
 
   private
-    def food_items_params
-      # same as using "params[:subject]", except that it:                                                                                                                       
-      # - raises an error if :subject is not present                                                                                                                            
-      # - allows listed attributes to be mass-assigned                                                                                                                          
+    def food_items_params                                                                                                                         
       params.require(:food_item).permit(:name, :category_id)
     end
   

@@ -9,12 +9,14 @@
   <%= yield :head %>
 
   <%= csrf_meta_tag %>
+
+  
 </head>
 <body>
   <header id="navigation">
   	<%= render :partial => 'common/navigation_bar' %>
   </header>
-  <section cid="main_content">
+  <section id="main_content">
 	<%= yield %>
   </section>
   <footer></footer>

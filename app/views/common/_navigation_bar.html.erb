@@ -1,15 +1,15 @@
 <nav>
 	<ul id="dropdown-container">
-		<li id="home-logo"><a href="#">Home</a></li>
+		<li id="home-logo"><%= link_to("Home", '/') %></li>
 		<li class="dropdown-component"><a href="#">Foods</a>
             <ul>
-				<li><a href="#">Manage</a></li>
+				<li><%=  link_to "Manage", food_items_path(@food_items) %> 
 			</ul>
 		</li>
 		<li class="dropdown-component"><a href="#">Recipes</a>
             <ul>
 				<li><a href="#">Search New</a></li>
-				<li><a href="#">Manage</a></li>
+				<li><%= link_to "Manage", {:controller => 'recipes', :action => 'list'} %></li>
 			</ul>
 		</li>
 		<li class="dropdown-component"><a href="#">Meal Plans</a>

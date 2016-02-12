@@ -1,3 +1,3 @@
 class Recipe < ActiveRecord::Base
-	has_many :tags
+	belongs_to :tag
 end

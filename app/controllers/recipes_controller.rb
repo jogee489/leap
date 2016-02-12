@@ -8,7 +8,8 @@ class RecipesController < ApplicationController
 	end
 
 	def index
-		@recipeList = Recipe.all
+		@recipeList = Recipe.all.page(params[:page]).per_page(4)
+
 	end
 
 	def list
@@ -18,9 +19,11 @@ class RecipesController < ApplicationController
 	def show
 		@recipe = Recipe.find(params[:id])
 		if @recipe.blank?
-			flash[:error] = 'The recipe you are looking for has dissapeared..'
+			flash[:error] = 'The recipe you are looking for has disappeared..'
 			render action: 'list'
+
 		end
+
 	end
 
 	def new
@@ -48,11 +51,6 @@ class RecipesController < ApplicationController
 	def destroy
 		@recipe = Recipe.find(params[:id]).destroy
     	redirect_to(:action => 'index')
-	end
-
-	def popup
-		@recipe = Recipe.find(params[:id])
-		render :partial => "common/modal_box.html.erb"
 	end
 
 

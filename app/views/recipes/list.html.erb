@@ -7,6 +7,17 @@
 <!-- Latest compiled JavaScript -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+<script >
+
+	$(document).ready(function() {
+
+		$("div.box").click (function(e) {
+			alert("div clicked");
+		});
+	});
+
+</script>
+
 <div class="container">
 	<h1>Recipes List</h1>
 
@@ -19,11 +30,15 @@
 <%= will_paginate @recipeList %>
 
 <div class="container">
+	
 	<% @recipeList.each do |recipe| %>
-	<%= render :partial => "common/box.html.erb", :object => recipe, :as => "recipe" %>
-	  
-	  
+	
+	<%= render :partial => "common/recipe_box.html.erb", :object => recipe, :as => "recipe" %>
+
+
 	<% end %>
+
+
 </div>
  
 

@@ -40,7 +40,7 @@ class TagsController < ApplicationController
 	end
 
 	def destroy
-		.destroy
+		#.destroy
     	redirect_to(:action => 'index')
 	end
 

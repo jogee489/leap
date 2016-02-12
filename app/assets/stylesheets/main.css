@@ -6,8 +6,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  top: 0;
-  height: 100%;
+  padding-top: 70px;
   background: #c2cfb2; }
 
 #navigation {
@@ -97,7 +96,6 @@ nav {
   left: 0;
   background: rgba(4, 5, 20, 0.8);
   z-index: 99999;
-  opacity: 0;
   -webkit-transition: opacity 400ms ease-in;
   -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in;
