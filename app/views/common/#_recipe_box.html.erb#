@@ -1,0 +1,9 @@
+<body>
+  <div id="box">
+    <div id="box-title">Smoked Broccoli</div>
+    <div id="box-content">
+      Gluten Free<br />
+      10/02/1987
+    </div>
+  </div>
+  

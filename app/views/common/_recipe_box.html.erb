@@ -1,0 +1,13 @@
+
+  <div id="box">
+  
+    <h2><%= recipe.title %></h2>
+    <p id="box-content">
+      <% if recipe.tag  %>
+        <%= recipe.tag.title %>
+        <br />
+      <% end %>
+      <%= recipe.created_at.strftime("%m/%d/%Y") %>                   
+    </p>
+  
+  </div>

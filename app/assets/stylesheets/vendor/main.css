@@ -1,0 +1,24 @@
+/*
+Errno::ENOENT: No such file or directory - /Users/Aaron/Documents/School/Homework/SeniorProject/leap/app/assets/stylesheets/vendor/main.scss
+
+Backtrace:
+org/jruby/RubyIO.java:3783:in `read'
+org/jruby/RubyIO.java:3966:in `read'
+/Users/Aaron/.rvm/gems/jruby-1.7.19/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:482:in `update_stylesheet'
+/Users/Aaron/.rvm/gems/jruby-1.7.19/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:215:in `update_stylesheets'
+org/jruby/RubyArray.java:1613:in `each'
+/Users/Aaron/.rvm/gems/jruby-1.7.19/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/Aaron/.rvm/gems/jruby-1.7.19/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:293:in `watch'
+/Users/Aaron/.rvm/gems/jruby-1.7.19/gems/sass-3.4.21/lib/sass/plugin.rb:109:in `method_missing'
+/Users/Aaron/.rvm/gems/jruby-1.7.19/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:383:in `watch_or_update'
+/Users/Aaron/.rvm/gems/jruby-1.7.19/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/Users/Aaron/.rvm/gems/jruby-1.7.19/gems/sass-3.4.21/lib/sass/exec/base.rb:52:in `parse'
+/Users/Aaron/.rvm/gems/jruby-1.7.19/gems/sass-3.4.21/lib/sass/exec/base.rb:19:in `parse!'
+/Users/Aaron/.rvm/gems/jruby-1.7.19/gems/sass-3.4.21/bin/sass:13:in `(root)'
+org/jruby/RubyKernel.java:1087:in `load'
+/Users/Aaron/.rvm/gems/jruby-1.7.19/bin/sass:23:in `(root)'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Errno::ENOENT: No such file or directory - /Users/Aaron/Documents/School/Homework/SeniorProject/leap/app/assets/stylesheets/vendor/main.scss"; }
