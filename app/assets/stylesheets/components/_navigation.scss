@@ -1,0 +1,42 @@
+.navbar-inverse {
+  background-color: $navbar-background;
+  border: none;
+  .navbar-brand {
+    color: white;
+
+    &:hover, focus {
+      color: blue;
+    }
+  }
+}
+
+.dropdown-menu{
+  background-color: $navbar-background;
+  border: none;
+  min-width: 130px;
+  right: auto;
+  li{
+    &:hover {
+      background-color: $navbar-background;
+    }
+  }
+
+}
+
+.dropdown-toggle {
+  color: white;
+}
+
+.navbar-toggle {
+  border: none;
+}
+
+.navbar-nav > li > a {
+  color: white;
+}
+
+
+.navbar {
+  margin-bottom: 0px;
+  border-radius: 0px;
+}

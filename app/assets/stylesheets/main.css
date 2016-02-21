@@ -5809,8 +5809,34 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
-body {
-  background: #c2cfb2; }
+.navbar-inverse {
+  background-color: #2e7d32;
+  border: none; }
+  .navbar-inverse .navbar-brand {
+    color: white; }
+    .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand focus {
+      color: blue; }
+
+.dropdown-menu {
+  background-color: #2e7d32;
+  border: none;
+  min-width: 130px;
+  right: auto; }
+  .dropdown-menu li:hover {
+    background-color: #2e7d32; }
+
+.dropdown-toggle {
+  color: white; }
+
+.navbar-toggle {
+  border: none; }
+
+.navbar-nav > li > a {
+  color: white; }
+
+.navbar {
+  margin-bottom: 0px;
+  border-radius: 0px; }
 
 #box {
   font-family: Raleway, sans-serif;
@@ -5868,5 +5894,11 @@ body {
   text-decoration: none; }
   .close:hover {
     font-weight: bold; }
+
+.bgimage {
+  background-image: url("veggies.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 300px; }
 
 /*# sourceMappingURL=main.css.map */

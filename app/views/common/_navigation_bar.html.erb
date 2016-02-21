@@ -1,30 +1,38 @@
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse" >
 	<div class="container">
 		<div class="navbar-header">
-			<%= link_to "Home", '/', :class => "navbar-brand" %>
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsemenu">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<%= link_to "LEAP", '/', :class => "navbar-brand" %>
 		</div>
-		<ul class="nav navbar-nav navbar-right">
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meal Plans</a>
-				<ul class="dropdown-menu">
-					<li><%= link_to "Generate", "#" %></li>
-					<li><%= link_to "Manage", "#" %></li>
+		<div class="collapse navbar-collapse" id="collapsemenu">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MEAL PLANS</a>
+					<ul class="dropdown-menu">
+						<li><%= link_to "GENERATE", "#" %></li>
+						<li><%= link_to "MANAGE", "#" %></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RECIPES</a>
+					<ul class="dropdown-menu">
+						<li><%= link_to "SEARCH NEW", "#" %></li>
+						<li><%= link_to "MANAGE", {:controller => 'recipes', :action => 'list'} %></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FOODS</a>
+					<ul class="dropdown-menu">
+						<li><%=  link_to "MANAGE", food_items_path(@food_items) %> 
+						</ul>
+					</li>
 				</ul>
-			</li>
-			<li>
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes</a>
-				<ul class="dropdown-menu">
-					<li><%= link_to "Search New", "#" %></li>
-					<li><%= link_to "Manage", {:controller => 'recipes', :action => 'list'} %></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Foods</a>
-				<ul class="dropdown-menu">
-					<li><%=  link_to "Manage", food_items_path(@food_items) %> 
-				</ul>
-			</li>
-		</ul>
-	</div>
-</nav>
+			</div>
+
+		</div>
+	</nav>
