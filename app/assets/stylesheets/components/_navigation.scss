@@ -1,26 +1,42 @@
 .navbar-inverse {
+  font-weight: bold;
+  letter-spacing: 0.2em;
   background-color: $navbar-background;
   border: none;
+  margin-bottom: 0px;
+  border-radius: 0px;
+
   .navbar-brand {
     color: white;
+    font-weight: bold;
 
     &:hover, focus {
-      color: blue;
+      color: $navbar-font-hover;
     }
   }
 }
 
 .dropdown-menu{
-  background-color: $navbar-background;
+  border-radius: 0px;
+  background-color: rgba($navbar-background, 0.9);
   border: none;
   min-width: 130px;
   right: auto;
-  li{
-    &:hover {
-      background-color: $navbar-background;
+  padding: 0px;
+
+  > li {
+
+    > a {
+      color: white;
+      font-weight: bold;
+      padding: 12px;
+
+      &:hover {
+        color: $navbar-font-hover;
+        background-color: darken($navbar-background, 10%);
+      }
     }
   }
-
 }
 
 .dropdown-toggle {
@@ -28,15 +44,36 @@
 }
 
 .navbar-toggle {
+  border-radius: 0px;
   border: none;
 }
 
-.navbar-nav > li > a {
-  color: white;
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+
+    &:hover {
+      color: $navbar-font-hover;
+    }
 }
 
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: $navbar-font-hover;
+}
 
-.navbar {
-  margin-bottom: 0px;
-  border-radius: 0px;
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+  color: white;
+  padding: 12px;
+
+  &:hover {
+    color: $navbar-font-hover;
+    background-color: darken($navbar-background, 10%);
+  }
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: darken($navbar-background, 10%);
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+  background-color: darken($navbar-background, 10%);
 }
