@@ -3,6 +3,16 @@
 // -----------------------------------------------------------------------------
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,200,600);
 
-body {
+html, body {
   font-family: Raleway, sans-serif;
+  height: 100%;
+}
+
+section {
+	padding-top: 50px;
+	height: 100%;
+}
+
+a:hover {
+	text-decoration: none;
 }

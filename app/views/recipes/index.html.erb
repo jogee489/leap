@@ -1,3 +1,2 @@
-<%= page_title "Manage Recipes" %> 
-<!-- Need to add search bar -->
-<%= redirect_to 'list.html.erb' %>
+
+<%= render partial: 'list', :object => @recipeList, :as => "recipes" %>
