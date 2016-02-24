@@ -12,17 +12,31 @@
   display: block;
 }
 .table-fixed tbody td, .table-fixed thead > tr> th {
-  float: left;
+
   border-bottom-width: 0;
 }
 
-td.col-xs-12 {
+td.col-xs-10 {
 	&:hover {
 		background-color: darken(white, 10%);
+	}
+
+	a {
+		&:hover {
+			
+		}
 	}
 }
 
 #recipe_table {
 	float: left;
 	width: 20%;
+
+	.recipe_name {
+		float: none;
+	}
+
+	.checkbox {
+		float: none;
+	}
 }

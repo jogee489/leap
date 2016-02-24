@@ -2,41 +2,42 @@
 
 <div class="container" id="recipe_table">
   <div class="row">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4>
-            Recipes 
-          </h4>
-        </div>
-        <table class="table table-fixed table-hover table-bordered">
-          <thead>
-            <tr>
-              <th class="col-size-6"><a href="#"><span class="glyphicon glyphicon-plus"></span></a></th>
-              <th class="col-size-6"><a href="#"><span class="glyphicon glyphicon-trash"></span></a></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% recipes.each do |recipe| %>
-                <tr data-link="<%= recipe_path(recipe) %>">
-                   <td class="col-xs-12">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox">
-                        <%= link_to recipe.title, recipes_path, :id => recipe.id %>
-                    </label>
-                    </div>
-                  </td>
-                </tr>
-            <% end %>
-          </tbody>
-        </table>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>
+          Recipes 
+        </h4>
       </div>
+      <table class="table table-fixed table-bordered">
+        <thead>
+          <tr>
+            <th class="col-xs-6"><a href="#"><span class="glyphicon glyphicon-plus"></span></a></th>
+            <th class="col-xs-6"><a href="#"><span class="glyphicon glyphicon-trash"></span></a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% recipes.each do |recipe| %>
+          <tr>
+            <td class="col-xs-2 checkbox">
+                <label>
+                  <input type="checkbox">
+                </label>
+            </td>
+            <td class="col-xs-10 recipe-name" data-link="<%= recipe_path(recipe) %>">
+                <%= recipe.title %>
+            </td>
+          </tr>
+
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
 
 <script>
-  $("tr[data-link]").click(function() {
+  $("td[data-link]").click(function() {
     document.location.href= this.getAttribute("data-link") ;
   })
 </script>

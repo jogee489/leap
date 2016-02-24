@@ -5889,15 +5889,18 @@ a:hover {
   display: block; }
 
 .table-fixed tbody td, .table-fixed thead > tr > th {
-  float: left;
   border-bottom-width: 0; }
 
-td.col-xs-12:hover {
+td.col-xs-10:hover {
   background-color: #e6e6e6; }
 
 #recipe_table {
   float: left;
   width: 20%; }
+  #recipe_table .recipe_name {
+    float: none; }
+  #recipe_table .checkbox {
+    float: none; }
 
 .bgimage {
   background-image: url("veggies.jpg");
