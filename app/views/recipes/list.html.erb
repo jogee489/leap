@@ -1,47 +1,24 @@
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
 <div class="container">
-	<h1>Recipes List</h1>
-
-	<div class="well">
-	  <h3>Recipes List</h3>
-	  <p>this portion of page contains all of our recipes stored in the database.</p>
-		<a href="#" class="btn btn-success"  data-toggle="modal" data-target="#myRecipeModal">Quick Add</a>
-    
-	</div>
+	
   <!-- pagination -->
   <%= will_paginate @recipeList %>
-  <!-- search bar -->
 
-
-
-<!-- START VERSION 2-->
-
-<div class="container">
-
-<div class="row">
-
-	<div class="container col-md-8">
-			<table class = "table table-striped table-hover">
+	<div class="container">
+			<table class = "table table-hover">
 					 
 				 <thead>
 						<tr>
 							<th>
-								<a href="#" class="btn btn-warning disabled"  data-toggle="modal" data-target="#">Delete <span class="glyphicon glyphicon-trash"/></a>
+								<a href="#" id="btnDelete" class="btn btn-warning disabled"  data-toggle="modal" data-target="#">Delete <span class="glyphicon glyphicon-trash"/></a>
 							</th>
 							<th>
-	
+								<a href="#" class="btn btn-success"  data-toggle="modal" data-target="#myRecipeModal">Quick Add <span class="glyphicon glyphicon-plus"/></a> 
 
 							</th>
-							<th id="chkSelectAll"style="width: 5%;">
+							<th id="chkSelectAll">
 	
 								 <span> <input type="checkbox" id="check-all" ></span>
 							</th>
@@ -71,16 +48,38 @@
 				<% @recipeList.each do |r| %>
 						
 						<tr>
-								<td  style="width: 5%;"><span class="glyphicon glyphicon-plus expand"> </span></td>
-							  <td  style="width: 5%;"><%= index+=1 %></td>
-							 	<td  style="width: 5%;"><span> <input type="checkbox" class="check-rec"></span></td>
-						   	<td  style="width: 90%;"><a class="recTitle" ><%= r.title %></a></td>
+								<td><span class="glyphicon glyphicon-plus expand"> </span></td>
+							  <td><%= index+=1 %></td>
+							 	<td><span> <input type="checkbox" class="check-rec"></span></td>
+						   	<td><a class="recTitle" ><%= r.title %></a></td>
 						</tr>
 						<tr>
-								<td colspan="4" class="detailView collapse out" >
+								<td colspan="4" id="oneRow" class="detailView  "style="display: none;" >
 
-								 <%= r.ingredients %>
-
+								 <!--<%= r.ingredients %>-->
+										<div class="container col-md-12">																		
+											<!--<%= render 'recipe_details'%> --> 
+											<div class="panel panel-default" id="recipePanel">
+												<div class="panel-heading">Recipe Details</div>
+												<div class="panel-body">
+													<form role="form">
+														<div class="form-group">
+															<label for="email">Recipe Title</label>
+															<textarea class="form-control" id="ing"required><%= r.title %></textarea>
+														</div>
+														<div class="form-group">
+															<label for="pwd">Recipe Ingredients:</label>
+															<textarea class="form-control"  id="ing"required><%= r.ingredients %></textarea>
+														</div>
+														<div class="form-group">
+															<label for="pwd">Recipe Directions:</label>
+															<textarea class="form-control"  id="dir"required><%= r.directions %></textarea>
+														</div>
+														<%= button_to("Update", {:action=>:update, :id => r.id},  :class=>"btn btn-warning col-sm-4 col-md-offset-3") %>
+														<%= button_to("Delete", {:action=>:destroy, :id => r.id}, :method=>:delete, :class=>"btn btn-danger col-sm-4") %>
+													</form>
+											</div>
+										</div>
 								</td>
 						</tr>
 				<% end %>
@@ -88,13 +87,6 @@
 				 
 			</table>
 
-
-	</div>
-
-	<div class="container col-md-4">
-			<%= render :partial => "recipe_details"%> 
-	</div>
-</div>
 </div>
 <!--
 <%= render 'recipe_details' %>
@@ -115,24 +107,52 @@
 <script>
 	$(document).ready(function () {
 
-	$('.recTitle').on('click', function () {
-      alert("check")
-  });
-
+	//$('.recTitle').on('click', function () {
+  //    alert("check")
+  //});
+	
+	// Needs to be fixed.
 	$(".expand").click(function() {
-    if($(".detailView").hasClass("out")) {
-        $(".detailView").addClass("in");
-        $(".detailView").removeClass("out");
-    } else {
-        $(".detailView").addClass("out");
-        $(".detailView").removeClass("in");
-    }
-	});
-
-	$("#check-all").bind('change', function(){        
-		$('.check-rec').prop('checked', $("#check-all").is(':checked')); 
+			$(".detailView").toggle('slow')
+//    if($(".detailView").hasClass("out")) {				
+//				$("#oneRow").attr('colspan',4);
+//        $(".detailView").addClass("in");
+//        $(".detailView").removeClass("out");
+//    } else {
+//				$("#oneRow").attr('colspan',4);
+//        $(".detailView").addClass("out");
+//        $(".detailView").removeClass("in");
+//    }
+		if($(".expand").hasClass("glyphicon-plus")){
+				$(".expand").addClass("glyphicon-minus");
+				$(".expand").removeClass("glyphicon-plus");
+		}else{
+				$(".expand").addClass("glyphicon-plus");
+				$(".expand").removeClass("glyphicon-minus");
+		}
 	});
 	
+	
+	// Toggle check boxes: check all checkboxes and enable delete button.
+	$("#check-all").bind('change', function(){        
+		$('.check-rec').prop('checked', $("#check-all").is(':checked'));
+		if($('#btnDelete').hasClass("disabled")) {
+        
+        $('#btnDelete').removeClass("disabled");
+    } else {
+        $('#btnDelete').addClass("disabled");
+    }
+	});
+	// Individual checkbox click.
+	$('.check-rec').bind('change', function(){ 
+		var numChked = $('.check-rec:checked').size();
+		
+		if($('#btnDelete').hasClass("disabled") && numChked>0) {       
+        $('#btnDelete').removeClass("disabled");
+    } else if(numChked==0) {
+        $('#btnDelete').addClass("disabled");
+    }
+	});
 	
 
  });
