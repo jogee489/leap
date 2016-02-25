@@ -1,2 +1,3 @@
-
-<%= render partial: 'list', :object => @recipeList, :as => "recipes" %>
+<%= page_title "Manage Recipes" %> 
+<!-- Need to add search bar -->
+<%= render partial: 'list', locals: { f: f } %>

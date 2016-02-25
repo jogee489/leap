@@ -1,0 +1,145 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+<div class="container">
+	<h1>Recipes List</h1>
+
+	<div class="well">
+	  <h3>Recipes List</h3>
+	  <p>this portion of page contains all of our recipes stored in the database.</p>
+		<a href="#" class="btn btn-success"  data-toggle="modal" data-target="#myRecipeModal">Quick Add</a>
+    
+	</div>
+  <!-- pagination -->
+  <%= will_paginate @recipeList %>
+  <!-- search bar -->
+
+
+
+<!-- START VERSION 2-->
+
+<div class="container">
+
+<div class="row">
+
+	<div class="container col-md-8">
+			<table class = "table table-striped table-hover">
+					 
+				 <thead>
+						<tr>
+							<th>
+								<a href="#" class="btn btn-warning disabled"  data-toggle="modal" data-target="#">Delete <span class="glyphicon glyphicon-trash"/></a>
+							</th>
+							<th>
+	
+
+							</th>
+							<th id="chkSelectAll"style="width: 5%;">
+	
+								 <span> <input type="checkbox" id="check-all" ></span>
+							</th>
+							<th>
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="type in recipe title...">
+									<span class="input-group-btn">
+		      					<button class="btn btn-default" type="button"> search <span class="glyphicon glyphicon-search"></button>
+		    					</span>
+								</div>
+							</th>
+							
+						</tr>
+						<tr>
+							 <th></th>
+							 <th>Index</th>
+							 <th>Select</th>
+						   <th>Name</th>
+						</tr>
+
+				 </thead>
+		 
+				 <tbody>
+
+				<% @index %>
+				<% index=0 %>	
+				<% @recipeList.each do |r| %>
+						
+						<tr>
+								<td  style="width: 5%;"><span class="glyphicon glyphicon-plus expand"> </span></td>
+							  <td  style="width: 5%;"><%= index+=1 %></td>
+							 	<td  style="width: 5%;"><span> <input type="checkbox" class="check-rec"></span></td>
+						   	<td  style="width: 90%;"><a class="recTitle" ><%= r.title %></a></td>
+						</tr>
+						<tr>
+								<td colspan="4" class="detailView collapse out" >
+
+								 <%= r.ingredients %>
+
+								</td>
+						</tr>
+				<% end %>
+				 </tbody>
+				 
+			</table>
+
+
+	</div>
+
+	<div class="container col-md-4">
+			<%= render :partial => "recipe_details"%> 
+	</div>
+</div>
+</div>
+<!--
+<%= render 'recipe_details' %>
+-->
+
+<!-- END VERSION 2 -->
+
+
+
+  <!-- If there is no recipe, tell user -->
+	<% if @recipeList.empty? %>
+	  <div class="alert alert-info">No recipes in the database.</div>
+	<% end %>
+	<div>
+		<%= render 'new_recipe_form' %>	
+	</div>
+
+<script>
+	$(document).ready(function () {
+
+	$('.recTitle').on('click', function () {
+      alert("check")
+  });
+
+	$(".expand").click(function() {
+    if($(".detailView").hasClass("out")) {
+        $(".detailView").addClass("in");
+        $(".detailView").removeClass("out");
+    } else {
+        $(".detailView").addClass("out");
+        $(".detailView").removeClass("in");
+    }
+	});
+
+	$("#check-all").bind('change', function(){        
+		$('.check-rec').prop('checked', $("#check-all").is(':checked')); 
+	});
+	
+	
+
+ });
+</script>
+
+
+
+
+  
+
