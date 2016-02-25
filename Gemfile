@@ -11,8 +11,6 @@ gem 'sass-rails', '~> 4.0.0'
 
 gem 'bootstrap-sass', '~>3.2.0'
 
-
-
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -31,10 +29,6 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -46,6 +40,9 @@ end
 # gem 'capistrano', group: :development
 
 gem 'will_paginate', '> 3.0'
+
+# Help handle docx files. Read more at https://github.com/chrahunt/docx
+gem 'docx', '~> 0.2.07', :require => ["docx"]
 
 group :test do
 	gem 'mocha' # Used for mocking and stubbing. Documentation at: https://github.com/freerange/mocha

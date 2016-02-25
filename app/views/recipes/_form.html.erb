@@ -4,12 +4,10 @@
 	  { value: @recipe.try(:title) } %>
 
 	  <%= add_form_element 'recipe', 'ingredients',
-	  { type: 'text'},
+	  { type: 'textarea'},
 	  { value: @recipe.try(:ingredients) } %>
 
 	  <%= add_form_element 'recipe', 'directions',
-	  { type: 'text'},
+	  { type: 'textarea'},
 	  { value: @recipe.try(:directions) } %>
-
-	
 </div>

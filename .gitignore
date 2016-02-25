@@ -1,5 +1,5 @@
 tmp*
-*.bok
+*.bak
 *.log
 .project
 *.bundle
@@ -7,3 +7,4 @@ tmp*
 leap.war
 log*
 *~
+*sass-cache*

@@ -1,0 +1,26 @@
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".saveRecipe").click(function() {
+			var div = $(this).closest(".recipeData");
+			var title = div.find("#recipe_title").val();
+			var ingredients = div.find("#recipe_ingredients").val();
+			var directions = div.find("#recipe_directions").val();
+		});
+		$(".removeRecipe").click(function() {
+			$(this).closest(".recipeData").remove();
+		});
+	});
+</script>
+
+<%= page_title 'Display the document information.' %>
+
+<button>Save All</button>
+<% @recipe_list.each do |recipe| %>
+	<div class="recipeData">
+		<%= render partial: 'form' %>
+		<button class="saveRecipe">Save</button>
+		<button class="removeRecipe">Remove</button>
+	</div>
+	
+<% end %>

@@ -1,25 +1,7 @@
 Leap::Application.routes.draw do
-  get "food_items/index"
 
-  get "food_items/show"
-
-  get "food_items/new"
-
-  get "food_items/edit"
-
-  get "food_items/delete"
-
-  
-  get "categories/index"
-
-  get "categories/show"
-
-  get "categories/new"
-
-  get "categories/edit"
-
-  get "categories/delete"
-
+  get "recipes/upload", controller: :recipes, action: :upload
+  post "recipes/display_upload", controller: :recipes, action: :display_upload
 	
   get "recipes/list", controller: :recipes, action:  :list
 

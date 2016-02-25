@@ -12,7 +12,6 @@ module LeapFormHelper
   # Optionally returns submit and cancel buttons for a form.
   def form_buttons(accept = 'Ok', deny = 'Cancel', deny_path = {})
     deny_path = { controller: params[:controller] } if deny_path.blank?
-    Rails.logger.error("Bananakick: deny_path")
     content_tag(:ol, class: 'actions clearfix') do
       submit = form_submit_button(accept) if accept.present?
       cancel = form_deny_button(deny, deny_path) if deny.present?
@@ -102,27 +101,6 @@ module LeapFormHelper
 </div>
         EOS
     end
-  end
-
-  # Create a search form. Pass in the url and search method.
-  def search_form(search_method = nil, additional_values = {})
-    additional_jquery :form, :search_forms
-    additional_fields = additional_values.collect do |k, v|
-      hidden_field_tag(k, v)
-    end.join
-
-    <<-EOS.html_safe
-<form class="search_form" method="get" action="/searches.html">
-  #{hidden_field_tag '_method', 'get'}
-    #{hidden_field_tag 'search_method', search_method}
-    #{additional_fields}
-    #{text_field_tag :query}
-  <span class="image">
-        <span id="search_icon">#{image_tag 'forms/search.png'}</span>
-        <span id="loading_icon" style="display: none;">#{image_tag 'forms/loading.gif'}</span>
-    </span>
-</form>
-    EOS
   end
 
 end
