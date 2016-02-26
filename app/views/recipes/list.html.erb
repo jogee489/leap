@@ -1,4 +1,17 @@
-
+<script type="text/javascript">
+  $(document).ready(function() {
+  	// delete all of the recipes with the box checked
+    $("#btnDelete").click(function() {
+      var selected = [];
+      // gather the id of all checked recipes
+      $('input:checked').each(function() {
+      	var id = $(this).closest('tr').find('#recipe_id').val();
+        selected.push(id);
+      });
+      console.log(selected);
+    });
+  });
+</script>
 
 
 <div class="container">
@@ -48,9 +61,12 @@
 				<% @recipeList.each do |r| %>
 						
 						<tr>
-								<td><span class="glyphicon glyphicon-plus expand"> </span></td>
-							  <td><%= index+=1 %></td>
-							 	<td><span> <input type="checkbox" class="check-rec"></span></td>
+							<%= add_form_element 'recipe', 'id',
+	  							{ type: 'hidden'},
+								{ value: r.try(:id) } %>
+							<td><span class="glyphicon glyphicon-plus expand"> </span></td>
+							<td><%= index+=1 %></td>
+							<td><span> <input type="checkbox" class="check-rec"></span></td>
 						   	<td><a class="recTitle" ><%= r.title %></a></td>
 						</tr>
 						<tr>

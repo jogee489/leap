@@ -3,7 +3,26 @@ require 'docx'
 class RecipesController < ApplicationController
 
 	def save_recipe_json
-		
+		@recipe = Recipe.new(JSON.parse(params[:recipe]))
+		if @recipe.save
+			puts "saved properly"
+		end
+
+		#respond_with @recipe
+		render text: "success"
+	end
+
+	def save_recipe_list
+		raw_json = params[:recipeList]
+		puts raw_json
+		#recipe_list = JSON.parse(params[:recipeList])
+		recipes = raw_json.collect { |attributes| JSON.decode(attribues) }
+		puts recipes
+		recipes.each do |recipe_data|
+			recipe = Recipe.new(recipe_data)
+			recipe.save
+		end
+		return
 	end
 	
 	def searchRecipes
@@ -15,7 +34,7 @@ class RecipesController < ApplicationController
 	end
 
 	def list
-		@recipeList = Recipe.all.page(params[:page]).per_page(5)
+		@recipeList = Recipe.all.page(params[:page]).per_page(15)
 	end
 
 	def show
