@@ -66,30 +66,35 @@ a:hover {
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
   background-color: #205823; }
 
-.table-fixed thead {
-  width: 97%; }
+.row {
+  margin-top: 40px;
+  padding: 0 10px; }
 
-.table-fixed tbody {
-  height: 670px;
-  overflow-y: auto;
-  width: 100%; }
+.foods-table td {
+  border: none !important;
+  cursor: pointer; }
 
-.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
-  display: block; }
+.foods-menu {
+  height: 38px;
+  border-bottom: 1px solid #ddd; }
 
-.table-fixed tbody td, .table-fixed thead > tr > th {
-  border-bottom-width: 0; }
+.foods-menu-icon {
+  padding-right: 15px; }
 
-td.col-xs-10:hover {
-  background-color: #e6e6e6; }
+.foods-panel {
+  width: 230px; }
 
-#recipe_table {
-  float: left;
-  width: 20%; }
-  #recipe_table .recipe_name {
-    float: none; }
-  #recipe_table .checkbox {
-    float: none; }
+.foods-table {
+  width: 190px;
+  /* 36 x 5 (number of foods) */
+  height: 180px; }
+
+.foods-table tbody {
+  display: block;
+  width: 190px;
+  /* 56 x 4 (number of foods) */
+  height: 224px;
+  overflow: auto; }
 
 .bgimage {
   background-image: url("veggies.jpg");
@@ -97,3 +102,5 @@ td.col-xs-10:hover {
   background-size: cover;
   opacity: 0.7;
   height: 350px; }
+
+/*# sourceMappingURL=main.css.map */
