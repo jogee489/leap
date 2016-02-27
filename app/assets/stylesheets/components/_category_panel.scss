@@ -1,0 +1,37 @@
+.row{
+    margin-top:40px;
+    padding: 0 10px;
+}
+
+.foods-table td {
+    border: none !important;
+    cursor: pointer;
+}
+
+.foods-menu {
+    height: 38px;
+    border-bottom: 1px solid #ddd;
+}
+
+.foods-menu-icon {
+    padding-right: 15px;
+}
+
+.foods-panel {
+   
+   width: 230px;
+}
+
+.foods-table {
+    width: 190px;
+    /* 36 x 5 (number of foods) */
+    height: 180px;
+}
+
+.foods-table tbody {
+    display: block;
+    width: 190px;
+    /* 56 x 4 (number of foods) */
+    height: 224px;
+    overflow: auto;
+} 

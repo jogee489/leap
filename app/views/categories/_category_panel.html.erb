@@ -1,0 +1,27 @@
+<div class="col-md-4">
+  <div class="foods-panel panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= cat.name %></h3>
+    </div>
+    <div class="panel-body">
+     <div class="foods-menu">
+       <a href="#"><span class="foods-menu-icon glyphicon glyphicon-plus"></span></a>
+       <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+     </div>
+     <table class="foods-table table table-hover">
+        <% cat.food_items.each do |foodItem| %>
+        <tr>
+         <td>
+           <div class="checkbox">
+             <label>
+              <input type="checkbox">
+              <%= foodItem.name %>
+            </label>
+          </div>
+        </td>
+      </tr>
+      <% end %>
+</table>
+</div>   
+</div>
+</div>
