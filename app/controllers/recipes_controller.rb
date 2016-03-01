@@ -25,7 +25,8 @@ class RecipesController < ApplicationController
 		return
 	end
 	
-	def searchRecipes
+	def search_new
+       render "recipes/search_new"
 	end
 
 	def index

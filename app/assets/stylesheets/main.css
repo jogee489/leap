@@ -1,57 +1,124 @@
-/*
-Syntax error: File to import not found or unreadable: pages/index.
-              Load path: /home/fabeliflow/Documents/CS465/leap/app/assets/stylesheets
-        on line 33 of main.scss
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200,600);
+html {
+  font-family: Raleway, sans-serif; }
 
-28:   'components/category_panel',
-29:   'components/buttons';
-30: 
-31: // 6. Page-specific styles
-32: @import
-33:   'pages/index',
-34:   'pages/search_new';
-35: 
-36: // 7. Themes
-37: @import
-38:   'themes/default';
+section {
+  padding-top: 50px;
+  height: 100%;
+  width: 100vw; }
 
-Backtrace:
-main.scss:33
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/import_node.rb:45:in `import'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/import_node.rb:28:in `imported_file'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/import_node.rb:37:in `css_import?'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:217:in `visit_import'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `map'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/tree/root_node.rb:20:in `render'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/engine.rb:315:in `_render'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/engine.rb:262:in `render'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:362:in `update_stylesheet'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `each'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:283:in `block in watch'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/vendor/listen/lib/listen/multi_listener.rb:108:in `call'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/vendor/listen/lib/listen/multi_listener.rb:117:in `block in initialize_adapter'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/vendor/listen/lib/listen/adapter.rb:198:in `call'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/vendor/listen/lib/listen/adapter.rb:198:in `report_changes'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/vendor/listen/lib/listen/adapter.rb:210:in `poll_changed_dirs'
-/home/fabeliflow/.rvm/gems/ruby-2.2.1/gems/sass-3.2.19/vendor/listen/lib/listen/adapters/linux.rb:48:in `block in start'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: pages/index.\A               Load path: /home/fabeliflow/Documents/CS465/leap/app/assets/stylesheets\A         on line 33 of main.scss\A \A 28:   'components/category_panel',\A 29:   'components/buttons';\A 30: \A 31: // 6. Page-specific styles\A 32: @import\A 33:   'pages/index',\A 34:   'pages/search_new';\A 35: \A 36: // 7. Themes\A 37: @import\A 38:   'themes/default';"; }
+a:hover {
+  text-decoration: none; }
+
+.navbar-inverse {
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  background-color: #2e7d32;
+  border: none;
+  margin-bottom: 0px;
+  border-radius: 0px; }
+  .navbar-inverse .navbar-brand {
+    color: white;
+    font-weight: bold; }
+    .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand focus {
+      color: #e0e0e0; }
+
+.dropdown-menu {
+  border-radius: 0px;
+  background-color: rgba(46, 125, 50, 0.9);
+  border: none;
+  min-width: 130px;
+  right: auto;
+  padding: 0px; }
+  .dropdown-menu > li > a {
+    color: white;
+    font-weight: bold;
+    padding: 12px; }
+    .dropdown-menu > li > a:hover {
+      color: #e0e0e0;
+      background-color: #205823; }
+
+.dropdown-toggle {
+  color: white; }
+
+.navbar-toggle {
+  border-radius: 0px;
+  border: none; }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: white; }
+  .navbar-inverse .navbar-nav > li > a:hover {
+    color: #e0e0e0; }
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-color: #e0e0e0; }
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+  color: white;
+  padding: 12px; }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
+    color: #e0e0e0;
+    background-color: #205823; }
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #205823; }
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+  background-color: #205823; }
+
+.row {
+  margin-top: 40px;
+  padding: 0 10px; }
+
+.foods-table td {
+  border: none !important;
+  cursor: pointer;
+  width: 190px; }
+
+.foods-menu {
+  height: 38px;
+  border-bottom: 1px solid #ddd; }
+
+.foods-menu-icon {
+  padding-right: 15px; }
+
+.foods-panel {
+  width: 230px; }
+
+.foods-table {
+  width: 190px;
+  /* 36 x 5 (number of foods) */
+  height: 180px; }
+
+.foods-table tbody {
+  display: block;
+  width: 190px;
+  /* 56 x 4 (number of foods) */
+  height: 224px;
+  overflow: auto; }
+
+#delete-food-icn {
+  pointer-events: none; }
+
+.bgimage {
+  background-image: url("veggies.jpg");
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.7;
+  width: 100vw;
+  /* browser height - navbar height */
+  min-height: -webkit-calc(100vh - 50px);
+  min-height: -moz-calc(100vh - 50px);
+  min-height: calc(100vh - 50px); }
+
+.dual-list .list-group {
+  margin-top: 8px; }
+
+.list-left li, .list-right li {
+  cursor: pointer; }
+
+.list-arrows {
+  padding-top: 100px; }
+
+.list-arrows button {
+  margin-bottom: 20px; }
