@@ -1,12 +1,12 @@
-<div class="col-md-4">
+<div class="col-s-1 col-md-4 col-lg-3">
   <div class="foods-panel panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title"><%= cat.name %></h3>
     </div>
     <div class="panel-body">
      <div class="foods-menu">
-       <a href="#"><span class="foods-menu-icon glyphicon glyphicon-plus"></span></a>
-       <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+       <a href="#"><span id="add-food-icn" class="foods-menu-icon glyphicon glyphicon-plus"></span></a>
+       <a href="#"><span id="delete-food-icn" class="glyphicon glyphicon-trash"></span></a>
      </div>
      <table class="foods-table table table-hover">
         <% cat.food_items.each do |foodItem| %>
@@ -17,6 +17,7 @@
               <input type="checkbox">
               <%= foodItem.name %>
             </label>
+            <a href="#"><span class="glyphicon glyphicon-remove pull-right"></span></a>
           </div>
         </td>
       </tr>

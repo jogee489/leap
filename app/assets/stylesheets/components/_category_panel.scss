@@ -6,6 +6,7 @@
 .foods-table td {
     border: none !important;
     cursor: pointer;
+    width: 190px;
 }
 
 .foods-menu {
@@ -34,4 +35,8 @@
     /* 56 x 4 (number of foods) */
     height: 224px;
     overflow: auto;
+}
+
+#delete-food-icn {
+    pointer-events: none;
 }

@@ -5,6 +5,7 @@ Leap::Application.routes.draw do
 	post "recipes/save_recipe_json", controller: :recipes, action: :save_recipe_json
   post "recipes/save_recipe_list", controller: :recipes, action: :save_recipe_list
   get "recipes/list", controller: :recipes, action:  :list
+  get "recipes/search_new", controller: :recipes, action: :search_new
 
   resources :categories
 
