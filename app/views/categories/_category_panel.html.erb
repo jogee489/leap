@@ -1,28 +1,36 @@
-<div class="col-s-1 col-md-4 col-lg-3">
-  <div class="foods-panel panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title"><%= cat.name %></h3>
+<div class="col-sm-4 col-md-4 col-lg-3">
+    <div id="foods-panel" class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title"><%= cat.name %></h3>
+        </div>
+        <div class="panel-body">
+            <table id="foods-table" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <a href="#"><span class="pull-left glyphicon glyphicon-plus"></span></a>
+                        </th>
+                        <th>
+                            <a href="#"><span class="pull-left glyphicon glyphicon-trash"></span></a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% cat.food_items.each do |foodItem| %>
+                        <tr>
+                            <td>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                    <%= foodItem.name %>
+                                </label>
+                                <a href="#"><span class="glyphicon glyphicon-remove pull-right"></span></a>
+                            </div>
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>   
     </div>
-    <div class="panel-body">
-     <div class="foods-menu">
-       <a href="#"><span id="add-food-icn" class="foods-menu-icon glyphicon glyphicon-plus"></span></a>
-       <a href="#"><span id="delete-food-icn" class="glyphicon glyphicon-trash"></span></a>
-     </div>
-     <table class="foods-table table table-hover">
-        <% cat.food_items.each do |foodItem| %>
-        <tr>
-         <td>
-           <div class="checkbox">
-             <label>
-              <input type="checkbox">
-              <%= foodItem.name %>
-            </label>
-            <a href="#"><span class="glyphicon glyphicon-remove pull-right"></span></a>
-          </div>
-        </td>
-      </tr>
-      <% end %>
-</table>
-</div>   
-</div>
 </div>
