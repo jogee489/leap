@@ -5,6 +5,9 @@ html {
 #main-content {
   padding-top: 50px; }
 
+.page-container {
+  padding-top: 50px; }
+
 a:hover {
   text-decoration: none; }
 
@@ -99,18 +102,10 @@ a:hover {
   min-height: -moz-calc(100vh - 50px);
   min-height: calc(100vh - 50px); }
 
-.dual-list .list-group {
-  margin-top: 8px; }
+.have-avoid-panel .list-group {
+  /* food item * 5 */
+  height: 210px;
+  overflow-y: scroll; }
 
-.list-left li, .list-right li {
-  cursor: pointer; }
-
-.list-arrows {
-  padding-top: 50px;
-  margin-left: 0; }
-
-.list-arrows button {
-  margin-bottom: 20px; }
-
-#foods-container {
-  padding-top: 50px; }
+.have-avoid-arrows {
+  padding-top: 130px; }

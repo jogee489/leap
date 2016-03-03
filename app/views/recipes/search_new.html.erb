@@ -1,61 +1,83 @@
-<div class="container">
+<script type="text/javascript">
+  $(function () {
+
+            $('body').on('click', '.list-group .list-group-item', function () {
+                $(this).toggleClass('active');
+            });
+            $('.list-arrows button').click(function () {
+                var $button = $(this), actives = '';
+                if ($button.hasClass('move-left')) {
+                    actives = $('.list-right ul li.active');
+                    actives.clone().appendTo('.list-left ul');
+                    actives.remove();
+                } else if ($button.hasClass('move-right')) {
+                    actives = $('.list-left ul li.active');
+                    actives.clone().appendTo('.list-right ul');
+                    actives.remove();
+                }
+            });
+            $('.dual-list .selector').click(function () {
+                var $checkBox = $(this);
+                if (!$checkBox.hasClass('selected')) {
+                    $checkBox.addClass('selected').closest('.well').find('ul li:not(.active)').addClass('active');
+                    $checkBox.children('i').removeClass('glyphicon-unchecked').addClass('glyphicon-check');
+                } else {
+                    $checkBox.removeClass('selected').closest('.well').find('ul li.active').removeClass('active');
+                    $checkBox.children('i').removeClass('glyphicon-check').addClass('glyphicon-unchecked');
+                }
+            });
+        });
+</script>
+
+<div class="page-container container">
   <div class="row">
     <div class="dual-list list-left col-md-3 col-md-offset-2">
       <div>
         <div class="have-avoid-panel panel panel-primary">
-        <div class="panel-heading">
-        <h3 class="panel-title">To Have</h3>
-      </div>
-      <div class="panel-body">
-        <table id="have-avoid-table" class="table table-hover">
-          <tr>
-          <td>
-          <div class="checkbox">
-          <label>
-          <input type="checkbox">Yeah
-          </label>
-          <a href="#">
-          <span class="glyphicon glyphicon-remove pull-right"></span>
-          </a>
+          <div class="panel-heading">
+            <h3 class="panel-title">To Have</h3>
           </div>
-          </td>
-          </tr>
-        </table>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div class="list-arrows col-md-1 text-center">
-            <button class="btn btn-default btn-sm move-left">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </button>
-
-            <button class="btn btn-default btn-sm move-right">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </button>
+          <div class="panel-body">
+            <ul class="list-group">
+              <li class="list-group-item">Broccoli</li>
+              <li class="list-group-item">Cauliflower</li>
+              <li class="list-group-item">Broccoli</li>
+              <li class="list-group-item">Cauliflower</li>
+              <li class="list-group-item">Broccoli</li>
+              <li class="list-group-item">Cauliflower</li>
+              <li class="list-group-item">Broccoli</li>
+              <li class="list-group-item">Cauliflower</li>
+            </ul>
+          </div>
         </div>
-      <div class="dual-list list-right col-md-3">
-        <div>
+      </div>
+    </div>
+    <div class="have-avoid-arrows list-arrows col-md-1 text-center">
+      <button class="btn btn-default btn-sm move-left">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+      </button>
+      <button class="btn btn-default btn-sm move-right">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+      </button>
+    </div>
+    <div class="dual-list list-right col-md-3">
+      <div>
         <div class="have-avoid-panel panel panel-primary">
-        <div class="panel-heading">
-        <h3 class="panel-title">To Avoid</h3>
-        </div>
-        <div class="panel-body">
-          <table class="have-avoid-table table table-hover">
-            <tr>
-            <td>
-            <div class="checkbox">
-            <label>
-            <input type="checkbox">Yeah
-            </label>
-            <a href="#">
-            <span class="glyphicon glyphicon-remove pull-right"></span>
-            </a>
-            </div>
-            </td>
-            </tr>
-          </table>
-        </div>
+          <div class="panel-heading">
+            <h3 class="panel-title">To Avoid</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="list-group">
+              <li class="list-group-item">Broccoli</li>
+              <li class="list-group-item">Cauliflower</li>
+              <li class="list-group-item">Broccoli</li>
+              <li class="list-group-item">Cauliflower</li>
+              <li class="list-group-item">Broccoli</li>
+              <li class="list-group-item">Cauliflower</li>
+              <li class="list-group-item">Broccoli</li>
+              <li class="list-group-item">Cauliflower</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
