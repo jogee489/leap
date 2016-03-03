@@ -1,170 +1,157 @@
 <script type="text/javascript">
-$(document).ready(function() {
-// delete all of the recipes with the box checked
-$("#btnDelete").click(function() {
-var selected = [];
-// gather the id of all checked recipes
-$('input:checked').each(function() {
-var id = $(this).closest('tr').find('#recipe_id').val();
-selected.push(id);
-});
-console.log(selected);
-});
-});
+  $(document).ready(function() {
+  	// delete all of the recipes with the box checked
+    $("#btnDelete").click(function() {
+      var selected = [];
+      // gather the id of all checked recipes
+      $('.check-rec:checked').each(function() {
+      	var id = $(this).closest('tr').find('#recipe_id').val();
+        selected.push(id);
+      });
+      console.log(selected);
+    });
+
+		// Logic for expanding recipe details when + or - is pressed.
+		$(".expand").click(function() {
+			$(this).closest("tr").next(".recipeDetails").toggle('slow');
+			$(this).toggleClass("glyphicon-chevron-down");
+			$(this).toggleClass("glyphicon-chevron-up");
+		});
+		
+		
+		// Toggle check boxes: check all checkboxes and enable delete button.
+		$("#check-all").bind('change', function() {
+			$('.check-rec').prop('checked', $("#check-all").is(':checked'));
+			var numChecked = $('.check-rec:checked').size();
+			if (numChecked == 0) {
+				$('#btnDelete').addClass("disabled");
+			} else if ($(this).prop("checked")) {
+				$('#btnDelete').removeClass("disabled");
+			}
+		});
+		
+		// Individual checkbox click.
+		$('.check-rec').bind('change', function() {
+			var numChecked = $('.check-rec:checked').size();
+			var maxChecked = $('.check-rec').size();
+			 
+			if ($('#btnDelete').hasClass("disabled") && numChecked > 0) {       
+		  	$('#btnDelete').removeClass("disabled");
+		  } else if (numChecked == 0) {
+		  	$('#btnDelete').addClass("disabled");
+		  } else if (numChecked < maxChecked) {
+				$('#check-all').prop("checked", false);
+			} else if (numChecked == maxChecked) {
+				$('#check-all').prop("checked", true);
+			}
+		});
+
+  });
 </script>
 
 
 <div class="container">
 
-<!-- pagination -->
-<%= will_paginate @recipeList %>
+	<!-- pagination -->
+	<%= will_paginate @recipeList %>
 
-<div class="container">
-	<table class = "table table-hover">
+	<div class="container">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>
+						<a href="#" id="btnDelete" class="btn btn-warning disabled">
+							Delete <span class="glyphicon glyphicon-trash" />
+						</a>
+					</th>
+					<th>
+						<a href="#" class="btn btn-success" data-toggle="modal" data-target="#myRecipeModal">
+							Quick Add <span class="glyphicon glyphicon-plus" />
+						</a> 
 
-		<thead>
-		<tr>
-		<th>
-		<a href="#" id="btnDelete" class="btn btn-warning disabled" >Delete <span class="glyphicon glyphicon-trash"/></a>
-		</th>
-		<th>
-		<a href="#" class="btn btn-success" data-toggle="modal" data-target="#myRecipeModal">Quick Add <span class="glyphicon glyphicon-plus"/></a> 
+					</th>
+					<th id="chkSelectAll">
+						<span class="glyphicon glyphicon-th-list" id="expand_all" />
+						<span> <input type="checkbox" id="check-all" /> </span>
+					</th>
+					<th>
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="type in recipe title..." />
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="button">
+									search <span class="glyphicon glyphicon-search">
+								</button>
+							</span>
+						</div>
+					</th>
 
-		</th>
-		<th id="chkSelectAll">
-		<span class="glyphicon glyphicon-th-list" id="expand_all"/>
-		<span> <input type="checkbox" id="check-all" ></span>
-		</th>
-		<th>
-		<div class="input-group">
-		<input type="text" class="form-control" placeholder="type in recipe title...">
-		<span class="input-group-btn">
-		<button class="btn btn-default" type="button"> search <span class="glyphicon glyphicon-search"></button>
-		</span>
-		</div>
-		</th>
+				</tr>
+				<tr>
+					<th></th>
+					<th>Index</th>
+					<th>Select</th>
+					<th>Name</th>
+				</tr>
 
-		</tr>
-		<tr>
-		<th></th>
-		<th>Index</th>
-		<th>Select</th>
-		<th>Name</th>
-		</tr>
+			</thead>
 
-		</thead>
+			<tbody>
 
-		<tbody>
+				<% @index %>
+				<% index=0 %>	
+				<% @recipeList.each do |r| %>
 
-		<% @index %>
-		<% index=0 %>	
-		<% @recipeList.each do |r| %>
+					<tr>
+						<%= add_form_element 'recipe', 'id',
+						{ type: 'hidden'},
+						{ value: r.try(:id) } %>
+						<td>
+							<span class="glyphicon glyphicon-chevron-down expand" id="myExpand_<%= index+=1 %>"/>
+						</td>
+						<td><%= index %></td>
+						<td><input type="checkbox" class="check-rec"/></td>
+						<td><a class="recTitle" ><%= r.title %></a></td>
+					</tr>
+					<tr class="recipeDetails" style="display:none;">
+						<td colspan="4" class="detailView">
 
-		<tr>
-		<%= add_form_element 'recipe', 'id',
-		{ type: 'hidden'},
-		{ value: r.try(:id) } %>
-		<td>
-		<span class="glyphicon glyphicon-chevron-down expand" id="myExpand_<%= index+=1 %>"/>
-		</td>
-		<td><%= index %></td>
-		<td>
-		<span><input type="checkbox" class="check-rec"/>
-		</td>
-		<td><a class="recTitle" ><%= r.title %></a></td>
-		</tr>
-		<tr>
-		<td colspan="4" class="detailView "style="display: none;" id="myDetails_<%= index %>">
+							<!--<%= r.ingredients %>-->
+							<div class="container col-md-12">																		
 
-		<!--<%= r.ingredients %>-->
-		<div class="container col-md-12">																		
-
-		<div class="panel panel-default" id="recipePanel">
-		<div class="panel-heading">Recipe Details</div>
-		<div class="panel-body">
-		<form role="form">
-		<div class="form-group">
-		<label for="email">Recipe Title</label>
-		<textarea class="form-control" id="ing"required><%= r.title %></textarea>
-		</div>
-		<div class="form-group">
-		<label for="pwd">Recipe Ingredients:</label>
-		<textarea class="form-control"  id="ing"required><%= r.ingredients %></textarea>
-		</div>
-		<div class="form-group">
-		<label for="pwd">Recipe Directions:</label>
-		<textarea class="form-control"  id="dir"required><%= r.directions %></textarea>
-		</div>
-		<%= button_to("Update", {:action=>:update, :id => r.id},  :class=>"btn btn-warning col-sm-4 col-md-offset-3") %>
-		<%= button_to("Delete", {:action=>:destroy, :id => r.id}, :method=>:delete, :class=>"btn btn-danger col-sm-4") %>
-		</form>
-		</div>
-		</div>
-		</td>
-		</tr>
-		<% end %>
-		</tbody>
-
-	</table>
-
+								<div class="panel panel-default" id="recipePanel">
+									<div class="panel-heading">Recipe Details</div>
+									<div class="panel-body">
+										<form role="form">
+											<div class="form-group">
+												<label for="title">Recipe Title</label>
+												<textarea class="form-control" id="title" required><%= r.title %></textarea>
+											</div>
+											<div class="form-group">
+												<label for="ingredients">Recipe Ingredients:</label>
+												<textarea class="form-control"  id="ingredients" required><%= r.ingredients %></textarea>
+											</div>
+											<div class="form-group">
+												<label for="directions">Recipe Directions:</label>
+												<textarea class="form-control"  id="directions" required><%= r.directions %></textarea>
+											</div>
+											<%= button_to("Update", {:action=>:update, :id => r.id},  :class=>"btn btn-warning col-sm-4 col-md-offset-3") %>
+											<%= button_to("Delete", {:action=>:destroy, :id => r.id}, :method=>:delete, :class=>"btn btn-danger col-sm-4") %>
+										</form>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
 </div>
 
-<!-- If there is no recipe, tell user -->
-<% if @recipeList.empty? %>
-<div class="alert alert-info">No recipes in the database.</div>
-<% end %>
-<div>
-<%= render 'new_recipe_form' %>	
-</div>
-
-<script>
-$(document).ready(function () {
-
-// Show detail of a recipe.
-$(".expand").click(function() {
-var myExpand = this.id;
-
-var myExpandId = this.id.split("_");
-var myDetailsId = "#myDetails_"+myExpandId[1];
-// Show that recipe detail of that index.			
-$(myDetailsId).toggle('slow');
-// Change gliphicon.
-if($('#myExpand_'+myExpandId[1]).hasClass("glyphicon-chevron-down")){				
-$('#myExpand_'+myExpandId[1]).addClass("glyphicon-chevron-up");
-$('#myExpand_'+myExpandId[1]).removeClass("glyphicon-chevron-down");
-}else{
-$('#myExpand_'+myExpandId[1]).addClass("glyphicon-chevron-down");
-$('#myExpand_'+myExpandId[1]).removeClass("glyphicon-chevron-up");
-}
-});
-
-// Expand all recipe details.
-$('#expand_all').click(function() {
-$('.detailView').toggle('slow');
-});
-
-
-// Toggle check boxes: check all checkboxes and enable delete button.
-$("#check-all").bind('change', function(){        
-$('.check-rec').prop('checked', $("#check-all").is(':checked'));
-if($('#btnDelete').hasClass("disabled")) {
-
-$('#btnDelete').removeClass("disabled");
-} else {
-$('#btnDelete').addClass("disabled");
-}
-});
-// Individual checkbox click.
-$('.check-rec').bind('change', function(){ 
-var numChked = $('.check-rec:checked').size();
-
-if($('#btnDelete').hasClass("disabled") && numChked>0) {       
-$('#btnDelete').removeClass("disabled");
-} else if(numChked==0) {
-$('#btnDelete').addClass("disabled");
-}
-});
-
-
-});
-</script>s
+			<!-- If there is no recipe, tell user -->
+			<% if @recipeList.empty? %>
+			<div class="alert alert-info">No recipes in the database.</div>
+			<% end %>
+			<div>
+				<%= render 'new_recipe_form' %>	
+			</div>
