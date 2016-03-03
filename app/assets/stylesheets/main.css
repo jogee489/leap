@@ -109,3 +109,19 @@ a:hover {
 
 .have-avoid-arrows {
   padding-top: 130px; }
+
+.foods-panel {
+  width: 250px; }
+  .foods-panel .list-group {
+    /* food item * 8 */
+    height: -webkit-calc(42px * 5);
+    height: -moz-calc(42px * 5);
+    height: -ms-calc(42px * 5);
+    height: calc(42px * 5);
+    overflow-y: scroll; }
+
+.foods-panel-menu {
+  padding-bottom: 15px; }
+
+.add-food-input {
+  display: none; }

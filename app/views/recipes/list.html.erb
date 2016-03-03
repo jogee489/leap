@@ -14,7 +14,7 @@ console.log(selected);
 </script>
 
 
-<div class="container">
+<div class="page-container container">
 
 <!-- pagination -->
 <%= will_paginate @recipeList %>
@@ -23,98 +23,95 @@ console.log(selected);
 	<table class = "table table-hover">
 
 		<thead>
-		<tr>
-		<th>
-		<a href="#" id="btnDelete" class="btn btn-warning disabled" >Delete <span class="glyphicon glyphicon-trash"/></a>
-		</th>
-		<th>
-		<a href="#" class="btn btn-success" data-toggle="modal" data-target="#myRecipeModal">Quick Add <span class="glyphicon glyphicon-plus"/></a> 
-
-		</th>
-		<th id="chkSelectAll">
-		<span class="glyphicon glyphicon-th-list" id="expand_all"/>
-		<span> <input type="checkbox" id="check-all" ></span>
-		</th>
-		<th>
-		<div class="input-group">
-		<input type="text" class="form-control" placeholder="type in recipe title...">
-		<span class="input-group-btn">
-		<button class="btn btn-default" type="button"> search <span class="glyphicon glyphicon-search"></button>
-		</span>
-		</div>
-		</th>
-
-		</tr>
-		<tr>
-		<th></th>
-		<th>Index</th>
-		<th>Select</th>
-		<th>Name</th>
-		</tr>
-
+			<tr>
+				<th>
+					<a href="#" id="btnDelete" class="btn btn-warning disabled" >Delete <span class="glyphicon glyphicon-trash"/></a>
+				</th>
+				<th>
+					<a href="#" class="btn btn-success" data-toggle="modal" data-target="#myRecipeModal">Quick Add <span class="glyphicon glyphicon-plus"/></a> 
+				</th>
+				<th id="chkSelectAll">
+					<span class="glyphicon glyphicon-th-list" id="expand_all"/>
+					<span> <input type="checkbox" id="check-all" ></span>
+				</th>
+				<th>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="type in recipe title..."/>
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"> search <span class="glyphicon glyphicon-search"></button>
+						</span>
+					</div>
+				</th>
+			</tr>
+			<tr>
+				<th></th>
+				<th>Index</th>
+				<th>Select</th>
+				<th>Name</th>
+			</tr>
 		</thead>
 
 		<tbody>
 
-		<% @index %>
-		<% index=0 %>	
-		<% @recipeList.each do |r| %>
+			<% @index %>
+			<% index=0 %>	
+			<% @recipeList.each do |r| %>
 
-		<tr>
-		<%= add_form_element 'recipe', 'id',
-		{ type: 'hidden'},
-		{ value: r.try(:id) } %>
-		<td>
-		<span class="glyphicon glyphicon-chevron-down expand" id="myExpand_<%= index+=1 %>"/>
-		</td>
-		<td><%= index %></td>
-		<td>
-		<span><input type="checkbox" class="check-rec"/>
-		</td>
-		<td><a class="recTitle" ><%= r.title %></a></td>
-		</tr>
-		<tr>
-		<td colspan="4" class="detailView "style="display: none;" id="myDetails_<%= index %>">
-
-		<!--<%= r.ingredients %>-->
-		<div class="container col-md-12">																		
-
-		<div class="panel panel-default" id="recipePanel">
-		<div class="panel-heading">Recipe Details</div>
-		<div class="panel-body">
-		<form role="form">
-		<div class="form-group">
-		<label for="email">Recipe Title</label>
-		<textarea class="form-control" id="ing"required><%= r.title %></textarea>
-		</div>
-		<div class="form-group">
-		<label for="pwd">Recipe Ingredients:</label>
-		<textarea class="form-control"  id="ing"required><%= r.ingredients %></textarea>
-		</div>
-		<div class="form-group">
-		<label for="pwd">Recipe Directions:</label>
-		<textarea class="form-control"  id="dir"required><%= r.directions %></textarea>
-		</div>
-		<%= button_to("Update", {:action=>:update, :id => r.id},  :class=>"btn btn-warning col-sm-4 col-md-offset-3") %>
-		<%= button_to("Delete", {:action=>:destroy, :id => r.id}, :method=>:delete, :class=>"btn btn-danger col-sm-4") %>
-		</form>
-		</div>
-		</div>
-		</td>
-		</tr>
-		<% end %>
+			<tr>
+				<%= add_form_element 'recipe', 'id',
+				{ type: 'hidden'},
+				{ value: r.try(:id) } %>
+				<td>
+					<span class="glyphicon glyphicon-chevron-down expand" id="myExpand_<%= index+=1 %>"/>
+				</td>
+				<td>
+					<%= index %>
+				</td>
+				<td>
+					<span><input type="checkbox" class="check-rec"/>
+				</td>
+				<td>
+					<a class="recTitle" ><%= r.title %></a>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="detailView "style="display: none;" id="myDetails_<%= index %>">
+					<div class="container col-md-12">																
+						<div class="panel panel-default" id="recipePanel">
+							<div class="panel-heading">Recipe Details</div>
+							<div class="panel-body">
+								<form role="form">
+									<div class="form-group">
+										<label for="email">Recipe Title</label>
+										<textarea class="form-control" id="ing"required><%= r.title %></textarea>
+									</div>
+									<div class="form-group">
+										<label for="pwd">Recipe Ingredients:</label>
+										<textarea class="form-control"  id="ing"required><%= r.ingredients %></textarea>
+									</div>
+									<div class="form-group">
+										<label for="pwd">Recipe Directions:</label>
+										<textarea class="form-control"  id="dir"required><%= r.directions %></textarea>
+									</div>
+									<%= button_to("Update", {:action=>:update, :id => r.id},  :class=>"btn btn-warning col-sm-4 col-md-offset-3") %>
+									<%= button_to("Delete", {:action=>:destroy, :id => r.id}, :method=>:delete, :class=>"btn btn-danger col-sm-4") %>
+								</form>
+							</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<% end %>
 		</tbody>
-
 	</table>
-
 </div>
 
 <!-- If there is no recipe, tell user -->
 <% if @recipeList.empty? %>
-<div class="alert alert-info">No recipes in the database.</div>
+	<div class="alert alert-info">No recipes in the database.</div>
 <% end %>
 <div>
-<%= render 'new_recipe_form' %>	
+	<%= render 'new_recipe_form' %>	
 </div>
 
 <script>
@@ -167,4 +164,4 @@ $('#btnDelete').addClass("disabled");
 
 
 });
-</script>s
+</script>
