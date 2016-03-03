@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
 		end
 
 		#respond_with @recipe
-		render text: "success"
+		render nothing: true
 	end
 
 	def save_recipe_list
@@ -49,7 +49,7 @@ class RecipesController < ApplicationController
 	end
 
 	def new
-		@recipe = Recipe.new()
+		@recipe = Recipe.new
 	end
 
 	def create

@@ -1,53 +1,59 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
+
 		$(".saveRecipe").click(function() {
 			var div = $(this).closest(".recipeData");
 			var title = div.find("#recipe_title").val();
 			var ingredients = div.find("#recipe_ingredients").val();
 			var directions = div.find("#recipe_directions").val();
 			var recipeJSON = '{"title":"' + title + '", "ingredients":"' + ingredients +
-						 	 '", "directions":"' + directions + '"}';
+						 	 			 '", "directions":"' + directions + '"}';
 			$.ajax({
-                url: "/recipes/save_recipe_json",
-                method: "POST",
-                data: {recipe: recipeJSON},
-                timeout: 5500,
-                success: function() {
-                	console.log("success");
-                	div.html("Saved Successfully!");
-                	div.fadeOut("slow");
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                	console.log("an error has occured");
-                	console.log(textStatus);
-                	console.log(errorThrown);
-                }
+        url: "/recipes/save_recipe_json",
+       	method: "POST",
+      	data: {recipe: recipeJSON},
+        timeout: 5500,
+        success: function() {
+          console.log("success");
+          div.hide();
+          div.html("Saved Successfully!");
+          div.fadeIn("slow");
+          div.fadeOut("slow");
+				},
+      	error: function(jqXHR, textStatus, errorThrown) {
+        	console.log("an error has occured");
+        	console.log(textStatus);
+        	console.log(errorThrown);
+        }
 			});
 		});
+
 		$(".removeRecipe").click(function() {
 			$(this).closest(".recipeData").fadeOut();
 		});
+
 		$("#saveAll").click(function() {
 			// create JSON to hold all recipe information
 			var recipeList = '';
 			$.ajax({
-                url: "/recipes/save_recipe_list",
-                method: "POST",
-                dataType: "json",
-                data: {recipeList: recipeList},
-                timeout: 5500,
-                success: function(data) {
-                	console.log("success");
-                },
-                error: function(error) {
-                	console.log("an error has occured\n" + error);
-                	console.log(error);
-                },
-                complete: function() {
-                }
+        url: "/recipes/save_recipe_list",
+        method: "POST",
+      	dataType: "json",
+        data: {recipeList: recipeList},
+      	timeout: 5500,
+       	success: function(data) {
+        	console.log("success");
+      	},
+      	error: function(error) {
+        	console.log("an error has occured\n" + error);
+        	console.log(error);
+      	},
+      	complete: function() {
+				}
 			});
-		})
+		});
+
 	});
 </script>
 
