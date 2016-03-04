@@ -29,6 +29,48 @@
         });
 </script>
 
+<script> 
+// This controls the food selection table
+$(document).ready(function () {
+
+  // Show all items of a category.
+  $(".expand").click(function() {
+    var myExpand = this.id;
+    
+    var myExpandId = this.id.split("_");
+    var myDetailsClass = '.'+myExpandId[0]+"_items";
+    // Show that recipe detail of that index.     
+    //alert(myDetailsClass);
+    $(myDetailsClass).toggle('slow');
+    // Change gliphicon arrow up and down.
+    var id='#'+myExpand;
+    if($(id).hasClass("glyphicon-chevron-down")){       
+      $(id).addClass("glyphicon-chevron-up");
+      $(id).removeClass("glyphicon-chevron-down");
+    }else{
+      $(id).addClass("glyphicon-chevron-down");
+      $(id).removeClass("glyphicon-chevron-up");
+    }
+  });
+  // Enable buttons when check boxes are checked.
+  $('.checkItems').bind('change', function(){ 
+    var numChked = $('.checkItems:checked').size();
+
+    if(numChked) {       
+      $('#btnToAvoid').removeClass("disabled");
+      $('#btnToHave').removeClass("disabled");
+    } else if(numChked==0) {
+      $('#btnToAvoid').addClass("disabled");
+      $('#btnToHave').addClass("disabled");
+    }
+  });
+
+  // TO-DO: handles btnToHave and btnToAvoid.
+
+
+});
+</script>
+
 <div class="page-container container">
   <div class="row">
     <div class="dual-list list-left col-md-3 col-md-offset-2">
@@ -81,5 +123,36 @@
         </div>
       </div>
     </div>
+  </div>
+
+   <!-- Now here goes the table -->
+
+  <div class="panel panel-success">
+      <div class="panel-heading">Select Food Items to add or to avoid</div>
+      <div class="panel-body">
+        <table class="table table-hover">          
+          <thead>            
+            <tr>
+              <th style="width: 30%;"><button class="btn btn-primary disabled" type="button" id="btnToHave"> FOOD TO HAVE <span class="glyphicon glyphicon-plus"></button>
+              <button class="btn btn-warning disabled" type="button" id="btnToAvoid"> FOOD TO AVOID <span class="glyphicon glyphicon-minus"></button></th>
+              <th></th>
+            </tr>
+            <% @category_list.each do |cat| %>
+            <tr>
+              <th><span class="glyphicon glyphicon-chevron-down expand" id="<%= cat.name %>_expand"/></th>
+              <th><%= cat.name %></th>
+            </tr>            
+          </thead>
+          <tbody>
+            <% cat.food_items.each do |foodItem| %>         
+            <tr class="<%= cat.name %>_items" style="display: none;" >
+              <td><span><input type="checkbox" class="checkItems" id=""/></td>
+              <td><%= foodItem.name %></td>
+            </tr>            
+          </tbody>
+          <% end %>
+          <% end %>
+        </table>
+      </div>
   </div>
 </div>

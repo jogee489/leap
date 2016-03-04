@@ -16,8 +16,7 @@ a:hover {
   letter-spacing: 0.2em;
   background-color: #2e7d32;
   border: none;
-  margin-bottom: 0px;
-  border-radius: 0px; }
+  margin-bottom: 0; }
   .navbar-inverse .navbar-brand {
     color: white;
     font-weight: bold; }
@@ -25,12 +24,15 @@ a:hover {
       color: #e0e0e0; }
 
 .dropdown-menu {
-  border-radius: 0px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
   background-color: rgba(46, 125, 50, 0.9);
   border: none;
   min-width: 130px;
   right: auto;
-  padding: 0px; }
+  padding: 0; }
   .dropdown-menu > li > a {
     color: white;
     font-weight: bold;
@@ -43,7 +45,6 @@ a:hover {
   color: white; }
 
 .navbar-toggle {
-  border-radius: 0px;
   border: none; }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -59,7 +60,7 @@ a:hover {
   padding: 12px; }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
     color: #e0e0e0;
-    background-color: #205823; }
+    background-color: #276a2b; }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
   background-color: #205823; }
@@ -91,20 +92,26 @@ a:hover {
     height: 224px;
     overflow: auto; }
 
-.bgimage {
-  background-image: url("veggies.jpg");
+.main-header {
+  background-image: url("main_image.png");
   background-position: center center;
   background-size: cover;
-  opacity: 0.7;
   width: 100vw;
   /* browser height - navbar height */
   min-height: -webkit-calc(100vh - 50px);
   min-height: -moz-calc(100vh - 50px);
+  min-height: -ms-calc(100vh - 50px);
   min-height: calc(100vh - 50px); }
+
+.main-content-container {
+  padding: 50px 50px 0 50px; }
 
 .have-avoid-panel .list-group {
   /* food item * 5 */
-  height: 210px;
+  height: -webkit-calc(42px * 5);
+  height: -moz-calc(42px * 5);
+  height: -ms-calc(42px * 5);
+  height: calc(42px * 5);
   overflow-y: scroll; }
 
 .have-avoid-arrows {
@@ -113,7 +120,7 @@ a:hover {
 .foods-panel {
   width: 250px; }
   .foods-panel .list-group {
-    /* food item * 8 */
+    /* food item * 5 */
     height: -webkit-calc(42px * 5);
     height: -moz-calc(42px * 5);
     height: -ms-calc(42px * 5);
@@ -122,6 +129,3 @@ a:hover {
 
 .foods-panel-menu {
   padding-bottom: 15px; }
-
-.add-food-input {
-  display: none; }

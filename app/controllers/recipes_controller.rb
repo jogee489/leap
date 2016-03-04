@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
 	end
 	
 	def search_new
-       render "recipes/search_new"
+       @category_list = Category.all
 	end
 
 	def index

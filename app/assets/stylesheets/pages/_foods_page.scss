@@ -2,7 +2,7 @@
 	width: 250px;
 
 	.list-group {
-		/* food item * 8 */
+		/* food item * 5 */
 		@include calc(height, '42px * 5');
 		overflow-y: scroll; 
 	}
@@ -13,5 +13,5 @@
 }
 
 .add-food-input {
-	display: none;
+	
 }

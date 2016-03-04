@@ -3,8 +3,8 @@
   letter-spacing: 0.2em;
   background-color: $navbar-background;
   border: none;
-  margin-bottom: 0px;
-  border-radius: 0px;
+  margin-bottom: 0;
+  
 
   .navbar-brand {
     color: white;
@@ -17,12 +17,12 @@
 }
 
 .dropdown-menu{
-  border-radius: 0px;
+  @include border-radius(0);
   background-color: rgba($navbar-background, 0.9);
   border: none;
   min-width: 130px;
   right: auto;
-  padding: 0px;
+  padding: 0;
 
   > li {
 
@@ -44,7 +44,6 @@
 }
 
 .navbar-toggle {
-  border-radius: 0px;
   border: none;
 }
 
@@ -66,7 +65,7 @@
 
   &:hover {
     color: $navbar-font-hover;
-    background-color: darken($navbar-background, 10%);
+    background-color: darken($navbar-background, 5%);
   }
 }
 

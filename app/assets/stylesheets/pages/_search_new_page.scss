@@ -2,7 +2,7 @@
 
   .list-group {
     /* food item * 5 */
-    height: 210px;
+    @include calc(height, '42px * 5');
     overflow-y: scroll; 
   }
 }

@@ -2,14 +2,16 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 
-.bgimage {
-	background-image: url('veggies.jpg');
-	background-position: center center;
-	background-size: cover;
-	opacity: 0.7;
-	width: 100vw;
-	/* browser height - navbar height */
-	min-height: -webkit-calc(100vh - 50px);
-    min-height: -moz-calc(100vh - 50px);
-    min-height: calc(100vh - 50px);
+.main-header {
+  background-image: url('main_image.png');
+  background-position: center center;
+  background-size: cover;
+  
+  width: 100vw;
+  /* browser height - navbar height */
+  @include calc(min-height, '100vh - 50px');
+}
+
+.main-content-container {
+  padding: 50px 50px 0 50px;
 }
