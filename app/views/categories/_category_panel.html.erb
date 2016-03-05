@@ -1,32 +1,56 @@
-<script type="text/javascript">
-  $(function () {
-    $('body').on('click', '.list-group .list-group-item', function () {
-      $(this).toggleClass('active');
-    });
-  });
-</script>
+<script>
 
+  //delete entire category when trash button is clicked
+  $(function() {
+    $(".delete-category-button").off().click(function() {
+      var heading = $(this).parent();
+      var panel = heading.parent()
+      var categoryId = heading.find("#category_id").val();
+      $.ajax({
+        url: "/categories/destroy",
+        method: "POST",
+        data: {id: categoryId},
+        timeout: 5500,
+        success: function() {
+          console.log("success");
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log("an error has occured");
+          console.log(textStatus);
+          console.log(errorThrown);
+        }
+      });
+      panel.hide("slow");
+    })
+  })
+</script>
 <div class="col-sm-4 col-md-4 col-lg-3">
   <div class="foods-panel panel panel-primary">
     <div class="panel-heading">
+      <%= add_form_element 'category', 'id',
+        { type: 'hidden'},
+        { value: cat.try(:id) } %>
       <h3 class="panel-title"><%= cat.name %></h3>
-      <a class="pull-right btn btn-primary selector" title="select all"><i class="glyphicon glyphicon-unchecked"></i></a>
+      <a class="pull-right pull-top btn btn-primary selector delete-category-button" title="delete all"><i class="glyphicon glyphicon-trash"></i></a>
     </div>
     <div class="panel-body">
       <div class="foods-panel-menu">
-        <a href="#" class="btn btn-success">Add <span class="glyphicon glyphicon-plus"/></a>
-        <a href="#" class="pull-right btn btn-danger">Delete <span class="glyphicon glyphicon-trash"/></a>
+        <a href="#" class="btn btn-success add-button">Add <span class="glyphicon glyphicon-plus"/></a>
+        <a href="#" class="pull-right btn btn-danger delete-button">Delete <span class="glyphicon glyphicon-trash"/></a>
       </div>
       <!-- Input field for adding new food item -->
       <div class="add-food-input form-group">
         <div class="input-group">
           <input type="text" class="form-control" name="validate-optional" id="validate-optional" placeholder="New Food Item">
-          <span class="input-group-addon info"><span class="glyphicon glyphicon-plus"></span></span>
+          <span class="input-group-addon submit-button info"><span class="glyphicon glyphicon-plus"></span></span>
         </div>
       </div>
       <ul class="list-group">
-        <% cat.food_items.each do |foodItem| %>
+        <% cat.food_items.sorted.each do |foodItem| %>
           <li class="list-group-item">
+            <%= add_form_element 'food_item', 'id',
+            { type: 'hidden'},
+            { value: foodItem.try(:id) } %>
             <%= foodItem.name %>
           </li>
         <% end %>
