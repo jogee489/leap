@@ -1,4 +1,33 @@
 class FoodItemsController < ApplicationController
+  def save_food_item_json
+    @foodItem = FoodItem.new(JSON.parse(params[:food_item]))
+    if @foodItem.save
+      puts "save successful"
+    end
+
+    render nothing: true
+  end
+
+  def delete_multiple_food_items
+    params[:food_item].each do |id| 
+      FoodItem.find(id).destroy
+    end
+
+    render nothing: true
+  end
+
+  def modify_multiple_food_items
+    i = 0
+    nameList = params[:names].split(',')
+    params[:food_item].each do |id| 
+      newName = nameList[i]
+      FoodItem.find(id).update_attributes({name: newName})
+      i += 1
+    end      
+    render nothing: true
+  end
+
+
   def index
     @foodItems = FoodItem.all
   end
