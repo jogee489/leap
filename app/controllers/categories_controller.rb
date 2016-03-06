@@ -9,8 +9,15 @@ class CategoriesController < ApplicationController
   def new
   end
 
+  def save_category 
+    Category.new(name: params[:name]).save
+    render nothing: true
+  end
+
   def edit
   end
+
+
 
   def destroy
     @category = Category.find(params[:id]).destroy

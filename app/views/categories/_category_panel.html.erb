@@ -1,28 +1,5 @@
 <script>
 
-  //delete entire category when trash button is clicked
-  $(function() {
-    $(".delete-category-button").off().click(function() {
-      var heading = $(this).parent();
-      var panel = heading.parent()
-      var categoryId = heading.find("#category_id").val();
-      $.ajax({
-        url: "/categories/destroy",
-        method: "POST",
-        data: {id: categoryId},
-        timeout: 5500,
-        success: function() {
-          console.log("success");
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-          console.log("an error has occured");
-          console.log(textStatus);
-          console.log(errorThrown);
-        }
-      });
-      panel.hide("slow");
-    })
-  })
 </script>
 <div class="col-sm-4 col-md-4 col-lg-3">
   <div class="foods-panel panel panel-primary">
@@ -31,11 +8,13 @@
         { type: 'hidden'},
         { value: cat.try(:id) } %>
       <h3 class="panel-title"><%= cat.name %></h3>
-      <a class="pull-right pull-top btn btn-primary selector delete-category-button" title="delete all"><i class="glyphicon glyphicon-trash"></i></a>
+      <a class="pull-right btn minimize-category-button" title="delete all"><i class="glyphicon glyphicon-chevron-up"></i></a>
+      <a class="pull-right btn btn-primary selector delete-category-button" title="delete all"><i class="glyphicon glyphicon-trash"></i></a>
     </div>
     <div class="panel-body">
       <div class="foods-panel-menu">
         <a href="#" class="btn btn-success add-button">Add <span class="glyphicon glyphicon-plus"/></a>
+        <a href="#" class="btn btn-warning edit-button">Edit <span class="glyphicon glyphicon-edit"/></a>
         <a href="#" class="pull-right btn btn-danger delete-button">Delete <span class="glyphicon glyphicon-trash"/></a>
       </div>
       <!-- Input field for adding new food item -->
@@ -47,10 +26,11 @@
       </div>
       <ul class="list-group">
         <% cat.food_items.sorted.each do |foodItem| %>
-          <li class="list-group-item">
-            <%= add_form_element 'food_item', 'id',
+          <%= add_form_element 'food_item', 'id',
             { type: 'hidden'},
             { value: foodItem.try(:id) } %>
+          <li class="list-group-item">
+            
             <%= foodItem.name %>
           </li>
         <% end %>

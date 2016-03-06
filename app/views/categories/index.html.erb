@@ -1,22 +1,30 @@
 <script type="text/javascript">
   //hide the add field until the add button is clicked
   $(function() {
+    selectRow();
     $('.input-group').hide()
   })
-  //this hides the panel if you click on the header
+  //this hides the panel if you click on the up button
   $(function () {
-    $('.panel-heading').click(function () {
-    	var body = $(this).parent().find(".panel-body");
+    $('.minimize-category-button').click(function () {
+    	var body = $(this).parent().parent().find(".panel-body");
     	var buttons = body.find(".btn");
     	if(body.is(":visible")) {
     		buttons.toggle(0);
-       		body.toggle(800);
+       		body.toggle(400);
     	}
     	else {
-    		body.toggle(800, function() {
+    		body.toggle(400, function() {
     			buttons.toggle(0);
     		});
     	}
+      var icon = $(this).find(".glyphicon")
+      if(icon.hasClass("glyphicon-chevron-up")){
+        icon.addClass("glyphicon-chevron-down");
+        icon.removeClass("glyphicon-chevron-up");
+      } else {
+        icon.addClass("glyphicon-chevron-up");
+        icon.removeClass("glyphicon-chevron-down");      }
     });
   });
 
@@ -27,14 +35,16 @@
       var body = menu.parent();
       var list = body.find(".list-group");
       var textField = body.find(".input-group");
+      var textBox = textField.find(".form-control")
       
 
       if(!textField.is(":visible")){
         list.animate({height: 176}, 0, function() {
-          textField.toggle(800);
+          textField.toggle(400);
+          textBox.focus();
         });
       } else {
-        textField.toggle(800, function () {
+        textField.toggle(400, function () {
           list.animate({height: 210}, 0);
        });
       }});
@@ -55,28 +65,15 @@
         var name = $.trim(input)
         console.log(categoryID) 
         var json = '{"name":"' + name + '", "category_id":"' + categoryID + '"}';
-      $.ajax({
-        url: "/food_items/save_food_item_json",
-        method: "POST",
-        data: {food_item: json},
-        timeout: 5500,
-        success: function() {
-          console.log("success");
-          body.fadeOut(0);
-          body.fadeIn(0);
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-          console.log("an error has occured");
-          console.log(textStatus);
-          console.log(errorThrown);
-        }
-      });
-    	//Redraw the list here
-
-     	//clear and hide the textfield
+        var reloadPage = function() {
+          location.reload();
+        }    	
       	textField.val("");
-      	textField.parent().toggle(800, function () {
-      		list.animate({height: 210}, 0);
+      	textField.parent().toggle(400, function () {
+      		list.animate({height: 210}, 0, function() {
+            ajaxCall("/food_items/save_food_item_json", "POST", {food_item: json}, reloadPage)
+
+          });
       	});
       
       	}
@@ -85,7 +82,7 @@
     });
   
   //Function to add a class to a row if it has been selected, and darken the row
-  $(function() {
+  function selectRow() {
     var listItems = $(".list-group-item");
     listItems.off().click(function() {
       if(!$(this).hasClass("selected")){
@@ -96,7 +93,7 @@
         $(this).removeClass("selected");
       }
     });
-  });
+  }
 
   //function to delete all selected foods in specified container
   $(function() {
@@ -106,32 +103,15 @@
       var selectedID = [];
       // gather the id of all selected items
       selectedFoods.each(function() {
-        var id = $(this).closest('li').find('#food_item_id').val();
+        var id = $(this).closest('ul').find('#food_item_id').val();
         selectedID.push(id);
       });
       console.log(selectedID);
-     
-      if(confirm("Are you sure you want to delete this Category?")){
-      	$.ajax({
-      	  url: "/food_items/delete_multiple_food_items",
-      	  method: "POST",
-      	  data: {food_item: selectedID},
-      	  timeout: 5500,
-      	  success: function() {
-      	    console.log("success");
-      	  },
-      	  error: function(jqXHR, textStatus, errorThrown) {
-      	    console.log("an error has occured");
-      	    console.log(textStatus);
-      	    console.log(errorThrown);
-      	  }
-      	});
-		
+      ajaxCall("/food_items/delete_multiple_food_items", "POST", {food_item: selectedID});
       selectedFoods.fadeOut(400);
-      }
+      });
     });
 
-  });
 
 
   //delete entire category when trash button is clicked
@@ -140,10 +120,78 @@
       var heading = $(this).parent();
       var panel = heading.parent()
       var categoryId = heading.find("#category_id").val();
-      $.ajax({
-        url: "/categories/destroy",
-        method: "POST",
-        data: {id: categoryId},
+      if(confirm("Are you sure you want to delete this Category?")){
+        //ajaxCall("/categories/destroy", "POST", {id:categoryId});
+        panel.hide("slow", function() {
+        $(this).remove();
+      });
+
+      }
+    })
+  })
+
+  //convert all selected items to editable textboxes when the edit button is selected
+  $(function() {
+    $(".edit-button").off().click(function() {
+      var list = $(this).parent().parent().find(".list-group");
+      var selectedFoods = list.find(".list-group-item.selected");   
+      var button = $(this);
+      var selectedID = [];
+      var newNames = [];
+      if($.trim(button.text()) == "Edit") {
+        button.html("Update <span class='glyphicon glyphicon-edit'/>");
+        //convert all selected foods to textboxes
+        //selectedFoods.css("background-color", "white");
+        selectedFoods.attr('contenteditable', 'true');
+        selectedFoods.unbind();
+      } else {
+          selectedFoods.each(function() {
+            newNames.push($.trim($(this).text()));
+            var foodID = $(this).closest('ul').find('#food_item_id').val();
+            selectedID.push(foodID);
+          })
+          console.log(selectedID);
+          console.log(newNames);
+          button.html("Edit <span class='glyphicon glyphicon-edit'/>");
+          console.log(selectedID.length);
+          newNames = newNames.join(",");
+          if(selectedID.length > 0) {
+            var reloadPage = function() {
+              location.reload();
+            }
+            ajaxCall("/food_items/modify_multiple_food_items", "POST", {food_item: selectedID, names: newNames}, reloadPage);
+          }
+          selectedFoods.attr('contenteditable', 'false');
+          selectedFoods.removeClass("selected");
+          selectedFoods.css("background-color", "white");
+          selectRow();
+      }});
+  });
+
+  //add a new category if textfield has text
+$(function() {
+    $('.add-category-button').click(function() {
+      var textField = $(this).parent().find('.form-control');
+      var input = textField.val();
+      console.log(input);
+      if($.trim(input).length == 0) {
+        //-----------------------------------TODO: flash error message-----------------------------------------------
+      } else {
+        var name = $.trim(input)
+        var reloadPage = function() {
+          location.reload();
+        }
+        ajaxCall("/categories/save_category", "POST", {name: name}, reloadPage);
+    }
+  });
+});
+
+function ajaxCall(url, method, data, completeFunction){
+  completeFunction = completeFunction || function() {};
+  $.ajax({
+        url: url,
+        method: method,
+        data: data,
         timeout: 5500,
         success: function() {
           console.log("success");
@@ -152,14 +200,18 @@
           console.log("an error has occured");
           console.log(textStatus);
           console.log(errorThrown);
-        }
+        },
+        complete: completeFunction
       });
-      panel.hide("slow");
-    })
-  })
-
+}
 
  </script>
+ 
+<div class="header">
+  <input type="text" class="form-control" name="validate-optional" id="validate-optional" placeholder="New Category">
+  <a href="#" class="btn btn-success add-category-button">Add Category <span class="glyphicon glyphicon-plus"/></a>
+
+</div>
 <div class="page-container container">
 	<div class="row">
 	<% @categoryList.each do |category| %>
