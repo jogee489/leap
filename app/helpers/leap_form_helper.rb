@@ -57,6 +57,7 @@ module LeapFormHelper
       when 'hidden'
         hidden_field(obj, method, html_options)
       when 'textarea'
+        html_options = {class: 'form-control'}
         text_area(obj, method, html_options)
       when 'password'
         password_field(obj, method, html_options)

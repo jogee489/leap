@@ -1,0 +1,36 @@
+<header class="main-header"></header>
+<div class="main-content-container row">
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+    <div class="main-thumbnail thumbnail">
+      <%= image_tag("square_icon_foods.png", class: "img-responsive") %>
+      <div class="caption">
+        <h3>Meal Plans</h3>
+        <p>Generate meal plans based on foods to have and avoid<br /><br /></p>
+        <a class="btn btn-info" href="#">Generate</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+    <div class="thumbnail">
+      <%= image_tag("square_icon_recipes.png", class: "img-responsive") %>
+      <div class="caption">
+        <h3>Recipes</h3>
+        <p>Search new recipes from the web. Manage existing recipes</p>
+        <p></p>
+        <%= link_to "Search New", {:controller => 'recipes', :action => 'search_new'}, {:class=>"btn btn-info"} %>
+        <%= link_to "Manage", {:controller => 'recipes', :action => 'index'}, {:class=>"btn btn-info"} %>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+    <div class="thumbnail">
+      <%= image_tag("square_icon_foods.png", class: "img-responsive") %>
+      <div class="caption">
+        <h3>Find your Foods</h3>
+        <p>Manage foods from different categories<br /><br /></p>
+        
+        <%= link_to "Manage", {:controller => 'categories', :action => 'index'}, {:class=>"btn btn-info"} %>
+      </div>
+    </div>
+  </div>
+</div>

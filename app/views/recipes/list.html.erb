@@ -9,6 +9,21 @@
         selected.push(id);
       });
       console.log(selected);
+      $.ajax({
+        url: "/recipes/destroy_multiple/",
+       	method: "POST",
+      	data: {recipe_ids: JSON.stringify(selected)},
+        timeout: 5500,
+        success: function() {
+          console.log("success");
+				},
+      	error: function(jqXHR, textStatus, errorThrown) {
+        	console.log("an error has occured");
+        	console.log(textStatus);
+        	console.log(errorThrown);
+        }
+			});
+			location.reload();
     });
 
 		// Logic for expanding recipe details when + or - is pressed.
@@ -44,6 +59,30 @@
 			} else if (numChecked == maxChecked) {
 				$('#check-all').prop("checked", true);
 			}
+		});
+
+		$('.update-button').click(function() {
+			var form = $(this).closest("form");
+			var title = form.find("#title").val();
+			var ingredients = form.find("#ingredients").val();
+			var directions = form.find("#directions").val();
+			var id = form.find("#recipe_id").val();
+			var json = JSON.stringify({title: title, ingredients: ingredients, directions: directions});
+			console.log(json);
+			$.ajax({
+        url: "/recipes/update/" + id,
+       	method: "POST",
+      	data: {recipe: json},
+        timeout: 5500,
+        success: function() {
+          console.log("success");
+				},
+      	error: function(jqXHR, textStatus, errorThrown) {
+        	console.log("an error has occured");
+        	console.log(textStatus);
+        	console.log(errorThrown);
+        }
+			});
 		});
 
   });
@@ -88,16 +127,14 @@
 
 		<tbody>
 
-			<% @index %>
-			<% index=0 %>	
-			<% @recipeList.each do |r| %>
+			<% @recipeList.each_with_index do |recipe, index| %>
 
 			<tr>
 				<%= add_form_element 'recipe', 'id',
 				{ type: 'hidden'},
-				{ value: r.try(:id) } %>
+				{ value: recipe.try(:id) } %>
 				<td>
-					<span class="glyphicon glyphicon-chevron-down expand" id="myExpand_<%= index+=1 %>"/>
+					<span class="glyphicon glyphicon-chevron-down expand" />
 				</td>
 				<td>
 					<%= index %>
@@ -106,30 +143,33 @@
 					<span><input type="checkbox" class="check-rec"/>
 				</td>
 				<td>
-					<a class="recTitle" ><%= r.title %></a>
+					<a class="recTitle" ><%= recipe.title %></a>
 				</td>
 			</tr>
-			<tr>
-				<td colspan="4" class="detailView "style="display: none;" id="myDetails_<%= index %>">
-					<div class="container col-md-12">																
+			<tr class="recipeDetails" style="display: none">
+				<td colspan="4" class="detailView">
+					<div class="container col-md-12">
 						<div class="panel panel-default" id="recipePanel">
 							<div class="panel-heading">Recipe Details</div>
 							<div class="panel-body">
 								<form role="form">
+									<%= add_form_element 'recipe', 'id',
+										{ type: 'hidden' },
+										{ value: recipe.try(:id) } %>
 									<div class="form-group">
-										<label for="email">Recipe Title</label>
-										<textarea class="form-control" id="ing"required><%= r.title %></textarea>
+										<label for="title">Recipe Title</label>
+										<textarea class="form-control" id="title" required><%= recipe.title %></textarea>
 									</div>
 									<div class="form-group">
-										<label for="pwd">Recipe Ingredients:</label>
-										<textarea class="form-control"  id="ing"required><%= r.ingredients %></textarea>
+										<label for="ingredients">Recipe Ingredients:</label>
+										<textarea class="form-control"  id="ingredients" required><%= recipe.ingredients %></textarea>
 									</div>
 									<div class="form-group">
-										<label for="pwd">Recipe Directions:</label>
-										<textarea class="form-control"  id="dir"required><%= r.directions %></textarea>
+										<label for="directions">Recipe Directions:</label>
+										<textarea class="form-control"  id="directions" required><%= recipe.directions %></textarea>
 									</div>
-									<%= button_to("Update", {:action=>:update, :id => r.id},  :class=>"btn btn-warning col-sm-4 col-md-offset-3") %>
-									<%= button_to("Delete", {:action=>:destroy, :id => r.id}, :method=>:delete, :class=>"btn btn-danger col-sm-4") %>
+									<%= submit_tag('Update', class: "btn btn-warning col-sm-4 col-md-offset-3 update-button") %>
+									<%= button_to("Delete", {:action=>:destroy, :id => recipe.id}, :method=>:delete, :class=>"btn btn-danger col-sm-4") %>
 								</form>
 							</div>
 						</div>
@@ -148,56 +188,3 @@
 <div>
 	<%= render 'new_recipe_form' %>	
 </div>
-
-<script>
-$(document).ready(function () {
-
-// Show detail of a recipe.
-$(".expand").click(function() {
-var myExpand = this.id;
-
-var myExpandId = this.id.split("_");
-var myDetailsId = "#myDetails_"+myExpandId[1];
-// Show that recipe detail of that index.			
-$(myDetailsId).toggle('slow');
-// Change gliphicon.
-if($('#myExpand_'+myExpandId[1]).hasClass("glyphicon-chevron-down")){				
-$('#myExpand_'+myExpandId[1]).addClass("glyphicon-chevron-up");
-$('#myExpand_'+myExpandId[1]).removeClass("glyphicon-chevron-down");
-}else{
-$('#myExpand_'+myExpandId[1]).addClass("glyphicon-chevron-down");
-$('#myExpand_'+myExpandId[1]).removeClass("glyphicon-chevron-up");
-}
-});
-
-// Expand all recipe details.
-$('#expand_all').click(function() {
-$('.detailView').toggle('slow');
-});
-
-
-// Toggle check boxes: check all checkboxes and enable delete button.
-$("#check-all").bind('change', function(){        
-$('.check-rec').prop('checked', $("#check-all").is(':checked'));
-if($('#btnDelete').hasClass("disabled")) {
-
-$('#btnDelete').removeClass("disabled");
-} else {
-$('#btnDelete').addClass("disabled");
-}
-});
-// Individual checkbox click.
-$('.check-rec').bind('change', function(){ 
-var numChked = $('.check-rec:checked').size();
-
-if($('#btnDelete').hasClass("disabled") && numChked>0) {       
-$('#btnDelete').removeClass("disabled");
-} else if(numChked==0) {
-$('#btnDelete').addClass("disabled");
-}
-});
-
-
-});
-</script>
-

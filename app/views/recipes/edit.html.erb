@@ -1,6 +1,0 @@
-<%= page_title "Update #{@recipe.title} Tag" %>
-
-<%= form_for [@recipe] do |f| %>
-  <%= render partial: 'form', locals: { f: f } %>
-  <%= form_buttons 'Update', 'Cancel' %>
-<% end %>

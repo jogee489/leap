@@ -1,6 +1,6 @@
 <div class="container">
 	<%= add_form_element 'recipe', 'title',
-		{ type: 'text'},
+		{ type: 'textarea'},
 	  { value: @recipe.try(:title) } %>
 
 	  <%= add_form_element 'recipe', 'ingredients',

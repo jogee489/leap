@@ -8,15 +8,12 @@ class RecipesController < ApplicationController
 			puts "saved properly"
 		end
 
-		#respond_with @recipe
 		render nothing: true
 	end
 
 	def save_recipe_list
 		raw_json = params[:recipeList]
-		puts raw_json
-		#recipe_list = JSON.parse(params[:recipeList])
-		recipes = raw_json.collect { |attributes| JSON.decode(attribues) }
+		recipes = raw_json.collect { |attributes| JSON.parse(attribues) }
 		puts recipes
 		recipes.each do |recipe_data|
 			recipe = Recipe.new(recipe_data)
@@ -26,7 +23,7 @@ class RecipesController < ApplicationController
 	end
 	
 	def search_new
-       @category_list = Category.all
+       render "recipes/search_new"
 	end
 
 	def index
@@ -39,13 +36,7 @@ class RecipesController < ApplicationController
 	end
 
 	def show
-		@recipe = Recipe.find(params[:id])
-		if @recipe.blank?
-			flash[:error] = 'The recipe you are looking for has disappeared..'
-			render action: 'list'
-
-		end
-
+		redirect_to action: 'index'
 	end
 
 	def new
@@ -56,7 +47,7 @@ class RecipesController < ApplicationController
 		@recipe = Recipe.new(recipe_params)
 		if (@recipe.save) 
 			flash[:notice] = 'The new recipe was successfully added.'
-			redirect_to action: 'show', id: @recipe.id
+			redirect_to action: 'index'
 		else 
 			render action: 'new'
 		end
@@ -68,11 +59,27 @@ class RecipesController < ApplicationController
 
 	def update
 		@recipe = Recipe.find(params[:id])
+		recipe_data = JSON.parse(params[:recipe])
+		puts recipe_data
+		@recipe.update_attributes!(JSON.parse(params[:recipe]))
+		@recipe.save
+
+		redirect_to(action: list)
 	end
 
 	def destroy
 		@recipe = Recipe.find(params[:id]).destroy
     	redirect_to(:action => 'index')
+	end
+
+	def destroy_multiple
+		recipe_ids = JSON.parse(params[:recipe_ids])
+		puts recipe_ids
+		recipe_ids.each do |id|
+			recipe = Recipe.find(id) #to_f
+			recipe.destroy if recipe.present?
+		end
+		render nothing: true
 	end
 
 	def upload

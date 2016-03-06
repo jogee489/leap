@@ -1,7 +1,0 @@
-<div class="container" style="margin-left:3em;">
-	<%= page_title 'Upload .docx file for parsing.' %>
-	<%= form_tag 'display_upload', method: 'post', multipart: true do %>
-	  <%= add_form_element 'recipe', 'file', { type: 'file'} %>
-	  <%= form_submit_button 'Upload' %>
-	<% end %>
-</div>
