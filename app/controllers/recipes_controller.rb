@@ -23,16 +23,16 @@ class RecipesController < ApplicationController
 	end
 	
 	def search_new
-       @category_list = Category.all
+       @category_list = Category.sorted
 	end
 
 	def index
-		@recipeList = Recipe.all.page(params[:page])
+		@recipeList = Recipe.sorted.page(params[:page])
 		redirect_to action: 'list'
 	end
 
 	def list
-		@recipeList = Recipe.all.page(params[:page]).per_page(15)
+		@recipeList = Recipe.sorted.page(params[:page]).per_page(15)
 	end
 
 	def show

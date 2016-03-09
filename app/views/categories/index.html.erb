@@ -1,4 +1,7 @@
 <script type="text/javascript">
+var reloadPage = function() {
+          location.reload();
+        }     
   //hide the add field until the add button is clicked
   $(function() {
     selectRow();
@@ -60,14 +63,14 @@
       var textField = group.find(".form-control");
       var input = textField.val();
       if($.trim(input).length == 0) {
+        textField.parent().toggle(400, function () {
+          list.animate({height: 210}, 0);
+        });
         //-----------------------------------TODO: flash error message-----------------------------------------------
       } else {
         var name = $.trim(input)
         console.log(categoryID) 
-        var json = '{"name":"' + name + '", "category_id":"' + categoryID + '"}';
-        var reloadPage = function() {
-          location.reload();
-        }    	
+        var json = '{"name":"' + name + '", "category_id":"' + categoryID + '"}';   	
       	textField.val("");
       	textField.parent().toggle(400, function () {
       		list.animate({height: 210}, 0, function() {
@@ -92,11 +95,11 @@
   $(function() {
     $(".delete-button").off().click(function() {
       var list = $(this).parent().parent().find(".list-group")
-      var selectedFoods = list.find(".list-group-item.selected");
+      var selectedFoods = list.find(".list-group-item.highlight-item");
       var selectedID = [];
       // gather the id of all selected items
       selectedFoods.each(function() {
-        var id = $(this).closest('ul').find('#food_item_id').val();
+        var id = $(this).find('#food_item_id').val();
         selectedID.push(id);
       });
       console.log(selectedID);
@@ -111,55 +114,21 @@
   $(function() {
     $(".delete-category-button").off().click(function() {
       var heading = $(this).parent();
-      var panel = heading.parent()
+      var panel = heading.parent();
+      var container = $(this).closest(".foods-div")
       var categoryId = heading.find("#category_id").val();
       if(confirm("Are you sure you want to delete this Category?")){
-        //ajaxCall("/categories/destroy", "POST", {id:categoryId});
-        panel.hide("slow", function() {
-        $(this).remove();
+        panel.fadeOut(400, function() {
+          container.remove();
+          ajaxCall("/categories/destroy", "POST", {id:categoryId});
       });
+
 
       }
     })
   })
 
-  //convert all selected items to editable textboxes when the edit button is selected
-  $(function() {
-    $(".edit-button").off().click(function() {
-      var list = $(this).parent().parent().find(".list-group");
-      var selectedFoods = list.find(".list-group-item.selected");   
-      var button = $(this);
-      var selectedID = [];
-      var newNames = [];
-      if($.trim(button.text()) == "Edit") {
-        button.html("Update <span class='glyphicon glyphicon-edit'/>");
-        //convert all selected foods to textboxes
-        //selectedFoods.css("background-color", "white");
-        selectedFoods.attr('contenteditable', 'true');
-        selectedFoods.unbind();
-      } else {
-          selectedFoods.each(function() {
-            newNames.push($.trim($(this).text()));
-            var foodID = $(this).closest('ul').find('#food_item_id').val();
-            selectedID.push(foodID);
-          })
-          console.log(selectedID);
-          console.log(newNames);
-          button.html("Edit <span class='glyphicon glyphicon-edit'/>");
-          console.log(selectedID.length);
-          newNames = newNames.join(",");
-          if(selectedID.length > 0) {
-            var reloadPage = function() {
-              location.reload();
-            }
-            ajaxCall("/food_items/modify_multiple_food_items", "POST", {food_item: selectedID, names: newNames}, reloadPage);
-          }
-          selectedFoods.attr('contenteditable', 'false');
-          selectedFoods.removeClass("selected");
-          //selectedFoods.css("background-color", "white");
-          selectRow();
-      }});
-  });
+ 
 
   //add a new category if textfield has text
 $(function() {
@@ -170,10 +139,7 @@ $(function() {
       if($.trim(input).length == 0) {
         //-----------------------------------TODO: flash error message-----------------------------------------------
       } else {
-        var name = $.trim(input)
-        var reloadPage = function() {
-          location.reload();
-        }
+        var name = $.trim(input);
         ajaxCall("/categories/save_category", "POST", {name: name}, reloadPage);
     }
   });
