@@ -2,6 +2,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 
+    // Logic for saving a single recipe.
 		$(".saveRecipe").click(function() {
 			var div = $(this).closest(".recipeData");
 			var title = div.find("#recipe_title").val();
@@ -29,10 +30,12 @@
 			});
 		});
 
+    // Remove a singlular recipe
 		$(".removeRecipe").click(function() {
 			$(this).closest(".recipeData").fadeOut();
 		});
 
+    // Save all the recipes.
 		$("#saveAll").click(function() {
 			// create JSON to hold all recipe information
 			var recipeList = '';

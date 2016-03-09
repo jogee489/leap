@@ -1,13 +1,13 @@
-<div class="container">
-	<%= add_form_element 'recipe', 'title',
-		{ type: 'textarea'},
-	  { value: @recipe.try(:title) } %>
-
-	  <%= add_form_element 'recipe', 'ingredients',
-	  { type: 'textarea'},
-	  { value: @recipe.try(:ingredients) } %>
-
-	  <%= add_form_element 'recipe', 'directions',
-	  { type: 'textarea'},
-	  { value: @recipe.try(:directions) } %>
+<%= add_form_element 'recipe', 'id', { type: 'hidden' }, { value: recipe.try(:id) } %>
+<div class="form-group">
+  <label for="title">Recipe Title</label>
+  <textarea class="form-control" id="title" required><%= recipe.title %></textarea>
+</div>
+<div class="form-group">
+  <label for="ingredients">Recipe Ingredients:</label>
+  <textarea class="form-control"  id="ingredients" required><%= recipe.ingredients %></textarea>
+</div>
+<div class="form-group">
+  <label for="directions">Recipe Directions:</label>
+  <textarea class="form-control"  id="directions" required><%= recipe.directions %></textarea >
 </div>

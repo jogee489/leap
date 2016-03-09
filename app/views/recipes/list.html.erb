@@ -31,7 +31,7 @@
 			$(this).closest("tr").next(".recipeDetails").toggle('slow');
 			$(this).toggleClass("glyphicon-chevron-down");
 			$(this).toggleClass("glyphicon-chevron-up");
-		});
+		}); 
 		
 		
 		// Toggle check boxes: check all checkboxes and enable delete button.
@@ -40,7 +40,7 @@
 			var numChecked = $('.check-rec:checked').size();
 			if (numChecked == 0) {
 				$('#btnDelete').addClass("disabled");
-			} else if ($(this).prop("checked")) {
+			} else if ($(this).prop("checked")) { // Ensure delete enabled when checked.
 				$('#btnDelete').removeClass("disabled");
 			}
 		});
@@ -52,16 +52,17 @@
 			 
 			if ($('#btnDelete').hasClass("disabled") && numChecked > 0) {       
 		  	$('#btnDelete').removeClass("disabled");
-		  } else if (numChecked == 0) {
+		  } else if (numChecked == 0) { // disable delete when 0 checked
 		  	$('#btnDelete').addClass("disabled");
-		  } else if (numChecked < maxChecked) {
+		  } else if (numChecked < maxChecked) { // not all checked
 				$('#check-all').prop("checked", false);
-			} else if (numChecked == maxChecked) {
+			} else if (numChecked == maxChecked) { //checkall when all checked
 				$('#check-all').prop("checked", true);
 			}
 		});
 
-		$('.update-button').click(function() {
+		$('.update-button').click(function(event) {
+			event.stopPropagation();
 			var form = $(this).closest("form");
 			var title = form.find("#title").val();
 			var ingredients = form.find("#ingredients").val();
@@ -125,59 +126,10 @@
 			</tr>
 		</thead>
 
-		<tbody>
-
-			<% @recipeList.each_with_index do |recipe, index| %>
-
-			<tr>
-				<%= add_form_element 'recipe', 'id',
-				{ type: 'hidden'},
-				{ value: recipe.try(:id) } %>
-				<td>
-					<span class="glyphicon glyphicon-chevron-down expand" />
-				</td>
-				<td>
-					<%= index %>
-				</td>
-				<td>
-					<span><input type="checkbox" class="check-rec"/>
-				</td>
-				<td>
-					<a class="recTitle" ><%= recipe.title %></a>
-				</td>
-			</tr>
-			<tr class="recipeDetails" style="display: none">
-				<td colspan="4" class="detailView">
-					<div class="container col-md-12">
-						<div class="panel panel-default" id="recipePanel">
-							<div class="panel-heading">Recipe Details</div>
-							<div class="panel-body">
-								<form role="form">
-									<%= add_form_element 'recipe', 'id',
-										{ type: 'hidden' },
-										{ value: recipe.try(:id) } %>
-									<div class="form-group">
-										<label for="title">Recipe Title</label>
-										<textarea class="form-control" id="title" required><%= recipe.title %></textarea>
-									</div>
-									<div class="form-group">
-										<label for="ingredients">Recipe Ingredients:</label>
-										<textarea class="form-control"  id="ingredients" required><%= recipe.ingredients %></textarea>
-									</div>
-									<div class="form-group">
-										<label for="directions">Recipe Directions:</label>
-										<textarea class="form-control"  id="directions" required><%= recipe.directions %></textarea>
-									</div>
-									<%= submit_tag('Update', class: "btn btn-warning col-sm-4 col-md-offset-3 update-button") %>
-									<%= button_to("Delete", {:action=>:destroy, :id => recipe.id}, :method=>:delete, :class=>"btn btn-danger col-sm-4") %>
-								</form>
-							</div>
-						</div>
-					</div>
-				</td>
-			</tr>
-			<% end %>
-		</tbody>
+		<%= recipe_list(@recipeList,
+									 {label: 'Update', class: 'update-button', path: nil},
+									 {label: 'Delete', path: 'recipe/', action: 'destroy'},
+									 ) %>
 	</table>
 </div>
 

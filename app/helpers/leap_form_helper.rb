@@ -1,14 +1,6 @@
 # Methods in this module will relate directly to forms that are used ..
 module LeapFormHelper
 
-  # Returns the form element help for the sidebar.
-  def form_element_help_text
-    content_tag(:div, class: 'form_helper') do
-      side_panel_heading('Element Help') <<
-          content_tag(:p, 'Select an element to display the description for it.', id: 'element_description')
-    end
-  end
-
   # Optionally returns submit and cancel buttons for a form.
   def form_buttons(accept = 'Ok', deny = 'Cancel', deny_path = {})
     deny_path = { controller: params[:controller] } if deny_path.blank?
