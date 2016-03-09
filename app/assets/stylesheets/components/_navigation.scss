@@ -1,13 +1,13 @@
 .navbar-inverse {
-  font-weight: bold;
-  letter-spacing: 0.2em;
+  text-transform: uppercase;
   background-color: $navbar-background;
   border: none;
-  margin-bottom: 0;
-  
+  margin-bottom: 0; 
+  //width: 100%;
 
   .navbar-brand {
     color: white;
+    font-family: 'Comfortaa', sans-serif;
     font-weight: bold;
 
     &:hover, focus {
@@ -28,7 +28,7 @@
 
     > a {
       color: white;
-      font-weight: bold;
+      //font-weight: bold;
       padding: 12px;
 
       &:hover {
@@ -40,11 +40,13 @@
 }
 
 .dropdown-toggle {
+  @include transition(all 0.1s ease-in-out 0s);
   color: white;
 }
 
 .navbar-toggle {
   border: none;
+  @include border-radius(0 !important);
 }
 
 .navbar-inverse .navbar-nav > li > a {

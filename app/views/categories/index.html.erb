@@ -81,17 +81,10 @@
       });
     });
   
-  //Function to add a class to a row if it has been selected, and darken the row
+  // MODIFIED by fabs. Function to add a class to a row if it has been selected, and darken the row
   function selectRow() {
-    var listItems = $(".list-group-item");
-    listItems.off().click(function() {
-      if(!$(this).hasClass("selected")){
-        $(this).css("background-color", "grey");
-        $(this).addClass("selected");
-      } else {
-        $(this).css("background-color", "white");
-        $(this).removeClass("selected");
-      }
+    $('body').on('click', '.list-group .list-group-item', function () {
+      $(this).toggleClass('highlight-item');
     });
   }
 
@@ -163,7 +156,7 @@
           }
           selectedFoods.attr('contenteditable', 'false');
           selectedFoods.removeClass("selected");
-          selectedFoods.css("background-color", "white");
+          //selectedFoods.css("background-color", "white");
           selectRow();
       }});
   });
@@ -206,11 +199,10 @@ function ajaxCall(url, method, data, completeFunction){
 }
 
  </script>
- 
-<div class="header">
-  <input type="text" class="form-control" name="validate-optional" id="validate-optional" placeholder="New Category">
-  <a href="#" class="btn btn-success add-category-button">Add Category <span class="glyphicon glyphicon-plus"/></a>
 
+<div class="add-category-input container">
+    <input type="text" class="form-control" name="validate-optional" id="validate-optional" placeholder="New Category">
+    <a href="#" class="btn btn-app add-category-button"><span class="glyphicon glyphicon-plus"/></a>
 </div>
 <div class="page-container container">
 	<div class="row">

@@ -1,17 +1,10 @@
-.foods-panel {
-	width: 250px;
+.add-category-input {
+  padding-top: 50px;
 
-	.list-group {
-		/* food item * 5 */
-		@include calc(height, '42px * 5');
-		overflow-y: scroll; 
-	}
-}
-
-.foods-panel-menu {
-	padding-bottom: 15px;
-}
-
-.add-food-input {
-	
+  .form-control {
+    vertical-align: bottom;
+    width: 270px;
+    height: 42px;
+    display: inline-block;
+  }
 }

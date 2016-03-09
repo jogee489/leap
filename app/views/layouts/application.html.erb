@@ -18,9 +18,11 @@
     </head>
     <body>
         <%= render :partial => 'common/navigation_bar' %>
-        <section id="main-content">
+        <section id="app-content">
             <%= yield %>
         </section>
-        <footer></footer>
+        <footer>
+            <p class="text-muted">© 2016 AwesomeSauce</p>
+        </footer>
     </body>
 </html>

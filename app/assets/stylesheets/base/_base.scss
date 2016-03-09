@@ -1,14 +1,17 @@
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,200,600);
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Quicksand:300,400,700);
 
-html {
-  font-family: Raleway, sans-serif;
+html{
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 0.2em;
 }
 
-#main-content {
+#app-content {
+	background-color: $app-content-background;
 	padding-top: 50px;
+	//width: 100vw;
 }
 
 .page-container {
@@ -17,4 +20,18 @@ html {
 
 a:hover {
 	text-decoration: none;
+}
+
+/* highlight item */
+.highlight-item {
+	background-color: $list-selected;
+	font-weight: bold;
+}
+
+li {
+	@include border-radius(0 !important);
+}
+
+input {
+	@include border-radius(0 !important);
 }

@@ -14,3 +14,24 @@
 	-ms-border-radius: $radius;
 	border-radius: $radius;
 }
+
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	transition: $transition;
+}
+
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -ms-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin abbreviate-text() {
+	cursor: pointer;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

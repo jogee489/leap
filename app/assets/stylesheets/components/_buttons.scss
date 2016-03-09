@@ -1,3 +1,32 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+.btn {
+	@include border-radius(0 !important);
+	text-transform: uppercase;
+	border: none;
+}
+
+/* default-button */
+.btn-app {
+	background-color: $btn-background;
+	opacity: 0.5;
+	@include transition(all 0.1s ease-in-out 0s);
+	color:white;
+	padding: 10px;
+
+	&:hover {
+		opacity: 1;
+		color: white;
+	}
+
+	&:visited {
+		color: white;
+	}
+}
+
+/* add foods button */
+.btn-plus-add {
+	@extend .btn-app;
+	padding: 6px 12px 6px 12px;
+}
