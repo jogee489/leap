@@ -7,6 +7,25 @@
 	border: none;
 }
 
+/* main page button */
+.btn-main {
+	background: none;
+	font-size: 1.2em;
+	padding: 10px;
+	color: white;
+	@include transition(all 0.1s ease-in-out 0s);
+	font-weight: bold;
+	border: 3px solid white;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&:visited {
+		color: white;
+	}
+}
+
 /* default-button */
 .btn-app {
 	background-color: $btn-background;

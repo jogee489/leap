@@ -111,13 +111,15 @@ $(document).ready(function () {
 <div class="page-container container">
   <div class="container">
   <div class="row">
-      <div class="dual-list list-left col-md-5">
-          <div class="panel panel-primary">
-              <div class="panel-heading">
-                  <h3 class="panel-title">To Have <button type="button" class="btn btn-primary" style="border: none;"id="delete-to-have"><span class="glyphicon glyphicon-trash" />
-                  </button></h3>
+      <div class="dual-list list-left col-md-2 col-lg-2">
+          <div class="foods-panel panel panel-primary">
+              <div class="panel-heading clearfix">
+                  <h3 class="panel-title pull-left">To Have</h3>
               </div>
-              <div class="panel-body"  style="height:200px; overflow: auto;">
+              <div class="panel-body">
+                <div class="foods-panel-menu">
+                  <a href="#" id="delete-to-have" class="btn btn-app">Delete <span class="glyphicon glyphicon-trash"/></a>
+                </div>
                   <ul class="list-group"></ul>
               </div>
           </div>
@@ -128,13 +130,15 @@ $(document).ready(function () {
           <button class="btn btn-default btn-sm move-right"><span class="glyphicon glyphicon-chevron-right"></span>
           </button>
       </div>
-      <div class="dual-list list-right col-md-5">
-          <div class=" panel panel-primary">
-              <div class="panel-heading">
-                  <h3 class="panel-title">To Avoid <button type="button" class="btn btn-primary" style="border: none;"id="delete-to-avoid"><span class="glyphicon glyphicon-trash" />
-                      </button></h3>
+      <div class="dual-list list-right col-md-5 col-lg-5">
+          <div class="foods-panel panel panel-primary">
+              <div class="panel-heading clearfix">
+                  <h3 class="panel-title pull-left">To Have</h3>
               </div>
-              <div class="panel-body" style="height:200px; overflow: auto;">
+              <div class="panel-body">
+                <div class="foods-panel-menu">
+                  <a href="#" id="delete-to-avoid" class="btn btn-app">Delete <span class="glyphicon glyphicon-trash"/></a>
+                </div>
                   <ul class="list-group"></ul>
               </div>
           </div>

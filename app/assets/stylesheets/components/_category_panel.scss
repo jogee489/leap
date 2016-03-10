@@ -15,9 +15,7 @@
     padding-top: 7.5px;
     font-weight: bold;
     max-width: 220px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    @include abbreviate-text();
   }
 
   .list-group {
@@ -26,6 +24,7 @@
     overflow-y: auto;
 
     li {
+      cursor: pointer;
       @include abbreviate-text();
     }
   }

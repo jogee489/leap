@@ -1,15 +1,13 @@
 .navbar-inverse {
-  text-transform: uppercase;
   background-color: $navbar-background;
   border: none;
-  margin-bottom: 0; 
-  //width: 100%;
+  margin-bottom: 0;
 
   .navbar-brand {
     color: white;
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Oleo Script', cursive;
     font-weight: bold;
-
+    font-size: 1.7em;
     &:hover, focus {
       color: $navbar-font-hover;
     }
@@ -17,6 +15,7 @@
 }
 
 .dropdown-menu{
+  text-transform: uppercase;
   @include border-radius(0);
   background-color: rgba($navbar-background, 0.9);
   border: none;
@@ -40,6 +39,7 @@
 }
 
 .dropdown-toggle {
+  text-transform: uppercase;
   @include transition(all 0.1s ease-in-out 0s);
   color: white;
 }

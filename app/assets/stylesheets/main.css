@@ -1,11 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Quicksand:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Oleo+Script:400,700|Quicksand:300,400,700);
 html {
   font-family: 'Quicksand', sans-serif;
   letter-spacing: 0.2em; }
 
 #app-content {
   background-color: #efece6;
-  padding-top: 50px; }
+  padding-top: 50px;
+  min-height: 100vh; }
 
 .page-container {
   padding-top: 50px; }
@@ -31,18 +32,19 @@ input {
   border-radius: 0 !important; }
 
 .navbar-inverse {
-  text-transform: uppercase;
   background-color: #009c7b;
   border: none;
   margin-bottom: 0; }
   .navbar-inverse .navbar-brand {
     color: white;
-    font-family: 'Comfortaa', sans-serif;
-    font-weight: bold; }
+    font-family: 'Oleo Script', cursive;
+    font-weight: bold;
+    font-size: 1.7em; }
     .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand focus {
       color: #e0e0e0; }
 
 .dropdown-menu {
+  text-transform: uppercase;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -60,6 +62,7 @@ input {
       background-color: #006953; }
 
 .dropdown-toggle {
+  text-transform: uppercase;
   -webkit-transition: all 0.1s ease-in-out 0s;
   -moz-transition: all 0.1s ease-in-out 0s;
   -ms-transition: all 0.1s ease-in-out 0s;
@@ -168,6 +171,23 @@ footer {
   text-transform: uppercase;
   border: none; }
 
+/* main page button */
+.btn-main {
+  background: none;
+  font-size: 1.2em;
+  padding: 10px;
+  color: white;
+  -webkit-transition: all 0.1s ease-in-out 0s;
+  -moz-transition: all 0.1s ease-in-out 0s;
+  -ms-transition: all 0.1s ease-in-out 0s;
+  transition: all 0.1s ease-in-out 0s;
+  font-weight: bold;
+  border: 3px solid white; }
+  .btn-main:hover {
+    opacity: 0.8; }
+  .btn-main:visited {
+    color: white; }
+
 /* default-button */
 .btn-app, .btn-plus-add {
   background-color: #9e1754;
@@ -202,10 +222,12 @@ footer {
     top: 40%;
     width: 100%; }
     #main-header .container h1 {
+      font-family: 'Oleo Script', cursive;
       font-size: 5rem;
       color: white;
-      font-weight: bold;
-      text-transform: uppercase; }
+      font-weight: bold; }
+    #main-header .container .scroll-link {
+      margin-top: 100px; }
 
 #main-content-container {
   width: 100%;
@@ -217,6 +239,32 @@ footer {
   -moz-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
   -ms-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
   box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49); }
+  .main-thumbnail h3 {
+    font-size: 2em;
+    font-family: 'Oleo Script', cursive;
+    font-weight: bold; }
+  .main-thumbnail a {
+    font-size: 1.2em; }
+
+.img-box {
+  background-color: rgba(107, 66, 88, 0.9);
+  opacity: 1;
+  position: relative; }
+  .img-box a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; }
+  .img-box .img-responsive {
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s; }
+  .img-box:hover .img-responsive {
+    opacity: 0.1; }
+  .img-box:hover a {
+    display: block; }
 
 .have-avoid-panel .list-group {
   /* food item * 5 */

@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
-@import url(https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Quicksand:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Oleo+Script:400,700|Quicksand:300,400,700);
 
 html{
     font-family: 'Quicksand', sans-serif;
@@ -11,7 +11,7 @@ html{
 #app-content {
 	background-color: $app-content-background;
 	padding-top: 50px;
-	//width: 100vw;
+	min-height: 100vh;
 }
 
 .page-container {
