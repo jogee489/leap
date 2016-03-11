@@ -34,7 +34,8 @@ input {
 .navbar-inverse {
   background-color: #009c7b;
   border: none;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  height: 50px; }
   .navbar-inverse .navbar-brand {
     color: white;
     font-family: 'Oleo Script', cursive;
@@ -190,7 +191,7 @@ footer {
 
 /* default-button */
 .btn-app, .btn-plus-add {
-  background-color: #9e1754;
+  background-color: #009c7b;
   opacity: 0.5;
   -webkit-transition: all 0.1s ease-in-out 0s;
   -moz-transition: all 0.1s ease-in-out 0s;
@@ -243,6 +244,8 @@ footer {
     font-size: 2em;
     font-family: 'Oleo Script', cursive;
     font-weight: bold; }
+  .main-thumbnail p {
+    height: 120px; }
   .main-thumbnail a {
     font-size: 1.2em; }
 
@@ -250,12 +253,6 @@ footer {
   background-color: rgba(107, 66, 88, 0.9);
   opacity: 1;
   position: relative; }
-  .img-box a {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none; }
   .img-box .img-responsive {
     -webkit-transition: all 0.3s ease-in-out 0s;
     -moz-transition: all 0.3s ease-in-out 0s;
@@ -263,8 +260,18 @@ footer {
     transition: all 0.3s ease-in-out 0s; }
   .img-box:hover .img-responsive {
     opacity: 0.1; }
-  .img-box:hover a {
+  .img-box:hover .btn-main-container a {
     display: block; }
+
+.btn-main-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .btn-main-container a {
+    display: block;
+    margin-bottom: 15px;
+    display: none; }
 
 .have-avoid-panel .list-group {
   /* food item * 5 */

@@ -43,6 +43,10 @@
     font-weight: bold;
   }
 
+  p {
+    height: 120px;
+  }
+
   a {
     font-size: 1.2em;
   }
@@ -52,14 +56,6 @@
   background-color: rgba(107, 66, 88, 0.90);
   opacity: 1;
   position: relative;
-
-  a {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-  }  
   
   .img-responsive {
     @include transition(all 0.3s ease-in-out 0s);
@@ -71,8 +67,21 @@
       opacity: 0.1;
     }
 
-    a {
+    .btn-main-container a {
       display: block;
     }
   }
+}
+
+.btn-main-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  a {
+    display: block;
+    margin-bottom: 15px;
+    display: none;
+  }  
 }

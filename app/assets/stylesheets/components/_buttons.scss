@@ -28,7 +28,7 @@
 
 /* default-button */
 .btn-app {
-	background-color: $btn-background;
+	background-color: $navbar-background;
 	opacity: 0.5;
 	@include transition(all 0.1s ease-in-out 0s);
 	color:white;

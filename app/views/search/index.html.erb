@@ -36,11 +36,13 @@ if (typeof console === "undefined") {
     <div class="main-thumbnail thumbnail">
       <div class="img-box text-center">
         <%= image_tag("square_icon_mealplans.png", class: "img-responsive") %>
-        <a class="btn btn-main" href="">Generate</a>
+        <div class="btn-main-container">
+          <a class="btn btn-main" href="">Generate</a>
+        </div>
       </div>
       <div class="caption">
         <h3>Meal Plans</h3>
-        <p>Generate meal plans based on foods to have and avoid<br /><br /></p>
+        <p>Generate clean and healthy meal plans based on specific dietary requirements and taste preference. Plan out meals, snacks, and recipes while avoiding or including certain foods from detailed "real foods" lists!</p>
       </div>
     </div>
   </div>
@@ -48,12 +50,14 @@ if (typeof console === "undefined") {
     <div class="main-thumbnail thumbnail">
       <div class="img-box text-center">
         <%= image_tag("square_icon_recipes.png", class: "img-responsive") %>
-        <%= link_to "Search New", {:controller => 'recipes', :action => 'search_new'}, {:class=>"btn btn-main"} %>
-        <%= link_to "Manage", {:controller => 'recipes', :action => 'index'}, {:class=>"btn btn-main"} %>
+        <div class="btn-main-container">
+          <%= link_to "Search New", {:controller => 'recipes', :action => 'search_new'}, {:class=>"btn btn-main"} %>
+          <%= link_to "Manage", {:controller => 'recipes', :action => 'index'}, {:class=>"btn btn-main"} %>
+        </div>
       </div>
       <div class="caption">
         <h3>Recipes</h3>
-        <p>Search new recipes from the web. Manage existing recipes<br /><br /></p>
+        <p>Search new recipes from the web which fit specific dietary requirements and taste preferences. Alter recipes by substituting ingredients and amounts, when needed, to make them fit preferences</p>
       </div>
     </div>
   </div>
@@ -61,11 +65,13 @@ if (typeof console === "undefined") {
     <div class="main-thumbnail thumbnail">
       <div class="img-box text-center">
         <%= image_tag("square_icon_foods.png", class: "img-responsive") %>
-        <%= link_to "Manage", {:controller => 'categories', :action => 'index'}, {:class=>"btn btn-main"} %>
+        <div class="btn-main-container">
+          <%= link_to "Manage", {:controller => 'categories', :action => 'index'}, {:class=>"btn btn-main"} %>
+        </div>
       </div>      
       <div class="caption">
         <h3>Find your Foods</h3>
-        <p>Manage foods from different categories<br /><br /></p>
+        <p>Browse and search "real food" lists to include or avoid certain foods/ingredients in personalized food lists. Use the foods list to help find recipes and create meal plans</p>
       </div>
     </div>
   </div>
