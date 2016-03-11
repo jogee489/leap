@@ -6,4 +6,8 @@ class Recipe < ActiveRecord::Base
 	def title=(s)
     	write_attribute(:title, s.to_s.titleize) # The to_s is in case you get nil/non-string
   	end
+
+  	def self.search(title)
+  		where("title like ?", "%#{title}%")
+  	end
 end

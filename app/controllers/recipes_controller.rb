@@ -27,12 +27,15 @@ class RecipesController < ApplicationController
 	end
 
 	def index
-		@recipeList = Recipe.sorted.page(params[:page])
 		redirect_to action: 'list'
 	end
 
 	def list
-		@recipeList = Recipe.sorted.page(params[:page]).per_page(15)
+		if params[:search]
+			@recipeList = Recipe.search(params[:search]).sorted.page(params[:page]).per_page(15)
+		else
+			@recipeList = Recipe.sorted.page(params[:page]).per_page(15)
+		end
 	end
 
 	def show
@@ -64,12 +67,12 @@ class RecipesController < ApplicationController
 		@recipe.update_attributes!(JSON.parse(params[:recipe]))
 		@recipe.save
 
-		redirect_to(action: list)
+		redirect_to(action: 'list')
 	end
 
 	def destroy
 		@recipe = Recipe.find(params[:id]).destroy
-    	redirect_to(:action => 'index')
+    	redirect_to(action: 'index')
 	end
 
 	def destroy_multiple
