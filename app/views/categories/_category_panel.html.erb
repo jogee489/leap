@@ -1,6 +1,3 @@
-<script>
-
-</script>
 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 foods-div">
   <div class="foods-panel panel panel-primary">
     <div class="panel-heading clearfix">
@@ -8,18 +5,18 @@
         { type: 'hidden'},
         { value: cat.try(:id) } %>
       <h3 class="panel-title pull-left"><%= cat.name %></h3>
-      <a class="pull-right btn btn-primary selector delete-category-button" title="delete all"><i class="glyphicon glyphicon-remove"></i></a>
+      <a class="pull-right btn btn-delete-cat" title="Delete category"><span class="glyphicon glyphicon-remove"/></a>
     </div>
     <div class="panel-body">
       <div class="foods-panel-menu">
-        <a class="btn btn-app add-button">Add <span class="glyphicon glyphicon-plus"/></a>
-        <a class="btn btn-app delete-button">Delete <span class="glyphicon glyphicon-trash"/></a>
+        <a class="btn btn-app btn-add-food">Add <span class="glyphicon glyphicon-plus"/></a>
+        <a class="btn btn-app btn-delete-food">Delete <span class="glyphicon glyphicon-trash"/></a>
       </div>
       <!-- Input field for adding new food item -->
       <div class="add-food-input form-group">
         <div class="input-group">
-          <input type="text" class="form-control" name="validate-optional" id="validate-optional" placeholder="New Food Item">
-          <span class="input-group-addon btn btn-plus-add submit-button info"><span class="glyphicon glyphicon-plus"></span></span>
+          <input type="text" class="form-control" placeholder="New Food Item">
+          <span class="input-group-addon btn btn-app btn-plus-food"><span class="glyphicon glyphicon-plus"></span></span>
         </div>
       </div>
       <ul class="list-group">

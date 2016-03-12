@@ -11,6 +11,10 @@
     background-color: $panel-heading-background;
   }
 
+  .panel-body {
+    height: 332px;
+  }
+
   .panel-title {
     padding-top: 7.5px;
     font-weight: bold;
@@ -30,21 +34,11 @@
   }
 }
 
-.delete-category-button {
-  border: none;
-  background-color: $panel-heading-background;
-  @include transition(all 0.1s ease-in-out 0s);
-
-  &:hover {
-    background-color: darken($panel-heading-background, 10%);
-  }
-}
-
 .foods-panel-menu {
   padding-bottom: 15px;
   border-bottom: 2px groove rgba(209,209,209,0.49);
 
-  .add-button {
+  .btn-add-food {
     margin-right: 10px;
   }
 }
@@ -54,7 +48,7 @@
     height: 42px;
   }
 
-  .submit-button {
+  .btn-plus-food {
     cursor: pointer; 
   }
 }

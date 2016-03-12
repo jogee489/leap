@@ -33,7 +33,7 @@ var reloadPage = function() {
 
   //display add text field
   $(function () {
-    $('.add-button').off().click(function() {
+    $('.btn-add-food').off().click(function() {
       var menu = $(this).parent();
       var body = menu.parent();
       var list = body.find(".list-group");
@@ -55,7 +55,7 @@ var reloadPage = function() {
 
   //function to add food item if text field is filled out
   $(function () {
-    $('.submit-button').off().click(function() {
+    $('.btn-plus-food').off().click(function() {
       var group = $(this).parent();
       var body = group.parent().parent() 
       var list = group.parent().next()
@@ -93,7 +93,7 @@ var reloadPage = function() {
 
   //function to delete all selected foods in specified container
   $(function() {
-    $(".delete-button").off().click(function() {
+    $(".btn-delete-food").off().click(function() {
       var list = $(this).parent().parent().find(".list-group")
       var selectedFoods = list.find(".list-group-item.highlight-item");
       var selectedID = [];
@@ -112,7 +112,7 @@ var reloadPage = function() {
 
   //delete entire category when trash button is clicked
   $(function() {
-    $(".delete-category-button").off().click(function() {
+    $(".btn-delete-cat").off().click(function() {
       var heading = $(this).parent();
       var panel = heading.parent();
       var container = $(this).closest(".foods-div")
@@ -132,7 +132,7 @@ var reloadPage = function() {
 
   //add a new category if textfield has text
 $(function() {
-    $('.add-category-button').click(function() {
+    $('.btn-add-cat').click(function() {
       var textField = $(this).parent().find('.form-control');
       var input = textField.val();
       console.log(input);
@@ -167,8 +167,8 @@ function ajaxCall(url, method, data, completeFunction){
  </script>
 
 <div class="add-category-input container">
-    <input type="text" class="form-control" name="validate-optional" id="validate-optional" placeholder="New Category">
-    <a class="btn btn-app add-category-button"><span class="glyphicon glyphicon-plus"/></a>
+    <input type="text" class="form-control" placeholder="New Category">
+    <a class="btn btn-app btn-add-cat"><span class="glyphicon glyphicon-plus"/></a>
 </div>
 <div class="page-container container">
 	<div class="row">

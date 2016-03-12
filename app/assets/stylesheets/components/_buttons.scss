@@ -11,6 +11,8 @@
 .btn-main {
 	background: none;
 	font-size: 1.2em;
+	min-width: 161px;
+	height: 49px;
 	padding: 10px;
 	color: white;
 	@include transition(all 0.1s ease-in-out 0s);
@@ -31,7 +33,7 @@
 	background-color: $navbar-background;
 	opacity: 0.5;
 	@include transition(all 0.1s ease-in-out 0s);
-	color:white;
+	color: white;
 	padding: 10px;
 
 	&:hover {
@@ -44,8 +46,25 @@
 	}
 }
 
-/* add foods button */
-.btn-plus-add {
-	@extend .btn-app;
-	padding: 6px 12px 6px 12px;
+/* panel delete category button */
+.btn-delete-cat {
+  border: none;
+  background-color: $panel-heading-background;
+  @include transition(all 0.1s ease-in-out 0s);
+  color: white;
+
+  &:hover {
+    //background-color: darken($panel-heading-background, 10%);
+    color: $navbar-font-hover;
+  }
+
+  &:visited {
+		color: white;
+	}
+}
+
+.btn-add-cat {
+	position: absolute;
+	width: 36px;
+	height: 42px;
 }

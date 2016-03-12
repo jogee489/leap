@@ -123,6 +123,8 @@ footer {
     -ms-border-radius: 0 !important;
     border-radius: 0 !important;
     background-color: #6b4258; }
+  .foods-panel .panel-body {
+    height: 332px; }
   .foods-panel .panel-title {
     padding-top: 7.5px;
     font-weight: bold;
@@ -143,25 +145,15 @@ footer {
       overflow: hidden;
       text-overflow: ellipsis; }
 
-.delete-category-button {
-  border: none;
-  background-color: #6b4258;
-  -webkit-transition: all 0.1s ease-in-out 0s;
-  -moz-transition: all 0.1s ease-in-out 0s;
-  -ms-transition: all 0.1s ease-in-out 0s;
-  transition: all 0.1s ease-in-out 0s; }
-  .delete-category-button:hover {
-    background-color: #4b2f3e; }
-
 .foods-panel-menu {
   padding-bottom: 15px;
   border-bottom: 2px groove rgba(209, 209, 209, 0.49); }
-  .foods-panel-menu .add-button {
+  .foods-panel-menu .btn-add-food {
     margin-right: 10px; }
 
 .add-food-input .form-control {
   height: 42px; }
-.add-food-input .submit-button {
+.add-food-input .btn-plus-food {
   cursor: pointer; }
 
 .btn {
@@ -176,6 +168,8 @@ footer {
 .btn-main {
   background: none;
   font-size: 1.2em;
+  min-width: 161px;
+  height: 49px;
   padding: 10px;
   color: white;
   -webkit-transition: all 0.1s ease-in-out 0s;
@@ -190,7 +184,7 @@ footer {
     color: white; }
 
 /* default-button */
-.btn-app, .btn-plus-add {
+.btn-app {
   background-color: #009c7b;
   opacity: 0.5;
   -webkit-transition: all 0.1s ease-in-out 0s;
@@ -199,15 +193,30 @@ footer {
   transition: all 0.1s ease-in-out 0s;
   color: white;
   padding: 10px; }
-  .btn-app:hover, .btn-plus-add:hover {
+  .btn-app:hover {
     opacity: 1;
     color: white; }
-  .btn-app:visited, .btn-plus-add:visited {
+  .btn-app:visited {
     color: white; }
 
-/* add foods button */
-.btn-plus-add {
-  padding: 6px 12px 6px 12px; }
+/* panel delete category button */
+.btn-delete-cat {
+  border: none;
+  background-color: #6b4258;
+  -webkit-transition: all 0.1s ease-in-out 0s;
+  -moz-transition: all 0.1s ease-in-out 0s;
+  -ms-transition: all 0.1s ease-in-out 0s;
+  transition: all 0.1s ease-in-out 0s;
+  color: white; }
+  .btn-delete-cat:hover {
+    color: #e0e0e0; }
+  .btn-delete-cat:visited {
+    color: white; }
+
+.btn-add-cat {
+  position: absolute;
+  width: 36px;
+  height: 42px; }
 
 #main-header {
   background-image: url("main_image.png");
@@ -288,6 +297,6 @@ footer {
   padding-top: 50px; }
   .add-category-input .form-control {
     vertical-align: bottom;
-    width: 270px;
+    width: 264px;
     height: 42px;
     display: inline-block; }
