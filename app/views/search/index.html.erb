@@ -37,7 +37,7 @@ if (typeof console === "undefined") {
       <div class="img-box text-center">
         <%= image_tag("square_icon_mealplans.png", class: "img-responsive") %>
         <div class="btn-main-container">
-          <a class="btn btn-main" href="">Generate</a>
+          <%= link_to "Generate", {:controller => 'search', :action => 'generate'}, {:class=>"btn btn-main"} %>
         </div>
       </div>
       <div class="caption">
