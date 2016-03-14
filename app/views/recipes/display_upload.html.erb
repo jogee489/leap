@@ -1,4 +1,5 @@
 <%= page_title 'Display the document information.' %>
 
 <%= render partial: 'results' %>
-<button>Save All</button> <%= button_to 'Recipe List' action: 'list' %>
+<button class="save-all-recipes">Save All</button>
+<%= button_to 'Recipe List', action: 'list' %>

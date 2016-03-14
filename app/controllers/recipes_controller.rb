@@ -13,13 +13,11 @@ class RecipesController < ApplicationController
 
 	def save_recipe_list
 		raw_json = params[:recipeList]
-		recipes = raw_json.collect { |attributes| JSON.parse(attribues) }
-		puts recipes
-		recipes.each do |recipe_data|
-			recipe = Recipe.new(recipe_data)
+		raw_json.each do |attributes|
+			recipe = Recipe.new(JSON.parse(attributes)) 
 			recipe.save
 		end
-		return
+		render status: 200, nothing: true
 	end
 	
 	def search_new

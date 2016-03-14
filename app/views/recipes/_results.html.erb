@@ -17,7 +17,8 @@
       var directions = div.find("#directions").val();
       var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions});
       console.log(recipeJSON);
-      /*$.ajax({
+      //TODO: still needs testing
+      $.ajax({
         url: "/recipes/save_recipe_json",
         method: "POST",
         data: {recipe: recipeJSON},
@@ -35,7 +36,7 @@
           console.log(textStatus);
           console.log(errorThrown);
         }
-      });*/
+      });
     });
 
     // Remove a singlular recipe
@@ -46,9 +47,16 @@
     });
 
     // Save all the recipes.
-    $("#saveAll").click(function() {
+    $(".save-all-recipes").click(function() {
       // create JSON to hold all recipe information
-      var recipeList = '';
+      var recipeList = [];
+      $(".recipeDetails").each(function() {
+        var title = $(this).find("#title").val();
+        var ingredients = $(this).find("#ingredients").val();
+        var directions = $(this).find("#directions").val();
+        var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions});
+        recipeList.push(recipeJSON);
+      });
       $.ajax({
         url: "/recipes/save_recipe_list",
         method: "POST",
