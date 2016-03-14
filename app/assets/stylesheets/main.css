@@ -9,7 +9,8 @@ html {
   min-height: 100vh; }
 
 .page-container {
-  padding-top: 50px; }
+  margin: 0;
+  padding: 50px; }
 
 a:hover {
   text-decoration: none; }
@@ -104,58 +105,6 @@ footer {
   height: 60px;
   text-align: center; }
 
-.foods-panel {
-  width: 300px;
-  border: none;
-  -webkit-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
-  -moz-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
-  -ms-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
-  box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
-  margin-bottom: 50px;
-  -webkit-border-radius: 0 !important;
-  -moz-border-radius: 0 !important;
-  -ms-border-radius: 0 !important;
-  border-radius: 0 !important; }
-  .foods-panel .panel-heading {
-    border: none;
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
-    -ms-border-radius: 0 !important;
-    border-radius: 0 !important;
-    background-color: #6b4258; }
-  .foods-panel .panel-body {
-    height: 332px; }
-  .foods-panel .panel-title {
-    padding-top: 7.5px;
-    font-weight: bold;
-    max-width: 220px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-  .foods-panel .list-group {
-    /* food item * 5 */
-    height: -webkit-calc(42px * 5);
-    height: -moz-calc(42px * 5);
-    height: -ms-calc(42px * 5);
-    height: calc(42px * 5);
-    overflow-y: auto; }
-    .foods-panel .list-group li {
-      cursor: pointer;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis; }
-
-.foods-panel-menu {
-  padding-bottom: 15px;
-  border-bottom: 2px groove rgba(209, 209, 209, 0.49); }
-  .foods-panel-menu .btn-add-food {
-    margin-right: 10px; }
-
-.add-food-input .form-control {
-  height: 42px; }
-.add-food-input .btn-plus-food {
-  cursor: pointer; }
-
 .btn {
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
@@ -199,6 +148,12 @@ footer {
   .btn-app:visited {
     color: white; }
 
+.btn-app-disabled {
+  background-color: #9e1754;
+  cursor: not-allowed; }
+  .btn-app-disabled:hover {
+    opacity: 0.5; }
+
 /* panel delete category button */
 .btn-delete-cat {
   border: none;
@@ -217,6 +172,34 @@ footer {
   position: absolute;
   width: 36px;
   height: 42px; }
+
+.panel-app, .foods-panel {
+  border: none;
+  -webkit-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  -moz-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  -ms-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -ms-border-radius: 0 !important;
+  border-radius: 0 !important; }
+  .panel-app .panel-heading, .foods-panel .panel-heading {
+    height: 52px;
+    border: none;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -ms-border-radius: 0 !important;
+    border-radius: 0 !important;
+    background-color: #6b4258; }
+  .panel-app .panel-body, .foods-panel .panel-body {
+    height: 332px; }
+  .panel-app .panel-title, .foods-panel .panel-title {
+    padding-top: 7.5px;
+    font-weight: bold;
+    max-width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
 
 #main-header {
   background-image: url("main_image.png");
@@ -321,21 +304,100 @@ footer {
   line-height: 1.428571429;
   border-radius: 15px; }
 
-.have-avoid-panel .list-group {
-  /* food item * 5 */
-  height: -webkit-calc(42px * 5);
-  height: -moz-calc(42px * 5);
-  height: -ms-calc(42px * 5);
-  height: calc(42px * 5);
-  overflow-y: scroll; }
+.list-arrows {
+  display: block;
+  margin-top: 150px;
+  margin-right: auto;
+  margin-left: auto; }
 
-.have-avoid-arrows {
-  padding-top: 130px; }
+.have-avoid-list {
+  margin-top: 15px; }
+
+.food-well {
+  width: 900px;
+  border: none;
+  -webkit-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  -moz-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  -ms-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -ms-border-radius: 0 !important;
+  border-radius: 0 !important;
+  background-color: white;
+  padding: 15px; }
+
+.have-avoid-container {
+  padding-bottom: 15px;
+  border-bottom: 2px groove rgba(209, 209, 209, 0.49); }
+
+#btn-have {
+  margin-right: 10px; }
+
+.food-table-container {
+  height: -webkit-calc(44px * 5);
+  height: -moz-calc(44px * 5);
+  height: -ms-calc(44px * 5);
+  height: calc(44px * 5);
+  overflow-y: auto;
+  margin-top: 15px; }
+  .food-table-container .table thead tr {
+    background-color: #6b4258;
+    color: white;
+    font-size: 16px;
+    cursor: pointer; }
+    .food-table-container .table thead tr th {
+      padding: 10px 15px;
+      height: 44px; }
+  .food-table-container .table tbody {
+    border-collapse: separate; }
+    .food-table-container .table tbody tr {
+      display: none; }
+
+.food-item {
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+#btn-cancel-search {
+  margin-right: 15px; }
 
 .add-category-input {
-  padding-top: 50px; }
+  margin: 0;
+  padding: 50px 0px 0px 50px; }
   .add-category-input .form-control {
     vertical-align: bottom;
     width: 264px;
     height: 42px;
     display: inline-block; }
+
+/* foods panel */
+.foods-panel {
+  width: 300px;
+  margin-bottom: 50px; }
+  .foods-panel .panel-body {
+    height: 332px; }
+  .foods-panel .list-group {
+    /* food item * 5 */
+    height: -webkit-calc(42px * 5);
+    height: -moz-calc(42px * 5);
+    height: -ms-calc(42px * 5);
+    height: calc(42px * 5);
+    overflow-y: auto; }
+    .foods-panel .list-group li {
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+
+.foods-panel-menu {
+  padding-bottom: 15px;
+  border-bottom: 2px groove rgba(209, 209, 209, 0.49); }
+  .foods-panel-menu .btn-add-food {
+    margin-right: 10px; }
+
+.add-food-input .form-control {
+  height: 42px; }
+.add-food-input .btn-plus-food {
+  cursor: pointer; }

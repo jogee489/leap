@@ -3,7 +3,7 @@
             $('body').on('click', '.list-group .list-group-item', function () {
                 $(this).toggleClass('highlight-item');
             });
-            $('.list-arrows button').click(function () {
+            $('.list-arrows a').click(function () {
                 var $button = $(this), actives = '';
                 if ($button.hasClass('move-left')) {
                     actives = $('.list-right ul li.highlight-item');
@@ -28,16 +28,21 @@
             $('#delete-to-have').click(function(){              
               var n = $('.list-left ul li.highlight-item').size();
               if(n==0){
-                alert("Please select a food item to delete");
+                // $this.removeClass("btn-app-disabled");
+                alert(n);
+                // alert("Please select a food item to delete");
               }else{
+                // $this.addClass("btn-app-disabled");
                 $('.list-left ul li.highlight-item').remove();
               }
             });
             $('#delete-to-avoid').click(function(){              
               var n = $('.list-right ul li.highlight-item').size();
               if(n==0){
-                alert("Please select a food item to delete");
+                alert(n);
+                $('#delete-to-avoid').addClass('btn-app-disabled');
               }else{
+                $('#delete-to-avoid').removeClass('btn-app-disabled');
                 $('.list-right ul li.highlight-item').remove();
               }
             });
@@ -69,108 +74,97 @@ $(document).ready(function () {
   $('.food-item').click(function() {
     $(this).toggleClass('highlight-item');
     var numChked = $('.highlight-item').size();
-
      if(numChked) {       
-       $('#btnToAvoid').removeClass("disabled");
-       $('#btnToHave').removeClass("disabled");
+       $('#btn-avoid').removeClass("btn-app-disabled");
+       $('#btn-have').removeClass("btn-app-disabled");
      } else if(numChked==0) {
-       $('#btnToAvoid').addClass("disabled");
-       $('#btnToHave').addClass("disabled");
+       $('#btn-avoid').addClass("btn-app-disabled");
+       $('#btn-have').addClass("btn-app-disabled");
      }
   });
-
   // Button to have
-  $('#btnToHave').click(function () {
+  $('#btn-have').click(function () {
     var actives = '';
     actives = $('.food_row td li.highlight-item');        
     actives.clone().appendTo('.list-left ul');
-    $('#btnToHave').addClass("disabled");
-    $('#btnToAvoid').addClass("disabled");
+    $('#btn-have').addClass("btn-app-disabled");
+    $('#btn-avoid').addClass("btn-app-disabled");
     // Deselect all food items.
     $('.food-item ').removeClass('highlight-item');
   });
-
   // Button to avoid.
-  $('#btnToAvoid').click(function () {
+  $('#btn-avoid').click(function () {
     var actives = '';
     actives = $('.food_row td li.highlight-item');        
     actives.clone().appendTo('.list-right ul');
-    $('#btnToHave').addClass("disabled");
-    $('#btnToAvoid').addClass("disabled");
+    $('#btn-have').addClass("btn-app-disabled");
+    $('#btn-avoid').addClass("btn-app-disabled");
     // Deselect all food items.
     $('.food-item ').removeClass('highlight-item');
   });
-
-  $('#btnCancel').click(function(){
+  $('#btn-cancel-search').click(function(){
     location.reload();
   });
-
 });
 </script>
-
-<div class="page-container container">
-  <div class="container">
   <div class="row">
-      <div class="dual-list list-left col-md-5">
-          <div class="foods-panel panel panel-primary">
-              <div class="panel-heading clearfix">
-                  <h3 class="panel-title pull-left">To Have</h3>
-              </div>
-              <div class="panel-body">
-                <div class="foods-panel-menu">
-                  <a href="#" id="delete-to-have" class="btn btn-app">Delete <span class="glyphicon glyphicon-trash"/></a>
-                </div>
-                  <ul class="list-group"></ul>
-              </div>
+    <div class="dual-list list-left col-md-5">
+      <div class="foods-panel panel panel-primary">
+        <div class="panel-heading clearfix">
+          <h3 class="panel-title">To Have</h3>
+        </div>
+        <div class="panel-body">
+          <div class="foods-panel-menu">
+            <a id="delete-to-have" class="btn btn-app">Delete <span class="glyphicon glyphicon-trash"/></a>
+            </div>
+            <ul class="have-avoid-list list-group"></ul>
           </div>
-      </div>
-      <div class="list-arrows col-md-1 text-center">
-          <button class="btn btn-default btn-sm move-left"><span class="glyphicon glyphicon-chevron-left"></span>
-          </button>
-          <button class="btn btn-default btn-sm move-right"><span class="glyphicon glyphicon-chevron-right"></span>
-          </button>
-      </div>
-      <div class="dual-list list-right col-md-5">
-          <div class="foods-panel panel panel-primary">
-              <div class="panel-heading clearfix">
-                  <h3 class="panel-title pull-left">To Avoid</h3>
-              </div>
-              <div class="panel-body">
-                <div class="foods-panel-menu">
-                  <a href="#" id="delete-to-avoid" class="btn btn-app">Delete <span class="glyphicon glyphicon-trash"/></a>
-                </div>
-                  <ul class="list-group"></ul>
-              </div>
-          </div>
-      </div>
-  </div> 
-  </div>
-  <!-- Now here goes the table -->
-  <div class="container" >
-    <div class="panel panel-success" >
-      <div class="panel-heading">Select Food Items to add or to avoid <button class="btn btn-primary disabled" type="button" id="btnToHave"><span class="glyphicon glyphicon-plus"/></button> <button class="btn btn-warning disabled" type="button" id="btnToAvoid"><span class="glyphicon glyphicon-minus"/></button></div>
-        <div class="panel-body" style="height:500px; overflow: auto;">
-          <table class="table" >          
-            <thead>            
-              <% @category_list.each do |cat| %>
-              <tr class="expand" id="<%= cat.name %>_expand">
-                <th style="width:1%"><span class="glyphicon glyphicon-chevron-down " id="<%= cat.name %>_icon"/></th>
-                <th><%= cat.name %></th>
-              </tr>            
-            </thead>
-            <tbody>        
-              <tr class="<%= cat.name %>_items food_row" style="display:none;">
-                <td colspan="2" style="border: none;" >                               
-                  <% cat.food_items.sorted.each do |foodItem| %>
-                    <li class=" food-item list-group-item ">
-                      <%= foodItem.name %>
-                    </li><% end %>                   
-                </td><% end %>
-              </tr>        
-            </tbody>  
-          </table>
         </div>
       </div>
+    <div class="list-arrows col-md-2">
+      <a class="btn btn-app move-left"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="btn btn-app move-right"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
-       
-</div>
+    <div class="dual-list list-right col-md-5">
+      <div class="foods-panel panel panel-primary">
+        <div class="panel-heading clearfix">
+        <h3 class="panel-title">To Avoid</h3>
+      </div>
+      <div class="panel-body">
+        <div class="foods-panel-menu">
+          <a id="delete-to-avoid" class="btn btn-app">Delete <span class="glyphicon glyphicon-trash"/></a>
+        </div>
+        <ul class="have-avoid-list list-group"></ul>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Now here goes the table -->
+  <div class="well-container">
+    <div class="well food-well">
+    <div class="have-avoid-container">
+      <a class="btn btn-app btn-app-disabled" id="btn-have">Have <span class="glyphicon glyphicon-plus"/></a>
+      <a class="btn btn-app btn-app-disabled" id="btn-avoid">Avoid <span class="glyphicon glyphicon-minus"/></a>
+    </div>
+  <div class="food-table-container">
+    <table class="table">          
+    <% @category_list.each do |cat| %>
+      <thead>
+        <tr class="expand" id="<%= cat.name %>_expand">
+          <th><span class="glyphicon glyphicon-chevron-down" id="<%= cat.name %>_icon"/></th>
+          <th><%= cat.name %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="<%= cat.name %>_items food_row">
+          <td colspan="2">                            
+            <% cat.food_items.sorted.each do |foodItem| %>
+              <li class="food-item list-group-item"><%= foodItem.name %></li>
+            <%end%>                   
+          </td>
+        </tr>
+      </tbody>
+    <%end%>
+  </table>
+  </div>
+  </div>

@@ -46,6 +46,14 @@
 	}
 }
 
+.btn-app-disabled {
+	background-color: $btn-background;
+	cursor: not-allowed;
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
 /* panel delete category button */
 .btn-delete-cat {
   border: none;

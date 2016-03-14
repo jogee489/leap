@@ -1,10 +1,52 @@
 .add-category-input {
-  padding-top: 50px;
+  margin: 0;
+  padding: 50px 0px 0px 50px;
 
   .form-control {
     vertical-align: bottom;
     width: 264px;
     height: 42px;
     display: inline-block;
+  }
+}
+
+/* foods panel */
+.foods-panel {
+	@extend .panel-app;
+  width: 300px;
+  margin-bottom: 50px;
+  
+  .panel-body {
+    height: 332px;
+  }
+
+  .list-group {
+    /* food item * 5 */
+    @include calc(height, '42px * 5');
+    overflow-y: auto;
+
+    li {
+      cursor: pointer;
+      @include abbreviate-text();
+    }
+  }
+}
+
+.foods-panel-menu {
+  padding-bottom: 15px;
+  border-bottom: 2px groove rgba(209,209,209,0.49);
+
+  .btn-add-food {
+    margin-right: 10px;
+  }
+}
+
+.add-food-input {
+  .form-control {
+    height: 42px;
+  }
+
+  .btn-plus-food {
+    cursor: pointer; 
   }
 }

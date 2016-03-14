@@ -13,7 +13,7 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meal Plans</a>
 					<ul class="dropdown-menu">
-						<li><%= link_to "Generate", "#" %></li>
+						<li><%= link_to "Generate", {:controller => 'search', :action => 'generate'} %></li>
 					</ul>
 				</li>
 				<li>
