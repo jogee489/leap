@@ -36,9 +36,9 @@ class RecipesController < ApplicationController
 		end
 	end
 
-	def show
-		redirect_to action: 'index'
-	end
+	#def show
+	#	redirect_to action: 'destroy'
+	#end
 
 	def new
 		@recipe = Recipe.new
@@ -70,6 +70,7 @@ class RecipesController < ApplicationController
 
 	def destroy
 		@recipe = Recipe.find(params[:id]).destroy
+		puts params[:id]
     	redirect_to(action: 'index')
 	end
 
@@ -77,7 +78,8 @@ class RecipesController < ApplicationController
 		recipe_ids = JSON.parse(params[:recipe_ids])
 		puts recipe_ids
 		recipe_ids.each do |id|
-			recipe = Recipe.find(id) #to_f
+			recipe = Recipe.find(id)
+
 			recipe.destroy if recipe.present?
 		end
 		render nothing: true

@@ -1,23 +1,64 @@
-// Logic for expanding and contracting recipe details.
-/*$(document).ready(function() {
-	$(".expand").click(function() {
-		$(this).closest("tr").next(".recipeDetails").toggle('slow');
-		$(this).toggleClass("glyphicon-chevron-down");
-	});
+$(document).ready(function() {
+  	// delete all of the recipes with the box checked
+    $("#btnDelete").click(function() {
+      var selected = [];
+      // gather the id of all checked recipes
+      $('.check-rec:checked').each(function() {
+      	var id = $(this).closest('tr').find('#recipe_id').val();
+        selected.push(id);
+      });
+      console.log(selected);
+      $.ajax({
+        url: "/recipes/destroy_multiple/",
+       	method: "POST",
+      	data: {recipe_ids: JSON.stringify(selected)},
+        timeout: 5500,
+        success: function() {
+          console.log("success");
+				},
+      	error: function(jqXHR, textStatus, errorThrown) {
+        	console.log("an error has occured");
+        	console.log(textStatus);
+        	console.log(errorThrown);
+        }
+			});
+			location.reload();
+    });
+		
+		// Toggle check boxes: check all checkboxes and enable delete button.
+		$("#check-all").bind('change', function() {
+			$('.check-rec').prop('checked', $("#check-all").is(':checked'));
+			var numChecked = $('.check-rec:checked').size();
+			if (numChecked == 0) {
+				$('#btnDelete').addClass("disabled");
+			} else if ($(this).prop("checked")) { // Ensure delete enabled when checked.
+				$('#btnDelete').removeClass("disabled");
+			}
+		});
 
-	// Handle checkboxes for the recipes.
-	$('.check-rec').bind('change', function() {
-		var numChecked = $('.check-rec:checked').size();
-		var maxChecked = $('.check-rec').size();
-		 
-		if ($('#btnDelete').hasClass("disabled") && numChecked > 0) {       
-	  	$('#btnDelete').removeClass("disabled");
-	  } else if (numChecked == 0) { // disable delete when none selected
-	  	$('#btnDelete').addClass("disabled");
-	  } else if (numChecked < maxChecked) { // not all checkboxes checked.
-			$('#check-all').prop("checked", false);
-		} else if (numChecked == maxChecked) { // all are checked.
-			$('#check-all').prop("checked", true);
-		}
-	});
-});*/
+		$('.update-button').click(function(event) {
+			var div = $(this).closest(".recipeDetails");
+			var title = div.find("#title").val();
+			var ingredients = div.find("#ingredients").val();
+			var directions = div.find("#directions").val();
+			var id = div.find("#recipe_id").val();
+			var json = JSON.stringify({title: title, ingredients: ingredients, directions: directions});
+			console.log(json);
+			$.ajax({
+        url: "/recipes/update/" + id,
+       	method: "POST",
+      	data: {recipe: json},
+        timeout: 5500,
+        success: function() {
+          console.log("success");
+          div
+				},
+      	error: function(jqXHR, textStatus, errorThrown) {
+        	console.log("an error has occured");
+        	console.log(textStatus);
+        	console.log(errorThrown);
+        }
+			});
+		});
+
+  });
