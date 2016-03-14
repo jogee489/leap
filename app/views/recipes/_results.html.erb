@@ -1,0 +1,88 @@
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    // Logic for expanding recipe details when + or - is pressed.
+    $(".expand").click(function() {
+      $(this).closest("tr").next(".recipeDetails").toggle('slow');
+      $(this).toggleClass("glyphicon-chevron-down");
+      $(this).toggleClass("glyphicon-chevron-up");
+    }); 
+
+    // Logic for saving a single recipe.
+    $(".save-recipe").click(function() {
+      var div = $(this).closest(".recipeDetails");
+      var title = div.find("#title").val();
+      var ingredients = div.find("#ingredients").val();
+      var directions = div.find("#directions").val();
+      var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions});
+      console.log(recipeJSON);
+      /*$.ajax({
+        url: "/recipes/save_recipe_json",
+        method: "POST",
+        data: {recipe: recipeJSON},
+        timeout: 5500,
+        success: function() {
+          console.log("success");
+          div.prev();
+          div.hide();
+          div.html("Saved Successfully!");
+          div.fadeIn("slow");
+          div.fadeOut("slow");
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log("an error has occured");
+          console.log(textStatus);
+          console.log(errorThrown);
+        }
+      });*/
+    });
+
+    // Remove a singlular recipe
+    $(".remove-recipe").click(function() {
+      var detailsTable = $(this).closest(".recipeDetails");
+      detailsTable.prev().fadeOut();
+      detailsTable.fadeOut();
+    });
+
+    // Save all the recipes.
+    $("#saveAll").click(function() {
+      // create JSON to hold all recipe information
+      var recipeList = '';
+      $.ajax({
+        url: "/recipes/save_recipe_list",
+        method: "POST",
+        dataType: "json",
+        data: {recipeList: recipeList},
+        timeout: 5500,
+        success: function(data) {
+          console.log("success");
+        },
+        error: function(error) {
+          console.log("an error has occured\n" + error);
+          console.log(error);
+        },
+        complete: function() {
+        }
+      });
+    });
+
+  });
+</script>
+
+<%= page_title 'Recipe Results' %>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Index</th>
+      <th>Select</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <%= recipe_list(@recipe_list,
+                 {label: 'Save', class: 'save-recipe', path: nil},
+                 {label: 'Remove', class: 'remove-recipe'},
+                  ) %>
+</table>

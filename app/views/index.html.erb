@@ -6,7 +6,7 @@
       <div class="caption">
         <h3>Meal Plans</h3>
         <p>Generate meal plans based on foods to have and avoid<br /><br /></p>
-        <a class="btn btn-info" href="#">Generate</a>
+        <%= link_to "Generate", {:controller => 'search', :action => 'generate'}, {:class=>"btn btn-info"} %>
       </div>
     </div>
   </div>

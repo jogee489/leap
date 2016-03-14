@@ -9,17 +9,17 @@ module RecipesHelper
 			if !submit[:path].nil?
 				submit_button = create_button_to(submit[:label], submit[:class], "#{recipe.id}", submit[:action])
 			else
-				submit_button = create_button(submit[:label], submit[:class])
+				submit_button = create_button(submit[:label], submit[:class] + ' btn btn-warning col-sm-4')
 			end
 
 			if !cancel[:path].nil?
 				cancel_button = create_button_to(cancel[:label], cancel[:class], "#{recipe.id}", cancel[:action])
 			else
-				cancel_button = create_button(cancel[:label], cancel[:class])
+				cancel_button = create_button(cancel[:label], cancel[:class] + ' btn btn-danger col-sm-4')
 			end
 
 			id_element = add_form_element('recipe', 'id', {type: 'hidden'}, {value: recipe.try(:id)})
-			form = render('form', recipe: recipe)
+			form = render('recipes/form', recipe: recipe)
 			recipe_table << <<-EOS.html_safe
 <tr>
 	#{id_element}
@@ -64,14 +64,14 @@ module RecipesHelper
 		method = 'delete' if action = 'destory'
 		method ||= 'post'
 		button_class ||= ''
-		button_to(label, {controller: 'recipe', action: 'action', id: id}, method: method, class: "btn btn-danger col-sm-4 #{button_class}")
+		button_to(label, {controller: 'recipe', action: 'action', id: id}, method: method, class: "#{button_class}")
 	end
 
 	# Create a button that does not lead anywhere.
 	def create_button(label, button_class)
 		button_class ||= ''
 		<<-EOS.html_safe
-<input class="btn btn-warning col-sm-4 col-md-offset-3 #{button_class}" type="button" value="#{label}" />
+<input class="#{button_class}" type="button" value="#{label}" />
 		EOS
 	end
 end

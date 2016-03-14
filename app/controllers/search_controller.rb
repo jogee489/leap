@@ -24,4 +24,7 @@ class SearchController < ApplicationController
 		@recipeList = Recipe.all
 	end
 
+	def generate
+		@category_list = Category.sorted
+	end
 end

@@ -88,11 +88,9 @@
 
   });
 </script>
-
-
 <div class="page-container container">
 <!-- pagination -->
-<%= will_paginate @recipeList %>
+<%= will_paginate @recipe_list %>
 
 <div class="container">
 	<table class = "table table-hover">
@@ -104,9 +102,12 @@
 				</th>
 				<th>
 					<a href="#" class="btn btn-success hidden-print" data-toggle="modal" data-target="#myRecipeModal">Quick Add <span class="glyphicon glyphicon-plus"/></a> 
+					<%= form_tag 'display_upload', method: 'post', multipart: true do %>
+	  				<%= file_field 'recipe', 'file' %>
+	  				<%= submit_tag 'Upload' %>
+	  			<% end %>
 				</th>
 				<th id="chkSelectAll">
-					<span class="glyphicon glyphicon-th-list" id="expand_all"/>
 					<span> <input type="checkbox" id="check-all" ></span>
 				</th>
 				<th>
@@ -129,7 +130,7 @@
 			</tr>
 		</thead>
 
-		<%= recipe_list(@recipeList,
+		<%= recipe_list(@recipe_list,
 									 {label: 'Update', class: 'update-button', path: nil},
 									 {label: 'Delete', path: 'recipe/', action: 'destroy'},
 									 ) %>
@@ -137,7 +138,7 @@
 </div>
 
 <!-- If there is no recipe, tell user -->
-<% if @recipeList.empty? %>
+<% if @recipe_list.empty? %>
 	<div class="alert alert-info">No recipes in the database.</div>
 <% end %>
 <div>

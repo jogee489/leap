@@ -32,9 +32,9 @@ class RecipesController < ApplicationController
 
 	def list
 		if params[:search]
-			@recipeList = Recipe.search(params[:search]).sorted.page(params[:page]).per_page(15)
+			@recipe_list = Recipe.search(params[:search]).sorted.page(params[:page]).per_page(15)
 		else
-			@recipeList = Recipe.sorted.page(params[:page]).per_page(15)
+			@recipe_list = Recipe.sorted.page(params[:page]).per_page(15)
 		end
 	end
 
