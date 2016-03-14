@@ -66,7 +66,7 @@ $(document).click(function(e) {
           console.log(foodItems);
           var found = null;
           $.each(foodItems, function(i, val){
-            if (val.innerText == name){
+            if (val.innerText.toUpperCase() == name.toUpperCase()){
               found = $(val);
             }
           });
@@ -150,7 +150,7 @@ $(function() {
           reloadPage();
         }
         var failFunction = function(sender){
-          sender.attr('data-content', "Category already exists!");
+          sender.attr('data-content', (name + " is already a category!"));
           sender.popover('show');
         }
         ajaxCall("/categories/save_category", "POST", {name: name}, $(this),  successFunction, failFunction);

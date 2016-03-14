@@ -6,4 +6,8 @@ class Category < ActiveRecord::Base
 
   scope :sorted, lambda { order("categories.name ASC")}
   
+  def name=(s)
+    write_attribute(:name, s.to_s.capitalize) # The to_s is in case you get nil/non-string
+  end
+  
 end
