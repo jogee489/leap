@@ -12,13 +12,15 @@ class CategoriesController < ApplicationController
   def save_category 
     @category = Category.new(name: params[:name])
     if Category.exists?(name: @category.name)
-      puts "save unsuccessful"
+      puts "Item already exists. Save unsuccessful."
       render status: 400, nothing: true
     elsif @category.save
       puts "save successful"
       render status: 200, nothing: true
     else
-      
+      puts "save unsuccessful"
+      render status: 400, nothing: true
+
     end
   end
 

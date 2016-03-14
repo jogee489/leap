@@ -2,14 +2,14 @@ class FoodItemsController < ApplicationController
   def save_food_item_json
     foodItem = FoodItem.new(JSON.parse(params[:food_item]))
     if FoodItem.exists?(name: foodItem.name)
-      puts "save unsuccessful"
+      puts "Item already exists. Save unsuccessful"
       render status: 400, nothing: true
     elsif foodItem.save
       puts "save successful"
       render status: 200, nothing: true
-      
     else
-
+      puts "save unsuccessful"
+      render status: 400, nothing: true
     end
   end
 
