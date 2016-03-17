@@ -1,20 +1,13 @@
 $(document).ready(function() {
   	// delete all of the recipes with the box checked
     $("#btnDelete").click(function() {
-
       var selected = [];
-
       // gather the id of all checked recipes
       $('.check-rec:checked').each(function() {
-
       	var id = $(this).closest('tr').find('#recipe_id').val();
-
         selected.push(id);
       });
-
-      //console.log(selected);
-
-      
+      // Send the ids to delete_multiple through ajax
       $.ajax({
         url: "/recipes/destroy_multiple/",
        	method: "POST",
@@ -69,5 +62,21 @@ $(document).ready(function() {
         }
 			});
 		});
+
+    // Individual checkbox click.
+  $('.check-rec').bind('change', function() {
+    var numChecked = $('.check-rec:checked').size();
+    var maxChecked = $('.check-rec').size();
+       
+    if ($('#btnDelete').hasClass("btn-app-disabled") && numChecked > 0) {       
+        $('#btnDelete').removeClass("btn-app-disabled");
+     } else if (numChecked == 0) { // disable delete when 0 checked
+        $('#btnDelete').addClass("btn-app-disabled");
+     } else if (numChecked < maxChecked) { // not all checked
+        $('#check-all').prop("checked", false);
+    } else if (numChecked == maxChecked) { //checkall when all checked
+        $('#check-all').prop("checked", true);
+    }
+  });
 
   });
