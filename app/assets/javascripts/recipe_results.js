@@ -1,7 +1,7 @@
 $(document).ready(function() {
     
     // Logic for saving a single recipe.
-    $(".save-recipe").click(function() {
+    $(".btn-save-recipe").click(function() {
       var div = $(this).closest(".recipeDetails");
       var title = div.find("#title").val();
       var ingredients = div.find("#ingredients").val();

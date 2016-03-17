@@ -9,6 +9,19 @@
   border-bottom: 2px groove rgba(209,209,209,0.49);
 }
 
+#search_form {
+	width: 376.25px;
+	margin: 0;
+}
+
+.search-rec-input {
+	@extend .app-input;
+
+	.form-control {
+		position: absolute;
+	}
+}
+
 .detail-view {
 	position:relative;
 	height: 335px;

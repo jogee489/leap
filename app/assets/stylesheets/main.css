@@ -32,6 +32,16 @@ input {
   -ms-border-radius: 0 !important;
   border-radius: 0 !important; }
 
+.app-input, .search-rec-input, .add-category-input {
+  margin: 0;
+  padding: 0;
+  width: auto; }
+  .app-input .form-control, .search-rec-input .form-control, .add-category-input .form-control {
+    vertical-align: bottom;
+    width: 264px;
+    height: 40px;
+    display: inline-block; }
+
 .navbar-inverse {
   background-color: #009c7b;
   border: none;
@@ -214,6 +224,7 @@ footer {
 
 .well-app, .food-well, .recipe-well {
   width: auto;
+  margin: 0;
   border: none;
   -webkit-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
   -moz-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
@@ -446,18 +457,21 @@ footer {
   padding-bottom: 15px;
   border-bottom: 2px groove rgba(209, 209, 209, 0.49); }
 
+#search_form {
+  width: 376.25px;
+  margin: 0; }
+
+.search-rec-input .form-control {
+  position: absolute; }
+
 .detail-view {
   position: relative;
   height: 335px; }
 
 .add-category-input {
-  margin: 0;
-  padding: 50px 0px 0px 50px; }
+  margin: 50px 0px 0px 50px; }
   .add-category-input .form-control {
-    vertical-align: bottom;
-    width: 264px;
-    height: 42px;
-    display: inline-block; }
+    height: 42px; }
 
 /* foods panel */
 .foods-panel {

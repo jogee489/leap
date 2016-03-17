@@ -1,12 +1,9 @@
 .add-category-input {
-  margin: 0;
-  padding: 50px 0px 0px 50px;
-
+  @extend .app-input;
+  margin: 50px 0px 0px 50px;
+    
   .form-control {
-    vertical-align: bottom;
-    width: 264px;
     height: 42px;
-    display: inline-block;
   }
 }
 
