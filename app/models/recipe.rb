@@ -1,6 +1,6 @@
 class Recipe < ActiveRecord::Base
 	belongs_to :tag
-	scope :sorted, lambda { order("recipes.title ASC")}
+	scope :sorted, lambda { order("recipes.created_at DESC")}
 	  validates_uniqueness_of :title
 
 	def title=(s)

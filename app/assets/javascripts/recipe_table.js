@@ -12,10 +12,10 @@ $(document).ready(function() {
 		var numChecked = $('.check-rec:checked').size();
 		var maxChecked = $('.check-rec').size();
 			 
-		if ($('#btnDelete').hasClass("disabled") && numChecked > 0) {       
-		  	$('#btnDelete').removeClass("disabled");
+		if ($('#btnDelete').hasClass("btn-app-disabled") && numChecked > 0) {       
+		  	$('#btnDelete').removeClass("btn-app-disabled");
 		 } else if (numChecked == 0) { // disable delete when 0 checked
-		  	$('#btnDelete').addClass("disabled");
+		  	$('#btnDelete').addClass("btn-app-disabled");
 		 } else if (numChecked < maxChecked) { // not all checked
 				$('#check-all').prop("checked", false);
 		} else if (numChecked == maxChecked) { //checkall when all checked

@@ -1,0 +1,25 @@
+<%= javascript_include_tag 'recipe_list.js' %>
+<%= javascript_include_tag 'recipe_table.js' %>
+<div class="page-container container">
+  <!-- pagination -->
+  <%= will_paginate @recipe_list %>
+  <div class="well recipe-well">
+    <div class="recipe-well-menu">
+      <a class="btn btn-app" title="Add a new recipe" data-toggle="modal" data-target="#myRecipeModal">Quick Add <span class="glyphicon glyphicon-plus"/></a>
+      <a id="btn-upload-recipes" class="btn btn-app" title="Upload multiple recipes from file">Upload <span class="glyphicon glyphicon-upload"/></a>
+      <a id="btnDelete" class="btn btn-app btn-app-disabled" >Delete <span class="glyphicon glyphicon-trash"/></a>
+      <%= form_tag(recipes_list_path, method: 'get', id: 'search_form') do %>
+        <div class="add-category-input container">
+          <%= text_field_tag :search, params[:search], class: "form-control",
+            placeholder: "Enter a recipe title" %>
+          <a class="btn btn-app">Search <span class="glyphicon glyphicon-search"></a>
+          <span class="input-group-btn"></span>
+        </div>
+      <% end %>
+    </div>
+    <%= render partial: "recipe_table", locals: {recipe_list: @recipe_list} %>
+  </div>
+</div>
+<div>
+	<%= render 'new_recipe_form' %>
+</div>

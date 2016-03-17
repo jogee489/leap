@@ -4,7 +4,7 @@ html {
   letter-spacing: 0.2em; }
 
 #app-content {
-  background-color: #efece6;
+  background-color: #e8e0b7;
   padding-top: 50px;
   min-height: 100vh; }
 
@@ -173,6 +173,17 @@ footer {
   width: 36px;
   height: 42px; }
 
+.btn-edit-recipe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px; }
+
+.check-app {
+  margin: 0; }
+  .check-app input {
+    margin-left: -25px; }
+
 .panel-app, .foods-panel {
   border: none;
   -webkit-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
@@ -200,6 +211,85 @@ footer {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
+
+.well-app, .food-well, .recipe-well {
+  width: auto;
+  border: none;
+  -webkit-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  -moz-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  -ms-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -ms-border-radius: 0 !important;
+  border-radius: 0 !important;
+  background-color: white;
+  padding: 15px; }
+
+/* recipe table */
+.recipe-table-container {
+  margin-top: 15px;
+  max-height: 522px;
+  overflow-y: auto; }
+  .recipe-table-container .table {
+    margin: 0; }
+    .recipe-table-container .table thead th {
+      font-size: 16px;
+      padding: 10px 15px;
+      height: 44px; }
+    .recipe-table-container .table tbody tr {
+      background-color: #6b4258;
+      color: white;
+      opacity: 0.9; }
+      .recipe-table-container .table tbody tr:hover {
+        opacity: 1; }
+      .recipe-table-container .table tbody tr td {
+        font-size: 16px;
+        padding: 10px 15px;
+        max-height: 440px; }
+        .recipe-table-container .table tbody tr td span {
+          cursor: pointer; }
+      .recipe-table-container .table tbody tr .check-app label {
+        font-weight: bold; }
+
+.detail-view {
+  background-color: white; }
+
+.index-recipe, .title-recipe {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.recipe-box {
+  -webkit-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  -moz-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  -ms-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
+  padding: 20px;
+  background-color: #ecf9d4;
+  max-height: 458px;
+  position: relative;
+  color: #333; }
+  .recipe-box h1 {
+    font-family: 'Oleo Script', cursive;
+    font-size: 20px;
+    margin: 0px 0px 10px 0px; }
+  .recipe-box p {
+    font-size: 15px;
+    font-weight: none;
+    margin-bottom: 20px;
+    width: 984px; }
+
+#rec-title, #rec-tags {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 882px; }
+
+#rec-ingredients, #rec-directions {
+  max-width: 882px;
+  max-height: 84px;
+  overflow-y: auto; }
 
 #main-header {
   background-image: url("main_image.png");
@@ -314,38 +404,23 @@ footer {
   margin-top: 15px; }
 
 .food-well {
-  width: 900px;
-  border: none;
-  -webkit-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
-  -moz-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
-  -ms-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
-  box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
-  -webkit-border-radius: 0 !important;
-  -moz-border-radius: 0 !important;
-  -ms-border-radius: 0 !important;
-  border-radius: 0 !important;
-  background-color: white;
-  padding: 15px; }
+  width: 900px; }
 
-.have-avoid-container {
+.have-avoid-menu {
   padding-bottom: 15px;
   border-bottom: 2px groove rgba(209, 209, 209, 0.49); }
 
-#btn-have {
-  margin-right: 10px; }
-
 .food-table-container {
-  height: -webkit-calc(44px * 5);
-  height: -moz-calc(44px * 5);
-  height: -ms-calc(44px * 5);
-  height: calc(44px * 5);
   overflow-y: auto;
   margin-top: 15px; }
   .food-table-container .table thead tr {
     background-color: #6b4258;
+    opacity: 0.9;
     color: white;
     font-size: 16px;
     cursor: pointer; }
+    .food-table-container .table thead tr:hover {
+      opacity: 1; }
     .food-table-container .table thead tr th {
       padding: 10px 15px;
       height: 44px; }
@@ -362,6 +437,18 @@ footer {
 
 #btn-cancel-search {
   margin-right: 15px; }
+
+.recipe-well {
+  width: 1084px;
+  max-height: 629px; }
+
+.recipe-well-menu {
+  padding-bottom: 15px;
+  border-bottom: 2px groove rgba(209, 209, 209, 0.49); }
+
+.detail-view {
+  position: relative;
+  height: 335px; }
 
 .add-category-input {
   margin: 0;
@@ -394,8 +481,6 @@ footer {
 .foods-panel-menu {
   padding-bottom: 15px;
   border-bottom: 2px groove rgba(209, 209, 209, 0.49); }
-  .foods-panel-menu .btn-add-food {
-    margin-right: 10px; }
 
 .add-food-input .form-control {
   height: 42px; }

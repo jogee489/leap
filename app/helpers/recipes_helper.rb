@@ -2,56 +2,31 @@
 module RecipesHelper
 
 	# Render table for listing recipes
-	def recipe_list(recipes, submit, cancel)
+	def recipe_list(recipes)
 		#button_to when path is present
 		recipe_table = ''
-		submit[:class] ||= ''
-		submit[:class] += ' btn btn-warning col-sm-4'
-		cancel[:class] ||= ''
-		cancel[:class] += ' btn btn-danger col-sm-4'
+		
 		recipes.each_with_index do |recipe, index|
-			if !submit[:path].nil?
-				submit_button = create_button_to(submit[:label], submit[:class], recipe.id, submit[:action])
-			else
-				submit_button = create_button(submit[:label], submit[:class])
-			end
-
-			if !cancel[:path].nil?
-				cancel_button = create_button_to(cancel[:label], cancel[:class], recipe.id, cancel[:action])
-			else
-				cancel_button = create_button(cancel[:label], cancel[:class])
-			end
+			
 
 			id_element = add_form_element('recipe', 'id', {type: 'hidden'}, {value: recipe.try(:id)})
 			form = render('recipes/form', recipe: recipe)
 			recipe_table << <<-EOS.html_safe
+
 <tr>
 	#{id_element}
      <td>
         <span class="glyphicon glyphicon-chevron-down expand" />
      </td>
-     <td>
-     	#{index}
-     </td>
-     <td>
-        <span><input type="checkbox" class="check-rec"/>
-     </td>
-     <td>
-        <a class="recTitle" >#{recipe.title}</a>
+     <td class="title-recipe">
+     	<div class="checkbox check-app">
+  			<label><input class="check-rec" type="checkbox" value="">#{recipe.title}</label>
+		</div>
     </td>
 </tr>
 <tr class="recipeDetails" style="display: none">
-    <td colspan="4" class="detailView">
-        <div class="container col-md-12">
-          <div class="panel panel-default" id="recipePanel">
-            <div class="panel-heading">Recipe Details</div>
-            <div class="panel-body">
-                #{form}
-                #{submit_button}
-                #{cancel_button}
-            </div>
-          	</div>
-        </div>
+    <td colspan="4" class="detail-view">
+    	#{form}
     </td>
 </tr>
 
@@ -60,20 +35,5 @@ module RecipesHelper
 		recipe_table.html_safe
 	end
 
-	# Create a button with the specified path.
-	# Currently not working properly
-	def create_button_to(label, button_class, id, action)
-		method = 'delete' if action == 'destroy'
-		method ||= 'post'
-		button_class ||= ''
-		button_to(label, {controller: 'recipes', action: action, id: id}, method: method, class: "#{button_class}")
-	end
-
-	# Create a button that does not lead anywhere.
-	def create_button(label, button_class)
-		button_class ||= ''
-		<<-EOS.html_safe
-<input class="#{button_class}" type="button" value="#{label}" />
-		EOS
-	end
+	
 end

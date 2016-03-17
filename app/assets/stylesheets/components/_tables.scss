@@ -1,0 +1,86 @@
+/* recipe table */
+.recipe-table-container {
+  margin-top: 15px;
+  max-height: 522px;
+  overflow-y: auto;
+
+  .table {
+  	margin: 0;
+
+  	thead th{
+  		font-size: 16px;
+  		padding: 10px 15px;
+		height: 44px;
+  	}
+
+  	tbody {
+			tr {
+	  		background-color: $panel-heading-background;
+				color: white;
+				opacity: 0.9;
+				
+				//cursor: pointer;
+
+				&:hover {
+					opacity: 1;
+				}
+
+				td {
+					font-size: 16px;
+					padding: 10px 15px;
+					max-height: 440px;
+
+					span {
+						cursor: pointer;
+					}
+				}
+
+				.check-app label {
+					font-weight: bold;
+				}
+  		}
+  	}
+	}
+}
+
+.detail-view {
+	background-color: white;
+}
+
+.index-recipe, .title-recipe {
+	@include abbreviate-text();
+}
+
+.recipe-box {
+	@include box-shadow(0px 2px 11px 2px rgba(209,209,209,0.49));
+	padding: 20px;
+	background-color: $recipe-box-background;
+	max-height: 458px;
+	position: relative;
+	
+	color: #333;
+
+	h1 {
+		font-family: 'Oleo Script', cursive;
+      font-size: 20px;
+      margin: 0px 0px 10px 0px;
+    }
+
+    p {
+    	font-size: 15px;
+    	font-weight: none;
+    	margin-bottom: 20px;
+    	width: 984px;
+    }
+}
+
+#rec-title, #rec-tags {
+	@include abbreviate-text();
+	max-width: 882px;
+}
+
+#rec-ingredients, #rec-directions {
+	max-width: 882px;
+	max-height: 84px;
+	overflow-y: auto;
+}

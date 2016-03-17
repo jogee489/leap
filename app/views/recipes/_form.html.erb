@@ -1,13 +1,13 @@
-<%= add_form_element 'recipe', 'id', { type: 'hidden' }, { value: recipe.try(:id) } %>
-<div class="form-group">
-  <label for="title">Recipe Title</label>
-  <textarea class="form-control" id="title" required><%= recipe.title %></textarea>
-</div>
-<div class="form-group">
-  <label for="ingredients">Recipe Ingredients:</label>
-  <textarea class="form-control"  id="ingredients" required><%= recipe.ingredients %></textarea>
-</div>
-<div class="form-group">
-  <label for="directions">Recipe Directions:</label>
-  <textarea class="form-control"  id="directions" required><%= recipe.directions %></textarea >
+<div class="recipe-box">
+	<%= add_form_element 'recipe', 'id', { type: 'hidden' }, { value: recipe.try(:id) } %>
+	<h1 for="title">Title</h1>
+	<p contenteditable="true" id="rec-title" required><%= recipe.title %></p>
+	<h1 for="ingredients">Ingredients</h1>
+	<p contenteditable="true" id="rec-ingredients" required><%= recipe.ingredients %></p>
+	<h1 for="directions">Directions</h1>
+	<p contenteditable="true" id="rec-directions" required><%= recipe.directions %></p>
+	<h1 for="tag_id">Tags</h1>
+	<p contenteditable="true" id="rec-tags" required><%= recipe.tag_id %></p>
+	<a class="btn btn-app btn-edit-recipe " >Edit 
+    	<span class="glyphicon glyphicon-edit"/></a>
 </div>
