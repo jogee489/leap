@@ -99,6 +99,11 @@ $(document).ready(function() {
         directions.attr('contenteditable', 'false');
         tags.attr('contenteditable', 'false');
 
+        title.css({"border": "none"});
+        ingredients.css({"border": "none"});
+        directions.css({"border": "none"});
+        tags.css({"border": "none"});
+
 
         var json = JSON.stringify({title: title.text(), ingredients: ingredients.text(), directions: directions.text()});
 
@@ -126,13 +131,21 @@ $(document).ready(function() {
         directions.attr('contenteditable', 'true');
         tags.attr('contenteditable', 'true');
 
+        title.css({"border-color": "#C1E0FF", 
+             "border-width":"1px", 
+             "border-style":"solid"});
+        ingredients.css({"border-color": "#C1E0FF", 
+             "border-width":"1px", 
+             "border-style":"solid"});
+        directions.css({"border-color": "#C1E0FF", 
+             "border-width":"1px", 
+             "border-style":"solid"});
+        tags.css({"border-color": "#C1E0FF", 
+             "border-width":"1px", 
+             "border-style":"solid"});
+
       }
       
-    });
-
-    $('.btn-save-updated').click(function() {
-      
-
     });
 
   });
