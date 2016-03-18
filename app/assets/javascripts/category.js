@@ -153,7 +153,7 @@ $(function() {
           sender.attr('data-content', (name + " is already a category!"));
           sender.popover('show');
         }
-        ajaxCall("/categories/save_category", "POST", {name: name}, $(this),  successFunction, failFunction);
+        ajaxCall("/categories/save_category", "POST", {name: name}, $(this),  reloadPage, failFunction);
       }
   });
 });

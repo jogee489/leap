@@ -1,5 +1,17 @@
-<%= page_title 'Display the document information.' %>
+<%= javascript_include_tag 'recipe_results.js' %>
+<%= javascript_include_tag 'recipe_table.js' %>
 
-<%= render partial: 'results' %>
-<button class="save-all-recipes">Save All</button>
-<%= button_to 'Recipe List', action: 'list' %>
+<div class="page-container container">
+  <!-- pagination -->
+  <div class="well recipe-well">
+    <div class="recipe-well-menu">
+      <span class="select-all-check">
+        <a class="btn btn-app" data-color="default">Select All</a>
+        <input type="checkbox" class="hidden" checked />
+      </span>
+      <a id="btn-save-recipes" class="btn btn-app btn-app-disabled" >Save <span class="glyphicon glyphicon-save"/></a>
+      <a id="btn-delete-recipes" class="btn btn-app btn-app-disabled" >Delete <span class="glyphicon glyphicon-trash"/></a>
+    </div>
+    <%= render partial: "recipe_table", locals: {recipe_list: @recipe_list} %>
+  </div>
+</div>

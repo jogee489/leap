@@ -79,4 +79,60 @@ $(document).ready(function() {
     }
   });
 
+    $('.btn-edit-recipe').click(function() {
+      var recBox = $(this).closest('.recipe-box');
+      var title = recBox.find('#rec-title');
+      var ingredients = recBox.find('#rec-ingredients');
+      var directions = recBox.find('#rec-directions');
+      var tags = recBox.find('#rec-tags');
+      var id = recBox.find('#recipe_id').val();
+      
+      console.log(title.text());
+
+      if($(this).hasClass('btn-save-updated')){
+        $(this).removeClass('btn-save-updated');
+
+        $(this).text('Edit');
+
+        title.attr('contenteditable', 'false');
+        ingredients.attr('contenteditable', 'false');
+        directions.attr('contenteditable', 'false');
+        tags.attr('contenteditable', 'false');
+
+
+        var json = JSON.stringify({title: title.text(), ingredients: ingredients.text(), directions: directions.text()});
+
+        $.ajax({
+          url: "/recipes/update/" + id,
+          method: "POST",
+          data: {recipe: json},
+          timeout: 5500,
+          success: function() {
+            location.reload();
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log("an error has occured");
+            console.log(textStatus);
+            console.log(errorThrown);
+          }
+        });
+      } else {
+        $(this).addClass('btn-save-updated');
+
+        $(this).text('Save');
+
+        title.attr('contenteditable', 'true');
+        ingredients.attr('contenteditable', 'true');
+        directions.attr('contenteditable', 'true');
+        tags.attr('contenteditable', 'true');
+
+      }
+      
+    });
+
+    $('.btn-save-updated').click(function() {
+      
+
+    });
+
   });

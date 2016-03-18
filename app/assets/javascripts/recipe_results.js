@@ -2,11 +2,19 @@ $(document).ready(function() {
     
     // Logic for saving a single recipe.
     $(".btn-save-recipe").click(function() {
+
       var div = $(this).closest(".recipeDetails");
+<<<<<<< Updated upstream
       var title = div.find("#rec-title").val();
       var ingredients = div.find("#rec-ingredients").val();
       var directions = div.find("#rec-directions").val();
       var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions});
+=======
+      var title = div.find("#title").val();
+      var ingredients = div.find("#ingredients").val();
+      var directions = div.find("#directions").val();
+      var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions}).push();
+>>>>>>> Stashed changes
       $.ajax({
         url: "/recipes/save_recipe_json",
         method: "POST",
@@ -75,6 +83,37 @@ $(document).ready(function() {
       detailsTable.fadeOut();
     });
 
+    $('.btn-edit-recipe').click(function() {
+      var recBox = $(this).closest('.recipe-box');
+      var title = recBox.find('#rec-title');
+      var ingredients = recBox.find('#rec-ingredients');
+      var directions = recBox.find('#rec-directions');
+      var tags = recBox.find('#rec-tags');
+      
+      if($(this).hasClass('btn-save-updated')){
+        $(this).removeClass('btn-save-updated');
+
+        $(this).text('Edit');
+
+        title.attr('contenteditable', 'false');
+        ingredients.attr('contenteditable', 'false');
+        directions.attr('contenteditable', 'false');
+        tags.attr('contenteditable', 'false');
+
+      } else {
+        $(this).addClass('btn-save-updated');
+
+        $(this).text('Save');
+
+        title.attr('contenteditable', 'true');
+        ingredients.attr('contenteditable', 'true');
+        directions.attr('contenteditable', 'true');
+        tags.attr('contenteditable', 'true');
+
+      }
+      
+    });
+
     // Save all the recipes.
     $(".save-all-recipes").click(function() {
       // create JSON to hold all recipe information
@@ -83,7 +122,9 @@ $(document).ready(function() {
         var title = $(this).find("#rec-title").val();
         var ingredients = $(this).find("#rec-ingredients").val();
         var directions = $(this).find("#rec-directions").val();
+
         var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions});
+        console.log(title);
         recipeList.push(recipeJSON);
       });
       $.ajax({

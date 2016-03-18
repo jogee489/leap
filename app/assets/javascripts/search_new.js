@@ -1,7 +1,5 @@
-<script>
 $(function () {
 	$('#btn-search-recipe').click(function() {
-
 		var foodsToHaveList = $('.have-list').find('.food-item');
 		var foodsToAvoidList = $('.avoid-list').find('.food-item');
 
@@ -17,26 +15,16 @@ $(function () {
 		});
 
 		$.ajax({
-        type: "POST",
+        type: POST,
         url: "/recipes/search_online",
-       	timeout: 0,
+       	timeout: 20000,
         data: {foods_to_include: haveList,
         	   foods_to_exclude: avoidList},
        	success: function() {
-       		window.location.replace("/recipes/display_online_results")
+       		console.log('success');
        	}
 
       });
 
 	});
 });
-</script>
-<div class="page-container container">
-  <form>
-	  <%= render partial: "search_new" %>
-	  <div class="container">     
-	        <a class="btn btn-app pull-right" id="btn-search-recipe">Search <span class="glyphicon glyphicon-search"></span></a>
-	        <a class="btn btn-app pull-right" id="btn-cancel-search">Cancel</a>
-	  </div> 
-</form>
-</div>
