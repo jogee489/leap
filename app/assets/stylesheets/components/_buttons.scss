@@ -44,6 +44,13 @@
 	&:visited {
 		color: white;
 	}
+
+
+}
+
+.disabled {
+	background-color: $btn-background;
+	opacity: 1;
 }
 
 .btn-app-disabled {

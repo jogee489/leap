@@ -1,12 +1,12 @@
-<%= javascript_include_tag "category" %>
-<div class="add-category-input container">
-    <input type="text" class="form-control" placeholder="New Category">
-    <a class="btn btn-app btn-add-cat popup-marker" data-toggle="popover" data-placement="top" data-content="Content"><span class="glyphicon glyphicon-plus popup-marker"/></a>
-</div>
 <div class="page-container container">
-	<div class="row">
-	<% @categoryList.each do |category| %>
-		<%= render partial: "category_panel", locals: {cat: category} %>
-	<% end %>
+		<%= javascript_include_tag "category" %>
+		<div class="add-category-input container">
+			<input type="text" class="form-control" placeholder="New Category">
+			<a class="btn btn-app btn-add-cat popup-marker" data-toggle="popover" data-placement="top" data-content="Content"><span class="glyphicon glyphicon-plus popup-marker"/></a>
+		</div>
+		<div class="row">
+		<% @categoryList.each do |category| %>
+			<%= render partial: "category_panel", locals: {cat: category} %>
+		<% end %>
 	</div>
 </div>

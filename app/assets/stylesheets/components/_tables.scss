@@ -47,7 +47,7 @@
 	background-color: white;
 }
 
-.index-recipe, .title-recipe {
+.title-recipe {
 	@include abbreviate-text();
 }
 
@@ -68,7 +68,7 @@
 
     p {
     	font-size: 15px;
-    	font-weight: none;
+    	//font-weight: none;
     	margin-bottom: 20px;
     	width: 984px;
     }
@@ -76,10 +76,12 @@
 
 #rec-title, #rec-tags {
 	@include abbreviate-text();
+	white-space: nowrap;
 	max-width: 882px;
 }
 
 #rec-ingredients, #rec-directions {
+	//word-wrap: break-word;
 	max-width: 882px;
 	max-height: 84px;
 	overflow-y: auto;

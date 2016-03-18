@@ -28,11 +28,11 @@
             $('#delete-to-have').click(function(){              
               var n = $('.list-left ul li.highlight-item').size();
               if(n==0){
-                // $this.removeClass("btn-app-disabled");
+                // $this.removeClass("disabled");
                 alert(n);
                 // alert("Please select a food item to delete");
               }else{
-                // $this.addClass("btn-app-disabled");
+                // $this.addClass("disabled");
                 $('.list-left ul li.highlight-item').remove();
               }
             });
@@ -40,9 +40,9 @@
               var n = $('.list-right ul li.highlight-item').size();
               if(n==0){
                 alert(n);
-                $('#delete-to-avoid').addClass('btn-app-disabled');
+                $('#delete-to-avoid').addClass('disabled');
               }else{
-                $('#delete-to-avoid').removeClass('btn-app-disabled');
+                $('#delete-to-avoid').removeClass('disabled');
                 $('.list-right ul li.highlight-item').remove();
               }
             });
@@ -75,11 +75,11 @@ $(document).ready(function () {
     $(this).toggleClass('highlight-item');
     var numChked = $('.highlight-item').size();
      if(numChked) {       
-       $('#btn-avoid').removeClass("btn-app-disabled");
-       $('#btn-have').removeClass("btn-app-disabled");
+       $('#btn-avoid').removeClass("disabled");
+       $('#btn-have').removeClass("disabled");
      } else if(numChked==0) {
-       $('#btn-avoid').addClass("btn-app-disabled");
-       $('#btn-have').addClass("btn-app-disabled");
+       $('#btn-avoid').addClass("disabled");
+       $('#btn-have').addClass("disabled");
      }
   });
   // Button to have
@@ -87,8 +87,8 @@ $(document).ready(function () {
     var actives = '';
     actives = $('.food_row td li.highlight-item');        
     actives.clone().appendTo('.list-left ul');
-    $('#btn-have').addClass("btn-app-disabled");
-    $('#btn-avoid').addClass("btn-app-disabled");
+    $('#btn-have').addClass("disabled");
+    $('#btn-avoid').addClass("disabled");
     // Deselect all food items.
     $('.food-item ').removeClass('highlight-item');
   });
@@ -97,8 +97,8 @@ $(document).ready(function () {
     var actives = '';
     actives = $('.food_row td li.highlight-item');        
     actives.clone().appendTo('.list-right ul');
-    $('#btn-have').addClass("btn-app-disabled");
-    $('#btn-avoid').addClass("btn-app-disabled");
+    $('#btn-have').addClass("disabled");
+    $('#btn-avoid').addClass("disabled");
     // Deselect all food items.
     $('.food-item ').removeClass('highlight-item');
   });
@@ -107,8 +107,8 @@ $(document).ready(function () {
   });
 });
 </script>
-  <div class="row">
-    <div class="dual-list list-left col-md-5">
+  <div class="have-avoid-panel-container center-block">
+    <div class="dual-list list-left">
       <div class="foods-panel panel panel-primary">
         <div class="panel-heading clearfix">
           <h3 class="panel-title">To Have</h3>
@@ -121,11 +121,11 @@ $(document).ready(function () {
           </div>
         </div>
       </div>
-    <div class="list-arrows col-md-2">
+    <div class="list-arrows">
       <a class="btn btn-app move-left"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="btn btn-app move-right"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
-    <div class="dual-list list-right col-md-5">
+    <div class="dual-list list-right">
       <div class="foods-panel panel panel-primary">
         <div class="panel-heading clearfix">
         <h3 class="panel-title">To Avoid</h3>
@@ -140,11 +140,11 @@ $(document).ready(function () {
   </div>
   </div>
   <!-- Now here goes the table -->
-  <div class="well-container">
-    <div class="well food-well">
+  
+    <div class="well have-avoid-well">
     <div class="have-avoid-menu">
-      <a class="btn btn-app btn-app-disabled" id="btn-have">Have <span class="glyphicon glyphicon-plus"/></a>
-      <a class="btn btn-app btn-app-disabled" id="btn-avoid">Avoid <span class="glyphicon glyphicon-minus"/></a>
+      <a class="btn btn-app disabled" id="btn-have">Have <span class="glyphicon glyphicon-plus"/></a>
+      <a class="btn btn-app disabled" id="btn-avoid">Avoid <span class="glyphicon glyphicon-minus"/></a>
     </div>
   <div class="food-table-container">
     <table class="table">          
@@ -167,4 +167,4 @@ $(document).ready(function () {
     <%end%>
   </table>
   </div>
-  </div>
+  

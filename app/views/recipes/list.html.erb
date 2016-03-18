@@ -8,19 +8,8 @@
     <div class="recipe-well-menu">
       <a class="btn btn-app" title="Add a new recipe" data-toggle="modal" data-target="#myRecipeModal">Quick Add <span class="glyphicon glyphicon-plus"/></a>
       <a id="btn-upload-recipes" class="btn btn-app" title="Upload multiple recipes from file">Upload <span class="glyphicon glyphicon-upload"/></a>
-      <a id="btnDelete" class="btn btn-app btn-app-disabled" >Delete <span class="glyphicon glyphicon-trash"/></a>
-      <%= form_tag 'display_upload', method: 'post', multipart: true do %>
-      <%= file_field 'recipe', 'file' %>
-      <%= submit_tag 'Upload' %>
-      <% end %>
-      <%= form_tag(recipes_list_path, method: 'get', id: 'search_form') do %>
-        <div class="search-rec-input container">
-          <a class="btn btn-app btn-search-recipe">Search <span class="glyphicon glyphicon-search"></a>
-          <%= text_field_tag :search, params[:search], class: "form-control",
-            placeholder: "Recipe Title" %>
-          <span class="input-group-btn"></span>
-        </div>
-      <% end %>
+      <a id="btnDelete" class="btn btn-app" >Delete <span class="glyphicon glyphicon-trash"/></a>
+      
     </div>
     <%= render partial: "recipe_table", locals: {recipe_list: @recipe_list} %>
   </div>

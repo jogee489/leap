@@ -1,7 +1,7 @@
 <%= javascript_include_tag 'recipe_results.js' %>
 <%= javascript_include_tag 'recipe_table.js' %>
 
-<%= page_title 'Display the information found online.' %>
+
 
 <% if($recipe_list)%>
 	<% @recipe_list = $recipe_list %>
@@ -16,7 +16,7 @@
     <div class="recipe-well-menu">
       <span class="select-all-check">
         <a class="btn btn-app" data-color="default">Select All</a>
-        <input type="checkbox" checked />
+        <input type="checkbox"/>
       </span>
       <a id="btn-save-recipes" class="btn btn-app" >Save <span class="glyphicon glyphicon-save"/></a>
       <a id="btn-delete-recipes" class="btn btn-app" >Delete <span class="glyphicon glyphicon-trash"/></a>
