@@ -92,7 +92,7 @@ $(document).ready(function() {
       if($(this).hasClass('btn-save-updated')){
         $(this).removeClass('btn-save-updated');
 
-        $(this).text('Edit');
+        $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
 
         title.attr('contenteditable', 'false');
         ingredients.attr('contenteditable', 'false');
@@ -108,7 +108,7 @@ $(document).ready(function() {
           data: {recipe: json},
           timeout: 5500,
           success: function() {
-            location.reload();
+            console.log("success");
           },
           error: function(jqXHR, textStatus, errorThrown) {
             console.log("an error has occured");
@@ -119,7 +119,7 @@ $(document).ready(function() {
       } else {
         $(this).addClass('btn-save-updated');
 
-        $(this).text('Save');
+        $(this).html('Save <span class="glyphicon glyphicon-save"></span>');
 
         title.attr('contenteditable', 'true');
         ingredients.attr('contenteditable', 'true');

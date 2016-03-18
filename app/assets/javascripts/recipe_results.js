@@ -4,17 +4,10 @@ $(document).ready(function() {
     $(".btn-save-recipe").click(function() {
 
       var div = $(this).closest(".recipeDetails");
-<<<<<<< Updated upstream
       var title = div.find("#rec-title").val();
       var ingredients = div.find("#rec-ingredients").val();
       var directions = div.find("#rec-directions").val();
       var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions});
-=======
-      var title = div.find("#title").val();
-      var ingredients = div.find("#ingredients").val();
-      var directions = div.find("#directions").val();
-      var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions}).push();
->>>>>>> Stashed changes
       $.ajax({
         url: "/recipes/save_recipe_json",
         method: "POST",
@@ -93,7 +86,7 @@ $(document).ready(function() {
       if($(this).hasClass('btn-save-updated')){
         $(this).removeClass('btn-save-updated');
 
-        $(this).text('Edit');
+        $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
 
         title.attr('contenteditable', 'false');
         ingredients.attr('contenteditable', 'false');
@@ -103,7 +96,7 @@ $(document).ready(function() {
       } else {
         $(this).addClass('btn-save-updated');
 
-        $(this).text('Save');
+        $(this).html('Save <span class="glyphicon glyphicon-save"></span>');
 
         title.attr('contenteditable', 'true');
         ingredients.attr('contenteditable', 'true');
