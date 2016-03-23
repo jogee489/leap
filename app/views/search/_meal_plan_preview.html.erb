@@ -1,0 +1,35 @@
+
+<!-- Modal -->
+<div id="mealPlanPreview" class="modal fade ">
+  <!-- <div class="modal-dialog"> -->
+
+    <!-- Modal content-->
+    <div class="modal-content col-md-10 col-md-offset-1">
+      <div class="modal-header">
+        <button type="button" class="close btn" data-dismiss="modal">close</button>
+        <h4 class="modal-title">Preview Meal PLan</h4>
+      </div>
+
+      <!-- <div class="modal-body"> -->
+          <a href="#" class="btn btn-warning " id="btn-delete-preview" style="margin-bottom:10px">Delete <span class="glyphicon glyphicon glyphicon-remove"></span></a>
+          <!-- BREAKFAST TABLE -->
+          <%= render partial: "meal_table", locals: {meal_name: "BREAKFAST", id: "brk"} %>
+          <!-- SNACK 1 TABLE -->
+          <%= render partial: "meal_table", locals: {meal_name: "SNACK 1", id: "snk1"} %>
+          <!-- LUNCH TABLE -->
+          <%= render partial: "meal_table", locals: {meal_name: "LUNCH", id: "lnh"} %>
+          <!-- SNACK 2 TABLE -->
+          <%= render partial: "meal_table", locals: {meal_name: "SNACK 2", id: "snk2"} %>
+          <!-- DINNER 2 TABLE -->
+          <%= render partial: "meal_table", locals: {meal_name: "DINNER", id: "dnr"} %>
+      <!-- </div> -->
+
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+
+  <!-- </div> -->
+</div>
+
+

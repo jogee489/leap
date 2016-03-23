@@ -16,7 +16,7 @@ module RecipesHelper
 <tr>
 	#{id_element}
      <td>
-        <span class="glyphicon glyphicon-chevron-down expand" />
+        <span class="glyphicon glyphicon-chevron-down expand-rec" />
      </td>
      <td class="title-recipe">
      	<div class="checkbox check-app">

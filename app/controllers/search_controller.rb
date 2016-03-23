@@ -26,6 +26,7 @@ class SearchController < ApplicationController
 
 	def generate
 		@category_list = Category.sorted
+		@recipe_list = Recipe.all
 	end
 
 	def web_crawl
