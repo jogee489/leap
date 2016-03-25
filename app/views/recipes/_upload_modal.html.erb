@@ -1,0 +1,13 @@
+<div id="upload-modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"/></a>
+			</div>
+			<%= form_tag 'display_upload', method: 'post', multipart: true do %>
+				<%= file_field 'recipe', 'file' %>
+				<%= link_to 'Upload', class: 'btn btn-app' %>
+			<% end %>
+		</div>
+	</div>
+</div>

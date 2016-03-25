@@ -6,14 +6,21 @@
   <%= will_paginate @recipe_list %>
   <div class="well recipe-well">
     <div class="recipe-well-menu">
-      <a class="btn btn-app" title="Add a new recipe" data-toggle="modal" data-target="#myRecipeModal">Quick Add <span class="glyphicon glyphicon-plus"/></a>
-      <a id="btn-upload-recipes" class="btn btn-app" title="Upload multiple recipes from file">Upload <span class="glyphicon glyphicon-upload"/></a>
-      <a id="btnDelete" class="btn btn-app" >Delete <span class="glyphicon glyphicon-trash"/></a>
-      
+      <a class="btn btn-app" title="Add a new recipe" data-toggle="modal" data-target="#new-recipe-modal">Quick Add <span class="glyphicon glyphicon-plus"/></a>
+      <a id="btn-upload-recipes" class="btn btn-app" title="Upload multiple recipes from file" data-toggle="modal" data-target="#upload-modal">Upload <span class="glyphicon glyphicon-upload"/></a>
+      <a id="btn-delete-recipes" class="btn btn-app disabled" >Delete <span class="glyphicon glyphicon-trash"/></a>
+      <%= form_tag(recipes_list_path, method: 'get', class: 'app-search') do %>
+          <a class="btn btn-app">Search <span class="glyphicon glyphicon-search"></a>
+          <%= text_field_tag :search, params[:search], class: "form-control",
+          placeholder: "Recipe Title" %>
+      <% end %>
     </div>
     <%= render partial: "recipe_table", locals: {recipe_list: @recipe_list} %>
   </div>
 </div>
 <div>
 	<%= render 'new_recipe_form' %>
+</div>
+<div>
+  <%= render 'upload_modal' %>
 </div>

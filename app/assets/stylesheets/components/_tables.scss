@@ -70,19 +70,19 @@
     	font-size: 15px;
     	//font-weight: none;
     	margin-bottom: 20px;
-    	width: 984px;
+    	width: 862px;
     }
 }
 
-#rec-title, #rec-tags {
+.rec-title, .rec-tags {
 	@include abbreviate-text();
-	white-space: nowrap;
-	max-width: 882px;
+	overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 
-#rec-ingredients, #rec-directions {
+.rec-ingredients, .rec-directions {
 	//word-wrap: break-word;
-	max-width: 882px;
 	max-height: 84px;
 	overflow-y: auto;
 }

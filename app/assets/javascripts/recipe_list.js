@@ -1,6 +1,6 @@
 $(document).ready(function() {
   	// delete all of the recipes with the box checked
-    $("#btnDelete").click(function() {
+    $("#btn-delete-recipes").click(function() {
       var selected = [];
       // gather the id of all checked recipes
       $('.check-rec:checked').each(function() {
@@ -32,9 +32,9 @@ $(document).ready(function() {
 		// 	$('.check-rec').prop('checked', $("#check-all").is(':checked'));
 		// 	var numChecked = $('.check-rec:checked').size();
 		// 	if (numChecked == 0) {
-		// 		$('#btnDelete').addClass("disabled");
+		// 		$('#btn-delete-recipes').addClass("disabled");
 		// 	} else if ($(this).prop("checked")) { // Ensure delete enabled when checked.
-		// 		$('#btnDelete').removeClass("disabled");
+		// 		$('#btn-delete-recipes').removeClass("disabled");
 		// 	}
 		// });
 
@@ -67,11 +67,15 @@ $(document).ready(function() {
   $('.check-rec').bind('change', function() {
     var numChecked = $('.check-rec:checked').size();
     var maxChecked = $('.check-rec').size();
+    // fabio code
+    var row = $(this).closest("tr");
        
-    if ($('#btnDelete').hasClass("btn-app-disabled") && numChecked > 0) {       
-        $('#btnDelete').removeClass("btn-app-disabled");
+    if ($('#btn-delete-recipes').hasClass("disabled") && numChecked > 0) {       
+        $('#btn-delete-recipes').removeClass("disabled");
+        row.css({"opacity": "1"});
      } else if (numChecked == 0) { // disable delete when 0 checked
-        $('#btnDelete').addClass("btn-app-disabled");
+        $('#btn-delete-recipes').addClass("disabled");
+        row.css({"opacity": "0.9"});
      } else if (numChecked < maxChecked) { // not all checked
         $('#check-all').prop("checked", false);
     } else if (numChecked == maxChecked) { //checkall when all checked
@@ -81,10 +85,10 @@ $(document).ready(function() {
 
     $('.btn-edit-recipe').click(function() {
       var recBox = $(this).closest('.recipe-box');
-      var title = recBox.find('#rec-title');
-      var ingredients = recBox.find('#rec-ingredients');
-      var directions = recBox.find('#rec-directions');
-      var tags = recBox.find('#rec-tags');
+      var title = recBox.find('.rec-title');
+      var ingredients = recBox.find('.rec-ingredients');
+      var directions = recBox.find('.rec-directions');
+      var tags = recBox.find('.rec-tags');
       var id = recBox.find('#recipe_id').val();
       
       console.log(title.text());

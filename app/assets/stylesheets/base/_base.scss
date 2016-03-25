@@ -48,3 +48,47 @@ input {
     display: inline-block;
   }
 }
+
+.app-search {
+	@extend .app-input;
+
+	a {
+		//position: absolute;
+	}
+
+	.form-control {
+		//position: absolute;
+		//margin-left: -15px;
+		width: 0;
+		padding: 0;
+		@include transition(width 0.7s);
+	}
+
+	&:hover .form-control, .form-control:focus {
+		width: 264px;
+		padding: 6px 12px;
+	}
+}
+
+/* default modal box */
+.app-modal {
+	background-color: rgba(107,66,88,0.90);
+
+	.modal-header {
+		border-bottom: 2px groove rgba(209,209,209,0.50);
+		padding: 0;
+
+		.close {
+			padding: 6px 12px;
+			margin-bottom: 15px;
+		}
+	}
+
+	.modal-content {
+		margin: auto;
+		border: none;
+		@include border-radius(0 !important);
+		padding: 15px;
+	}
+}
+

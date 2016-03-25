@@ -1,52 +1,70 @@
 <script type="text/javascript">
   $(function () {
-            $('body').on('click', '.list-group .list-group-item', function () {
-                $(this).toggleClass('highlight-item');
-            });
-            $('.list-arrows a').click(function () {
-                var $button = $(this), actives = '';
-                if ($button.hasClass('move-left')) {
-                    actives = $('.list-right ul li.highlight-item');
-                    actives.clone().appendTo('.list-left ul');
-                    actives.remove();
-                } else if ($button.hasClass('move-right')) {
-                    actives = $('.list-left ul li.highlight-item');
-                    actives.clone().appendTo('.list-right ul');
-                    actives.remove();
-                }
-            });
-            $('.dual-list .selector').click(function () {
-                var $checkBox = $(this);
-                if (!$checkBox.hasClass('highlight-item')) {
-                    $checkBox.addClass('highlight-item').closest('.well').find('ul li:not(.active)').addClass('active');
-                    $checkBox.children('i').removeClass('glyphicon-unchecked').addClass('glyphicon-check');
-                } else {
-                    $checkBox.removeClass('highlight-item').closest('.well').find('ul li.active').removeClass('active');
-                    $checkBox.children('i').removeClass('glyphicon-check').addClass('glyphicon-unchecked');
-                }
-            });
-            $('#delete-to-have').click(function(){              
-              var n = $('.list-left ul li.highlight-item').size();
-              if(n==0){
-                // $this.removeClass("disabled");
-                alert(n);
-                // alert("Please select a food item to delete");
-              }else{
-                // $this.addClass("disabled");
-                $('.list-left ul li.highlight-item').remove();
-              }
-            });
-            $('#delete-to-avoid').click(function(){              
-              var n = $('.list-right ul li.highlight-item').size();
-              if(n==0){
-                alert(n);
-                $('#delete-to-avoid').addClass('disabled');
-              }else{
-                $('#delete-to-avoid').removeClass('disabled');
-                $('.list-right ul li.highlight-item').remove();
-              }
-            });
-        });
+    $('body').on('click', '.list-group .list-group-item', function () {
+        $(this).toggleClass('highlight-item');
+    });
+    $('#btn-move-left').click(function(){
+      if($('.list-right ul li.highlight-item').size()>0){
+        $('#delete-to-have').removeClass('disabled');
+      }
+      var numOfToAvoid = $('.avoid-list').find('.food-item').size();
+      if(numOfToAvoid==$('.list-right ul li.highlight-item').size()){
+        $('#delete-to-avoid').addClass('disabled');
+      }
+      actives = $('.list-right ul li.highlight-item');
+      actives.clone().appendTo('.list-left ul');
+      actives.remove();
+    });
+    $('#btn-move-right').click(function(){
+      if($('.list-left ul li.highlight-item').size()>0){
+        $('#delete-to-avoid').removeClass('disabled');
+      }
+      var numOfToHave = $('.have-list').find('.food-item').size();
+      if(numOfToHave==$('.list-left ul li.highlight-item').size()){
+        $('#delete-to-have').addClass('disabled');
+      }
+      actives = $('.list-left ul li.highlight-item');
+      actives.clone().appendTo('.list-right ul');
+      actives.remove();
+    });    
+
+    $('.dual-list .selector').click(function () {
+      var $checkBox = $(this);
+      if (!$checkBox.hasClass('highlight-item')) {
+          $checkBox.addClass('highlight-item').closest('.well').find('ul li:not(.active)').addClass('active');
+          $checkBox.children('i').removeClass('glyphicon-unchecked').addClass('glyphicon-check');
+      } else {
+          $checkBox.removeClass('highlight-item').closest('.well').find('ul li.active').removeClass('active');
+          $checkBox.children('i').removeClass('glyphicon-check').addClass('glyphicon-unchecked');
+      }
+    });
+    $('#delete-to-have').click(function(){    
+      var numOfToHave = $('.have-list').find('.food-item').size();  
+      var n = $('.list-left ul li.highlight-item').size();
+      if(n==0){}
+      else{                
+        $('.list-left ul li.highlight-item').remove();
+        if(numOfToHave==1){
+          $('#delete-to-have').addClass('disabled');
+        }else if(numOfToHave==n){
+          $('#delete-to-have').addClass('disabled');
+        }
+      }
+    });
+    $('#delete-to-avoid').click(function(){ 
+      var numOfToAvoid = $('.avoid-list').find('.food-item').size();            
+      var n = $('.list-right ul li.highlight-item').size();
+      if(n==0){}
+      else{                
+        $('.list-right ul li.highlight-item').remove();
+        if(numOfToAvoid==1){
+          $('#delete-to-avoid').addClass('disabled');
+        } else if(numOfToAvoid==n){
+          $('#delete-to-avoid').addClass('disabled');
+        }
+      }     
+    });
+});
 // This controls the food selection table
 $(document).ready(function () {
   // Show all items of a category.
@@ -91,6 +109,13 @@ $(document).ready(function () {
     $('#btn-avoid').addClass("disabled");
     // Deselect all food items.
     $('.food-item ').removeClass('highlight-item');
+    
+    // Enable delete button in to-have-panel.
+    $('#delete-to-have').removeClass("disabled");
+    // Enable left right button.
+    $('#btn-move-left').removeClass("disabled");
+    $('#btn-move-right').removeClass("disabled");
+
   });
   // Button to avoid.
   $('#btn-avoid').click(function () {
@@ -101,7 +126,14 @@ $(document).ready(function () {
     $('#btn-avoid').addClass("disabled");
     // Deselect all food items.
     $('.food-item ').removeClass('highlight-item');
+
+    // Enable delete button in to-have-panel.
+    $('#delete-to-avoid').removeClass("disabled")
+    // Enable left right button.
+    $('#btn-move-left').removeClass("disabled");
+    $('#btn-move-right').removeClass("disabled");
   });
+
   $('#btn-cancel-search').click(function(){
     location.reload();
   });
@@ -117,15 +149,15 @@ $(document).ready(function () {
         </div>
         <div class="panel-body">
           <div class="foods-panel-menu" >
-            <a id="delete-to-have" class="btn btn-app">Delete <span class="glyphicon glyphicon-trash"/></a>
+            <a id="delete-to-have" class="btn btn-app disabled">Delete <span class="glyphicon glyphicon-trash"/></a>
             </div>
             <ul class="have-avoid-list have-list list-group" ></ul>
           </div>
         </div>
       </div>
     <div class="list-arrows" >
-      <a class="btn btn-app move-left" style="margin-bottom: 300px;"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="btn btn-app move-right" style="margin-bottom: 300px;"><span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a class="btn btn-app move-left disabled" id='btn-move-left' style="margin-bottom: 300px;"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="btn btn-app move-right disabled" id='btn-move-right' style="margin-bottom: 300px;"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
     <div class="dual-list list-right">
       <div class="foods-panel panel panel-primary" style="text-align: left">
@@ -134,7 +166,7 @@ $(document).ready(function () {
       </div>
       <div class="panel-body">
         <div class="foods-panel-menu" style="text-align: left">
-          <a id="delete-to-avoid" class="btn btn-app">Delete <span class="glyphicon glyphicon-trash"/></a>
+          <a id="delete-to-avoid" class="btn btn-app disabled">Delete <span class="glyphicon glyphicon-trash"/></a>
         </div>
         <ul class="have-avoid-list avoid-list list-group"></ul>
       </div>
@@ -170,4 +202,3 @@ $(document).ready(function () {
   </table>
   </div>
   </div>
- 
