@@ -1,6 +1,10 @@
 require 'docx'
+require 'rubygems'
+require 'nokogiri'   
+require 'open-uri'
 
 class RecipesController < ApplicationController
+	MAX_NUM_OF_RECIPES = 3
 
 	def save_recipe_json
 		@recipe = Recipe.new(JSON.parse(params[:recipe]))
@@ -104,12 +108,11 @@ class RecipesController < ApplicationController
 	end
 
 	def search_online
-		$recipe_list = web_crawl
+		$recipe_list = web_crawl_blog if params[:foods_to_include].present?
 		if $recipe_list
-			puts $recipe_list
 			render status: 200, nothing: true
 		else
-			puts "did not find recipes"
+			render status: 404, nothing: true
 		end
 	end
 
@@ -144,10 +147,83 @@ class RecipesController < ApplicationController
   			
   	end
 
+  	def web_crawl_blog
+		# Variables
+		@recipeList = []
+		page_url = "http://realfitrealfoodmom.com/?s=-blog+recipe"
+		foods_include = params[:foods_to_include]
+		foods_exclude = params[:foods_to_exclude]
+		num_of_recipes = 0
+		j = 0
+
+		# Construct initial URL method
+		def constructInitialURL(baseURL, food_items)
+			food_items.each {|food| baseURL << "+#{food}"}
+			baseURL << '&submit=Go'
+		end
+
+		# Iterate through food items to construct page_url.
+		constructInitialURL(page_url, foods_include)
+		
+		# Request and open the page.
+		page = Nokogiri::HTML(open(page_url))   
+		
+		# get <a> tags which contains recipe links.
+		temp_partial_links = page.css("h1.entry-title a")
+		# keep only href links.
+		recipe_links = temp_partial_links.map{|element| element["href"]}.compact
+		
+		while j < (recipe_links.count - 1)  and num_of_recipes < MAX_NUM_OF_RECIPES do
+			method_flag = true # Flag indicating which method to use to find directions.
+			# Open the page
+			recipe_page = Nokogiri::HTML(open(recipe_links[j]))
+			# Grab the recipe title
+			title = recipe_page.at_css("h1.entry-title").text
+
+			# gather ingredients.
+			unorganized_ingredients = []
+			ingredients = []
+			unorganized_ingredients = recipe_page.css("li.ingredient")
+			# try a new method if ingredients were not found.
+			if unorganized_ingredients.blank?
+				##### Issue with multiple ul inside div.entry-content
+				ul = recipe_page.css("div.entry-content ul")
+				if ul.count > 1
+					j += 1
+					next
+				end
+				unorganized_ingredients = recipe_page.css("div.entry-content li")
+				method_flag = false
+			end
+			# give up on parsing this page and try another link
+			if unorganized_ingredients.blank?
+				j += 1
+				next
+			end
+			unorganized_ingredients.each {|item| ingredients.push item.text}
+
+			# gather directions.
+			unorganized_directions = []
+			directions = []
+			if method_flag
+				unorganized_directions = recipe_page.css("li.instruction")
+				unorganized_directions.each { |direction| directions.push direction.text}
+			else
+				ul = recipe_page.at_css("div.entry-content ul")
+				directions = ul.next_element.text.split(". ")
+			end
+
+			j += 1
+			num_of_recipes += 1
+
+			@recipeList.push(Recipe.new(title: title, ingredients: ingredients, directions: directions))
+		end
+		
+		### THIS WILL NEED TO RENDER THE RESULTS PAGE ###
+		return @recipeList
+  	end
+
   	def web_crawl
-		require 'rubygems'
-		require 'nokogiri'   
-		require 'open-uri'
 
 		#########################################################
 		############ End of Recipe class definition #############
@@ -172,7 +248,6 @@ class RecipesController < ApplicationController
 		################## Define variables #####################
 		# Page URL base.
 		PAGE_URL = "http://allrecipes.com/search/results/?wt="
-		MAX_NUM_OF_RECIPES = 3
 		
 		# food_to_include, food_to_exclude, number_of_recipes.
 		# foods_include, foods_exclude, num_of_recipe = ARGV

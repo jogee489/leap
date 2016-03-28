@@ -6,6 +6,9 @@ gem 'rails', '4.0.0'
 # Use jdbcsqlite3 as the database for Active Record
 gem 'activerecord-jdbcsqlite3-adapter'
 
+# jdbcpostgresql is the database for Active Record.
+gem 'activerecord-jdbcpostgresql-adapter'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -48,4 +51,5 @@ group :test do
 	gem 'mocha' # Used for mocking and stubbing. Documentation at: https://github.com/freerange/mocha
 	gem 'factory_girl' # Replaces fixtures with factories making it easier to read. https://github.com/thoughtbot/factory_girl
 	gem 'factory_girl_rails' , "~> 4.0" # Rails support for factory_girl https://github.com/thoughtbot/factory_girl_rails
+	gem 'shoulda-context' # Used for testing methods: https://github.com/thoughtbot/shoulda-context
 end
