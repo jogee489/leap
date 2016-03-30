@@ -57,13 +57,13 @@
   opacity: 1;
   position: relative;
   
-  .img-responsive {
+  .main-thumbnail-img {
     @include transition(all 0.3s ease-in-out 0s);
   }
 
   &:hover {
 
-    .img-responsive {
+    .main-thumbnail-img {
       opacity: 0.1;
     }
 
@@ -74,10 +74,7 @@
 }
 
 .btn-main-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  @include center-obj();
 
   a {
     display: block;

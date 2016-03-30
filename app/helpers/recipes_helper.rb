@@ -15,13 +15,13 @@ module RecipesHelper
 
 <tr>
 	#{id_element}
-     <td>
+     <td class="td-expand">
         <span class="glyphicon glyphicon-chevron-down expand-rec" />
      </td>
      <td class="title-recipe">
-     	<div class="checkbox check-app">
-  			<label><input class="check-rec" type="checkbox" value="">#{recipe.title}</label>
-		</div>
+    	<div class="checkbox check-app">
+  			<label><input class="check-rec" type="checkbox" value="">Yeha#{recipe.title}</label>
+			</div>  	
     </td>
 </tr>
 <tr class="recipeDetails" style="display: none">

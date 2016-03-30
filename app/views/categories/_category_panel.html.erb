@@ -5,12 +5,12 @@
         { type: 'hidden'},
         { value: cat.try(:id) } %>
       <h3 class="panel-title pull-left"><%= cat.name %></h3>
-      <a class="pull-right btn btn-delete-cat" title="Delete category"><span class="glyphicon glyphicon-remove"/></a>
+      <button class="pull-right btn btn-delete-cat" title="Delete category" type="button"><span class="glyphicon glyphicon-remove"/></button>
     </div>
     <div class="panel-body">
       <div class="foods-panel-menu">
-        <a class="btn btn-app btn-add-food">Add <span class="glyphicon glyphicon-plus"/></a>
-        <a class="btn btn-app btn-delete-food">Delete <span class="glyphicon glyphicon-trash"/></a>
+        <button class="btn btn-app btn-add-food" type="button">Add <span class="glyphicon glyphicon-plus"/></button>
+        <button class="btn btn-app btn-delete-food" type="button">Delete <span class="glyphicon glyphicon-trash"/></button>
       </div>
       <!-- Input field for adding new food item -->
       <div class="add-food-input form-group">

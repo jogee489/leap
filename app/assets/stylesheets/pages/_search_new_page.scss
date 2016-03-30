@@ -69,13 +69,24 @@
 	margin: 0 auto;
 	position: relative;
 
-	.dual-list {
+	.list-left {
 		display: inline-block;
+  		vertical-align: middle;
+	}
+
+	.list-right {
+		display: inline-block;
+  		vertical-align: middle;
+	}
+
+	.foods-panel {
+		text-align: left;
 	}
 
 	.list-arrows {
-		display:inline-block;
-		margin: 0px 40px;
+		display: inline-block;
+  		vertical-align: middle;
+		margin: 0px 40px 40px 40px;
 	}
 }
 

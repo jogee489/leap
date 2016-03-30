@@ -1,14 +1,21 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+/* main page button */
 .btn {
 	@include border-radius(0 !important);
 	text-transform: uppercase;
-	border: none;
+	letter-spacing: 0.2em;
+
+	&:focus {
+		outline: 0 !important;
+	}
 }
 
-/* main page button */
 .btn-main {
+	
+	@extend .btn;
+
 	background: none;
 	font-size: 1.2em;
 	min-width: 161px;
@@ -20,16 +27,20 @@
 	border: 3px solid white;
 
 	&:hover {
+		color: white;
 		opacity: 0.8;
 	}
 
-	&:visited {
+	&:focus {
 		color: white;
 	}
 }
 
 /* default-button */
 .btn-app {
+	@extend .btn;
+	border: none;
+
 	background-color: $navbar-background;
 	opacity: 0.5;
 	@include transition(all 0.1s ease-in-out 0s);
@@ -41,30 +52,21 @@
 		color: white;
 	}
 
-	&:visited {
+	&:focus {
 		color: white;
 	}
-
-
 }
 
 .disabled {
 	background-color: $btn-background;
-	opacity: 1;
-}
-
-.btn-app-disabled {
-	background-color: $btn-background;
-	cursor: not-allowed;
-	&:hover {
-		opacity: 0.5;
-	}
+	pointer-events: none;
 }
 
 /* panel delete category button */
 .btn-delete-cat {
   border: none;
-  background-color: $panel-heading-background;
+  padding: 6px 9px 3px 12px;
+  background-color: transparent;
   @include transition(all 0.1s ease-in-out 0s);
   color: white;
 
@@ -73,12 +75,13 @@
     color: $navbar-font-hover;
   }
 
-  &:visited {
+  &:focus {
 		color: white;
 	}
 }
 
 .btn-add-cat {
+	padding: 12px 7px 10px 10px;
 	position: absolute;
 	width: 36px;
 	height: 42px;
@@ -93,8 +96,9 @@
 
 .check-app {
 	margin: 0;
-
-	input {
-		margin-left: -25px;
-	}
 }
+
+.btn-plus-food {
+    padding: 10px 7px 10px 10px;
+    cursor: pointer; 
+  }

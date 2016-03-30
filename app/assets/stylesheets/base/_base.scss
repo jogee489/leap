@@ -52,22 +52,18 @@ input {
 .app-search {
 	@extend .app-input;
 
-	a {
-		//position: absolute;
-	}
-
 	.form-control {
-		//position: absolute;
-		//margin-left: -15px;
-		width: 0;
-		padding: 0;
-		@include transition(width 0.7s);
+		width: 264px;
+		//@include transition(width 0.7s);
+		//padding: 0; 
 	}
 
-	&:hover .form-control, .form-control:focus {
-		width: 264px;
-		padding: 6px 12px;
-	}
+
+
+	//&:hover .form-control, .form-control:focus {
+	//	width: 264px;
+	//	padding: 6px 12px;
+	//}
 }
 
 /* default modal box */
@@ -76,19 +72,51 @@ input {
 
 	.modal-header {
 		border-bottom: 2px groove rgba(209,209,209,0.50);
-		padding: 0;
+		padding: 0px 0px 15px 0px;
+		font-size: 1.5em;
+    	
+    	font-weight: bold;
+
+    	h3 {
+    		font-family: 'Oleo Script', cursive;
+
+    	}
 
 		.close {
-			padding: 6px 12px;
-			margin-bottom: 15px;
+			
+			color: #333;
+			border: none;
+			margin: 0;
+			opacity: 0.3;
+			//padding: 0;
+			padding: 6px 7px 6px 12px;
+			//margin-bottom: 15px;
+			@include transition(all 0.1s ease-in-out 0s);
+
+			.glyphicon {
+				font-size: 0.7em;
+			}
+
+			&:hover {
+				opacity: 0.8;
+			}
+
+			&:focus {
+				outline: 0;
+			}		
 		}
 	}
 
 	.modal-content {
-		margin: auto;
+		//@include center-obj();
 		border: none;
 		@include border-radius(0 !important);
 		padding: 15px;
 	}
+}
+
+.thumbnail {
+	border: none;
+	@include border-radius(0 !important);
 }
 

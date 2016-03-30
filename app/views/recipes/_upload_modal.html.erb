@@ -1,13 +1,43 @@
+<script type="text/javascript">
+$(document).on('change', '.btn-file :file', function() {
+  var input = $(this),
+      numFiles = input.get(0).files ? input.get(0).files.length : 1,
+      label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+  input.trigger('fileselect', [numFiles, label]);
+});
+
+$(document).ready( function() {
+    $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+        
+        var input = $(this).parents('.input-group').find(':text'),
+            log = numFiles > 1 ? numFiles + ' files selected' : label;
+        
+        if( input.length ) {
+            input.val(log);
+        } else {
+            if( log ) alert(log);
+        }
+        
+    });
+});
+</script>
+
 <div id="upload-modal" class="modal fade" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"/></a>
+				<button class="btn close" data-dismiss="modal" type="button"><span class="glyphicon glyphicon-remove"/></button>
+				<h3 class="modal-title">Upload Recipes from File</h3>
 			</div>
-			<%= form_tag 'display_upload', method: 'post', multipart: true do %>
-				<%= file_field 'recipe', 'file' %>
-				<%= link_to 'Upload', class: 'btn btn-app' %>
-			<% end %>
+			<div class="input-group openfile-app">
+				<span class="input-group-btn">
+					<span class="btn btn-app btn-file">
+						Browse&hellip; <input type="file" multiple>
+					</span>
+				</span>
+				<input type="text" class="form-control" readonly>
+			</div>
+			<button class="btn btn-app" type="submit">Upload</button>
 		</div>
 	</div>
 </div>

@@ -24,7 +24,8 @@
 
 	.modal-content {
 		width: 1039px;
-		height: 544px;
+		height: 555px;
+		@include center-obj();
 	}
 
 	.recipe-box {
@@ -35,4 +36,44 @@
 
 #upload-modal {
 	@extend .app-modal;
+}
+
+.search-toggle {
+	//width: 120px;
+	.active {                
+		display: none;		
+	}
+}
+
+.openfile-app {
+	padding: 15px 0px;
+
+	.btn-file {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.form-control {
+		height: 40px;
+	}
+
+	.btn-file input[type=file] {
+		position: absolute;
+		top: 0;
+		right: 0;
+		min-width: 100%;
+		min-height: 100%;
+		font-size: 100px;
+		text-align: right;
+		filter: alpha(opacity=0);
+		opacity: 0;
+		background: red;
+		cursor: inherit;
+		display: block;
+	}
+
+	input[readonly] {
+		background-color: white !important;
+		cursor: text !important;
+	}
 }

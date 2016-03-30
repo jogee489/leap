@@ -143,30 +143,30 @@ $(document).ready(function () {
 
   <div class="have-avoid-panel-container text-center">
     <div class="dual-list list-left">
-      <div class="foods-panel panel panel-primary" style="text-align: left">
+      <div class="foods-panel panel panel-primary">
         <div class="panel-heading clearfix">
           <h3 class="panel-title" >To Have</h3>
         </div>
         <div class="panel-body">
           <div class="foods-panel-menu" >
-            <a id="delete-to-have" class="btn btn-app disabled">Delete <span class="glyphicon glyphicon-trash"/></a>
+            <button id="delete-to-have" class="btn btn-app disabled" type="button">Delete <span class="glyphicon glyphicon-trash"/></button>
             </div>
             <ul class="have-avoid-list have-list list-group" ></ul>
           </div>
         </div>
       </div>
-    <div class="list-arrows" >
-      <a class="btn btn-app move-left disabled" id='btn-move-left' style="margin-bottom: 300px;"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="btn btn-app move-right disabled" id='btn-move-right' style="margin-bottom: 300px;"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    <div class="list-arrows">
+      <button class="btn btn-app move-left disabled" id='btn-move-left'type="button"><span class="glyphicon glyphicon-chevron-left"></span></button>
+      <button class="btn btn-app move-right disabled" id='btn-move-right'type="button"><span class="glyphicon glyphicon-chevron-right"></span></button>
     </div>
     <div class="dual-list list-right">
-      <div class="foods-panel panel panel-primary" style="text-align: left">
+      <div class="foods-panel panel panel-primary">
         <div class="panel-heading clearfix">
         <h3 class="panel-title">To Avoid</h3>
       </div>
       <div class="panel-body">
-        <div class="foods-panel-menu" style="text-align: left">
-          <a id="delete-to-avoid" class="btn btn-app disabled">Delete <span class="glyphicon glyphicon-trash"/></a>
+        <div class="foods-panel-menu">
+          <button id="delete-to-avoid" class="btn btn-app disabled" type="button">Delete <span class="glyphicon glyphicon-trash"/></button>
         </div>
         <ul class="have-avoid-list avoid-list list-group"></ul>
       </div>
@@ -177,28 +177,30 @@ $(document).ready(function () {
   
     <div class="well have-avoid-well">
     <div class="have-avoid-menu">
-      <a class="btn btn-app disabled" id="btn-have">Have <span class="glyphicon glyphicon-plus"/></a>
-      <a class="btn btn-app disabled" id="btn-avoid">Avoid <span class="glyphicon glyphicon-minus"/></a>
+      <button class="btn btn-app disabled" id="btn-have" type="button">Have <span class="glyphicon glyphicon-plus"/></button>
+      <button class="btn btn-app disabled" id="btn-avoid" type="button">Avoid <span class="glyphicon glyphicon-minus"/></button>
     </div>
   <div class="food-table-container">
     <table class="table">          
-    <% @category_list.each do |cat| %>
-      <thead>
-        <tr class="expand" id="<%= cat.name %>_expand">
-          <th><span class="glyphicon glyphicon-chevron-down" id="<%= cat.name %>_icon"/></th>
-          <th><%= cat.name %></th>
-        </tr>
-      </thead>
       <tbody>
-        <tr class="<%= cat.name %>_items food_row">
-          <td colspan="2">                            
-            <% cat.food_items.sorted.each do |foodItem| %>
-              <li class="food-item list-group-item"><%= foodItem.name %></li>
-            <%end%>                   
+      <% @category_list.each do |cat| %>
+      <tr class="expand" id="<%= cat.name %>_expand">
+          <td>
+            <span class="glyphicon glyphicon-chevron-down" id="<%= cat.name %>_icon"/>
           </td>
-        </tr>
+          <td><%= cat.name %></td>
+      </tr>
+      <tr class="<%= cat.name %>_items food_row">
+        <td colspan="2">                            
+          <% cat.food_items.sorted.each do |foodItem| %>
+            <ul>
+              <li class="food-item list-group-item"><%= foodItem.name %></li>
+            </ul>
+          <%end%>                   
+        </td>
+      </tr>
+       <%end%>
       </tbody>
-    <%end%>
   </table>
   </div>
   </div>
