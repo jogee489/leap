@@ -26,8 +26,7 @@
   max-height: 292px;
   margin-top: 15px;
 
-	.table {
-
+	&.table {
 		thead tr {
 			background-color: $panel-heading-background;
 			opacity: 0.9;

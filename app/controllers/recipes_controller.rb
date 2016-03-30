@@ -210,7 +210,9 @@ class RecipesController < ApplicationController
 				unorganized_directions.each { |direction| directions.push direction.text}
 			else
 				ul = recipe_page.at_css("div.entry-content ul")
-				directions = ul.next_element.text.split(". ")
+				if ul
+					directions = ul.next_element.text.split(". ")
+				end
 			end
 
 			j += 1
@@ -219,7 +221,6 @@ class RecipesController < ApplicationController
 			@recipeList.push(Recipe.new(title: title, ingredients: ingredients, directions: directions))
 		end
 		
-		### THIS WILL NEED TO RENDER THE RESULTS PAGE ###
 		return @recipeList
   	end
 
@@ -347,7 +348,6 @@ class RecipesController < ApplicationController
 			@recipeList.push(Recipe.new(title: title, ingredients: ingredients, directions: directions))
 		end
 		
-		### THIS WILL NEED TO RENDER THE RESULTS PAGE ###
 		return @recipeList
 		end
 	

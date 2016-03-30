@@ -1,12 +1,15 @@
-<%= javascript_include_tag 'recipe_results.js' %>
 <%= javascript_include_tag 'recipe_table.js' %>
+<%= javascript_include_tag 'recipe_results.js' %>
 
 
 
-<% if($recipe_list)%>
+<% if $recipe_list %>
 	<% @recipe_list = $recipe_list %>
 	<% $recipe_list = nil %>
-
+<% else %>
+  <script>
+    window.location.href = "/recipes/search_new"
+  </script>
 <% end %>
 
 

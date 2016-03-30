@@ -4,10 +4,11 @@ $(document).ready(function() {
     $(".btn-save-recipe").click(function() {
 
       var div = $(this).closest(".recipeDetails");
-      var title = div.find("#rec-title").val();
-      var ingredients = div.find("#rec-ingredients").val();
-      var directions = div.find("#rec-directions").val();
-      var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions});
+      var title = div.find(".rec-title").val();
+      var ingredients = div.find(".rec-ingredients").val();
+      var directions = div.find(".rec-directions").val();
+      var tags = div.find(".rec-tags").val();
+      var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions, tags: tags});
       $.ajax({
         url: "/recipes/save_recipe_json",
         method: "POST",
@@ -43,10 +44,11 @@ $(document).ready(function() {
       var recipeList = [];
       $(".check-rec:checked").each(function() {
         var recipeData = $(this).closest("tr").next();
-        var title = recipeData.find("#rec-title").text();
-        var ingredients = recipeData.find("#rec-ingredients").text();
-        var directions = recipeData.find("#rec-directions").text();
-        var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions});
+        var title = recipeData.find(".rec-title").text();
+        var ingredients = recipeData.find(".rec-ingredients").text();
+        var directions = recipeData.find(".rec-directions").text();
+        var tags = recipeData.find(".rec-tags").text();
+        var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions, tags: tags});
         recipeList.push(recipeJSON);
       });
       $.ajax({
@@ -78,10 +80,14 @@ $(document).ready(function() {
 
     $('.btn-edit-recipe').click(function() {
       var recBox = $(this).closest('.recipe-box');
-      var title = recBox.find('#rec-title');
-      var ingredients = recBox.find('#rec-ingredients');
-      var directions = recBox.find('#rec-directions');
-      var tags = recBox.find('#rec-tags');
+      var title = recBox.find('.rec-title');
+      var ingredients = recBox.find('.rec-ingredients');
+      var directions = recBox.find('.rec-directions');
+      var tags = recBox.find('.rec-tags');
+
+      console.log(recBox);
+      console.log(title);
+      console.log(ingredients);
       
       if($(this).hasClass('btn-save-updated')){
         $(this).removeClass('btn-save-updated');
@@ -93,6 +99,11 @@ $(document).ready(function() {
         directions.attr('contenteditable', 'false');
         tags.attr('contenteditable', 'false');
 
+        title.css({"border": "none"});
+        ingredients.css({"border": "none"});
+        directions.css({"border": "none"});
+        tags.css({"border": "none"});
+
       } else {
         $(this).addClass('btn-save-updated');
 
@@ -103,6 +114,19 @@ $(document).ready(function() {
         directions.attr('contenteditable', 'true');
         tags.attr('contenteditable', 'true');
 
+        title.css({"border-color": "#C1E0FF", 
+             "border-width":"1px", 
+             "border-style":"solid"});
+        ingredients.css({"border-color": "#C1E0FF", 
+             "border-width":"1px", 
+             "border-style":"solid"});
+        directions.css({"border-color": "#C1E0FF", 
+             "border-width":"1px", 
+             "border-style":"solid"});
+        tags.css({"border-color": "#C1E0FF", 
+             "border-width":"1px", 
+             "border-style":"solid"});
+
       }
       
     });
@@ -112,10 +136,10 @@ $(document).ready(function() {
       // create JSON to hold all recipe information
       var recipeList = [];
       $(".recipeDetails").each(function() {
-        var title = $(this).find("#rec-title").val();
-        var ingredients = $(this).find("#rec-ingredients").val();
-        var directions = $(this).find("#rec-directions").val();
-
+        var title = $(this).find(".rec-title").val();
+        var ingredients = $(this).find(".rec-ingredients").val();
+        var directions = $(this).find(".rec-directions").val();
+        var tags = $(this).find(".rec-tags").val();
         var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions});
         console.log(title);
         recipeList.push(recipeJSON);
