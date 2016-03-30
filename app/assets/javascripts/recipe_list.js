@@ -89,7 +89,7 @@ $(document).ready(function() {
       var ingredients = recBox.find('.rec-ingredients').text();
       var directions = recBox.find('.rec-directions').text();
       var tags = recBox.find('.rec-tags').text();
-      var json = JSON.stringify({title: title, directions: directions, ingredients: ingredients});
+      var json = JSON.stringify({title: title, directions: directions, ingredients: ingredients, tags: tags});
       console.log(ingredients);
       console.log(title);
       console.log(directions);
@@ -138,7 +138,7 @@ $(document).ready(function() {
         tags.css({"border": "none"});
 
 
-        var json = JSON.stringify({title: title.text(), ingredients: ingredients.text(), directions: directions.text()});
+        var json = JSON.stringify({title: title.text(), ingredients: ingredients.text(), directions: directions.text(), tags: tags.text()});
 
         $.ajax({
           url: "/recipes/update/" + id,

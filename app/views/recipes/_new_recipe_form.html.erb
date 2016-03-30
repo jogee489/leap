@@ -1,35 +1,3 @@
-<script>
-	$( function() {
-		$('btn-save-recipe').click(function() {
-			var title = $.find('.rec-title').val();
-			var ingredients = $.find('.rec-ingredients').val();
-			var directions = $.find('.rec-directions').val();
-			var tags = $.find('.rec-tags').val();
-			var json = JSON.stringify({title: title, directions: directions, ingredients: ingredients});
-			console.log(ingredients);
-			console.log(title);
-			console.log(directions);
-			console.log(json);
-			$.ajax({
-          		url: "/recipes/save_recipe_json",
-          		method: "POST",
-          		data: {recipe: json},
-          		timeout: 5500,
-          		success: function() {
-          		  console.log("success");
-          		  location.reload();
-
-          		},
-          		error: function(jqXHR, textStatus, errorThrown) {
-          		  console.log("an error has occured");
-          		  console.log(textStatus);
-          		  console.log(errorThrown);
-          		}
-          	});
-		});
-	});
-</script>
-
 
 	<div id="new-recipe-modal" class="modal fade" role="dialog">
 		<div class="modal-content">
