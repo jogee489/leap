@@ -83,6 +83,35 @@ $(document).ready(function() {
     }
   });
 
+    $('.btn-save-recipe').click(function() {
+      var recBox = $(this).closest('.recipe-box');
+      var title = recBox.find('.rec-title').text();
+      var ingredients = recBox.find('.rec-ingredients').text();
+      var directions = recBox.find('.rec-directions').text();
+      var tags = recBox.find('.rec-tags').text();
+      var json = JSON.stringify({title: title, directions: directions, ingredients: ingredients});
+      console.log(ingredients);
+      console.log(title);
+      console.log(directions);
+      console.log(json);
+      
+      $.ajax({
+           url: "/recipes/save_recipe_json",
+           method: "POST",
+           data: {recipe: json},
+           timeout: 5500,
+           success: function() {
+             console.log("success");
+             location.reload();
+           },
+           error: function(jqXHR, textStatus, errorThrown) {
+             console.log("an error has occured");
+             console.log(textStatus);
+             console.log(errorThrown);
+           }
+        });
+    }); 
+
     $('.btn-edit-recipe').click(function() {
       var recBox = $(this).closest('.recipe-box');
       var title = recBox.find('.rec-title');

@@ -20,7 +20,7 @@ module RecipesHelper
      </td>
      <td class="title-recipe">
     	<div class="checkbox check-app">
-  			<label><input class="check-rec" type="checkbox" value="">Yeha#{recipe.title}</label>
+  			<label><input class="check-rec" type="checkbox" value="">#{recipe.title}</label>
 			</div>  	
     </td>
 </tr>
