@@ -28,7 +28,7 @@ module LeapFormHelper
 
   public
 
-  def leap_button(text, html_options, = {}, icon_name)
+  def leap_button(text, html_options = {}, icon_name)
     span = "<span class='glyphicon #{icon_name}' />" if icon_name.present?
     span ||= ''
     button_class = html_options[:class] || ''
@@ -36,7 +36,7 @@ module LeapFormHelper
     button_type = html_options[:type] || ''
 
     <<-EOS.html_safe
-      <button class="btn btn-app #{button_class}" id="#{button_id}" type="#{type}">
+      <button class="btn btn-app #{button_class}" id="#{button_id}" type="#{button_type}">
         #{text}
         #{span}
       </button>
