@@ -28,7 +28,7 @@ module LeapFormHelper
 
   public
 
-  def leap_button(text, html_options = {}, icon_name)
+  def leap_button(text, html_options = {}, icon_name = nil)
     span = "<span class='glyphicon #{icon_name}' />" if icon_name.present?
     span ||= ''
     button_class = html_options[:class] || ''
