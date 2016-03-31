@@ -30,6 +30,29 @@ $(document).ready(function () {
             curInputs = curStep.find("input[type='text'],input[type='url']"),
             isValid = true;
 
+        if (curStepBtn == "step-1") {
+            // Get foods to have
+            var food_items = [];
+            $('.have-list').find('li').each(function() {
+                food_items.push($(this).text());
+            });
+            // Send food_items to find_recipes
+            console.log(food_items);
+            $.ajax({
+                url: "/search/find_recipes/",
+                method: "POST",
+                data: {food_items: JSON.stringify(food_items)},
+                timeout: 5000,
+                success: function() {
+                  console.log("success");
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log("an error has occured");
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                }
+            });
+        }
         $(".form-group").removeClass("has-error");
         for(var i=0; i<curInputs.length; i++){
             if (!curInputs[i].validity.valid){

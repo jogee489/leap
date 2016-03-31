@@ -31,10 +31,9 @@ module ApplicationHelper
     alert_box(heading, content_tag(:p, message), class: level)
   end
 
-  # Alert boxes are represented in several different areas throughout the Admin Console. Most often
+  # Alert boxes are represented in several different areas throughout the application. Most often
   # they are called for the flash messages that appear on the page when the user needs to be notified
-  # of something. They can, and are, used elsewhere as well. For example the remove_link method
-  # calls this method to build the message box for removing an object.
+  # of something..
   #
   # === Example
   #   alert_box('This is a test', 'This is the message for the alert box.', class: 'warning')
@@ -68,20 +67,6 @@ module ApplicationHelper
     else
       content_tag(:h2, content_tag(:span, h(page_title)), html_options)
     end
-  end
-
-  # Returns a link to the given path with the given label wrapped in styling for an action.
-  #
-  # === Options
-  # * +action_class+: Supplies an HTML class for the action (a class can pre provided for the link with just +class+.)
-  #
-  # === Example
-  #   <%= action_link_to 'Launch Nukes!', launch_nukes_path, action_class: 'armageddon_it' %>
-  def action_link_to(label, options = nil, html_options = nil)
-    options ||= {}
-    html_options = convert_options_to_data_attributes(options, html_options)
-    action_class = html_options.delete('action_class')
-    content_tag(:li, link_to(content_tag(:span, label), options, html_options), class: action_class)
   end
 
 end

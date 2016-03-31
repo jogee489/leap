@@ -28,6 +28,18 @@ module LeapFormHelper
 
   public
 
+  def leap_button(text, icon_name, button_class = '', id = 'button', type = 'button')
+    span = "<span class='glyphicon #{icon_name}' />" if icon_name.present?
+    span ||= ''
+
+    <<-EOS.html_safe
+      <button class="btn btn-app #{button_class}" id="#{id}" type="button">
+        #{text}
+        #{span}
+      </button>
+    EOS
+  end
+
   # Adds a form element styled to match our form style.
   def add_form_element(obj = nil, method = 'attribute', options = {}, html_options = {})
     type = options[:type] || 'text'

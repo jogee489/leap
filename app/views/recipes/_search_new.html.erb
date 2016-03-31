@@ -1,63 +1,63 @@
-  <div class="have-avoid-panel-container text-center">
-    <div class="dual-list list-left">
-      <div class="foods-panel panel panel-primary">
-        <div class="panel-heading clearfix">
-          <h3 class="panel-title" >To Have</h3>
-        </div>
-        <div class="panel-body">
-          <div class="foods-panel-menu" >
-            <button id="delete-to-have" class="btn btn-app disabled" type="button">Delete <span class="glyphicon glyphicon-trash"/></button>
-            </div>
-            <ul class="have-avoid-list have-list list-group" ></ul>
-          </div>
-        </div>
+<div class="have-avoid-panel-container text-center">
+  <div class="dual-list list-left">
+    <div class="foods-panel panel panel-primary">
+      <div class="panel-heading clearfix">
+        <h3 class="panel-title" >To Have</h3>
       </div>
-    <div class="list-arrows">
-      <button class="btn btn-app move-left disabled" id='btn-move-left'type="button"><span class="glyphicon glyphicon-chevron-left"></span></button>
-      <button class="btn btn-app move-right disabled" id='btn-move-right'type="button"><span class="glyphicon glyphicon-chevron-right"></span></button>
+      <div class="panel-body">
+        <div class="foods-panel-menu" >
+          <%= leap_button 'Delete', 'glyphicon-trash', 'disabled', 'delete-to-have'%>
+        </div>
+        <ul class="have-avoid-list have-list list-group" ></ul>
+      </div>
     </div>
-    <div class="dual-list list-right">
-      <div class="foods-panel panel panel-primary">
-        <div class="panel-heading clearfix">
+  </div>
+  <div class="list-arrows">
+    <button class="btn btn-app move-left disabled" id='btn-move-left'type="button"><span class="glyphicon   glyphicon-chevron-left"></span></button>
+    <button class="btn btn-app move-right disabled" id='btn-move-right'type="button"><span class="glyphicon   glyphicon-chevron-right"></span></button>
+  </div>
+  <div class="dual-list list-right">
+    <div class="foods-panel panel panel-primary">
+      <div class="panel-heading clearfix">
         <h3 class="panel-title">To Avoid</h3>
       </div>
       <div class="panel-body">
         <div class="foods-panel-menu">
-          <button id="delete-to-avoid" class="btn btn-app disabled" type="button">Delete <span class="glyphicon glyphicon-trash"/></button>
+          <%= leap_button 'Delete', 'glyphicon-trash', 'disabled', 'delete-to-avoid'%>
         </div>
         <ul class="have-avoid-list avoid-list list-group"></ul>
       </div>
     </div>
   </div>
+</div>
+<!-- Now here goes the table -->
+
+<div class="well have-avoid-well">
+  <div class="have-avoid-menu">
+    <%= leap_button 'Have', 'glyphicon-minus', 'disabled', 'btn-have'%>
+    <%= leap_button 'Avoid', 'glyphicon-plus', 'disabled', 'btn-avoid'%>
   </div>
-  <!-- Now here goes the table -->
-  
-    <div class="well have-avoid-well">
-    <div class="have-avoid-menu">
-      <button class="btn btn-app disabled" id="btn-have" type="button">Have <span class="glyphicon glyphicon-plus"/></button>
-      <button class="btn btn-app disabled" id="btn-avoid" type="button">Avoid <span class="glyphicon glyphicon-minus"/></button>
-    </div>
   <div class="food-table-container">
     <table class="table">          
       <tbody>
-      <% @category_list.each do |cat| %>
-      <tr class="expand" id="<%= cat.name %>_expand">
-          <td>
-            <span class="glyphicon glyphicon-chevron-down" id="<%= cat.name %>_icon"/>
-          </td>
-          <td><%= cat.name %></td>
-      </tr>
-      <tr class="<%= cat.name %>_items food_row">
-        <td colspan="2">                            
-          <% cat.food_items.sorted.each do |foodItem| %>
-            <ul>
-              <li class="food-item list-group-item"><%= foodItem.name %></li>
-            </ul>
-          <%end%>                   
-        </td>
-      </tr>
-       <%end%>
+        <% @category_list.each do |cat| %>
+          <tr class="expand" id="<%= cat.name %>_expand">
+            <td>
+              <span class="glyphicon glyphicon-chevron-down" id="<%= cat.name %>_icon"/>
+            </td>
+            <td><%= cat.name %></td>
+          </tr>
+          <tr class="<%= cat.name %>_items food_row">
+            <td colspan="2">                            
+              <% cat.food_items.sorted.each do |foodItem| %>
+                <ul>
+                  <li class="food-item list-group-item"><%= foodItem.name %></li>
+                </ul>
+              <%end%>                   
+            </td>
+          </tr>
+        <%end%>
       </tbody>
-  </table>
+    </table>
   </div>
-  </div>
+</div>

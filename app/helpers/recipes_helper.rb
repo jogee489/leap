@@ -3,7 +3,6 @@ module RecipesHelper
 
 	# Render table for listing recipes
 	def recipe_list(recipes)
-		#button_to when path is present
 		recipe_table = ''
 		
 		recipes.each_with_index do |recipe, index|

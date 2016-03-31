@@ -8,22 +8,22 @@
     <div class="recipe-well-menu">
       <button class="btn btn-app" title="Add a new recipe" data-toggle="modal" data-target="#new-recipe-modal" type="button">Quick Add <span class="glyphicon glyphicon-plus"/></button>
       <button id="btn-upload-recipes" class="btn btn-app" title="Upload multiple recipes from file" data-toggle="modal" data-target="#upload-modal" type="button">Upload <span class="glyphicon glyphicon-upload"/></button>
-      <button id="btn-delete-recipes" class="btn btn-app disabled" >Delete <span class="glyphicon glyphicon-trash"/></button>
-        <%= form_tag(recipes_list_path, method: 'get', class: 'app-search') do %>
-          <div class="btn-group">
-            <button class="btn btn-app" type="submit">Search <span class="glyphicon glyphicon-search"></button>
-            <%= text_field_tag :search, params[:search], class: "form-control",
-          placeholder: "Recipe Title" %>
-          </div>
-        <% end %>
-        <div class="search-toggle btn-group" data-toggle="buttons">
-          <button class="btn btn-app">
-            <input type="radio" name="options" id="opt-title" checked>By Title
-          </button>
-          <button class="btn btn-app active">
-            <input type="radio" name="options" id="opt-tag">By Tag
-          </button>   
+      <%= leap_button 'Delete', 'glyphicon-trash', 'disabled', 'btn-delete-recipes' %>
+      <%= form_tag(recipes_list_path, method: 'get', class: 'app-search') do %>
+        <div class="btn-group">
+          <%= leap_button 'Search', 'glyphicon-search' %>
+          <%= text_field_tag :search, params[:search], class: "form-control",
+            placeholder: "Recipe Title" %>
         </div>
+      <% end %>
+      <div class="search-toggle btn-group" data-toggle="buttons">
+        <button class="btn btn-app">
+          <input type="radio" name="options" id="opt-title" checked>By Title
+        </button>
+        <button class="btn btn-app active">
+          <input type="radio" name="options" id="opt-tag">By Tag
+        </button>   
+      </div>
     </div>
     <%= render partial: "recipe_table", locals: {recipe_list: @recipe_list} %>
   </div>
