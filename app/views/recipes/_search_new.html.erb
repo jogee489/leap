@@ -6,7 +6,7 @@
       </div>
       <div class="panel-body">
         <div class="foods-panel-menu" >
-          <%= leap_button 'Delete', 'glyphicon-trash', 'disabled', 'delete-to-have'%>
+          <%= leap_button 'Delete', {class: 'disabled', id: 'delete-to-have'}, 'glyphicon-trash' %>
         </div>
         <ul class="have-avoid-list have-list list-group" ></ul>
       </div>
@@ -23,7 +23,7 @@
       </div>
       <div class="panel-body">
         <div class="foods-panel-menu">
-          <%= leap_button 'Delete', 'glyphicon-trash', 'disabled', 'delete-to-avoid'%>
+          <%= leap_button 'Delete', {class: 'disabled', id: 'delete-to-avoid'}, 'glyphicon-trash' %>
         </div>
         <ul class="have-avoid-list avoid-list list-group"></ul>
       </div>
@@ -34,8 +34,8 @@
 
 <div class="well have-avoid-well">
   <div class="have-avoid-menu">
-    <%= leap_button 'Have', 'glyphicon-minus', 'disabled', 'btn-have'%>
-    <%= leap_button 'Avoid', 'glyphicon-plus', 'disabled', 'btn-avoid'%>
+    <%= leap_button 'Have', {class: 'disabled', id: 'btn-have'}, 'glyphicon-minus' %>
+    <%= leap_button 'Avoid', {class: 'disabled', id: 'btn-avoid'}, 'glyphicon-plus' %>
   </div>
   <div class="food-table-container">
     <table class="table">          

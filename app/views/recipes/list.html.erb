@@ -8,10 +8,10 @@
     <div class="recipe-well-menu">
       <button class="btn btn-app" title="Add a new recipe" data-toggle="modal" data-target="#new-recipe-modal" type="button">Quick Add <span class="glyphicon glyphicon-plus"/></button>
       <button id="btn-upload-recipes" class="btn btn-app" title="Upload multiple recipes from file" data-toggle="modal" data-target="#upload-modal" type="button">Upload <span class="glyphicon glyphicon-upload"/></button>
-      <%= leap_button 'Delete', 'glyphicon-trash', 'disabled', 'btn-delete-recipes' %>
+      <%= leap_button 'Delete', {class: 'disabled', id: 'btn-delete-recipes'}, 'glyphicon-trash' %>
       <%= form_tag(recipes_list_path, method: 'get', class: 'app-search') do %>
         <div class="btn-group">
-          <%= leap_button 'Search', 'glyphicon-search' %>
+          <%= leap_button 'Search', {type: 'submit'},'glyphicon-search' %>
           <%= text_field_tag :search, params[:search], class: "form-control",
             placeholder: "Recipe Title" %>
         </div>
