@@ -1,63 +1,75 @@
 /* recipe table */
-.recipe-table-container {
-  margin-top: 15px;
-  max-height: 522px;
-  overflow-y: auto;
+.app-table {
+	margin-top: 15px;
+	overflow-y: auto;
 
-  .table {
-  	margin: 0;
+	.table {
+		margin: 0;
 
-  	thead th{
-  		font-size: 16px;
-  		padding: 10px 15px;
-		height: 44px;
-  	}
+		.app-table-tr {
+			background-color: $panel-heading-background;
+			color: white;
+			opacity: 0.9;
 
-  	tbody {
-			tr {
-	  		background-color: $panel-heading-background;
-				color: white;
-				opacity: 0.9;
-				
-				//cursor: pointer;
+			&:hover {
+				opacity: 1;
+			}
 
-				&:hover {
-					opacity: 1;
-				}
+			td {
+				font-size: 16px;
+				padding: 10px 15px;
+			}
+
+			.expand-icon {
+				cursor: pointer;
+				vertical-align: middle;
+			}
+
+			.expand-td {
+				width: 5% !important;
+			}
+
+			.app-table-title {
+				font-weight: bold;
+			}
+
+			.app-table-details {
+				display: none;
 
 				td {
-					font-size: 16px;
-					padding: 10px 15px;
-					max-height: 440px;
-
-					span {
-						cursor: pointer;
-					}
+					background-color: white;
 				}
-
-				.check-app label {
-					font-weight: bold;
-				}
-  		}
-  	}
+			}
+		}
 	}
 }
 
-.td-expand {
-	width: 5%;
+.recipe-table-container {
+  @extend .app-table;
+  max-height: 518px;
+
+	.check-app {
+		label {
+			font-weight: bold;
+			@include abbreviate-text();
+			vertical-align: middle;
+		}
+	}
 }
 
-.expand-rec {
-	vertical-align: middle;
-}
+.food-table-container {
+	@extend .app-table;
+	@include calc(height, '43px * 5');
 
-.detail-view {
-	background-color: white;
-}
+	.app-table-title {
+		font-weight: bold;
+		@include abbreviate-text();
+		vertical-align: middle;
+	}
 
-.title-recipe {
-	@include abbreviate-text();
-	width: 95%;
+	.app-table-details {
+		max-height: 440px;
+	}
 }
 
 .recipe-box {

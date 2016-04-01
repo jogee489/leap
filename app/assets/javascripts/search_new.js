@@ -99,7 +99,7 @@ $(function () {
 // This controls the food selection table
 $(document).ready(function () {
   // Show all items of a category.
-  $(".expand").click(function() {
+  $(".app-table-tr").click(function() {
     var myExpand = this.id;
     
     var myExpandId = this.id.split("_");
@@ -121,7 +121,7 @@ $(document).ready(function () {
   // Enable buttons when check boxes are checked.
   // and handles food items selections.
   $('.food-item').click(function() {
-    $(this).toggleClass('highlight-item');
+    //$(this).toggleClass('highlight-item');
     var numChked = $('.highlight-item').size();
      if(numChked) {       
        $('#btn-avoid').removeClass("disabled");

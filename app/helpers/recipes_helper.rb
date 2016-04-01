@@ -12,19 +12,19 @@ module RecipesHelper
 			form = render('recipes/form', recipe: recipe)
 			recipe_table << <<-EOS.html_safe
 
-<tr>
+<tr class="app-table-tr">
 	#{id_element}
-     <td class="td-expand">
-        <span class="glyphicon glyphicon-chevron-down expand-rec" />
+     <td class="expand-td">
+        <span class="glyphicon glyphicon-chevron-down expand-icon" />
      </td>
-     <td class="title-recipe">
+     <td class="app-table-title">
     	<div class="checkbox check-app">
   			<label><input class="check-rec" type="checkbox" value="">#{recipe.title}</label>
-			</div>  	
+		</div>
     </td>
 </tr>
-<tr class="recipeDetails" style="display: none">
-    <td colspan="4" class="detail-view">
+<tr class="app-table-details">
+    <td colspan="4">
     	#{form}
     </td>
 </tr>

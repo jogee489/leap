@@ -34,26 +34,26 @@
 
 <div class="well have-avoid-well">
   <div class="have-avoid-menu">
-    <%= leap_button 'Have', {class: 'disabled', id: 'btn-have'}, 'glyphicon-minus' %>
-    <%= leap_button 'Avoid', {class: 'disabled', id: 'btn-avoid'}, 'glyphicon-plus' %>
+    <%= leap_button 'Have', {class: 'disabled', id: 'btn-have'}, 'glyphicon-plus' %>
+    <%= leap_button 'Avoid', {class: 'disabled', id: 'btn-avoid'}, 'glyphicon-minus' %>
   </div>
   <div class="food-table-container">
     <table class="table">          
       <tbody>
         <% @category_list.each do |cat| %>
-          <tr class="expand" id="<%= cat.name %>_expand">
-            <td>
-              <span class="glyphicon glyphicon-chevron-down" id="<%= cat.name %>_icon"/>
+          <tr class="app-table-tr" id="<%= cat.name %>_expand">
+            <td class="expand-td">
+              <span class="glyphicon glyphicon-chevron-down expand-icon" id="<%= cat.name %>_icon"/>
             </td>
-            <td><%= cat.name %></td>
+            <td class="app-table-title"><%= cat.name %></td>
           </tr>
-          <tr class="<%= cat.name %>_items food_row">
-            <td colspan="2">                            
-              <% cat.food_items.sorted.each do |foodItem| %>
-                <ul>
-                  <li class="food-item list-group-item"><%= foodItem.name %></li>
-                </ul>
-              <%end%>                   
+          <tr class="<%= cat.name %>_items food_row app-table-details">
+            <td colspan="2">
+                <ul class="list-group">
+                  <% cat.food_items.sorted.each do |foodItem| %>
+                    <li class="food-item list-group-item"><%= foodItem.name %></li>
+                  <%end%> 
+                </ul>                
             </td>
           </tr>
         <%end%>
