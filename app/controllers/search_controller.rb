@@ -6,16 +6,6 @@ class SearchController < ApplicationController
 
 	end
 
-	def show
-		# Shell words here is for security reasons.
-		recipeData = %x(python ~/workspaces/leap/leap/script/foodSearcher.py #{Shellwords.escape(params[:searchString])})
-		@recipeList = JSON.parse(recipeData)
-		#@recipeList.each {|recipe|
-		#	instance = Recipe.create(recipe)
-		#}
-		render layout: false #this page does not need the layout on top of it.
-	end
-
 	def saveRecipe
 		Recipe.create(title: params[:title], ingredients: params[:ingredients], directions: params[:directions])
 	end
@@ -26,7 +16,18 @@ class SearchController < ApplicationController
 
 	def generate
 		@category_list = Category.sorted
-		@recipe_list = Recipe.all
+	end
+
+	def find_recipes
+		food_items = JSON.parse(params[:food_items])
+		@recipe_list = Recipe.ingredients_search(food_items) if food_items.present?
+		@recipe_list ||= Recipe.all
+
+		puts @recipe_list
+		#respond_to do |wants|
+		#	wants.html
+		#end
+		render partial: 'find_recipes' 
 	end
 
 	def web_crawl

@@ -1,4 +1,13 @@
+# Model for the Recipe table
+# Recipe has the following rows:
+# => tite: string
+# => ingredients: string
+# => directions: string
+#
+
 class Recipe < ActiveRecord::Base
+	require 'set' # Used for poor database search method...
+
 	belongs_to :tag
 	scope :sorted, lambda { order("recipes.created_at DESC")}
 	  validates_uniqueness_of :title
@@ -10,4 +19,13 @@ class Recipe < ActiveRecord::Base
   	def self.search(title)
   		where("title like ?", "%#{title}%")
   	end
+
+  	def self.ingredients_search(food_items)
+  		recipe_list = [].to_set
+  		food_items.each do |food|
+  			where("ingredients like ?", "%#{food}%").all.each { |recipe| recipe_list << recipe }
+  		end
+  		return recipe_list
+  	end
+
 end
