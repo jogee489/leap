@@ -26,11 +26,12 @@
 			}
 
 			.expand-td {
-				width: 5% !important;
+				width: 10% !important;
 			}
 
 			.app-table-title {
 				font-weight: bold;
+				max-width: 800px;
 			}
 
 			.app-table-details {
@@ -96,14 +97,13 @@
 }
 
 .rec-title, .rec-tags {
-	@include abbreviate-text();
-	overflow:hidden;
-    text-overflow:ellipsis;
-    white-space: nowrap;
+	max-height: 23px;
+	word-wrap: break-word;
+	overflow-y: auto;
 }
 
 .rec-ingredients, .rec-directions {
-	//word-wrap: break-word;
+	word-wrap: break-word;
 	max-height: 84px;
 	overflow-y: auto;
 }

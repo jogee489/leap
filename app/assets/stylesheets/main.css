@@ -25,6 +25,11 @@ li {
   -ms-border-radius: 0 !important;
   border-radius: 0 !important; }
 
+.list-group-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
 input {
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
@@ -305,9 +310,10 @@ footer {
         cursor: pointer;
         vertical-align: middle; }
       .app-table .table .app-table-tr .expand-td, .recipe-table-container .table .app-table-tr .expand-td, .food-table-container .table .app-table-tr .expand-td {
-        width: 5% !important; }
+        width: 10% !important; }
       .app-table .table .app-table-tr .app-table-title, .recipe-table-container .table .app-table-tr .app-table-title, .food-table-container .table .app-table-tr .app-table-title {
-        font-weight: bold; }
+        font-weight: bold;
+        max-width: 800px; }
       .app-table .table .app-table-tr .app-table-details, .recipe-table-container .table .app-table-tr .app-table-details, .food-table-container .table .app-table-tr .app-table-details {
         display: none; }
         .app-table .table .app-table-tr .app-table-details td, .recipe-table-container .table .app-table-tr .app-table-details td, .food-table-container .table .app-table-tr .app-table-details td {
@@ -356,14 +362,12 @@ footer {
     width: 862px; }
 
 .rec-title, .rec-tags {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
+  max-height: 23px;
+  word-wrap: break-word;
+  overflow-y: auto; }
 
 .rec-ingredients, .rec-directions {
+  word-wrap: break-word;
   max-height: 84px;
   overflow-y: auto; }
 
@@ -389,10 +393,15 @@ footer {
       margin-top: 100px; }
 
 #main-content-container {
-  width: 100%;
-  padding: 50px; }
+  margin: 0 auto;
+  position: relative; }
 
 .main-thumbnail {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 50px 20px;
+  text-align: left;
+  width: 378px;
   border: none;
   -webkit-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
   -moz-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
@@ -402,8 +411,6 @@ footer {
     font-size: 2em;
     font-family: 'Oleo Script', cursive;
     font-weight: bold; }
-  .main-thumbnail p {
-    height: 120px; }
   .main-thumbnail a {
     font-size: 1.2em; }
 
@@ -470,12 +477,6 @@ footer {
   line-height: 1.428571429;
   border-radius: 15px; }
 
-.list-arrows {
-  display: block;
-  margin-top: 150px;
-  margin-right: auto;
-  margin-left: auto; }
-
 .have-avoid-list {
   margin-top: 15px; }
 
@@ -490,9 +491,7 @@ footer {
 
 .food-item {
   cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
+  width: 839px; }
 
 #btn-cancel-search {
   margin-right: 8px; }
