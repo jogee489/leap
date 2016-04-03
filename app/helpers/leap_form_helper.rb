@@ -28,15 +28,17 @@ module LeapFormHelper
 
   public
 
-  def leap_button(text, html_options = {}, icon_name = nil)
+  def leap_button(text, html_options = {}, icon_name = nil, path = nil)
     span = "<span class='glyphicon #{icon_name}' />" if icon_name.present?
     span ||= ''
     button_class = html_options[:class] || ''
     button_id = html_options[:id] || ''
     button_type = html_options[:type] || ''
+    href = "href='#{path}'" if path.present?
+    href ||= ''
 
     <<-EOS.html_safe
-      <button class="btn btn-app #{button_class}" id="#{button_id}" type="#{button_type}">
+      <button class="btn #{button_class}" id="#{button_id}" type="#{button_type} #{href}">
         #{text}
         #{span}
       </button>

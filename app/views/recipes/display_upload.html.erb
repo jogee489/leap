@@ -9,8 +9,8 @@
         <a class="btn btn-app" data-color="default">Select All</a>
         <input type="checkbox" class="hidden" checked />
       </span>
-      <%= leap_button 'Save', {class: 'btn-app-disabled', id: 'btn-save-recipes'}, 'glyphicon-save' %>
-      <%= leap_button 'Delete', {class: 'btn-app-disabled', id: 'btn-delete-recipes'}, 'glyphicon-save' %>
+      <%= leap_button 'Save', {class: 'btn-app btn-app-disabled', id: 'btn-save-recipes'}, 'glyphicon-save' %>
+      <%= leap_button 'Delete', {class: 'btn-app btn-app-disabled', id: 'btn-delete-recipes'}, 'glyphicon-save' %>
     </div>
     <%= render partial: "recipe_table", locals: {recipe_list: @recipe_list} %>
   </div>
