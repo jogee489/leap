@@ -188,7 +188,7 @@ class RecipesController < ApplicationController
 			if unorganized_ingredients.blank?
 				##### Issue with multiple ul inside div.entry-content
 				ul = recipe_page.css("div.entry-content ul")
-				if ul.count > 1
+				if (ul.count > 1 or ul.count == 0)
 					j += 1
 					next
 				end
