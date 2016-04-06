@@ -28,12 +28,20 @@ module LeapFormHelper
 
   public
 
+  def delete_button(button_class = nil, id = nil)
+    leap_button('Delete', {class: "btn-app #{button_class}", id: id}, 'glyphicon-trash')
+  end
+
+  def save_button(button_class = nil, id = nil)
+    leap_button('Save', {class: "btn-app #{button_class}", id: id}, 'glyphicon-save')
+  end
+
   def leap_button(text, html_options = {}, icon_name = nil, path = nil)
     span = "<span class='glyphicon #{icon_name}' />" if icon_name.present?
     span ||= ''
     button_class = html_options[:class] || ''
     button_id = html_options[:id] || ''
-    button_type = html_options[:type] || ''
+    button_type = html_options[:type] || 'button'
     href = "href='#{path}'" if path.present?
     href ||= ''
 

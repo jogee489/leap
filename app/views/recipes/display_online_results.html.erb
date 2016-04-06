@@ -21,8 +21,8 @@
         <a class="btn btn-app" data-color="default">Select All</a>
         <input type="checkbox"/>
       </span>
-      <%= leap_button 'Save', {id: 'btn-app btn-save-recipes'}, 'glyphicon-save' %>
-      <%= leap_button 'Delete', {id: 'btn-app btn-delete-recipes'}, 'glyphicon-trash' %>
+      <%= leap_button 'Save', {class: 'btn-app', id: 'btn-save-recipes'}, 'glyphicon-save' %>
+      <%= leap_button 'Delete', {class: 'btn-app', id: 'btn-delete-recipes'}, 'glyphicon-trash' %>
     </div>
     <%= render partial: "recipe_table", locals: {recipe_list: @recipe_list} %>
   </div>

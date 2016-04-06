@@ -1,3 +1,10 @@
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#find-food-next').click(function() {
+      renderGenerateMealPlan();
+    });
+  });
+</script>
 <div class="col-xs-12">
   <div class="col-md-12">
     <h3> Select Recipes</h3>
@@ -30,6 +37,6 @@
     </div>
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#mealPlanPreview">Preview Meal Plan <span class="glyphicon glyphicon-list-alt"></span></button>
     <%= render partial: "recipes/recipe_table", locals: {recipe_list: @recipe_list} %>
-    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" style="margin-top:10px;">Next</button>
+    <button class="btn btn-primary nextBtn btn-lg pull-right"  id="find-food-next" type="button" style="margin-top:10px;">Next</button>
   </div>
 </div>

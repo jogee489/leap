@@ -23,7 +23,7 @@ module RecipesHelper
 		</div>
     </td>
 </tr>
-<tr class="app-table-details">
+<tr class="app-table-details" style="display:none;">
     <td colspan="4">
     	#{form}
     </td>

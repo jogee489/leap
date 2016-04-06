@@ -1,5 +1,4 @@
 require 'json'
-require 'shellwords'
 
 class SearchController < ApplicationController
 	def index
@@ -15,7 +14,6 @@ class SearchController < ApplicationController
 	end
 
 	def generate
-		@category_list = Category.sorted
 	end
 
 	def find_recipes
@@ -23,11 +21,16 @@ class SearchController < ApplicationController
 		@recipe_list = Recipe.ingredients_search(food_items) if food_items.present?
 		@recipe_list ||= Recipe.all
 
-		puts @recipe_list
-		#respond_to do |wants|
-		#	wants.html
-		#end
 		render partial: 'find_recipes' 
+	end
+
+	def select_foods
+		@category_list = Category.sorted
+		render partial: 'select_foods'
+	end
+
+	def generate_meal_plan
+		render partial: 'generate_meal_plan'
 	end
 
 	def web_crawl

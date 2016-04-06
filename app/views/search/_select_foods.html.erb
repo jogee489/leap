@@ -1,0 +1,15 @@
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#select-food-next').click(function() {
+      renderFindRecipes();
+    });
+  });
+</script>
+
+<div class="col-xs-12">
+  <div class="col-md-12">  
+    <h3> Select Foods</h3>
+    <%= render partial: "recipes/search_new" %>
+    <button class="btn btn-primary nextBtn btn-lg pull-right" id="select-food-next" type="button">Next</button>
+  </div>
+</div>

@@ -21,7 +21,7 @@ class Recipe < ActiveRecord::Base
   	end
 
   	def self.ingredients_search(food_items)
-  		recipe_list = [].to_set
+      recipe_list = [].to_set
   		food_items.each do |food|
   			where("ingredients like ?", "%#{food}%").all.each { |recipe| recipe_list << recipe }
   		end

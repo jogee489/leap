@@ -36,6 +36,7 @@ $(document).ready(function() {
         var tableRow = $(this).closest("tr");
         tableRow.next().remove();
         tableRow.remove();
+        checkListSize();
       });
     });
 
@@ -59,23 +60,19 @@ $(document).ready(function() {
         timeout: 5500,
         success: function(data) {
           console.log("success");
+          // Redirect to manage recipes if no more recipes in list.
+          checkListSize();
         },
         error: function(error) {
           console.log(error);
         },
       });
+      // Removed saved recipes from list
       $('.check-rec:checked').each(function() {
         var tableRow = $(this).closest("tr");
         tableRow.next().remove();
         tableRow.remove();
       });
-    });
-
-    // Remove a singlular recipe
-    $(".remove-recipe").click(function() {
-      var detailsTable = $(this).closest(".recipeDetails");
-      detailsTable.prev().fadeOut();
-      detailsTable.fadeOut();
     });
 
     $('.btn-edit-recipe').click(function() {
@@ -202,3 +199,13 @@ $(document).ready(function() {
     });
 
   });
+/**
+ * Check the size of the recipe list. Redirect to the manage recipes page when
+ * no more recipes are present.
+*/
+function checkListSize() {
+  console.log("checking size...")
+  if ($(".check-rec").length == 0) {
+     window.location.replace("/recipes/list");
+  }
+}
