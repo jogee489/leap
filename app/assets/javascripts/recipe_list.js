@@ -85,10 +85,10 @@ $(document).ready(function() {
 
     $('.btn-save-recipe').click(function() {
       var recBox = $(this).closest('.recipe-box');
-      var title = recBox.find('.rec-title').text();
-      var ingredients = recBox.find('.rec-ingredients').text();
-      var directions = recBox.find('.rec-directions').text();
-      var tags = recBox.find('.rec-tags').text();
+      var title = recBox.find('.rec-title').val();
+      var ingredients = recBox.find('.rec-ingredients').val();
+      var directions = recBox.find('.rec-directions').val();
+      var tags = recBox.find('.rec-tags').val();
       var json = JSON.stringify({title: title, directions: directions, ingredients: ingredients, tags: tags});
       console.log(ingredients);
       console.log(title);
