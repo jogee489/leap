@@ -1,3 +1,4 @@
+<%= javascript_include_tag 'search_new.js' %>
 <script type="text/javascript">
   $(document).ready(function () {
     $('#select-food-next').click(function() {
@@ -7,9 +8,8 @@
 </script>
 
 <div class="col-xs-12">
-  <div class="col-md-12">  
-    <h3> Select Foods</h3>
+  <div class="col-md-12">
     <%= render partial: "recipes/search_new" %>
-    <button class="btn btn-primary nextBtn btn-lg pull-right" id="select-food-next" type="button">Next</button>
+    <%= leap_button 'Next', {class: 'btn-app nextBtn pull-right', id: 'select-food-next', type: 'button'} %>
   </div>
 </div>

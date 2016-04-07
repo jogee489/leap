@@ -490,8 +490,7 @@ footer {
   border-bottom: 2px groove rgba(209, 209, 209, 0.49); }
 
 .food-item {
-  cursor: pointer;
-  width: 839px; }
+  cursor: pointer; }
 
 #btn-cancel-search {
   margin-right: 8px; }
