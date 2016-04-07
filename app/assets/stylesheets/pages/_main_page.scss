@@ -73,7 +73,7 @@
       opacity: 0.1;
     }
 
-    .btn-main-container a {
+    .btn-main-container * .btn {
       display: block;
     }
   }
@@ -82,7 +82,7 @@
 .btn-main-container {
   @include center-obj();
 
-  a {
+  & * .btn{
     display: block;
     margin-bottom: 15px;
     display: none;

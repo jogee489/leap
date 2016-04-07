@@ -37,7 +37,7 @@ if (typeof console === "undefined") {
       <div class="img-box text-center">
         <%= image_tag("square_icon_mealplans.png", class: "main-thumbnail-img img-responsive") %>
         <div class="btn-main-container">
-          <%= link_to "Generate", {:controller => 'search', :action => 'generate'}, {:class=>"btn btn-main"} %>
+          <%= button_to "Generate", {controller: 'search', action: 'generate'}, {class: "btn btn-main"} %>
         </div>
       </div>
       <div class="caption">
@@ -49,8 +49,8 @@ if (typeof console === "undefined") {
       <div class="img-box text-center">
         <%= image_tag("square_icon_recipes.png", class: "main-thumbnail-img img-responsive") %>
         <div class="btn-main-container">
-          <%= link_to "Search New", {:controller => 'recipes', :action => 'search_new'}, {:class=>"btn btn-main"} %>
-          <%= link_to "Manage", {:controller => 'recipes', :action => 'index'}, {:class=>"btn btn-main"} %>
+          <%= button_to "Search New", {controller: 'recipes', action: 'search_new'}, {class: "btn btn-main"} %>
+          <%= button_to "Manage", {controller: 'recipes', action: 'list'}, {class: "btn btn-main"} %>
         </div>
       </div>
       <div class="caption">
@@ -62,7 +62,7 @@ if (typeof console === "undefined") {
       <div class="img-box text-center">
         <%= image_tag("square_icon_foods.png", class: "main-thumbnail-img img-responsive") %>
         <div class="btn-main-container">
-          <%= link_to "Manage", {:controller => 'categories', :action => 'index'}, {:class=>"btn btn-main"} %>
+          <%= button_to "Manage", categories_path, {method: :get, class: "btn btn-main"} %>
         </div>
       </div>      
       <div class="caption">
