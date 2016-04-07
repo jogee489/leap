@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Oleo+Script:400,700|Quicksand:300,400,700);
 html {
-  font-family: 'Quicksand', sans-serif;
   letter-spacing: 0.2em; }
 
 #app-content {
@@ -23,7 +22,18 @@ li {
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
   -ms-border-radius: 0 !important;
-  border-radius: 0 !important; }
+  border-radius: 0 !important;
+  border-color: rgba(209, 209, 209, 0.5); }
+
+.form-control {
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -ms-border-radius: 0 !important;
+  border-radius: 0 !important;
+  border-color: rgba(209, 209, 209, 0.5);
+  letter-spacing: 0.2em;
+  color: #333;
+  font-size: 15px; }
 
 .list-group-item {
   white-space: nowrap;
@@ -50,16 +60,26 @@ input {
   width: 264px; }
 
 /* default modal box */
-.app-modal, #new-recipe-modal, #upload-modal {
+.app-modal, #meal-plan-preview-modal, #new-recipe-modal, #upload-modal {
   background-color: rgba(107, 66, 88, 0.9); }
-  .app-modal .modal-header, #new-recipe-modal .modal-header, #upload-modal .modal-header {
+  .app-modal .modal-dialog, #meal-plan-preview-modal .modal-dialog, #new-recipe-modal .modal-dialog, #upload-modal .modal-dialog {
+    margin: auto; }
+  .app-modal .modal-content, #meal-plan-preview-modal .modal-content, #new-recipe-modal .modal-content, #upload-modal .modal-content {
+    margin: 50px;
+    border: none;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -ms-border-radius: 0 !important;
+    border-radius: 0 !important;
+    padding: 15px; }
+  .app-modal .modal-header, #meal-plan-preview-modal .modal-header, #new-recipe-modal .modal-header, #upload-modal .modal-header {
     border-bottom: 2px groove rgba(209, 209, 209, 0.5);
     padding: 0px 0px 15px 0px;
     font-size: 1.5em;
     font-weight: bold; }
-    .app-modal .modal-header h3, #new-recipe-modal .modal-header h3, #upload-modal .modal-header h3 {
+    .app-modal .modal-header h3, #meal-plan-preview-modal .modal-header h3, #new-recipe-modal .modal-header h3, #upload-modal .modal-header h3 {
       font-family: 'Oleo Script', cursive; }
-    .app-modal .modal-header .close, #new-recipe-modal .modal-header .close, #upload-modal .modal-header .close {
+    .app-modal .modal-header .close, #meal-plan-preview-modal .modal-header .close, #new-recipe-modal .modal-header .close, #upload-modal .modal-header .close {
       color: #333;
       border: none;
       margin: 0;
@@ -69,19 +89,12 @@ input {
       -moz-transition: all 0.1s ease-in-out 0s;
       -ms-transition: all 0.1s ease-in-out 0s;
       transition: all 0.1s ease-in-out 0s; }
-      .app-modal .modal-header .close .glyphicon, #new-recipe-modal .modal-header .close .glyphicon, #upload-modal .modal-header .close .glyphicon {
+      .app-modal .modal-header .close .glyphicon, #meal-plan-preview-modal .modal-header .close .glyphicon, #new-recipe-modal .modal-header .close .glyphicon, #upload-modal .modal-header .close .glyphicon {
         font-size: 0.7em; }
-      .app-modal .modal-header .close:hover, #new-recipe-modal .modal-header .close:hover, #upload-modal .modal-header .close:hover {
+      .app-modal .modal-header .close:hover, #meal-plan-preview-modal .modal-header .close:hover, #new-recipe-modal .modal-header .close:hover, #upload-modal .modal-header .close:hover {
         opacity: 0.8; }
-      .app-modal .modal-header .close:focus, #new-recipe-modal .modal-header .close:focus, #upload-modal .modal-header .close:focus {
+      .app-modal .modal-header .close:focus, #meal-plan-preview-modal .modal-header .close:focus, #new-recipe-modal .modal-header .close:focus, #upload-modal .modal-header .close:focus {
         outline: 0; }
-  .app-modal .modal-content, #new-recipe-modal .modal-content, #upload-modal .modal-content {
-    border: none;
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
-    -ms-border-radius: 0 !important;
-    border-radius: 0 !important;
-    padding: 15px; }
 
 .thumbnail {
   border: none;
@@ -320,7 +333,7 @@ footer {
           background-color: white; }
 
 .recipe-table-container {
-  max-height: 518px; }
+  max-height: 517px; }
   .recipe-table-container .check-app label {
     font-weight: bold;
     white-space: nowrap;
@@ -349,6 +362,7 @@ footer {
   box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
   padding: 20px;
   background-color: #ecf9d4;
+  width: 1023px;
   max-height: 458px;
   position: relative;
   color: #333; }
@@ -356,20 +370,35 @@ footer {
     font-family: 'Oleo Script', cursive;
     font-size: 20px;
     margin: 0px 0px 10px 0px; }
-  .recipe-box p {
+  .recipe-box textarea {
+    resize: none;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent;
     font-size: 15px;
+    overflow-y: auto;
+    padding: 0;
+    color: #333;
+    pointer-events: none;
     margin-bottom: 20px;
     width: 862px; }
 
-.rec-title, .rec-tags {
-  max-height: 23px;
-  word-wrap: break-word;
-  overflow-y: auto; }
-
-.rec-ingredients, .rec-directions {
-  word-wrap: break-word;
-  max-height: 84px;
-  overflow-y: auto; }
+/* meal plan table */
+.meal-plan-table-container .table {
+  margin: 0;
+  border: 2px solid rgba(209, 209, 209, 0.5); }
+  .meal-plan-table-container .table .meal-plan-table-section {
+    background-color: #6b4258;
+    color: white; }
+    .meal-plan-table-container .table .meal-plan-table-section td {
+      font-weight: bold;
+      font-size: 16px;
+      padding: 10px 15px; }
+  .meal-plan-table-container .table .comments-area {
+    resize: none; }
 
 #main-header {
   background-image: url("main_image.png");
@@ -447,11 +476,8 @@ footer {
 .stepwizard {
   display: table;
   width: 100%;
-  position: relative; }
-
-.stepwizard-step button[disabled] {
-  opacity: 1 !important;
-  filter: alpha(opacity=100) !important; }
+  position: relative;
+  margin-bottom: 50px; }
 
 .stepwizard-row:before {
   top: 14px;
@@ -466,16 +492,25 @@ footer {
 .stepwizard-step {
   display: table-cell;
   text-align: center;
+  font-size: 16px;
+  font-weight: bold;
   position: relative; }
 
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px; }
+#select-food-next {
+  font-size: 16px;
+  padding: 10px 15px;
+  font-weight: bold; }
+
+.nextBtn {
+  margin: 50px 70px 0px 0px; }
+
+#meal-plan-preview-modal .modal-dialog {
+  width: -webkit-calc(100vw - 100px);
+  width: -moz-calc(100vw - 100px);
+  width: -ms-calc(100vw - 100px);
+  width: calc(100vw - 100px); }
+#meal-plan-preview-modal #btn-delete-preview {
+  margin: 15px 0px; }
 
 .have-avoid-list {
   margin-top: 15px; }
@@ -511,6 +546,9 @@ footer {
     vertical-align: middle;
     margin: 0px 40px 40px 40px; }
 
+.search-new-container {
+  margin: 50px 85px 0px 0px; }
+
 .recipe-well {
   margin: 0 auto;
   width: 1084px;
@@ -526,16 +564,15 @@ footer {
   position: relative;
   height: 335px; }
 
-#new-recipe-modal .modal-content {
-  width: 1039px;
-  height: 555px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+#new-recipe-modal .modal-dialog {
+  width: 1153px;
+  height: 555px; }
 #new-recipe-modal .recipe-box {
   margin-top: 15px;
   height: 458px; }
+#new-recipe-modal textarea {
+  border: #C1E0FF 1px solid;
+  pointer-events: auto; }
 
 .search-toggle .active {
   display: none; }

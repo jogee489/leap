@@ -4,7 +4,7 @@
 @import url(https://fonts.googleapis.com/css?family=Oleo+Script:400,700|Quicksand:300,400,700);
 
 html{
-    font-family: 'Quicksand', sans-serif;
+    //font-family: 'Quicksand', sans-serif !important;
     letter-spacing: 0.2em;
 }
 
@@ -30,6 +30,15 @@ a:hover {
 
 li {
 	@include border-radius(0 !important);
+  border-color: rgba(209,209,209,0.50);
+}
+
+.form-control {
+  @include border-radius(0 !important);
+  border-color: rgba(209,209,209,0.50);
+  letter-spacing: 0.2em;
+  color: #333;
+  font-size: 15px;
 }
 
 .list-group-item {
@@ -74,6 +83,18 @@ input {
 .app-modal {
 	background-color: rgba(107,66,88,0.90);
 
+  .modal-dialog {
+    margin: auto;
+  }
+
+  .modal-content {
+    //@include center-obj();
+    margin: 50px;
+    border: none;
+    @include border-radius(0 !important);
+    padding: 15px;
+  }
+
 	.modal-header {
 		border-bottom: 2px groove rgba(209,209,209,0.50);
 		padding: 0px 0px 15px 0px;
@@ -108,13 +129,6 @@ input {
 				outline: 0;
 			}		
 		}
-	}
-
-	.modal-content {
-		//@include center-obj();
-		border: none;
-		@include border-radius(0 !important);
-		padding: 15px;
 	}
 }
 

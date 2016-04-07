@@ -1,48 +1,58 @@
 <script type="text/javascript">
-$(document).ready(function(){
- // Hides scroll bar.
- $('.aut').keyup(function(e) {
-    while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
+  $(document).ready(function(){
+    // Hides scroll bar.
+    $('.aut').keyup(function(e) {
+      while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
         $(this).height($(this).height()+1);
-    };
- });
- $('.aut').css('overflow', 'hidden');
-
-});
+      };
+    });
+    $('.aut').css('overflow', 'hidden');
+  });
 </script>
-<table class="table table-bordered">
- <thead>
-  <tr>
-   <td style="text-align: center; background:lightgrey;" colspan="3"><%= meal_name %></td>
-  </tr>
-  <tr>
-   <th>Option 1</th>
-   <th>Option 2</th>
-   <th>Option 3</th>
-  </tr>
- </thead>
- <tbody>
-   <tr>
-    <td>
-     <ul class="have-avoid-list list-group " id=<%=id+"Op1" %> ></ul>
-    </td>
-    <td>
-     <ul class="have-avoid-list list-group " id=<%=id+"Op2" %> ></ul>
-    </td>
-    <td>
-     <ul class="have-avoid-list list-group " id=<%=id+"Op3" %> ></ul>
-    </td>
-   </tr>
-   <tr>
-   <td>
-    <textarea class="form-control aut" ></textarea>
-   </td>
-   <td>
-    <textarea class="form-control aut"></textarea>
-   </td>
-   <td>
-    <textarea class="form-control aut"></textarea>
-   </td>
-  </tr>
- </tbody>
-</table>
+<div class="meal-plan-table-container">
+  <table class="table table-bordered">
+    <thead>
+      <tr class="meal-plan-table-section text-center">
+        <td colspan="3"><%= meal_name %></td>
+      </tr>
+      <tr class="text-center">
+        <th>Option 1</th>
+        <th>Option 2</th>
+        <th>Option 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <ul class="have-avoid-list list-group " id=<%=id+"Op1" %> ></ul>
+        </td>
+        <td>
+          <ul class="have-avoid-list list-group " id=<%=id+"Op2" %> ></ul>
+        </td>
+        <td>
+          <ul class="have-avoid-list list-group " id=<%=id+"Op3" %> ></ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
+            <label for="comment">Comments:</label>
+            <textarea class="form-control comments-area" rows="5"></textarea>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="comment">Comments:</label>
+            <textarea class="form-control comments-area" rows="5"></textarea>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="comment">Comments:</label>
+            <textarea class="form-control comments-area" rows="5"></textarea>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -22,15 +22,27 @@
 #new-recipe-modal {
 	@extend .app-modal;
 
+	.modal-dialog {
+    //margin: auto;
+    width: 1153px;
+    height: 555px;
+   }
+
 	.modal-content {
-		width: 1039px;
-		height: 555px;
-		@include center-obj();
+		//margin: 50px;
+		//width: 1053px;
+		//height: 555px;
+		//@include center-obj();
 	}
 
 	.recipe-box {
 		margin-top: 15px;
 		height: 458px;
+	}
+
+	textarea {
+		border:#C1E0FF 1px solid;
+		pointer-events:auto;
 	}
 }
 

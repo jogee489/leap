@@ -1,19 +1,21 @@
 <div id="new-recipe-modal" class="modal fade" role="dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			<a class="pull-right btn close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"/></a>
-			<h3 class="modal-title">Quickly Add a New Recipe</h3>
-		</div>
-		<div class="recipe-box">
-			<h1 for="title">Title</h1>
-			<p contenteditable="true" name="recipe[title]" class="rec-title" required></p>
-			<h1 for="ingredients">Ingredients</h1>
-			<p contenteditable="true" name="recipe[ingredients]" class="rec-ingredients" required></p>
-			<h1 for="directions">Directions</h1>
-			<p contenteditable="true" name="recipe[directions]" class="rec-directions" required></p>
-			<h1 for="tag_id">Tags</h1>
-			<p contenteditable="true" name="recipe[tags]" class="rec-tags" required></p>
-			<%= leap_button 'Save', {class: 'btn-app btn-save-recipe'}, 'glyphicon-save'%>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="btn close" data-dismiss="modal" type="button"><span class="glyphicon glyphicon-remove"/></button>
+				<h3 class="modal-title">Quickly Add a New Recipe</h3>
+			</div>
+			<div class="recipe-box">
+				<h1 for="title">Title</h1>
+				<textarea name="recipe[title]" class="form-control rec-title" rows="1" required></textarea>
+				<h1 for="ingredients">Ingredients</h1>
+				<textarea name="recipe[ingredients]" class="form-control rec-ingredients" rows="4" required></textarea>
+				<h1 for="directions">Directions</h1>
+				<textarea name="recipe[directions]" class="form-control rec-directions" rows="4" required></textarea>
+				<h1 for="tag_id">Tags</h1>
+				<textarea name="recipe[tags]" class="form-control rec-tags" rows="1" required></textarea>
+				<%= leap_button 'Save', {class: 'btn-app btn-save-recipe'}, 'glyphicon-save'%>
+			</div>
 		</div>
 	</div>
 </div>

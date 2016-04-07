@@ -196,6 +196,15 @@ $(function () {
         }
       }
     }
+    // Remove if duplicates
+    for(i=dup_ids.length-1;i>=0;i--){
+       actives.splice(dup_ids[i],1);
+    }
+    // Food names selected to add into PANEL
+    var foods=[];
+    for(var i=0;i<actives.length;i++){
+      foods[i]=actives[i].innerHTML;
+    }
 
     // Prevent to-have and to-avoid panels have the same foods.
     var inTheOtherPanel=[];
@@ -209,10 +218,7 @@ $(function () {
       }
     }
 
-    // Remove if duplicates
-    for(i=dup_ids.length-1;i>=0;i--){
-       actives.splice(dup_ids[i],1);
-    }
+
 
     // Remove if already to-avoid or to-have.
     for(i=inTheOtherPanel_ids.length-1;i>=0;i--){
