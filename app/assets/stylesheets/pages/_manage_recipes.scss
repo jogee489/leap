@@ -67,6 +67,9 @@
 
 	.form-control {
 		height: 40px;
+		@include abbreviate-text();
+		background-color: white !important;
+		pointer-events: none;
 	}
 
 	.btn-file input[type=file] {
@@ -82,10 +85,5 @@
 		background: red;
 		cursor: inherit;
 		display: block;
-	}
-
-	input[readonly] {
-		background-color: white !important;
-		cursor: text !important;
 	}
 }

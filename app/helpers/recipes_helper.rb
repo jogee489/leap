@@ -18,9 +18,10 @@ module RecipesHelper
         <span class="glyphicon glyphicon-chevron-down expand-icon" />
      </td>
      <td class="app-table-title">
-    	<div class="checkbox check-app">
-  			<label><input class="check-rec" type="checkbox" value="">#{recipe.title}</label>
-		</div>
+    	<div class="app-checkbox">
+        <input class="check-rec" type="checkbox" id="#{recipe.title}">
+        <label for="#{recipe.title}">#{recipe.title}</label>
+      </div>
     </td>
 </tr>
 <tr class="app-table-details" style="display:none;">

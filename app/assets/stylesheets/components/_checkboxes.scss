@@ -1,0 +1,55 @@
+    .app-checkbox > [type="checkbox"]:not(:checked),
+    .app-checkbox > [type="checkbox"]:checked {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .app-checkbox > [type="checkbox"]:not(:checked) + label,
+    .app-checkbox > [type="checkbox"]:checked + label {
+        position: relative;
+        padding-left: 30px;
+        margin: 0;
+        //padding-top: 1px;
+        cursor: pointer;
+    }
+
+    .app-checkbox > [type="checkbox"]:not(:checked) + label:before,
+    .app-checkbox > [type="checkbox"]:checked + label:before {
+        content: '';
+        position: absolute; 
+        left:0; 
+        top: 50%;
+        margin-top:-9px;
+        width: 19px; 
+        height: 19px;
+        @include border-radius(0 !important);
+        border: 2px solid white;
+        background: transparent;
+    }
+
+    .app-checkbox > [type="checkbox"]:not(:checked) + label:after,
+    .app-checkbox > [type="checkbox"]:checked + label:after {
+        font: normal normal normal 12px/1 'Glyphicons Halflings';
+        content: '\e013';
+        position: absolute;
+        top: 50%;
+        margin-top:-7px;
+        left: 2px;
+        xtransition: all .2s;
+    }
+
+    .app-checkbox > [type="checkbox"]:not(:checked) + label:after {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    .app-checkbox > [type="checkbox"]:checked + label:after {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .app-checkbox > [type="checkbox"]:not(:checked) + label:after, .app-checkbox > [type="checkbox"]:checked + label:after {
+        color: white;
+        top: 55%;
+        left: 3px;
+    }
