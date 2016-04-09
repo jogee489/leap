@@ -16,9 +16,13 @@ class Recipe < ActiveRecord::Base
     	write_attribute(:title, s.to_s.titleize) # The to_s is in case you get nil/non-string
   	end
 
-  	def self.search(title)
-  		where("title like ?", "%#{title}%")
+  	def self.search(property, title)
+  		where("#{property} like ?", "%#{title}%")
   	end
+
+    def self.tags_search(tags)
+      where("tags contains ?", "%#{tags}%")
+    end
 
   	def self.ingredients_search(food_items)
       recipe_list = [].to_set

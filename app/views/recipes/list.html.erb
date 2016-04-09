@@ -15,14 +15,16 @@
           <%= text_field_tag :search, params[:search], class: "form-control",
             placeholder: "Recipe Title" %>
         </div>
-      <% end %>
-      <div class="search-toggle btn-group" data-toggle="buttons">
-        <button class="btn btn-app">
-          <input type="radio" name="options" id="opt-title" checked>By Title
-        </button>
-        <button class="btn btn-app active">
-          <input type="radio" name="options" id="opt-tag">By Tag
-        </button>   
+        <div class="search-toggle btn-group" data-toggle="buttons">
+          <button class="btn btn-app title-toggle">
+            <%= radio_button_tag(:sort, "tags") %>
+            <input type="radio" name="options" id="opt-title" checked>By Title
+          </button>
+          <button class="btn btn-app tag-toggle active">
+            <%= radio_button_tag(:sort, "title") %>
+            <input type="radio" name="options" id="opt-tag">By Tag
+          </button>
+        <% end %>   
       </div>
     </div>
     <%= render partial: "recipe_table", locals: {recipe_list: @recipe_list} %>

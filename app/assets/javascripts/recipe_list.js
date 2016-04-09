@@ -90,11 +90,7 @@ $(document).ready(function() {
       var directions = recBox.find('.rec-directions').val();
       var tags = recBox.find('.rec-tags').val();
       var json = JSON.stringify({title: title, directions: directions, ingredients: ingredients, tags: tags});
-      console.log(ingredients);
-      console.log(title);
-      console.log(directions);
-      console.log(json);
-      
+      console.log(tags);
       $.ajax({
            url: "/recipes/save_recipe_json",
            method: "POST",
@@ -120,8 +116,6 @@ $(document).ready(function() {
       var tags = recBox.find('.rec-tags');
       var id = recBox.find('#recipe_id').val();
       
-      console.log(title.text());
-
       if($(this).hasClass('btn-save-updated')){
         $(this).removeClass('btn-save-updated');
 
@@ -133,7 +127,7 @@ $(document).ready(function() {
         tags.css({"border": "none", "pointer-events": "none"});
 
 
-        var json = JSON.stringify({title: title.text(), ingredients: ingredients.text(), directions: directions.text(), tags: tags.text()});
+        var json = JSON.stringify({title: title.val(), ingredients: ingredients.val(), directions: directions.val(), tags: tags.val()});
 
         $.ajax({
           url: "/recipes/update/" + id,
@@ -160,4 +154,14 @@ $(document).ready(function() {
         tags.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
       }     
     });
-  });
+
+    $('.title-toggle').click(function() {
+      var searchBar = $('#search');
+      searchBar.attr('placeholder', 'Tags Names');
+    });
+
+    $('.tag-toggle').click(function() {
+      var searchBar = $('#search');
+      searchBar.attr('placeholder', 'Recipe Title');
+    });
+});
