@@ -1,8 +1,18 @@
 <%= javascript_include_tag 'search_new.js' %>
+<%= javascript_include_tag 'jquery.pleaseWait.js' %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#btn-search-recipe').click(function(){
+      $('body').pleaseWait();
+    });
+  }); 
+</script>
+
 <div class="page-container container">
   <%= render partial: "search_new" %>
-  <div class="search-new-container" style="margin: 50px 85px 0px 0px;"> 
-    <%= leap_button 'Search', {class: 'btn-app pull-right disabled', id: 'btn-search-recipe'}, 'glyphicon-search' %>
+  <div class="search-new-container">
+    <%= leap_button 'Search', {class: 'disabled btn-app pull-right', id: 'btn-search-recipe'}, 'glyphicon-search' %>
     <%= leap_button 'Cancel', {class: 'btn-app pull-right', id: 'btn-cancel-search'} %>
   </div> 
 </div>

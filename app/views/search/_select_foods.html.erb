@@ -7,9 +7,5 @@
   });
 </script>
 
-<div class="col-xs-12">
-  <div class="col-md-12">
-    <%= render partial: "recipes/search_new" %>
-      <%= leap_button 'Next', {class: 'btn-app nextBtn pull-right', id: 'select-food-next', type: 'button'} %>
-  </div>
-</div>
+<%= render partial: "recipes/search_new" %>
+<%= leap_button 'Next', {class: 'btn-app btn-next pull-right', id: 'select-food-next', type: 'button'} %>

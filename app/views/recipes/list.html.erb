@@ -5,7 +5,7 @@
   <!-- pagination -->
   <%= will_paginate @recipe_list %>
   <div class="well recipe-well">
-    <div class="recipe-well-menu">
+    <div class="app-well-menu">
       <button class="btn btn-app" title="Add a new recipe" data-toggle="modal" data-target="#new-recipe-modal" type="button">Quick Add <span class="glyphicon glyphicon-plus"/></button>
       <button id="btn-upload-recipes" class="btn btn-app" title="Upload multiple recipes from file" data-toggle="modal" data-target="#upload-modal" type="button">Upload <span class="glyphicon glyphicon-upload"/></button>
       <%= leap_button 'Delete', {class: 'btn-app disabled', id: 'btn-delete-recipes'}, 'glyphicon-trash' %>

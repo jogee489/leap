@@ -26,7 +26,7 @@
 			}
 
 			.expand-td {
-				width: 10% !important;
+				width: 12% !important;
 			}
 
 			.app-table-title {
@@ -108,8 +108,13 @@
 .meal-plan-table-container {
 	.table {
 		margin: 0;
+		background-color: white;
 		//width: 900px;
 		border: 2px solid rgba(209,209,209,0.50);
+
+		td, th {
+			padding: 10px;
+		}
 
 		.meal-plan-table-section {
 			background-color: $panel-heading-background;
@@ -117,15 +122,19 @@
 			td {
 				font-weight: bold;
 				font-size: 16px;
-				padding: 10px 15px;
 			}
 		}
 
-		.comments-area {
-        resize: none;
-        //border: none;
-        //pointer-events: none;
-        //@include box-shadow(none);
-    }
+		.recipe-list {
+			margin: 0;
+		}
+	}
+}
+
+.comments-area {
+	margin: 0;
+
+	textarea {
+		resize: none;
 	}
 }

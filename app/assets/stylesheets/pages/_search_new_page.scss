@@ -4,14 +4,9 @@
 
 .have-avoid-well {
 	margin: 0 auto;
-	@extend .well-app;
+	@extend .app-well;
 	width: 900px;
 	max-height: 394px;
-}
-
-.have-avoid-menu {
-	padding-bottom: 15px;
-  border-bottom: 2px groove rgba(209,209,209,0.49);
 }
 
 .food-item {

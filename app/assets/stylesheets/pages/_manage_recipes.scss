@@ -1,17 +1,12 @@
 .recipe-well {
 	margin: 0 auto;
-	@extend .well-app;
+	@extend .app-well;
 	width: 1084px;
 	max-height: 629px;
-}
 
-.recipe-well-menu {
-	padding-bottom: 15px;
-  border-bottom: 2px groove rgba(209,209,209,0.49);
-
-  .app-input {
-  	display: inline-block;
-  }
+	.app-well-menu .app-input {
+		display: inline-block;
+	}
 }
 
 .detail-view {

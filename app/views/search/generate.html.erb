@@ -4,15 +4,13 @@
 $(document).ready(function () {
     renderSelectFoods();
     var navListItems = $('div.setup-panel div a'),
-        allWells = $('.setup-content');
+        allWells = $('.generate-container');
             
     allWells.hide();
-
     navListItems.click(function (e) {
         e.preventDefault();
         var $target = $($(this).attr('href')),
             $item = $(this);
-
         if (!$item.hasClass('disabled')) {
             navListItems.removeClass('btn-primary').addClass('btn-default');
             $item.addClass('btn-primary');
@@ -21,7 +19,6 @@ $(document).ready(function () {
             $target.find('input:eq(0)').focus();
         }
     });
-
     $('div.setup-panel div a.btn-primary').trigger('click');
     // Add recipe title to proper position in the preview table.
     $('.add-to').on('click', function (){
@@ -36,7 +33,6 @@ $(document).ready(function () {
       $('.check-rec:checked').each(function() {
         var recipe_id = $(this).closest('tr').find('#recipe_id').val();
         var recipe_name = $(this).closest('tr').find('td').find('label').text();
-
         selected_recipe_names.push(recipe_name);
         selected_id.push(recipe_id);
       });
@@ -51,7 +47,6 @@ $(document).ready(function () {
          .appendTo("#" + option);
       });
     });
-
     // If a recipe in the preview meal plan gets clicked.
     
     // handles delete event in recipe preview table.
@@ -62,7 +57,6 @@ $(document).ready(function () {
     });
      
 });
-
 /* Logic for rendering and showing step-1: select foods */
 function renderSelectFoods() {
     updateStepLink("step-1");
@@ -85,7 +79,6 @@ function renderSelectFoods() {
         }
     });
 }
-
 /* Logic for rendering and showing step-2: find recipes */
 function renderFindRecipes() {
     updateStepLink("step-2");
@@ -116,7 +109,6 @@ function renderFindRecipes() {
         }
     });
 }
-
 /* Logic for rendering and showing step-3: generate meal plan */
 function renderGenerateMealPlan() {
     updateStepLink("step-3");
@@ -139,13 +131,11 @@ function renderGenerateMealPlan() {
         }
     });
 }
-
 /* Ensure the setup wizard links have the proper classes */
 function updateStepLink(stepNumber) {
     $('div.setup-panel div a').removeClass('btn-primary').addClass('btn-default');
     $('.stepwizard-step a[href="#' + stepNumber + '"]').addClass('btn-primary');
 }
-
 function checkErrors() {
     $(".form-group").removeClass("has-error");
     for(var i = 0; i < curInputs.length; i++) {
@@ -163,25 +153,25 @@ function checkErrors() {
  <div class="stepwizard">
      <div class="stepwizard-row setup-panel">
          <div class="stepwizard-step">
-            <%= leap_button '1', {class: 'btn-app', id: 'select-food-next', type: 'button'}, nil, '#step-1' %>
+            <%= leap_button '1', {class: 'btn-app step-app', id: 'select-food-next', type: 'button'}, nil, '#step-1' %>
              <p>SELECT FOODS</p>
          </div>
          <div class="stepwizard-step">
-            <%= leap_button '2', {class: 'btn-app disabled', id: 'select-food-next', type: 'button'}, nil, '#step-2' %>
+            <%= leap_button '2', {class: 'btn-app step-app disabled', id: 'select-food-next', type: 'button'}, nil, '#step-2' %>
              <p>SELECT RECIPES</p>
          </div>
          <div class="stepwizard-step">
-            <%= leap_button '3', {class: 'btn-app disabled', id: 'select-food-next', type: 'button'}, nil, '#step-3' %>
+            <%= leap_button '3', {class: 'btn-app step-app disabled', id: 'select-food-next', type: 'button'}, nil, '#step-3' %>
              <p>GENERATE</p>
          </div>
      </div>
  </div>
  <form role="form">
-    <div class="row setup-content" id="step-1"></div>
+    <div class="row generate-container" id="step-1"></div>
 
-    <div class="row setup-content" id="step-2"></div>
+    <div class="row generate-container" id="step-2"></div>
 
-    <div class="row setup-content" id="step-3"></div>
+    <div class="row generate-container" id="step-3"></div>
  </form>
 </div>
 <!-- Preview meal plan modal box.-->

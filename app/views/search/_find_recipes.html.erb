@@ -5,38 +5,86 @@
     });
   });
 </script>
-<div class="col-xs-12">
-  <div class="col-md-12">
-    <h3> Select Recipes</h3>
+
+<div class="well recipe-well">
+  <div class="app-well-menu">
     <div class="btn-group">
-      <button type="button" class="btn btn-info">Add to <span class="glyphicon glyphicon glyphicon-plus"></span></button>
-      <button type="button" class="btn btn-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="caret"></span>
-      </button>
+      <button type="button" class="btn btn-app" data-toggle="dropdown">Breakfast 
+        <span class="caret"></span></button>
       <ul class="dropdown-menu">
-          <li><a href="#" class="add-to" id="btn-brkOp1">breakfast option 1</a></li>
-          <li><a href="#" class="add-to" id="btn-brkOp2">breakfast option 2</a></li>
-          <li><a href="#" class="add-to" id="btn-brkOp3">breakfast option 3</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#" class="add-to" id="btn-snk1Op1">snack 1 Option 1</a></li>
-          <li><a href="#" class="add-to" id="btn-snk1Op2">snack 1 Option 2</a></li>
-          <li><a href="#" class="add-to" id="btn-snk1Op3">snack 1 Option 3</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#" class="add-to" id="btn-lnhOp1">lunch option 1</a></li>
-          <li><a href="#" class="add-to" id="btn-lnhOp2">lunch option 2</a></li>
-          <li><a href="#" class="add-to" id="btn-lnhOp3">lunch option 3</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#" class="add-to" id="btn-snk2Op1">snack 2 Option 1</a></li>
-          <li><a href="#" class="add-to" id="btn-snk2Op2">snack 2 Option 2</a></li>
-          <li><a href="#" class="add-to" id="btn-snk2Op3">snack 2 Option 3</a></li>        
-          <li role="separator" class="divider"></li>
-          <li><a href="#" class="add-to" id="btn-dnrOp1">dinner option 1</a></li>
-          <li><a href="#" class="add-to" id="btn-dnrOp2">dinner option 2</a></li>
-          <li><a href="#" class="add-to" id="btn-dnrOp3">dinner option 3</a></li>
-      </ul>                   
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-brkOp1">Option 1</a>
+        </li>
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-brkOp2">Option 2</a>
+        </li>
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-brkOp3">Option 3</a>
+        </li>
+      </ul>                
     </div>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#meal-plan-preview-modal">Preview Meal Plan <span class="glyphicon glyphicon-list-alt"></span></button>
-    <%= render partial: "recipes/recipe_table", locals: {recipe_list: @recipe_list} %>
-    <button class="btn btn-primary nextBtn btn-lg pull-right"  id="find-food-next" type="button" style="margin-top:10px;">Next</button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-app" data-toggle="dropdown">Snack 1 
+        <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-snk1Op1">Option 1</a>
+        </li>
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-snk1Op2">Option 2</a>
+        </li>
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-snk1Op2">Option 3</a>
+        </li>
+      </ul>                
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-app" data-toggle="dropdown">Lunch 
+        <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-lnhOp1">Option 1</a>
+        </li>
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-lnhOp2">Option 2</a>
+        </li>
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-lnhOp3">Option 3</a>
+        </li>
+      </ul>                
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-app" data-toggle="dropdown">Snack 2 
+        <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-snk2Op1">Option 1</a>
+        </li>
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-snk2Op2">Option 2</a>
+        </li>
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-snk2Op3">Option 3</a>
+        </li>
+      </ul>                
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-app" data-toggle="dropdown">Dinner 
+        <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-dnrOp1">Option 1</a>
+        </li>
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-dnrOp2">Option 2</a>
+        </li>
+        <li>
+          <button type="button" class="btn btn-app add-to" id="btn-dnrOp3">Option 3</a>
+        </li>
+      </ul>                
+    </div>
+    <button type="button" class="btn btn-app pull-right" data-toggle="modal" data-target="#meal-plan-preview-modal">Preview Meal Plan <span class="glyphicon glyphicon-list-alt"></span></button>
   </div>
+  <%= render partial: "recipes/recipe_table", locals: {recipe_list: @recipe_list} %>  
 </div>
+<button class="btn btn-app btn-next pull-right" id="find-food-next" type="button">Next</button>

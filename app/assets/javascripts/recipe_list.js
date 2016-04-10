@@ -157,7 +157,7 @@ $(document).ready(function() {
 
     $('.title-toggle').click(function() {
       var searchBar = $('#search');
-      searchBar.attr('placeholder', 'Tags Names');
+      searchBar.attr('placeholder', 'Tag Names');
     });
 
     $('.tag-toggle').click(function() {

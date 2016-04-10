@@ -1,14 +1,3 @@
-<script type="text/javascript">
-  $(document).ready(function(){
-    // Hides scroll bar.
-    $('.aut').keyup(function(e) {
-      while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
-        $(this).height($(this).height()+1);
-      };
-    });
-    $('.aut').css('overflow', 'hidden');
-  });
-</script>
 <div class="meal-plan-table-container">
   <table class="table table-bordered">
     <thead>
@@ -24,32 +13,37 @@
     <tbody>
       <tr>
         <td>
-          <ul class="have-avoid-list list-group " id=<%=id+"Op1" %> ></ul>
+          <label>Recipes:</label>
+          <ul class="recipe-list list-group" id=<%=id+"Op1" %> >
+            <li class="list-group-item">Lasagna</li>
+            <li class="list-group-item">Lasagna</li>
+            <li class="list-group-item">Lasagna</li>
+          </ul>
         </td>
         <td>
-          <ul class="have-avoid-list list-group " id=<%=id+"Op2" %> ></ul>
+          <ul class="recipe-list list-group" id=<%=id+"Op2" %> ></ul>
         </td>
         <td>
-          <ul class="have-avoid-list list-group " id=<%=id+"Op3" %> ></ul>
+          <ul class="recipe-list list-group" id=<%=id+"Op3" %> ></ul>
         </td>
       </tr>
       <tr>
         <td>
-          <div class="form-group">
+          <div class="form-group comments-area">
             <label for="comment">Comments:</label>
-            <textarea class="form-control comments-area" rows="5"></textarea>
+            <textarea class="form-control" rows="5"></textarea>
           </div>
         </td>
         <td>
-          <div class="form-group">
+          <div class="form-group comments-area">
             <label for="comment">Comments:</label>
-            <textarea class="form-control comments-area" rows="5"></textarea>
+            <textarea class="form-control" rows="5"></textarea>
           </div>
         </td>
         <td>
-          <div class="form-group">
+          <div class="form-group comments-area">
             <label for="comment">Comments:</label>
-            <textarea class="form-control comments-area" rows="5"></textarea>
+            <textarea class="form-control" rows="5"></textarea>
           </div>
         </td>
       </tr>

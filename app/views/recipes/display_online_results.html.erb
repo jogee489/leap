@@ -1,8 +1,6 @@
 <%= javascript_include_tag 'recipe_table.js' %>
 <%= javascript_include_tag 'recipe_results.js' %>
 
-
-
 <% if $recipe_list %>
 	<% @recipe_list = $recipe_list %>
 	<% $recipe_list = nil %>
@@ -12,11 +10,10 @@
   </script>
 <% end %>
 
-
 <div class="page-container container">
   <!-- pagination -->
   <div class="well recipe-well">
-    <div class="recipe-well-menu">
+    <div class="app-well-menu">
       <span class="select-all-check">
         <a class="btn btn-app" data-color="default">Select All</a>
         <input type="checkbox"/>

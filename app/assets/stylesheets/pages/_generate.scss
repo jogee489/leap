@@ -1,3 +1,11 @@
+#step-1 .btn-next {
+    margin-right: 100px;
+}
+
+#step-2 .btn-next {
+    margin-right: 8px;
+}
+
 .stepwizard-step p {
     margin-top: 10px;
 }
@@ -33,14 +41,10 @@
     position: relative;
 }
 
-#select-food-next {
+.step-app {
     font-size: 16px;
     padding: 10px 15px;
     font-weight: bold;
-}
-
-.nextBtn {
-  margin: 50px 70px 0px 0px;
 }
 
 #meal-plan-preview-modal {
@@ -58,5 +62,27 @@
 
     #btn-delete-preview {
         margin: 15px 0px;
+    }
+}
+
+.add-to {
+    width: 100%;
+    opacity: 0.9;
+    //&:hover {
+    //    background-color: darken($navbar-background, 5%);
+    //}
+}
+
+/* step-3 content */
+.generate-well {
+    @extend .app-well;
+
+    h3 {
+        font-family: 'Oleo Script', cursive;
+        font-weight: bold;
+    }
+
+    .meal-plan-result {
+        margin-top: 15px;
     }
 }
