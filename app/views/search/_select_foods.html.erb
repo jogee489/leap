@@ -1,11 +1,11 @@
 <%= javascript_include_tag 'search_new.js' %>
 <script type="text/javascript">
   $(document).ready(function () {
-    $('#select-food-next').click(function() {
+    $('#btn-select-food-next').click(function() {
       renderFindRecipes();
     });
   });
 </script>
 
 <%= render partial: "recipes/search_new" %>
-<%= leap_button 'Next', {class: 'btn-app btn-next pull-right', id: 'select-food-next', type: 'button'} %>
+<%= leap_button 'Next', {class: 'btn-app btn-next pull-right', id: 'btn-select-food-next', type: 'button'} %>

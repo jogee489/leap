@@ -1,6 +1,8 @@
+<%= javascript_include_tag 'recipe_table.js' %>
+<%= javascript_include_tag 'recipe_results.js' %>
 <script type="text/javascript">
   $(document).ready(function () {
-    $('#find-food-next').click(function() {
+    $('#btn-find-food-next').click(function() {
       renderGenerateMealPlan();
     });
   });
@@ -87,4 +89,4 @@
   </div>
   <%= render partial: "recipes/recipe_table", locals: {recipe_list: @recipe_list} %>  
 </div>
-<button class="btn btn-app btn-next pull-right" id="find-food-next" type="button">Next</button>
+<%= leap_button 'Next', {class: 'btn-app btn-next pull-right', id: 'btn-find-food-next'} %>

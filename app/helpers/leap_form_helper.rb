@@ -42,11 +42,9 @@ module LeapFormHelper
     button_class = html_options[:class] || ''
     button_id = html_options[:id] || ''
     button_type = html_options[:type] || 'button'
-    href = "href='#{path}'" if path.present?
-    href ||= ''
 
     <<-EOS.html_safe
-      <button class="btn #{button_class}" id="#{button_id}" type="#{button_type} #{href}">
+      <button class="btn #{button_class}" id="#{button_id}" type="#{button_type}">
         #{text}
         #{span}
       </button>
