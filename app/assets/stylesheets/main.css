@@ -191,7 +191,7 @@ footer {
 .btn-main {
   background: none;
   font-size: 1.2em;
-  min-width: 161px;
+  min-width: 175px;
   height: 49px;
   padding: 10px;
   color: white;
@@ -390,6 +390,9 @@ footer {
         .app-table .table .app-table-tr .app-table-details td, .recipe-table-container .table .app-table-tr .app-table-details td, .food-table-container .table .app-table-tr .app-table-details td {
           background-color: white; }
 
+.table-selected-tr {
+  opacity: 1; }
+
 .recipe-table-container {
   max-height: 517px; }
   .recipe-table-container .check-app label {
@@ -445,20 +448,28 @@ footer {
     width: 862px; }
 
 /* meal plan table */
-.meal-plan-table-container .table {
+.generate-table-container .table {
   margin: 0;
   background-color: white;
   border: 2px solid rgba(209, 209, 209, 0.5); }
-  .meal-plan-table-container .table td, .meal-plan-table-container .table th {
-    padding: 10px; }
-  .meal-plan-table-container .table .meal-plan-table-section {
+  .generate-table-container .table td, .generate-table-container .table th {
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .generate-table-container .table .generate-table-section {
     background-color: #6b4258;
     color: white; }
-    .meal-plan-table-container .table .meal-plan-table-section td {
+    .generate-table-container .table .generate-table-section td {
       font-weight: bold;
+      text-transform: uppercase;
       font-size: 16px; }
-  .meal-plan-table-container .table .recipe-list {
-    margin: 0; }
+  .generate-table-container .table .recipe-list {
+    margin: 0;
+    width: 335px; }
+  .generate-table-container .table .foods-list {
+    margin: 0;
+    width: 514px; }
 
 .comments-area {
   margin: 0; }
@@ -519,7 +530,7 @@ footer {
     transition: all 0.3s ease-in-out 0s; }
   .img-box:hover .main-thumbnail-img {
     opacity: 0.1; }
-  .img-box:hover .btn-main-container * .btn, .img-box:hover .btn-main-container * .btn-main, .img-box:hover .btn-main-container * .btn-app {
+  .img-box:hover .btn-main-container .btn-main {
     display: block; }
 
 .btn-main-container {
@@ -527,9 +538,8 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
-  .btn-main-container * .btn, .btn-main-container * .btn-main, .btn-main-container * .btn-app {
-    display: block;
-    margin-bottom: 15px;
+  .btn-main-container .btn-main {
+    margin-bottom: 20px;
     display: none; }
 
 #step-1 .btn-next {
@@ -579,16 +589,36 @@ footer {
   width: calc(100vw - 100px); }
 #meal-plan-preview-modal #btn-delete-preview {
   margin: 15px 0px; }
+#meal-plan-preview-modal .recipe-list {
+  /* recipes * 5 */
+  height: -webkit-calc(42px * 5);
+  height: -moz-calc(42px * 5);
+  height: -ms-calc(42px * 5);
+  height: calc(42px * 5);
+  overflow-y: auto; }
+  #meal-plan-preview-modal .recipe-list li {
+    cursor: pointer; }
 
-.add-to {
-  width: 100%;
-  opacity: 0.9; }
+.dropdown-add-to .btn-add-to:focus {
+  opacity: 1;
+  background-color: #006953; }
+.dropdown-add-to .dropdown-menu {
+  background-color: white;
+  color: white; }
+  .dropdown-add-to .dropdown-menu button {
+    opacity: 1;
+    width: 100%; }
+    .dropdown-add-to .dropdown-menu button:hover {
+      background-color: #008367;
+      color: #e0e0e0; }
 
 /* step-3 content */
 .generate-well h3 {
   font-family: 'Oleo Script', cursive;
   font-weight: bold; }
 .generate-well .meal-plan-result {
+  margin-top: 15px; }
+.generate-well .additional-comments {
   margin-top: 15px; }
 
 .have-avoid-list {
@@ -693,10 +723,7 @@ footer {
     height: calc(42px * 5);
     overflow-y: auto; }
     .foods-panel .list-group li {
-      cursor: pointer;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis; }
+      cursor: pointer; }
 
 .foods-panel-menu {
   padding-bottom: 15px;

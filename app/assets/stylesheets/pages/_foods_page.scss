@@ -24,7 +24,7 @@
 
     li {
       cursor: pointer;
-      @include abbreviate-text();
+      //@include abbreviate-text();
     }
   }
 }

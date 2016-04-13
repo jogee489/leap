@@ -45,6 +45,10 @@
 	}
 }
 
+.table-selected-tr {
+	opacity: 1;
+}
+
 .recipe-table-container {
   @extend .app-table;
   max-height: 517px;
@@ -105,7 +109,7 @@
 }
 
 /* meal plan table */
-.meal-plan-table-container {
+.generate-table-container {
 	.table {
 		margin: 0;
 		background-color: white;
@@ -114,19 +118,27 @@
 
 		td, th {
 			padding: 10px;
+			@include abbreviate-text();
 		}
 
-		.meal-plan-table-section {
+		.generate-table-section {
 			background-color: $panel-heading-background;
 			color: white;
 			td {
 				font-weight: bold;
+				text-transform: uppercase;
 				font-size: 16px;
 			}
 		}
 
 		.recipe-list {
 			margin: 0;
+			width: 335px;
+		}
+
+		.foods-list {
+			margin: 0;
+			width: 514px;
 		}
 	}
 }

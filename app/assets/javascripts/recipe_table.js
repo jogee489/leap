@@ -3,7 +3,8 @@ $(document).ready(function() {
 	// Logic for expanding recipe details when + or - is pressed.
     $(".expand-icon").click(function() {
       $(this).closest("tr").next(".app-table-details").toggle('slow');
-      $(this).closest("tr").css({"opacity": "1"});
+      //$(this).closest("tr").css({"opacity": "1"});
+      $(this).closest("tr").toggleClass(".table-selected-tr");
       $(this).toggleClass("glyphicon-chevron-down");
       $(this).toggleClass("glyphicon-chevron-up");
     }); 

@@ -161,40 +161,39 @@ $(document).ready(function() {
     $(".check-rec").bind('change', function() {
       var numChecked = $('.check-rec:checked').size();
       var maxChecked = $('.check-rec').size();
-      // Remove btn-app-disabled class if recipes selected and has class btn-app-disabled
-      if ($('#btn-delete-recipes').hasClass("btn-app-disabled") && numChecked > 0) {
-        $('#btn-delete-recipes').removeClass("btn-app-disabled");
-        $('#btn-save-recipes').removeClass("btn-app-disabled");
+      // Remove disabled class if recipes selected and has class disabled
+      if ($('#btn-delete-recipes').hasClass("disabled") && numChecked > 0) {
+        $('#btn-delete-recipes').removeClass("disabled");
+        $('#btn-save-recipes').removeClass("disabled");
        } else if (numChecked == 0) { // disable delete when none checked
-        $('#btn-delete-recipes').addClass("btn-app-disabled");
-        $('#btn-save-recipes').addClass("btn-app-disabled");
+        $('#btn-delete-recipes').addClass("disabled");
+        $('#btn-save-recipes').addClass("disabled");
        }
        // Update select all button
        if (numChecked == maxChecked){
-        $(".select-all-check").find("a").text("Deselect All");
+        $(".btn-select-all").html('Select All <span class="glyphicon glyphicon-check"></span>');
        } else {
-        $(".select-all-check").find("a").text("Select All");
+        $(".btn-select-all").html('Select All <span class="glyphicon glyphicon-unchecked"></span>');
        }
     });
 
     // Select all pressed.
-    $(".select-all-check").click(function() {
-      var selectAll = $(".select-all-check").find("a");
-      var text = selectAll.text();
+    $(".btn-select-all").click(function() {
+      var selectAll = $(".btn-select-all");
       // Select all when text is 'Select All' otherwise deselect all.
-      if (text == "Select All") {
+      if ($(this).is(':has(span.glyphicon-unchecked)')) {
         $(".check-rec").prop('checked', true);
-        selectAll.text("Deselect All");
+        selectAll.html('Select All <span class="glyphicon glyphicon-check"></span>');
         // Enable delete and save if they are disabled.
-        if ($('#btn-delete-recipes').hasClass("btn-app-disabled")) {
-          $('#btn-delete-recipes').removeClass("btn-app-disabled");
-          $('#btn-save-recipes').removeClass("btn-app-disabled");
+        if ($('#btn-delete-recipes').hasClass("disabled")) {
+          $('#btn-delete-recipes').removeClass("disabled");
+          $('#btn-save-recipes').removeClass("disabled");
         }
       } else {
-        selectAll.text("Select All");
+        selectAll.html('Select All <span class="glyphicon glyphicon-unchecked"></span>');
         $(".check-rec").prop('checked', false);
-        $('#btn-delete-recipes').addClass("btn-app-disabled");
-        $('#btn-save-recipes').addClass("btn-app-disabled");
+        $('#btn-delete-recipes').addClass("disabled");
+        $('#btn-save-recipes').addClass("disabled");
       }
     });
 

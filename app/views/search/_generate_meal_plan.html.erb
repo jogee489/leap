@@ -4,18 +4,53 @@
   </div>
   <div class="meal-plan-result">
     <!-- BREAKFAST TABLE -->
-    <%= render partial: "meal_table", locals: {meal_name: "BREAKFAST", id: "brk"} %>
+    <%= render partial: "meal_table", locals: {meal_name: "Breakfast", id: "brk"} %>
     <!-- SNACK 1 TABLE -->
-    <%= render partial: "meal_table", locals: {meal_name: "SNACK 1", id: "snk1"} %>
+    <%= render partial: "meal_table", locals: {meal_name: "Snack 1", id: "snk1"} %>
     <!-- LUNCH TABLE -->
-    <%= render partial: "meal_table", locals: {meal_name: "LUNCH", id: "lnh"} %>
+    <%= render partial: "meal_table", locals: {meal_name: "Lunch", id: "lnh"} %>
     <!-- SNACK 2 TABLE -->
-    <%= render partial: "meal_table", locals: {meal_name: "SNACK 2", id: "snk2"} %>
+    <%= render partial: "meal_table", locals: {meal_name: "Snack 2", id: "snk2"} %>
     <!-- DINNER 2 TABLE -->
-    <%= render partial: "meal_table", locals: {meal_name: "DINNER", id: "dnr"} %>
+    <%= render partial: "meal_table", locals: {meal_name: "Dinner", id: "dnr"} %>
   </div>
   <div class="app-well-menu">
     <h3>Food Items To Have/Avoid</h3>
+    <div class="generate-table-container">
+      <table class="table table-bordered">
+        <thead>
+          <tr class="generate-table-section text-center">
+            <td colspan="3">Food Items</td>
+          </tr>
+          <tr class="text-center">
+          <th>To Have</th>
+          <th>To Avoid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+            <ul class="foods-list list-group" id="gen-to-have-list">
+              <li class="list-group-item">Pear</li>
+              <li class="list-group-item">Cheese</li>
+              <li class="list-group-item">Pumpkin</li>
+              <li class="list-group-item">Peanut</li>
+              <li class="list-group-item">Kale</li>
+            </ul>
+          </td>
+          <td>
+            <ul class="foods-list list-group" id="gen-to-avoid-list">
+              <li class="list-group-item">Wheatddddddddddddddddddddddddddddddddddddddddddddddddd</li>
+              <li class="list-group-item">Milk</li>
+              <li class="list-group-item">Broccoli</li>
+              <li class="list-group-item">Pasta</li>
+              <li class="list-group-item">Bread</li>
+            </ul>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
   <div class="app-well-menu">
     <h3>Recipes</h3>

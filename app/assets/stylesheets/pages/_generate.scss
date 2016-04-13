@@ -63,14 +63,42 @@
     #btn-delete-preview {
         margin: 15px 0px;
     }
+
+    .recipe-list {
+        /* recipes * 5 */
+        @include calc(height, '42px * 5');
+        overflow-y: auto;
+
+        li {
+            cursor: pointer;
+        }
+    }
 }
 
-.add-to {
-    width: 100%;
-    opacity: 0.9;
-    //&:hover {
-    //    background-color: darken($navbar-background, 5%);
-    //}
+.dropdown-add-to {
+
+    .btn-add-to:focus {
+        opacity: 1;
+        background-color: darken($navbar-background, 10%);
+    }
+
+    .dropdown-menu {
+        background-color: white;
+        
+        color: white;
+
+        button {
+            opacity: 1;
+            width: 100%;
+
+            &:hover {
+                background-color: darken($navbar-background, 5%);
+                color: $navbar-font-hover;
+            }
+        }
+    }
+
+    //background-color: darken($navbar-background, 5%);
 }
 
 /* step-3 content */
@@ -83,6 +111,10 @@
     }
 
     .meal-plan-result {
+        margin-top: 15px;
+    }
+
+    .additional-comments {
         margin-top: 15px;
     }
 }
