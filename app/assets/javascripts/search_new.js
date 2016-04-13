@@ -98,19 +98,7 @@ $(function () {
 
   /** Show all items of a category. */
   $(".app-table-tr").click(function() {
-    // Show that recipe detail clicked tr.
-    $(this).next().toggle('fast');
-    // Change gliphicon arrow up and down.
-    var $id = $(this).find('.glyphicon');
-    $id.toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
-
-    if ($id.hasClass("glyphicon-chevron-up")) {
-      /* This should be handled by css, not js */
-      $(this).css({"opacity": '1'});
-    } else {
-      /* This should be handled by css, not js */
-      $(this).css({"opacity": '0.9'});
-    }
+    showFoodItemList($(this));
   });
 
   /** Hightlist food items in category list and toggle have/avoid buttons. */
@@ -168,4 +156,25 @@ function retriveFoodItemList() {
   $('#btn-have, #btn-avoid').addClass("disabled");
   $('#btn-move-left, #btn-move-right, #btn-search-recipe').removeClass("disabled");
   return $foodsToAdd;
+}
+
+/**
+ * Show the food items for the clicked Category
+ *
+ * @params $categoryToExpand the tr jquery object.
+ */
+function showFoodItemList($categoryToExpand) {
+  // Show that recipe detail clicked tr.
+    $categoryToExpand.next().toggle('fast');
+    // Change gliphicon arrow up and down.
+    var $id = $(this).find('.glyphicon');
+    $id.toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
+
+    if ($id.hasClass("glyphicon-chevron-up")) {
+      /* This should be handled by css, not js */
+      $categoryToExpand.css({"opacity": '1'});
+    } else {
+      /* This should be handled by css, not js */
+      $categoryToExpand.css({"opacity": '0.9'});
+    }
 }
