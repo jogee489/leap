@@ -8,4 +8,9 @@ class FoodItem < ActiveRecord::Base
     write_attribute(:name, s.to_s.capitalize) # The to_s is in case you get nil/non-string
   end
 
+  def self.search(name)
+  		where("name like ?", "%#{name}%")
+  	end
+  
+
 end

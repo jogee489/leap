@@ -25,7 +25,11 @@ class RecipesController < ApplicationController
 	end
 	
 	def search_new
-       @category_list = Category.sorted
+		if params[:search]
+			@category_list = Category.search(params[:search])
+       	else
+       		@category_list = Category.sorted
+       	end
 	end
 
 	def index

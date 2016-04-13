@@ -131,6 +131,29 @@ $(function () {
     location.reload();
   });
 
+   $('#search-btn').click(function() {
+    var search = $(this).next().val();
+ 
+    var foodList = [];
+    
+    $('td li').each(function() { 
+      if(search == $(this).text()) {
+        $(this).addClass('highlight-item');
+        var cat = $(this).closest('tr').prev();
+        var id = cat.find('.glyphicon');
+
+        if(id.hasClass('glyphicon-chevron-down')){
+          showFoodItemList($(this).closest('tr').prev());
+        }
+
+        var categoryName = cat.find('.app-table-title').text();
+        $('#search-category').text("Found in " + categoryName);
+      }
+    });
+  });
+
+
+
 });
 
 /**
@@ -158,6 +181,8 @@ function retriveFoodItemList() {
   return $foodsToAdd;
 }
 
+ 
+
 /**
  * Show the food items for the clicked Category
  *
@@ -167,7 +192,7 @@ function showFoodItemList($categoryToExpand) {
   // Show that recipe detail clicked tr.
     $categoryToExpand.next().toggle('fast');
     // Change gliphicon arrow up and down.
-    var $id = $(this).find('.glyphicon');
+    var $id = $categoryToExpand.find('.glyphicon');
     $id.toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
 
     if ($id.hasClass("glyphicon-chevron-up")) {

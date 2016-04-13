@@ -33,11 +33,21 @@
 <!-- Now here goes the table -->
 
 <div class="well have-avoid-well">
-  <div class="app-well-menu">
-    <%= leap_button 'Have', {class: 'btn-app disabled btn-have-avoid', id: 'btn-have'}, 'glyphicon-plus' %>
-    <%= leap_button 'Avoid', {class: 'btn-app disabled btn-have-avoid', id: 'btn-avoid'}, 'glyphicon-minus' %>
-  </div>
-  <div class="food-table-container">
+    <div class="app-well-menu pull-left" style="display: inline-block">
+    
+      <%= leap_button 'Have', {class: 'btn-app disabled btn-have-avoid', id: 'btn-have'}, 'glyphicon-plus' %>
+      <%= leap_button 'Avoid', {class: 'btn-app disabled btn-have-avoid', id: 'btn-avoid'}, 'glyphicon-minus' %>
+      
+    </div>
+
+    <strong id="search-category"></strong>
+  
+    <div class="btn-group pull-right" style="display: inline-block">
+      <%= leap_button 'Search', {class: 'btn-app', id: 'search-btn', type: 'submit'},'glyphicon-search' %>
+      <%= text_field_tag :search, params[:search], class: "form-control",
+        placeholder: "Food Item" %>
+    </div>
+  <div class="food-table-container" style="clear: both;">
     <table class="table">          
       <tbody>
         <% @category_list.each do |cat| %>
