@@ -32,4 +32,12 @@ class Recipe < ActiveRecord::Base
   		return recipe_list
   	end
 
+    def formatIngredients
+      ingredients.gsub('", "', "\n").delete('"[]')
+    end
+
+    def formatDirections
+      directions.gsub('", "', ' ').delete('"[]')
+    end
+
 end
