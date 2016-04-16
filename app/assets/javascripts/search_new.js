@@ -20,10 +20,11 @@ $(function () {
         type: "POST",
         url: "/recipes/search_online",
         timeout: 0,
+        dataType: "json",
         data: { foods_to_include: haveList,
                 foods_to_exclude: avoidList },
-        success: function() {
-          window.location.replace("/recipes/display_online_results")
+        success: function(data) {
+          window.location.replace("/recipes/display_online_results?recipe_links=" + data.recipe_links);
         }
       });
   });

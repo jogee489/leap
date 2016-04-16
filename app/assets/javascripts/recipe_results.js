@@ -197,6 +197,25 @@ $(document).ready(function() {
       }
     });
 
+    /** Search for more recipes and replace the current recipe table */
+    $('#btn-search-again').click(function() {
+      var recipe_links = $('#recipe_links').val();
+      $('body').pleaseWait();
+      $.ajax({
+        type: "POST",
+        url: "/recipes/search_again",
+        timeout: 0,
+        dataType: 'json',
+        data: { recipe_links: recipe_links },
+        success: function(data) {
+          window.location.replace("/recipes/display_online_results?recipe_links=" + data.recipe_links)
+        },
+        error: function() {
+          alert("No additional recipes were found");
+        }
+      });
+    });
+
   });
 /**
  * Check the size of the recipe list. Redirect to the manage recipes page when

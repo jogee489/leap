@@ -48,9 +48,8 @@ class RecipesController < ApplicationController
 		end
 	end
 
-	#def show
-	#	redirect_to action: 'destroy'
-	#end
+	def show
+	end
 
 	def new
 		@recipe = Recipe.new
@@ -118,13 +117,31 @@ class RecipesController < ApplicationController
 	def search_online
 		$recipe_list = web_crawl_blog if params[:foods_to_include].present?
 		if $recipe_list
-			render status: 200, nothing: true
+			puts @recipe_links
+			respond_to do |format|
+				message = { status: 200, recipe_links: @recipe_links }
+				format.json { render json: message }
+			end
 		else
 			render status: 404, nothing: true
 		end
 	end
 
+	def search_again
+		@recipe_links = []
+		# Split up the recipe links and add them to the @recipe_links
+		@recipe_links = params[:recipe_links].split(',')
 
+		$recipe_list = scrape_recipes if @recipe_links.present?
+		if $recipe_list
+			respond_to do |format|
+				message = { status: 200, recipe_links: @recipe_links }
+				format.json { render json: message }
+			end
+		else
+			render status: 404, nothing: true
+		end
+	end
 
 
   private
@@ -157,34 +174,33 @@ class RecipesController < ApplicationController
 
   	def web_crawl_blog
 		# Variables
-		@recipeList = []
 		page_url = "http://realfitrealfoodmom.com/?s=-blog+recipe"
 		foods_include = params[:foods_to_include]
 		foods_exclude = params[:foods_to_exclude]
-		num_of_recipes = 0
-		j = 0
-
-		# Construct initial URL method
-		def constructInitialURL(baseURL, food_items)
-			food_items.each {|food| baseURL << "+#{food}"}
-			baseURL << '&submit=Go'
-		end
 
 		# Iterate through food items to construct page_url.
-		constructInitialURL(page_url, foods_include)
+		foods_include.each {|food| page_url << "+#{food}"}
+		page_url << '&submit=Go'
 		
 		# Request and open the page.
-		page = Nokogiri::HTML(open(page_url))   
-		
+		page = Nokogiri::HTML(open(page_url))
 		# get <a> tags which contains recipe links.
 		temp_partial_links = page.css("h1.entry-title a")
 		# keep only href links.
-		recipe_links = temp_partial_links.map{|element| element["href"]}.compact
+		@recipe_links = temp_partial_links.map{|element| element["href"]}.compact
+		scrape_recipes
 		
-		while j < (recipe_links.count - 1)  and num_of_recipes < MAX_NUM_OF_RECIPES do
+  	end
+
+  	def scrape_recipes
+		@recipeList = []
+		num_of_recipes = 0
+
+		# Iterate over links while there are still links and max has not been reached.
+		while @recipe_links.any?  and num_of_recipes < MAX_NUM_OF_RECIPES do
 			method_flag = true # Flag indicating which method to use to find directions.
-			# Open the page
-			recipe_page = Nokogiri::HTML(open(recipe_links[j]))
+			recipe_page = Nokogiri::HTML(open(@recipe_links[0]))
+
 			# Grab the recipe title
 			title = recipe_page.at_css("h1.entry-title").text
 
@@ -194,10 +210,10 @@ class RecipesController < ApplicationController
 			unorganized_ingredients = recipe_page.css("li.ingredient")
 			# try a new method if ingredients were not found.
 			if unorganized_ingredients.blank?
-				##### Issue with multiple ul inside div.entry-content
+				# Issue with multiple ul inside div.entry-content. Only scrape when one ul.
 				ul = recipe_page.css("div.entry-content ul")
 				if (ul.count > 1 or ul.count == 0)
-					j += 1
+					@recipe_links.delete_at(0)
 					next
 				end
 				unorganized_ingredients = recipe_page.css("div.entry-content li")
@@ -205,7 +221,7 @@ class RecipesController < ApplicationController
 			end
 			# give up on parsing this page and try another link
 			if unorganized_ingredients.blank?
-				j += 1
+					@recipe_links.delete_at(0)
 				next
 			end
 			unorganized_ingredients.each {|item| ingredients.push item.text}
@@ -223,14 +239,16 @@ class RecipesController < ApplicationController
 				end
 			end
 
-			j += 1
+			@recipe_links.delete_at(0)
 			num_of_recipes += 1
 
 			@recipeList.push(Recipe.new(title: title, ingredients: ingredients, directions: directions))
 		end
 		
 		return @recipeList
+
   	end
+
 
   	def web_crawl
 

@@ -1,5 +1,6 @@
 <%= javascript_include_tag 'recipe_table.js' %>
 <%= javascript_include_tag 'recipe_results.js' %>
+<%= javascript_include_tag 'jquery.pleaseWait.js' %>
 
 <% if $recipe_list %>
 	<% @recipe_list = $recipe_list %>
@@ -19,5 +20,9 @@
       <%= leap_button 'Delete', {class: 'btn-app', id: 'btn-delete-recipes'}, 'glyphicon-trash' %>
     </div>
     <%= render partial: "recipe_table", locals: {recipe_list: @recipe_list} %>
+    <div class="search-new-container pull-right">
+      <%= leap_button 'Search Again', {class: 'btn-app', id: 'btn-search-again', type: 'submit'}, 'glyphicon-search' %>
+      <%= hidden_field('recipe', 'links', value: params[:recipe_links]) %>
+    </div>
   </div>
 </div>
