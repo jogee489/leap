@@ -33,11 +33,23 @@ class Recipe < ActiveRecord::Base
   	end
 
     def formatIngredients
-      ingredients.gsub('", "', "\n").delete('"[]')
+      if ingredients.kind_of?(Array)
+        string = ""
+        ingredients.each { |item| string << "#{item}\n" }
+        string.strip
+      else
+        ingredients.gsub('", "', "\n").delete('"[]')
+      end
     end
 
     def formatDirections
-      directions.gsub('", "', ' ').delete('"[]')
+      if directions.kind_of?(Array)
+        string = ""
+        directions.each{ |item| string << "#{item} "}
+        string.strip
+      else
+        directions.gsub('", "', ' ').delete('"[]')
+      end
     end
 
 end
