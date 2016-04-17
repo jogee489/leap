@@ -83,6 +83,10 @@ input {
 .app-modal {
 	background-color: rgba(107,66,88,0.90);
 
+  .modal-body {
+    padding: 15px 0px 0px 0px;
+  }
+
   .modal-dialog {
     margin: auto;
   }
@@ -131,6 +135,35 @@ input {
 		}
 	}
 }
+
+/* loading modal */
+
+#loading-modal {
+  @extend .app-modal;
+  cursor: wait;
+
+  .modal-dialog {
+    @include center-obj();
+  }
+
+  .modal-header {
+    border: none;
+    padding: 0;
+  }
+
+  .progress {
+    margin: 0;
+
+    .progress-bar {
+      background-color: $navbar-background;
+      opacity: 0.5;
+      border: none;
+      @include border-radius(0 !important);
+    }
+  }
+}
+
+
 
 .thumbnail {
 	border: none;

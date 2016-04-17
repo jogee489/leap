@@ -1,18 +1,25 @@
 <%= javascript_include_tag 'search_new.js' %>
 <%= javascript_include_tag 'jquery.pleaseWait.js' %>
 
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#btn-search-recipe').click(function(){
-      $('body').pleaseWait();
-    });
-  }); 
-</script>
-
 <div class="page-container container">
   <%= render partial: "search_new" %>
   <div class="search-new-container">
-    <%= leap_button 'Search', {class: 'disabled btn-app pull-right', id: 'btn-search-recipe'}, 'glyphicon-search' %>
+    <button class="disabled btn btn-app pull-right" id="btn-search-recipe" data-toggle="modal" data-target="#loading-modal" type="button">Search <span class="glyphicon glyphicon-search"/></button>
     <%= leap_button 'Cancel', {class: 'btn-app pull-right', id: 'btn-cancel-search'} %>
   </div> 
+</div>
+<div>
+  <div id="loading-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Searching for Recipes...</h3>
+      </div>
+      <div class="modal-body">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:100%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

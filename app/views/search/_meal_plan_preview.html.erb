@@ -5,17 +5,19 @@
         <button class="btn close" data-dismiss="modal" type="button"><span class="glyphicon glyphicon-remove"/></button>
         <h3 class="modal-title">Preview Meal Plan</h3>
       </div>
-      <%= leap_button 'Delete Recipes', {class: 'btn-app disabled', id: 'btn-delete-preview'}, 'glyphicon-trash' %>
-      <!-- BREAKFAST TABLE -->
-      <%= render partial: "meal_table", locals: {meal_name: "BREAKFAST", id: "brk"} %>
-      <!-- SNACK 1 TABLE -->
-      <%= render partial: "meal_table", locals: {meal_name: "SNACK 1", id: "snk1"} %>
-      <!-- LUNCH TABLE -->
-      <%= render partial: "meal_table", locals: {meal_name: "LUNCH", id: "lnh"} %>
-      <!-- SNACK 2 TABLE -->
-      <%= render partial: "meal_table", locals: {meal_name: "SNACK 2", id: "snk2"} %>
-      <!-- DINNER 2 TABLE -->
-      <%= render partial: "meal_table", locals: {meal_name: "DINNER", id: "dnr"} %>
+      <div class="modal-body">
+        <%= leap_button 'Delete Recipes', {class: 'btn-app disabled', id: 'btn-delete-preview'}, 'glyphicon-trash' %>
+        <!-- BREAKFAST TABLE -->
+        <%= render partial: "meal_table", locals: {meal_name: "BREAKFAST", id: "brk"} %>
+        <!-- SNACK 1 TABLE -->
+        <%= render partial: "meal_table", locals: {meal_name: "SNACK 1", id: "snk1"} %>
+        <!-- LUNCH TABLE -->
+        <%= render partial: "meal_table", locals: {meal_name: "LUNCH", id: "lnh"} %>
+        <!-- SNACK 2 TABLE -->
+        <%= render partial: "meal_table", locals: {meal_name: "SNACK 2", id: "snk2"} %>
+        <!-- DINNER 2 TABLE -->
+        <%= render partial: "meal_table", locals: {meal_name: "DINNER", id: "dnr"} %>
+      </div>
     </div>
   </div>
 </div>

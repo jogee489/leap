@@ -60,11 +60,13 @@ input {
   width: 264px; }
 
 /* default modal box */
-.app-modal, #meal-plan-preview-modal, #new-recipe-modal, #upload-modal {
+.app-modal, #loading-modal, #meal-plan-preview-modal, #new-recipe-modal, #upload-modal {
   background-color: rgba(107, 66, 88, 0.9); }
-  .app-modal .modal-dialog, #meal-plan-preview-modal .modal-dialog, #new-recipe-modal .modal-dialog, #upload-modal .modal-dialog {
+  .app-modal .modal-body, #loading-modal .modal-body, #meal-plan-preview-modal .modal-body, #new-recipe-modal .modal-body, #upload-modal .modal-body {
+    padding: 15px 0px 0px 0px; }
+  .app-modal .modal-dialog, #loading-modal .modal-dialog, #meal-plan-preview-modal .modal-dialog, #new-recipe-modal .modal-dialog, #upload-modal .modal-dialog {
     margin: auto; }
-  .app-modal .modal-content, #meal-plan-preview-modal .modal-content, #new-recipe-modal .modal-content, #upload-modal .modal-content {
+  .app-modal .modal-content, #loading-modal .modal-content, #meal-plan-preview-modal .modal-content, #new-recipe-modal .modal-content, #upload-modal .modal-content {
     margin: 50px;
     border: none;
     -webkit-border-radius: 0 !important;
@@ -72,15 +74,15 @@ input {
     -ms-border-radius: 0 !important;
     border-radius: 0 !important;
     padding: 15px; }
-  .app-modal .modal-header, #meal-plan-preview-modal .modal-header, #new-recipe-modal .modal-header, #upload-modal .modal-header {
+  .app-modal .modal-header, #loading-modal .modal-header, #meal-plan-preview-modal .modal-header, #new-recipe-modal .modal-header, #upload-modal .modal-header {
     border-bottom: 2px groove rgba(209, 209, 209, 0.5);
     padding: 0px 0px 15px 0px;
     font-size: 1.5em;
     font-weight: bold; }
-    .app-modal .modal-header h3, #meal-plan-preview-modal .modal-header h3, #new-recipe-modal .modal-header h3, #upload-modal .modal-header h3 {
+    .app-modal .modal-header h3, #loading-modal .modal-header h3, #meal-plan-preview-modal .modal-header h3, #new-recipe-modal .modal-header h3, #upload-modal .modal-header h3 {
       font-family: 'Oleo Script', cursive;
       font-weight: bold; }
-    .app-modal .modal-header .close, #meal-plan-preview-modal .modal-header .close, #new-recipe-modal .modal-header .close, #upload-modal .modal-header .close {
+    .app-modal .modal-header .close, #loading-modal .modal-header .close, #meal-plan-preview-modal .modal-header .close, #new-recipe-modal .modal-header .close, #upload-modal .modal-header .close {
       color: #333;
       border: none;
       margin: 0;
@@ -90,12 +92,34 @@ input {
       -moz-transition: all 0.1s ease-in-out 0s;
       -ms-transition: all 0.1s ease-in-out 0s;
       transition: all 0.1s ease-in-out 0s; }
-      .app-modal .modal-header .close .glyphicon, #meal-plan-preview-modal .modal-header .close .glyphicon, #new-recipe-modal .modal-header .close .glyphicon, #upload-modal .modal-header .close .glyphicon {
+      .app-modal .modal-header .close .glyphicon, #loading-modal .modal-header .close .glyphicon, #meal-plan-preview-modal .modal-header .close .glyphicon, #new-recipe-modal .modal-header .close .glyphicon, #upload-modal .modal-header .close .glyphicon {
         font-size: 0.7em; }
-      .app-modal .modal-header .close:hover, #meal-plan-preview-modal .modal-header .close:hover, #new-recipe-modal .modal-header .close:hover, #upload-modal .modal-header .close:hover {
+      .app-modal .modal-header .close:hover, #loading-modal .modal-header .close:hover, #meal-plan-preview-modal .modal-header .close:hover, #new-recipe-modal .modal-header .close:hover, #upload-modal .modal-header .close:hover {
         opacity: 0.8; }
-      .app-modal .modal-header .close:focus, #meal-plan-preview-modal .modal-header .close:focus, #new-recipe-modal .modal-header .close:focus, #upload-modal .modal-header .close:focus {
+      .app-modal .modal-header .close:focus, #loading-modal .modal-header .close:focus, #meal-plan-preview-modal .modal-header .close:focus, #new-recipe-modal .modal-header .close:focus, #upload-modal .modal-header .close:focus {
         outline: 0; }
+
+/* loading modal */
+#loading-modal {
+  cursor: wait; }
+  #loading-modal .modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  #loading-modal .modal-header {
+    border: none;
+    padding: 0; }
+  #loading-modal .progress {
+    margin: 0; }
+    #loading-modal .progress .progress-bar {
+      background-color: #009c7b;
+      opacity: 0.5;
+      border: none;
+      -webkit-border-radius: 0 !important;
+      -moz-border-radius: 0 !important;
+      -ms-border-radius: 0 !important;
+      border-radius: 0 !important; }
 
 .thumbnail {
   border: none;
@@ -264,6 +288,12 @@ footer {
 
 .btn-next {
   margin-top: 50px; }
+
+.btn-back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  right: 15px; }
 
 .app-checkbox > [type="checkbox"]:not(:checked),
 .app-checkbox > [type="checkbox"]:checked {
@@ -588,7 +618,7 @@ footer {
   width: -ms-calc(100vw - 100px);
   width: calc(100vw - 100px); }
 #meal-plan-preview-modal #btn-delete-preview {
-  margin: 15px 0px; }
+  margin-bottom: 15px; }
 #meal-plan-preview-modal .recipe-list {
   /* recipes * 5 */
   height: -webkit-calc(42px * 5);
@@ -669,7 +699,6 @@ footer {
   width: 1153px;
   height: 555px; }
 #new-recipe-modal .recipe-box {
-  margin-top: 15px;
   height: 458px; }
 #new-recipe-modal textarea {
   border: #C1E0FF 1px solid;
@@ -679,7 +708,7 @@ footer {
   display: none; }
 
 .openfile-app {
-  padding: 15px 0px; }
+  padding-bottom: 15px; }
   .openfile-app .btn-file {
     position: relative;
     overflow: hidden; }

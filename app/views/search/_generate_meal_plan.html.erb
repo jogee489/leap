@@ -1,3 +1,22 @@
+<script type="text/javascript">
+  var amountScrolled = 300;
+
+  $(window).scroll(function() {
+    if ( $(window).scrollTop() > amountScrolled ) {
+      $('.btn-back-to-top').fadeIn('slow');
+    } else {
+      $('.btn-back-to-top').fadeOut('slow');
+    }
+  });
+
+  $('.btn-back-to-top').click(function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 700);
+    return false;
+  });
+</script>
+
 <div class="well generate-well">
   <div class="app-well-menu">
     <h3>Meal Plan</h3>
@@ -62,3 +81,4 @@
     <textarea class="form-control" rows="5"></textarea>
   </div>
 </div>
+<%= leap_button '', {class: 'btn-app btn-back-to-top'}, 'glyphicon-chevron-up' %>
