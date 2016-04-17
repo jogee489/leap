@@ -1,30 +1,32 @@
 $(document).ready(function() {
   	// delete all of the recipes with the box checked
     $("#btn-delete-recipes").click(function() {
-      var selected = [];
-      // gather the id of all checked recipes
-      $('.check-rec:checked').each(function() {
-      	var id = $(this).closest('tr').find('#recipe_id').val();
-        selected.push(id);
-      });
+      if(confirm("Are you sure you want to delete the selected Recipes?")){
+
+        var selected = [];
+        // gather the id of all checked recipes
+        $('.check-rec:checked').each(function() {
+          var id = $(this).closest('tr').find('#recipe_id').val();
+          selected.push(id);
+        });
       // Send the ids to delete_multiple through ajax
       $.ajax({
         url: "/recipes/destroy_multiple/",
-       	method: "POST",
-      	data: {recipe_ids: JSON.stringify(selected)},
+        method: "POST",
+        data: {recipe_ids: JSON.stringify(selected)},
         timeout: 5500,
         success: function() {
           console.log("success");
-				},
-      	error: function(jqXHR, textStatus, errorThrown) {
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
         	console.log("an error has occured");
         	console.log(textStatus);
         	console.log(errorThrown);
         }
-			});
+      });
       if(selected.length>0)
         location.reload();
-			
+    }
     });
 		
 		// Toggle check boxes: check all checkboxes and enable delete button.

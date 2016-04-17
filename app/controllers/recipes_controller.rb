@@ -174,16 +174,8 @@ class RecipesController < ApplicationController
 
   	def web_crawl_blog
 		# Variables
-
-		@recipeList = []
-
 		page_url = "http://realfitrealfoodmom.com/?s=-blog+recipe"
 		foods_include = params[:foods_to_include]
-		foods_exclude = params[:foods_to_exclude]
-		ingredients_to_avoid = []
-		num_of_recipes = 0
-		j = 0
-
 		# Construct initial URL method
 		def constructInitialURL(baseURL, food_items)
 			food_items.each {|food| baseURL << "+#{food}"}
@@ -206,6 +198,9 @@ class RecipesController < ApplicationController
 
   	def scrape_recipes
 		@recipeList = []
+		foods_include = params[:foods_to_include]
+		foods_exclude = params[:foods_to_exclude]
+		ingredients_to_avoid = []
 		num_of_recipes = 0
 
 		# Iterate over links while there are still links and max has not been reached.
@@ -244,6 +239,8 @@ class RecipesController < ApplicationController
 						if item.text.downcase.include? avoid.downcase
 							ingredients_to_avoid[index] = -1
 							break
+						else
+							ingredients_to_avoid[index] = 0
 						end
 						index += 1
 				}

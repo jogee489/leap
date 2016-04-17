@@ -32,12 +32,15 @@ $(document).ready(function() {
 
     // Remove the selected recipes.
     $("#btn-delete-recipes").click(function() {
-      $('.check-rec:checked').each(function() {
-        var tableRow = $(this).closest("tr");
-        tableRow.next().remove();
-        tableRow.remove();
-        checkListSize();
-      });
+      if(confirm("Are you sure you want to delete the selected Recipes?")){
+
+        $('.check-rec:checked').each(function() {
+          var tableRow = $(this).closest("tr");
+          tableRow.next().remove();
+          tableRow.remove();
+          checkListSize();
+        });
+      }
     });
 
     // Save the selected recipes.
