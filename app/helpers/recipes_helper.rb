@@ -6,10 +6,12 @@ module RecipesHelper
 		recipe_table = ''
 		if recipes.present?
 			recipes.each_with_index do |recipe, index|
-				
+				if recipe.instance_of? Hash 
+					recipe = Recipe.new(title: recipe[:title], ingredients: recipe[:ingredients], directions: recipe[:directions])
+				end
 
 				id_element = add_form_element('recipe', 'id', {type: 'hidden'}, {value: recipe.try(:id)})
-				form = render('recipes/form', recipe: recipe)
+				form = render('recipes/form', recipe: recipe, parallel: recipe[:parallel])
 				recipe_table << <<-EOS.html_safe
 
 <tr class="app-table-tr">

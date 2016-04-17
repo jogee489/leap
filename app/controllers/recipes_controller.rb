@@ -174,9 +174,21 @@ class RecipesController < ApplicationController
 
   	def web_crawl_blog
 		# Variables
+
+		@recipeList = []
+
 		page_url = "http://realfitrealfoodmom.com/?s=-blog+recipe"
 		foods_include = params[:foods_to_include]
 		foods_exclude = params[:foods_to_exclude]
+		ingredients_to_avoid = []
+		num_of_recipes = 0
+		j = 0
+
+		# Construct initial URL method
+		def constructInitialURL(baseURL, food_items)
+			food_items.each {|food| baseURL << "+#{food}"}
+			baseURL << '&submit=Go'
+		end
 
 		# Iterate through food items to construct page_url.
 		foods_include.each {|food| page_url << "+#{food}"}
@@ -224,7 +236,19 @@ class RecipesController < ApplicationController
 					@recipe_links.delete_at(0)
 				next
 			end
-			unorganized_ingredients.each {|item| ingredients.push item.text}
+			index = 0
+			unorganized_ingredients.each {|item| 
+				ingredients.push item.text
+				if foods_exclude.present?
+					foods_exclude.each {|avoid|
+						if item.text.downcase.include? avoid.downcase
+							ingredients_to_avoid[index] = -1
+							break
+						end
+						index += 1
+				}
+				end
+			}
 
 			# gather directions.
 			unorganized_directions = []
@@ -242,7 +266,7 @@ class RecipesController < ApplicationController
 			@recipe_links.delete_at(0)
 			num_of_recipes += 1
 
-			@recipeList.push(Recipe.new(title: title, ingredients: ingredients, directions: directions))
+			@recipeList.push({title: title, ingredients: ingredients, directions: directions, parallel: ingredients_to_avoid})
 		end
 		
 		return @recipeList

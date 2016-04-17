@@ -138,7 +138,7 @@ $(function () {
     var foodList = [];
     
     $('td li').each(function() { 
-      if(search == $(this).text()) {
+      if(search.toLowerCase() == $(this).text().toLowerCase()) {
         $(this).addClass('highlight-item');
         var cat = $(this).closest('tr').prev();
         var id = cat.find('.glyphicon');
