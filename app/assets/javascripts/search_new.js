@@ -17,12 +17,12 @@ $(function () {
     });
     // Send request for recipes via ajax.
     $.ajax({
-        type: "POST",
-        url: "/recipes/search_online",
-        timeout: 0,
-        dataType: "json",
-        data: { foods_to_include: haveList,
-                foods_to_exclude: avoidList },
+      type: "POST",
+      url: "/recipes/search_online",
+      timeout: 0,
+      dataType: "json",
+      data: { foods_to_include: haveList,
+        foods_to_exclude: avoidList },
         success: function(data) {
           window.location.replace("/recipes/display_online_results?recipe_links=" + data.recipe_links);
         }
@@ -31,7 +31,7 @@ $(function () {
 
   /** Highlight selected food item. */
   $('body').on('click', '.have-avoid-list .list-group-item', function () {
-      $(this).toggleClass('highlight-item');
+    $(this).toggleClass('highlight-item');
   });
 
   /** Move food items from have list to avoid list */
@@ -70,11 +70,11 @@ $(function () {
   $('.dual-list .selector').click(function () {
     var $checkBox = $(this);
     if (!$checkBox.hasClass('highlight-item')) {
-        $checkBox.addClass('highlight-item').closest('.well').find('ul li:not(.active)').addClass('active');
-        $checkBox.children('i').removeClass('glyphicon-unchecked').addClass('glyphicon-check');
+      $checkBox.addClass('highlight-item').closest('.well').find('ul li:not(.active)').addClass('active');
+      $checkBox.children('i').removeClass('glyphicon-unchecked').addClass('glyphicon-check');
     } else {
-        $checkBox.removeClass('highlight-item').closest('.well').find('ul li.active').removeClass('active');
-        $checkBox.children('i').removeClass('glyphicon-check').addClass('glyphicon-unchecked');
+      $checkBox.removeClass('highlight-item').closest('.well').find('ul li.active').removeClass('active');
+      $checkBox.children('i').removeClass('glyphicon-check').addClass('glyphicon-unchecked');
     }
   });
 
@@ -106,12 +106,12 @@ $(function () {
   $('.food-item').click(function() {
     $(this).toggleClass('highlight-item');
     var numChked = $('.highlight-item').size();
-     if(numChked) {
-       $('#btn-avoid, #btn-have').removeClass("disabled");
-     } else if (numChked == 0) {
-       $('#btn-avoid, #btn-have').addClass("disabled");
-     }
-  });
+    if(numChked) {
+     $('#btn-avoid, #btn-have').removeClass("disabled");
+   } else if (numChked == 0) {
+     $('#btn-avoid, #btn-have').addClass("disabled");
+   }
+ });
 
   /** Add selected foods to 'to have' list. */
   $('#btn-have').click(function() {
@@ -132,10 +132,11 @@ $(function () {
     location.reload();
   });
 
-   $('#search-btn').click(function() {
+  $('#search-btn').click(function() {
     var search = $(this).next().val();
- 
+    var result = false;
     var foodList = [];
+    var categoryName;
     
     $('td li').each(function() { 
       if(search.toLowerCase() == $(this).text().toLowerCase()) {
@@ -147,14 +148,25 @@ $(function () {
           showFoodItemList($(this).closest('tr').prev());
         }
 
-        var categoryName = cat.find('.app-table-title').text();
-        $('#search-category').text("Found in " + categoryName);
+        categoryName = cat.find('.app-table-title').text();
+        result = true;
       }
+    });
+    if(result){
+      $(this).attr('data-content', search + " found in " + categoryName);
+    }
+    else {
+      $(this).attr('data-content', search + " not found!");
+    }
+    $(this).popover('show');
+
     });
   });
 
-
-
+$(document).click(function(e) {
+    if (!$(e.target).is('.popup-marker', 'popup-image')) {
+        $('.popup-marker').popover('hide');
+    }
 });
 
 /**
@@ -163,7 +175,7 @@ $(function () {
  *
  * @return A list of foodItems to be added to the 'to have' or 'to avoid' list.
  */
-function retriveFoodItemList() {
+ function retriveFoodItemList() {
   $foodItems = $('td li.highlight-item');
   currentFoods = []; // Array containing text of each food item
 
@@ -182,16 +194,16 @@ function retriveFoodItemList() {
   return $foodsToAdd;
 }
 
- 
+
 
 /**
  * Show the food items for the clicked Category
  *
  * @params $categoryToExpand the tr jquery object.
  */
-function showFoodItemList($categoryToExpand) {
+ function showFoodItemList($categoryToExpand) {
   // Show that recipe detail clicked tr.
-    $categoryToExpand.next().toggle('fast');
+  $categoryToExpand.next().toggle('fast');
     // Change gliphicon arrow up and down.
     var $id = $categoryToExpand.find('.glyphicon');
     $id.toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
@@ -203,4 +215,4 @@ function showFoodItemList($categoryToExpand) {
       /* This should be handled by css, not js */
       $categoryToExpand.css({"opacity": '0.9'});
     }
-}
+  }

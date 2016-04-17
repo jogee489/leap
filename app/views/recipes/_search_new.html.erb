@@ -42,8 +42,8 @@
 
     <strong id="search-category"></strong>
   
-    <div class="btn-group pull-right" style="display: inline-block">
-      <%= leap_button 'Search', {class: 'btn-app', id: 'search-btn', type: 'submit'},'glyphicon-search' %>
+    <div class="btn-group pull-right" style="display: inline-block">  
+      <button class="btn btn-app popup-marker" id="search-btn" data-toggle="popover" data-placement="top" data-content="Content" type="button">Search<span class="glyphicon glyphicon-search popup-marker"/></button>
       <%= text_field_tag :search, params[:search], class: "form-control",
         placeholder: "Food Item" %>
     </div>
