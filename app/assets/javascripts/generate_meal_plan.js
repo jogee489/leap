@@ -1,27 +1,21 @@
+/**
+ * Javascript file for rendering and handling events
+ * on the generate meal plan page.
+ */
+
 $(document).ready(function () {
     // Render starting point on load.
     renderSelectFoods();
+    $('.setup-content').hide();
 
-    var navListItems = $('div.setup-panel div a'),
-        allWells = $('.setup-content');
-            
-    allWells.hide();
-
-    // Go to a new step when nav item clicked.
-    navListItems.click(function (e) {
-        e.preventDefault();
-        var $target = $($(this).attr('href')),
-            $item = $(this);
-
-        if (!$item.hasClass('disabled')) {
-            navListItems.removeClass('btn-primary').addClass('btn-default');
-            $item.addClass('btn-primary');
-            allWells.hide();
-            $target.show();
-            $target.find('input:eq(0)').focus();
-        }
+    /* Go to a new step when nav item clicked. */
+    $('button.step-app').click(function () {
+        var target = $(this).find('a').attr('href');
+        console.log(target);
+        showCurrentStep(target);
     });
 
+    /* */
     $('div.setup-panel div a.btn-primary').trigger('click');
     // Add recipe title to proper position in the preview table.
     $('.add-to').on('click', function (){
@@ -64,7 +58,7 @@ $(document).ready(function () {
 
 /* Logic for rendering and showing step-1: select foods */
 function renderSelectFoods() {
-    updateStepLink("step-1");
+    updateStepLink("select-food-step");
     $.ajax({
         url: "/search/select_foods/",
         method: "GET",
@@ -73,9 +67,7 @@ function renderSelectFoods() {
         success: function(data) {
             console.log("success");
             $("#step-1").html(data);
-            $("#step-1").show();
-            $("#step-2").hide();
-            $("#step-3").hide();
+            showCurrentStep("#step-1");
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log("an error has occured");
@@ -87,7 +79,7 @@ function renderSelectFoods() {
 
 /* Logic for rendering and showing step-2: find recipes */
 function renderFindRecipes() {
-    updateStepLink("step-2");
+    updateStepLink("select-recipes-step");
     // Retrieve each food to have
     var food_items = [];
     $('.have-list').find('li').each(function() {
@@ -102,10 +94,8 @@ function renderFindRecipes() {
         timeout: 5000,
         success: function(data) {
             console.log("success");
-            $("#step-1").hide();
             $("#step-2").html(data);
-            $("#step-2").show();
-            $("#step-3").hide();
+            showCurrentStep("#step-2");
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log("an error has occured");
@@ -117,7 +107,7 @@ function renderFindRecipes() {
 
 /* Logic for rendering and showing step-3: generate meal plan */
 function renderGenerateMealPlan() {
-    updateStepLink("step-3");
+    updateStepLink("generate-step");
     $.ajax({
         url: "/search/generate_meal_plan/",
         method: "GET",
@@ -125,10 +115,8 @@ function renderGenerateMealPlan() {
         timeout: 5000,
         success: function(data) {
             console.log("success");
-            $("#step-1").hide();
-            $("#step-2").hide();
             $("#step-3").html(data);
-            $("#step-3").show();
+            showCurrentStep("#step-3");
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log("an error has occured");
@@ -137,11 +125,16 @@ function renderGenerateMealPlan() {
         }
     });
 }
+/* Display the proper divs for the current step */
+function showCurrentStep(stepNumberDiv) {
+    $('div.generate-container').hide();
+    $(stepNumberDiv).show();
+}
 
 /* Ensure the setup wizard links have the proper classes */
-function updateStepLink(stepNumber) {
+function updateStepLink(stepName) {
     $('div.setup-panel div a').removeClass('btn-primary').addClass('btn-default');
-    $('.stepwizard-step a[href="#' + stepNumber + '"]').addClass('btn-primary').removeClass('disabled');
+    $('#' + stepName).addClass('btn-primary').removeClass('disabled');
 }
 
 function checkErrors() {

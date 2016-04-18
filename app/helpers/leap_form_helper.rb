@@ -1,52 +1,35 @@
 # Methods in this module will relate directly to forms that are used ..
 module LeapFormHelper
 
-  # Optionally returns submit and cancel buttons for a form.
-  def form_buttons(accept = 'Ok', deny = 'Cancel', deny_path = {})
-    deny_path = { controller: params[:controller] } if deny_path.blank?
-    content_tag(:ol, class: 'actions clearfix') do
-      submit = form_submit_button(accept) if accept.present?
-      cancel = form_deny_button(deny, deny_path) if deny.present?
-      [submit, cancel].compact.join.html_safe
-    end
-  end
-
-  private
-
-  def form_submit_button(label)
-    name = label.sub(/\s+/, '').underscore
-    content_tag(:li) do
-      content_tag(:button, id: 'submit_button', type: 'submit', name: name) do
-        content_tag(:span, label)
-      end
-    end
-  end
-
-  def form_deny_button(label, path)
-    action_link_to(label, path, id: 'secondary', action_class: 'secondary')
-  end
-
   public
 
+  # Render html for a delete button
   def delete_button(button_class = nil, id = nil)
     leap_button('Delete', {class: "btn-app #{button_class}", id: id}, 'glyphicon-trash')
   end
 
+  # Render html for a save button
   def save_button(button_class = nil, id = nil)
     leap_button('Save', {class: "btn-app #{button_class}", id: id}, 'glyphicon-save')
   end
 
-  def leap_button(text, html_options = {}, icon_name = nil, path = nil)
+  # Helper method for displaying a button
+  def leap_button(text, options = {}, icon_name = nil, path = nil)
     span = "<span class='glyphicon #{icon_name}' />" if icon_name.present?
     span ||= ''
-    button_class = html_options[:class] || ''
-    button_id = html_options[:id] || ''
-    button_type = html_options[:type] || 'button'
+    button_class = options[:class] || ''
+    button_id = options[:id] ? "id='#{options[:id]}'" : ''
+    button_type = options[:type] || 'button'
+    data_toggle = options[:data_toggle] ? "data-toggle='#{options[:data_toggle]}'" : ''
+    data_target = options[:data_target] ? "data-target='#{options[:data_target]}'" : ''
+    path_to = path ? "<a href=#{path}></a>" : ''
+
 
     <<-EOS.html_safe
-      <button class="btn #{button_class}" id="#{button_id}" type="#{button_type}">
+      <button class="btn #{button_class}" #{button_id} type="#{button_type}" #{data_toggle} #{data_target}>
         #{text}
         #{span}
+        #{path_to}
       </button>
     EOS
   end

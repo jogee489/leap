@@ -1,4 +1,4 @@
-# Methods in this module will relate directly to forms that are used ..
+# Methods in this module are made to help render the recipe table.
 module RecipesHelper
 
 	# Render table for listing recipes
@@ -6,7 +6,7 @@ module RecipesHelper
 		recipe_table = ''
 		if recipes.present?
 			recipes.each_with_index do |recipe, index|
-				if recipe.instance_of? Hash 
+				if recipe.instance_of? Hash
 					recipe = Recipe.new(title: recipe[:title], ingredients: recipe[:ingredients], directions: recipe[:directions])
 				end
 

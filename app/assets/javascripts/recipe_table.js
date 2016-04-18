@@ -1,13 +1,21 @@
-// Logic for expanding and contracting recipe details.
+/**
+ * recipe_table.js contains all the javascript associated with displaying,
+ * and handling events on the recipe_table page.
+ */
+
 $(document).ready(function() {
 	// Logic for expanding recipe details when + or - is pressed.
-     $(".app-table-tr").click(function() {
+    $("tr.app-table-tr").click(function() {
       $(this).next(".app-table-details").toggle('slow');
       //$(this).css({"opacity": "1"}); // Should be handled by toggling a class
       $(this).toggleClass("expanded"); // Put opacity change in this class
       $(this).find(".expand-icon").toggleClass("glyphicon-chevron-down").toggleClass("glyphicon-chevron-up");
-    }); 
+    });
 
+    /* Stop the label from toggling the recipe view */
+    $('label').click(function(event) {
+    	event.stopPropagation(); //Prevents event from bubbling up.
+    })
 
 	// Individual checkbox click. DUPLICATE???
 	$('.check-rec').bind('change', function() {
