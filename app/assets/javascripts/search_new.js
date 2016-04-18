@@ -153,10 +153,10 @@ $(function () {
       }
     });
     if(result){
-      $(this).attr('data-content', search + " found in " + categoryName);
+      $(this).attr('data-content', search + " found and selected in " + categoryName);
     }
     else {
-      $(this).attr('data-content', search + " not found!");
+      $(this).attr('data-content', search + " Food item not found!");
     }
     $(this).popover('show');
 

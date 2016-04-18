@@ -133,8 +133,8 @@ function showCurrentStep(stepNumberDiv) {
 
 /* Ensure the setup wizard links have the proper classes */
 function updateStepLink(stepName) {
-    $('div.setup-panel div a').removeClass('btn-primary').addClass('btn-default');
-    $('#' + stepName).addClass('btn-primary').removeClass('disabled');
+    $('div.setup-panel div a').addClass('btn-default');
+    $('#' + stepName).removeClass('disabled');
 }
 
 function checkErrors() {

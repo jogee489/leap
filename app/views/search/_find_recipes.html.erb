@@ -87,6 +87,8 @@
     </div>
     <button type="button" class="btn btn-app pull-right" data-toggle="modal" data-target="#meal-plan-preview-modal">Preview Meal Plan <span class="glyphicon glyphicon-list-alt"></span></button>
   </div>
-  <%= render partial: "recipes/recipe_table", locals: {recipe_list: @recipe_list} %>  
+  <div class="app-well-container">
+    <%= render partial: "recipes/recipe_table", locals: {recipe_list: @recipe_list} %>
+  </div>
 </div>
 <%= leap_button 'Next', {class: 'btn-app btn-next pull-right', id: 'btn-find-food-next'} %>

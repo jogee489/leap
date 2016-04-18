@@ -7,8 +7,16 @@ html {
   margin-top: 50px;
   min-height: 100vh; }
 
+.page-title {
+  font-family: 'Oleo Script', cursive;
+  font-weight: bold;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 50px 0px 0px 50px;
+  margin: 0; }
+
 .page-container {
-  padding: 50px; }
+  padding: 50px 0px; }
 
 a:hover {
   text-decoration: none; }
@@ -56,8 +64,15 @@ input {
     height: 40px;
     display: inline-block; }
 
-.app-search .form-control {
-  width: 264px; }
+.app-search {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle; }
+  .app-search .btn-app {
+    position: relative;
+    float: left; }
+  .app-search .form-control {
+    width: 264px; }
 
 /* default modal box */
 .app-modal, #loading-modal, #meal-plan-preview-modal, #new-recipe-modal, #upload-modal {
@@ -79,7 +94,7 @@ input {
     padding: 0px 0px 15px 0px;
     font-size: 1.5em;
     font-weight: bold; }
-    .app-modal .modal-header h3, #loading-modal .modal-header h3, #meal-plan-preview-modal .modal-header h3, #new-recipe-modal .modal-header h3, #upload-modal .modal-header h3 {
+    .app-modal .modal-header .modal-title, #loading-modal .modal-header .modal-title, #meal-plan-preview-modal .modal-header .modal-title, #new-recipe-modal .modal-header .modal-title, #upload-modal .modal-header .modal-title {
       font-family: 'Oleo Script', cursive;
       font-weight: bold; }
     .app-modal .modal-header .close, #loading-modal .modal-header .close, #meal-plan-preview-modal .modal-header .close, #new-recipe-modal .modal-header .close, #upload-modal .modal-header .close {
@@ -87,7 +102,7 @@ input {
       border: none;
       margin: 0;
       opacity: 0.3;
-      padding: 6px 7px 6px 12px;
+      padding: 6px 12px;
       -webkit-transition: all 0.1s ease-in-out 0s;
       -moz-transition: all 0.1s ease-in-out 0s;
       -ms-transition: all 0.1s ease-in-out 0s;
@@ -255,7 +270,6 @@ footer {
 /* panel delete category button */
 .btn-delete-cat {
   border: none;
-  padding: 6px 9px 3px 12px;
   background-color: transparent;
   -webkit-transition: all 0.1s ease-in-out 0s;
   -moz-transition: all 0.1s ease-in-out 0s;
@@ -268,7 +282,6 @@ footer {
     color: white; }
 
 .btn-add-cat {
-  padding: 12px 7px 10px 10px;
   position: absolute;
   width: 36px;
   height: 42px; }
@@ -283,7 +296,6 @@ footer {
   margin: 0; }
 
 .btn-plus-food {
-  padding: 10px 7px 10px 10px;
   cursor: pointer; }
 
 .btn-next {
@@ -293,7 +305,8 @@ footer {
   display: none;
   position: fixed;
   bottom: 15px;
-  right: 15px; }
+  right: 15px;
+  padding: 10px; }
 
 .app-checkbox > [type="checkbox"]:not(:checked),
 .app-checkbox > [type="checkbox"]:checked {
@@ -391,24 +404,27 @@ footer {
   .app-well .app-well-menu, .generate-well .app-well-menu, .have-avoid-well .app-well-menu, .recipe-well .app-well-menu {
     padding-bottom: 15px;
     border-bottom: 2px groove rgba(209, 209, 209, 0.49); }
+    .app-well .app-well-menu h3, .generate-well .app-well-menu h3, .have-avoid-well .app-well-menu h3, .recipe-well .app-well-menu h3 {
+      margin: 0; }
+  .app-well .app-well-container, .generate-well .app-well-container, .have-avoid-well .app-well-container, .recipe-well .app-well-container {
+    margin-top: 15px; }
 
 /* recipe table */
 .app-table, .recipe-table-container, .food-table-container {
-  margin-top: 15px;
   overflow-y: auto; }
   .app-table .table, .recipe-table-container .table, .food-table-container .table {
     margin: 0; }
     .app-table .table .app-table-tr, .recipe-table-container .table .app-table-tr, .food-table-container .table .app-table-tr {
       background-color: #6b4258;
       color: white;
-      opacity: 0.9; }
+      opacity: 0.9;
+      cursor: pointer; }
       .app-table .table .app-table-tr:hover, .recipe-table-container .table .app-table-tr:hover, .food-table-container .table .app-table-tr:hover {
         opacity: 1; }
       .app-table .table .app-table-tr td, .recipe-table-container .table .app-table-tr td, .food-table-container .table .app-table-tr td {
         font-size: 16px;
         padding: 10px 15px; }
       .app-table .table .app-table-tr .expand-icon, .recipe-table-container .table .app-table-tr .expand-icon, .food-table-container .table .app-table-tr .expand-icon {
-        cursor: pointer;
         vertical-align: middle; }
       .app-table .table .app-table-tr .expand-td, .recipe-table-container .table .app-table-tr .expand-td, .food-table-container .table .app-table-tr .expand-td {
         width: 12% !important; }
@@ -573,10 +589,10 @@ footer {
     display: none; }
 
 #step-1 .btn-next {
-  margin-right: 100px; }
+  margin-right: 150px; }
 
 #step-2 .btn-next {
-  margin-right: 8px; }
+  margin-right: 58px; }
 
 .stepwizard-step p {
   margin-top: 10px; }
@@ -604,13 +620,11 @@ footer {
   display: table-cell;
   text-align: center;
   font-size: 16px;
-  font-weight: bold;
   position: relative; }
 
 .step-app {
   font-size: 16px;
-  padding: 10px 15px;
-  font-weight: bold; }
+  padding: 10px 15px; }
 
 #meal-plan-preview-modal .modal-dialog {
   width: -webkit-calc(100vw - 100px);
@@ -643,13 +657,16 @@ footer {
       color: #e0e0e0; }
 
 /* step-3 content */
-.generate-well h3 {
-  font-family: 'Oleo Script', cursive;
-  font-weight: bold; }
-.generate-well .meal-plan-result {
-  margin-top: 15px; }
-.generate-well .additional-comments {
-  margin-top: 15px; }
+.generate-well {
+  padding-top: 0; }
+  .generate-well .app-well-menu {
+    padding-top: 15px; }
+  .generate-well h3 {
+    font-family: 'Oleo Script', cursive;
+    font-weight: bold; }
+
+#btn-search-again {
+  margin: 50px 42px 0px 0px; }
 
 .have-avoid-list {
   margin-top: 15px; }
@@ -682,7 +699,7 @@ footer {
     margin: 0px 40px 40px 40px; }
 
 .search-new-container {
-  margin: 50px 85px 0px 0px; }
+  margin: 50px 134px 0px 0px; }
 
 .recipe-well {
   margin: 0 auto;

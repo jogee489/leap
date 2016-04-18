@@ -34,5 +34,13 @@
   .app-well-menu {
     padding-bottom: 15px;
     border-bottom: 2px groove rgba(209,209,209,0.49);
+
+    h3 {
+      margin: 0;
+    }
+  }
+
+  .app-well-container {
+    margin-top: 15px;
   }
 }

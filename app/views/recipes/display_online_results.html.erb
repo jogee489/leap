@@ -1,6 +1,5 @@
 <%= javascript_include_tag 'recipe_table.js' %>
 <%= javascript_include_tag 'recipe_results.js' %>
-<%= javascript_include_tag 'jquery.pleaseWait.js' %>
 
 <% if $recipe_list %>
 	<% @recipe_list = $recipe_list %>
@@ -10,7 +9,7 @@
     window.location.href = "/recipes/search_new"
   </script>
 <% end %>
-
+<h3 class="page-title">Recipe Search Result</h3>
 <div class="page-container container">
   <!-- pagination -->
   <div class="well recipe-well">
@@ -19,10 +18,25 @@
       <%= leap_button 'Save', {class: 'btn-app', id: 'btn-save-recipes'}, 'glyphicon-save' %>
       <%= leap_button 'Delete', {class: 'btn-app', id: 'btn-delete-recipes'}, 'glyphicon-trash' %>
     </div>
-    <%= render partial: "recipe_table", locals: {recipe_list: @recipe_list} %>
-    <div class="search-new-container pull-right">
-      <%= leap_button 'Search Again', {class: 'btn-app', id: 'btn-search-again', type: 'submit'}, 'glyphicon-search' %>
-      <%= hidden_field('recipe', 'links', value: params[:recipe_links]) %>
+    <div class="app-well-container">
+      <%= render partial: "recipe_table", locals: {recipe_list: @recipe_list} %>
+    </div>
+  </div>
+  <%= leap_button 'Search Again ', {class: 'btn-app pull-right', id: 'btn-search-again', type: 'submit', data_toggle: 'modal', data_target: '#loading-modal'}, 'glyphicon-search' %>
+  <%= hidden_field('recipe', 'links', value: params[:recipe_links]) %>
+</div>
+<div>
+  <div id="loading-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Searching For Recipes...</h3>
+      </div>
+      <div class="modal-body">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:100%"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

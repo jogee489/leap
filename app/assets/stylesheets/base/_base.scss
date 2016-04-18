@@ -14,8 +14,17 @@ html{
 	min-height: 100vh;
 }
 
+.page-title {
+  font-family: 'Oleo Script', cursive;
+  font-weight: bold;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 50px 0px 0px 50px;
+  margin: 0;
+}
+
 .page-container {
-	padding: 50px;
+	padding: 50px 0px;
 }
 
 a:hover {
@@ -64,6 +73,14 @@ input {
 
 .app-search {
 	@extend .app-input;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  
+  .btn-app {
+    position: relative;
+    float: left;
+  }
 
 	.form-control {
 		width: 264px;
@@ -105,9 +122,10 @@ input {
 		font-size: 1.5em;
     font-weight: bold;
 
-  	h3 {
+  	.modal-title {
   		font-family: 'Oleo Script', cursive;
       font-weight: bold;
+      //margin: 0;
   	}
 
 		.close {
@@ -117,7 +135,7 @@ input {
 			margin: 0;
 			opacity: 0.3;
 			//padding: 0;
-			padding: 6px 7px 6px 12px;
+			padding: 6px 12px;
 			//margin-bottom: 15px;
 			@include transition(all 0.1s ease-in-out 0s);
 

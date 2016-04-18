@@ -1,6 +1,6 @@
 /* recipe table */
 .app-table {
-	margin-top: 15px;
+	//margin-top: 15px;
 	overflow-y: auto;
 
 	.table {
@@ -10,6 +10,7 @@
 			background-color: $panel-heading-background;
 			color: white;
 			opacity: 0.9;
+			cursor: pointer;
 
 			&:hover {
 				opacity: 1;
@@ -21,7 +22,7 @@
 			}
 
 			.expand-icon {
-				cursor: pointer;
+				
 				vertical-align: middle;
 			}
 

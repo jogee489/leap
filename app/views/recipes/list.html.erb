@@ -1,6 +1,6 @@
 <%= javascript_include_tag 'recipe_list.js' %>
 <%= javascript_include_tag 'recipe_table.js' %>
-
+<h3 class="page-title">Manage Your Recipes</h3>
 <div class="page-container container">
   <!-- pagination -->
   <%= will_paginate @recipe_list %>
@@ -10,7 +10,7 @@
       <button id="btn-upload-recipes" class="btn btn-app" title="Upload multiple recipes from file" data-toggle="modal" data-target="#upload-modal" type="button">Upload <span class="glyphicon glyphicon-upload"/></button>
       <%= leap_button 'Delete', {class: 'btn-app disabled', id: 'btn-delete-recipes'}, 'glyphicon-trash' %>
       <%= form_tag(recipes_list_path, method: 'get', class: 'app-search') do %>
-        <div class="btn-group">
+        <div class="app-search">
           <%= leap_button 'Search', {class: 'btn-app', type: 'submit'},'glyphicon-search' %>
           <%= text_field_tag :search, params[:search], class: "form-control",
             placeholder: "Recipe Title" %>
@@ -27,7 +27,9 @@
         <% end %>   
       </div>
     </div>
-    <%= render partial: "recipe_table", locals: {recipe_list: @recipe_list} %>
+    <div class="app-well-container">
+      <%= render partial: "recipe_table", locals: {recipe_list: @recipe_list} %>
+    </div>
   </div>
 </div>
 <div>

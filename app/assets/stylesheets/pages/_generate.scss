@@ -1,9 +1,9 @@
 #step-1 .btn-next {
-    margin-right: 100px;
+    margin-right: 150px;
 }
 
 #step-2 .btn-next {
-    margin-right: 8px;
+    margin-right: 58px;
 }
 
 .stepwizard-step p {
@@ -37,14 +37,14 @@
     display: table-cell;
     text-align: center;
     font-size: 16px;
-    font-weight: bold;
+    //font-weight: bold;
     position: relative;
 }
 
 .step-app {
     font-size: 16px;
     padding: 10px 15px;
-    font-weight: bold;
+    //font-weight: bold;
 }
 
 #meal-plan-preview-modal {
@@ -104,17 +104,18 @@
 /* step-3 content */
 .generate-well {
     @extend .app-well;
+    padding-top: 0;
+
+    .app-well-menu {
+        padding-top: 15px;
+    }
 
     h3 {
         font-family: 'Oleo Script', cursive;
         font-weight: bold;
     }
+}
 
-    .meal-plan-result {
-        margin-top: 15px;
-    }
-
-    .additional-comments {
-        margin-top: 15px;
-    }
+#btn-search-again {
+    margin: 50px 42px 0px 0px;
 }
