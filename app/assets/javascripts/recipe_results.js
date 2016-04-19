@@ -203,7 +203,6 @@ $(document).ready(function() {
     /** Search for more recipes and replace the current recipe table */
     $('#btn-search-again').click(function() {
       var recipe_links = $('#recipe_links').val();
-      $('body').pleaseWait();
       $.ajax({
         type: "POST",
         url: "/recipes/search_again",
