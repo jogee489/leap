@@ -97,9 +97,11 @@ $(function () {
     }
   });
 
-  /** Show all items of a category. */
-  $(".app-table-tr").click(function() {
-    showFoodItemList($(this));
+  /** Logic for expanding food item list. */
+  $(".expand-td").click(function() {
+    $(this).parent().next().toggle('slow');
+    $(this).toggleClass("expanded"); // Put opacity change in this class
+    $(this).find(".expand-icon").toggleClass("glyphicon-chevron-down").toggleClass("glyphicon-chevron-up");
   });
 
   /** Hightlist food items in category list and toggle have/avoid buttons. */

@@ -4,18 +4,13 @@
  */
 
 $(document).ready(function() {
-	// Logic for expanding recipe details when + or - is pressed.
-    $("tr.app-table-tr").click(function() {
-      $(this).next(".app-table-details").toggle('slow');
-      //$(this).css({"opacity": "1"}); // Should be handled by toggling a class
-      $(this).toggleClass("expanded"); // Put opacity change in this class
-      $(this).find(".expand-icon").toggleClass("glyphicon-chevron-down").toggleClass("glyphicon-chevron-up");
-    });
 
-    /* Stop the label from toggling the recipe view */
-    $('label').click(function(event) {
-    	event.stopPropagation(); //Prevents event from bubbling up.
-    })
+	// Logic for expanding recipe details when chevron pressed.
+	$(".expand-td").click(function() {
+		$(this).parent().next().toggle('slow');
+		$(this).toggleClass("expanded"); // Put opacity change in this class
+		$(this).find(".expand-icon").toggleClass("glyphicon-chevron-down").toggleClass("glyphicon-chevron-up");
+    });
 
 	// Individual checkbox click. DUPLICATE???
 	$('.check-rec').bind('change', function() {
@@ -33,8 +28,4 @@ $(document).ready(function() {
 		}
 	});
 
-
-	
-
-	
 });
