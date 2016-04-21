@@ -2,8 +2,56 @@
 <%= javascript_include_tag 'recipe_results.js' %>
 <script type="text/javascript">
   $(document).ready(function () {
+
+    /* Logic for moving onto the next step. */
     $('#btn-find-food-next').click(function() {
       renderGenerateMealPlan();
+    });
+
+    /* Add selected recipes to the specified section of the meal plan */
+    $('button.option').click(function() {
+      // Get meal name and option. eg. breakfast option 2.
+      var option = this.id.split("-")[1];
+      // Get the ids of recipes currently included.
+      var current_ids = [];
+      $('ul#recipe-id-list li').each(function() {
+        current_ids.push($(this).text());
+      });
+
+      // Get selected recipe name.
+      var selected_id = [];
+      var selected_recipe_names = [];
+      // gather the ids and names of all checked recipes
+      $('.check-rec:checked').each(function() {
+        var recipe_id = $(this).closest('tr').find('#recipe_id').val();
+        var recipe_name = $(this).closest('tr').find('td').find('label').text();
+
+        selected_recipe_names.push(recipe_name);
+        selected_id.push(recipe_id);
+        $(this).prop('checked', false);
+      });
+
+      // Add selcted recipes to desired meal
+      $(selected_recipe_names).each(function(index, value) {
+        $('<li>').text(value).addClass("food-item list-group-item").appendTo("#" + option);
+        // Add id to the list if the recipe is unique.
+        if ($.inArray(selected_id[index], current_ids) == -1) {
+          $('<li>').text(selected_id[index]).appendTo('#recipe-id-list');  
+        }
+        
+      });
+
+      /* Highlight food item when clicked. */
+      $('div.modal-body .food-item').unbind('click').click(function() {
+        $(this).toggleClass('highlight-item');
+        var numChked = $('div.modal-body .highlight-item').size();
+        if(numChked) {
+          $('#btn-delete-preview').removeClass("disabled");
+        } else if (numChked == 0) {
+          $('#btn-delete-preview').addClass("disabled");
+        }
+      });
+
     });
   });
 </script>
@@ -15,13 +63,13 @@
         <span class="caret"></span></button>
       <ul class="dropdown-menu">
         <li>
-          <button type="button" class="btn btn-app" id="btn-brkOp1">Option 1</a>
+          <button type="button" class="btn btn-app option" id="btn-brkOp1">Option 1</a>
         </li>
         <li>
-          <button type="button" class="btn btn-app" id="btn-brkOp2">Option 2</a>
+          <button type="button" class="btn btn-app option" id="btn-brkOp2">Option 2</a>
         </li>
         <li>
-          <button type="button" class="btn btn-app" id="btn-brkOp3">Option 3</a>
+          <button type="button" class="btn btn-app option" id="btn-brkOp3">Option 3</a>
         </li>
       </ul>                
     </div>
@@ -30,13 +78,13 @@
         <span class="caret"></span></button>
       <ul class="dropdown-menu">
         <li>
-          <button type="button" class="btn btn-app" id="btn-snk1Op1">Option 1</a>
+          <button type="button" class="btn btn-app option" id="btn-snk1Op1">Option 1</a>
         </li>
         <li>
-          <button type="button" class="btn btn-app" id="btn-snk1Op2">Option 2</a>
+          <button type="button" class="btn btn-app option" id="btn-snk1Op2">Option 2</a>
         </li>
         <li>
-          <button type="button" class="btn btn-app" id="btn-snk1Op2">Option 3</a>
+          <button type="button" class="btn btn-app option" id="btn-snk1Op3">Option 3</a>
         </li>
       </ul>                
     </div>
@@ -45,13 +93,13 @@
         <span class="caret"></span></button>
       <ul class="dropdown-menu">
         <li>
-          <button type="button" class="btn btn-app" id="btn-lnhOp1">Option 1</a>
+          <button type="button" class="btn btn-app option" id="btn-lnhOp1">Option 1</a>
         </li>
         <li>
-          <button type="button" class="btn btn-app" id="btn-lnhOp2">Option 2</a>
+          <button type="button" class="btn btn-app option" id="btn-lnhOp2">Option 2</a>
         </li>
         <li>
-          <button type="button" class="btn btn-app" id="btn-lnhOp3">Option 3</a>
+          <button type="button" class="btn btn-app option" id="btn-lnhOp3">Option 3</a>
         </li>
       </ul>                
     </div>
@@ -60,13 +108,13 @@
         <span class="caret"></span></button>
       <ul class="dropdown-menu">
         <li>
-          <button type="button" class="btn btn-app" id="btn-snk2Op1">Option 1</a>
+          <button type="button" class="btn btn-app option" id="btn-snk2Op1">Option 1</a>
         </li>
         <li>
-          <button type="button" class="btn btn-app" id="btn-snk2Op2">Option 2</a>
+          <button type="button" class="btn btn-app option" id="btn-snk2Op2">Option 2</a>
         </li>
         <li>
-          <button type="button" class="btn btn-app" id="btn-snk2Op3">Option 3</a>
+          <button type="button" class="btn btn-app option" id="btn-snk2Op3">Option 3</a>
         </li>
       </ul>                
     </div>
@@ -75,13 +123,13 @@
         <span class="caret"></span></button>
       <ul class="dropdown-menu">
         <li>
-          <button type="button" class="btn btn-app" id="btn-dnrOp1">Option 1</a>
+          <button type="button" class="btn btn-app option" id="btn-dnrOp1">Option 1</a>
         </li>
         <li>
-          <button type="button" class="btn btn-app" id="btn-dnrOp2">Option 2</a>
+          <button type="button" class="btn btn-app option" id="btn-dnrOp2">Option 2</a>
         </li>
         <li>
-          <button type="button" class="btn btn-app" id="btn-dnrOp3">Option 3</a>
+          <button type="button" class="btn btn-app option" id="btn-dnrOp3">Option 3</a>
         </li>
       </ul>                
     </div>

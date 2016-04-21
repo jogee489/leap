@@ -98,16 +98,16 @@ $(function () {
   });
 
   /** Logic for expanding food item list. */
-  $(".expand-td").click(function() {
+  $(".expand-td").unbind('click').click(function() {
     $(this).parent().next().toggle('slow');
     $(this).toggleClass("expanded"); // Put opacity change in this class
     $(this).find(".expand-icon").toggleClass("glyphicon-chevron-down").toggleClass("glyphicon-chevron-up");
   });
 
   /** Hightlist food items in category list and toggle have/avoid buttons. */
-  $('.food-item').click(function() {
+  $('.food-item').unbind('click').click(function() {
     $(this).toggleClass('highlight-item');
-    var numChked = $('.highlight-item').size();
+    var numChked = $('div.food-table-container .highlight-item').size();
     if(numChked) {
      $('#btn-avoid, #btn-have').removeClass("disabled");
    } else if (numChked == 0) {
@@ -154,7 +154,7 @@ $(function () {
         result = true;
       }
     });
-    if(result){
+    if (result) {
       $(this).attr('data-content', search + " found and selected in " + categoryName);
     }
     else {

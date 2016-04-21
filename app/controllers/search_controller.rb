@@ -30,6 +30,11 @@ class SearchController < ApplicationController
 	end
 
 	def generate_meal_plan
+		meal_plan_data = JSON.parse(params[:meal_plan_data])
+		@foods_to_have = meal_plan_data['to_have']
+		@foods_to_avoid = meal_plan_data['to_avoid']
+		@recipe_list = Recipe.find(meal_plan_data['recipe_ids'])
+		
 		render partial: 'generate_meal_plan'
 	end
 

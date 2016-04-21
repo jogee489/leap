@@ -6,7 +6,7 @@
 $(document).ready(function() {
 
 	// Logic for expanding recipe details when chevron pressed.
-	$(".expand-td").click(function() {
+	$(".expand-td").unbind('click').click(function() {
 		$(this).parent().next().toggle('slow');
 		$(this).toggleClass("expanded"); // Put opacity change in this class
 		$(this).find(".expand-icon").toggleClass("glyphicon-chevron-down").toggleClass("glyphicon-chevron-up");

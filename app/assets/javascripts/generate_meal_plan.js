@@ -11,39 +11,7 @@ $(document).ready(function () {
     /* Go to a new step when nav item clicked. */
     $('button.step-app').click(function () {
         var target = $(this).find('a').attr('href');
-        console.log(target);
         showCurrentStep(target);
-    });
-
-    /* */
-    $('div.setup-panel div a.btn-primary').trigger('click');
-    // Add recipe title to proper position in the preview table.
-    $('.add-to').on('click', function (){
-      // Get button id.
-      var btnId = this.id;
-      // Get meal name and option. eg. breakfast option 2.
-      var option = btnId.split("-")[1];
-      // Get selected recipe name.
-      var selected_id = [];
-      var selected_recipe_names = [];
-      // gather the ids and names of all checked recipes
-      $('.check-rec:checked').each(function() {
-        var recipe_id = $(this).closest('tr').find('#recipe_id').val();
-        var recipe_name = $(this).closest('tr').find('td').find('label').text();
-
-        selected_recipe_names.push(recipe_name);
-        selected_id.push(recipe_id);
-      });
-      
-      var i = 0
-      $(selected_recipe_names).each(function() {
-       var name = selected_recipe_names[i];
-       i++;
-       var aaa = $('<li/>') // TODO: Does this need to be in a var?
-         .text(name)
-         .addClass("food-item list-group-item")
-         .appendTo("#" + option);
-      });
     });
 
     // If a recipe in the preview meal plan gets clicked.
@@ -65,7 +33,6 @@ function renderSelectFoods() {
         dataType: "html",
         timeout: 5000,
         success: function(data) {
-            console.log("success");
             $("#step-1").html(data);
             showCurrentStep("#step-1");
         },
@@ -93,7 +60,6 @@ function renderFindRecipes() {
         data: {food_items: JSON.stringify(food_items)},
         timeout: 5000,
         success: function(data) {
-            console.log("success");
             $("#step-2").html(data);
             showCurrentStep("#step-2");
         },
@@ -108,13 +74,35 @@ function renderFindRecipes() {
 /* Logic for rendering and showing step-3: generate meal plan */
 function renderGenerateMealPlan() {
     updateStepLink("generate-step");
+
+    // Get list of foods to have and to avoid.
+    var foodsToHave = [];
+    var foodsToAvoid = [];
+    $('.have-list').find('li').each(function() {
+        foodsToHave.push($(this).text());
+    });
+    $('.avoid-list').find('li').each(function() {
+        foodsToAvoid.push($(this).text());
+    });
+
+    // Get the list of recipe ids to include.
+    var idList = [];
+    $('#recipe-id-list li').each(function() {
+        idList.push($(this).text());
+    });
+
+    // Get recipes for each option
+    var breakfast;
+
+    // JSONify the parameters to be sent.
+    var data = JSON.stringify({to_have: foodsToHave, to_avoid: foodsToAvoid, recipe_ids: idList});
     $.ajax({
         url: "/search/generate_meal_plan/",
         method: "GET",
         dataType: "html",
         timeout: 5000,
+        data: {meal_plan_data: data},
         success: function(data) {
-            console.log("success");
             $("#step-3").html(data);
             showCurrentStep("#step-3");
         },

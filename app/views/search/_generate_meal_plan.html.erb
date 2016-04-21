@@ -15,6 +15,13 @@
     }, 700);
     return false;
   });
+
+  /** Logic for expanding food item list. */
+  $(".expand-td").unbind('click').click(function() {
+    $(this).parent().next().toggle('slow');
+    $(this).toggleClass("expanded"); // Put opacity change in this class
+    $(this).find(".expand-icon").toggleClass("glyphicon-chevron-down").toggleClass("glyphicon-chevron-up");
+  });
 </script>
 
 <div class="well generate-well">
@@ -52,20 +59,16 @@
           <tr>
             <td>
             <ul class="foods-list list-group" id="gen-to-have-list">
-              <li class="list-group-item">Pear</li>
-              <li class="list-group-item">Cheese</li>
-              <li class="list-group-item">Pumpkin</li>
-              <li class="list-group-item">Peanut</li>
-              <li class="list-group-item">Kale</li>
+              <% @foods_to_have.each do |food| %>
+                <li><%= food %></li>
+              <% end %>
             </ul>
           </td>
           <td>
             <ul class="foods-list list-group" id="gen-to-avoid-list">
-              <li class="list-group-item">Wheatddddddddddddddddddddddddddddddddddddddddddddddddd</li>
-              <li class="list-group-item">Milk</li>
-              <li class="list-group-item">Broccoli</li>
-              <li class="list-group-item">Pasta</li>
-              <li class="list-group-item">Bread</li>
+              <% @foods_to_avoid.each do |food| %>
+                <li><%= food %></li>
+              <% end %>
             </ul>
           </td>
           </tr>
@@ -77,7 +80,7 @@
     <h3>Recipes</h3>
   </div>
   <div class="app-well-container">
-
+    <%= render partial: "/recipes/recipe_table", locals: {recipe_list: @recipe_list} %>
   </div>
   <div class="app-well-menu">
     <h3>Additional Comments</h3>
