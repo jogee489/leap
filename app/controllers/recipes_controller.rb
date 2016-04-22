@@ -176,6 +176,7 @@ class RecipesController < ApplicationController
 		# Variables
 		page_url = "http://realfitrealfoodmom.com/?s=-blog+recipe"
 		foods_include = params[:foods_to_include]
+		
 		# Construct initial URL method
 		def constructInitialURL(baseURL, food_items)
 			food_items.each {|food| baseURL << "+#{food}"}
@@ -200,7 +201,6 @@ class RecipesController < ApplicationController
 		@recipeList = []
 		foods_include = params[:foods_to_include]
 		foods_exclude = params[:foods_to_exclude]
-		ingredients_to_avoid = []
 		num_of_recipes = 0
 
 		# Iterate over links while there are still links and max has not been reached.
@@ -210,6 +210,9 @@ class RecipesController < ApplicationController
 
 			# Grab the recipe title
 			title = recipe_page.at_css("h1.entry-title").text
+
+			#parallel array for current recipes ingredients
+			ingredients_to_avoid = []
 
 			# gather ingredients.
 			unorganized_ingredients = []
@@ -234,17 +237,25 @@ class RecipesController < ApplicationController
 			index = 0
 			unorganized_ingredients.each {|item| 
 				ingredients.push item.text
+				#Check for the foods to include first to populate the parallel array with corresponding 1's
+				foods_include.each do |have|
+					if item.text.downcase.include? have.downcase
+						ingredients_to_avoid[index] = 1
+						
+					end
+
+				end
+
+				
 				if foods_exclude.present?
-					foods_exclude.each {|avoid|
+					foods_exclude.each do |avoid|
 						if item.text.downcase.include? avoid.downcase
 							ingredients_to_avoid[index] = -1
-							break
-						else
-							ingredients_to_avoid[index] = 0
+							
 						end
-						index += 1
-				}
+					end
 				end
+			index += 1
 			}
 
 			# gather directions.
@@ -263,7 +274,10 @@ class RecipesController < ApplicationController
 			@recipe_links.delete_at(0)
 			num_of_recipes += 1
 
+
 			@recipeList.push({title: title, ingredients: ingredients, directions: directions, parallel: ingredients_to_avoid})
+
+
 		end
 		
 		return @recipeList

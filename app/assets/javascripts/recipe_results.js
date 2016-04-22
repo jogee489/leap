@@ -5,7 +5,8 @@ $(document).ready(function() {
 
       var div = $(this).closest(".recipeDetails");
       var title = div.find(".rec-title").val();
-      var ingredients = div.find(".rec-ingredients").val();
+      var ingredients = div.find(".rec-ingredients").find('li').val();
+      console.log(ingredients);
       var directions = div.find(".rec-directions").val();
       var tags = div.find(".rec-tags").val();
       var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions, tags: tags});
@@ -49,9 +50,25 @@ $(document).ready(function() {
       $(".check-rec:checked").each(function() {
         var recipeData = $(this).closest("tr").next();
         var title = recipeData.find(".rec-title").text();
-        var ingredients = recipeData.find(".rec-ingredients").text();
+        var ingredientsList = recipeData.find("li");
+        console.log(ingredients);
         var directions = recipeData.find(".rec-directions").text();
         var tags = recipeData.find(".rec-tags").text();
+
+        var ingredients = "";
+
+        for(var i = 0; i < ingredientsList.length; i++){
+          if(i != ingredientsList.length - 1){
+            ingredients += (ingredientsList[i].innerText + "\n");
+          }
+          else {
+            ingredients += (ingredientsList[i].innerText);
+          }
+        }
+
+        console.log(ingredients);
+
+
         var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions, tags: tags});
         recipeList.push(recipeJSON);
       });
@@ -182,6 +199,13 @@ $(document).ready(function() {
 
     // Select all pressed.
     $(".btn-select-all").click(function() {
+      var ingredients = $(document).find('li.ingredient');
+      console.log(ingredients);
+
+      for(var i = 0; i < ingredients.length; i++){
+        console.log(ingredients[i].innerText);
+      }
+
       var selectAll = $(".btn-select-all");
       // Select all when text is 'Select All' otherwise deselect all.
       if ($(this).is(':has(span.glyphicon-unchecked)')) {

@@ -84,7 +84,8 @@ $(document).ready(function() {
   $('.btn-edit-recipe').click(function() {
     var recBox = $(this).closest('.recipe-box');
     var title = recBox.find('.rec-title');
-    var ingredients = recBox.find('.rec-ingredients');
+    var ingredientsList = recBox.find('.rec-ingredients').find('li');
+    console.log(ingredientsList);
     var directions = recBox.find('.rec-directions');
     var tags = recBox.find('.rec-tags');
     var id = recBox.find('#recipe_id').val();
@@ -93,10 +94,29 @@ $(document).ready(function() {
       $(this).removeClass('btn-save-updated');
       $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
       title.css({"border": "none", "pointer-events": "none"});
-      ingredients.css({"border": "none", "pointer-events": "none"});
+      ingredientsList.css({"border": "none", "pointer-events": "none"});
       directions.css({"border": "none", "pointer-events": "none"});
       tags.css({"border": "none", "pointer-events": "none"});
-      var json = JSON.stringify({title: title.val(), ingredients: ingredients.val(), directions: directions.val(), tags: tags.val()});
+
+      title.attr('contenteditable', 'false');
+      ingredientsList.attr('contenteditable', 'false');
+      directions.attr('contenteditable', 'false');
+      tags.attr('contenteditable', 'false');
+
+      var ingredients = "";
+
+      for(var i = 0; i < ingredientsList.length; i++){
+          if(i != ingredientsList.length - 1){
+            ingredients += (ingredientsList[i].innerText + "\n");
+          }
+          else {
+            ingredients += (ingredientsList[i].innerText);
+          }
+        }
+
+      console.log(ingredients);
+
+      var json = JSON.stringify({title: title.val(), ingredients: ingredients, directions: directions.val(), tags: tags.val()});
       
       $.ajax({
         url: "/recipes/update/" + id,
@@ -116,9 +136,16 @@ $(document).ready(function() {
       $(this).addClass('btn-save-updated');
       $(this).html('Save <span class="glyphicon glyphicon-save"></span>');
       title.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
-      ingredients.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
+      ingredientsList.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
       directions.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
       tags.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
+
+
+      title.attr('contenteditable', 'true');
+      ingredientsList.attr('contenteditable', 'true');
+      directions.attr('contenteditable', 'true');
+      tags.attr('contenteditable', 'true');
+      
     }     
   });
 

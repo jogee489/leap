@@ -49,15 +49,20 @@ function renderFindRecipes() {
     updateStepLink("select-recipes-step");
     // Retrieve each food to have
     var food_items = [];
+    var avoid_items = [];
     $('.have-list').find('li').each(function() {
         food_items.push($(this).text());
+    });
+    $('.avoid-list').find('li').each(function() {
+        avoid_items.push($(this).text());
     });
     // Send food_items to find_recipes
     $.ajax({
         url: "/search/find_recipes/",
         method: "POST",
         dataType: "html",
-        data: {food_items: JSON.stringify(food_items)},
+        data: {food_items: JSON.stringify(food_items),
+               avoid_items: JSON.stringify(avoid_items)},
         timeout: 5000,
         success: function(data) {
             $("#step-2").html(data);

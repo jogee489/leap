@@ -7,11 +7,14 @@ module RecipesHelper
 		if recipes.present?
 			recipes.each_with_index do |recipe, index|
 				if recipe.instance_of? Hash
+					puts recipe
 					recipe = Recipe.new(title: recipe[:title], ingredients: recipe[:ingredients], directions: recipe[:directions])
+					puts recipe.ingredients
+					curr_parallel = recipes[index][:parallel]
 				end
 
 				id_element = add_form_element('recipe', 'id', {type: 'hidden'}, {value: recipe.try(:id)})
-				form = render('recipes/form', recipe: recipe, parallel: recipe[:parallel])
+				form = render('recipes/form', recipe: recipe, parallel: curr_parallel)
 				recipe_table << <<-EOS.html_safe
 
 <tr class="app-table-tr">
@@ -46,5 +49,40 @@ module RecipesHelper
 		recipe_table.html_safe
 	end
 
+	def ingredients_list(ingredients, parallel)
+		unordered_list_html = ''
+		ingredients_list_html = ''
+		puts parallel
+		
+		if parallel.present?
+			#check ingredients with parallel array. if parallel[index]=-1, render li with red background
+			index = 0;
+			ingredients.split("\n").each do |ingredient|
+				if parallel[index] == -1
+					ingredients_list_html << "<li class='ingredient-to-avoid'>#{ingredient}</li>"
+				elsif parallel[index] == 1
+					ingredients_list_html << "<li class='ingredient-to-have'>#{ingredient}</li>"
+				else
+					ingredients_list_html << "<li class='ingredient'>#{ingredient}</li>"
+				end
+				index +=1
+			end
+		else
+			ingredients.split("\n").each do |ingredient|
+				ingredients_list_html << "<li class='ingredient'>#{ingredient}</li>"
+			end
+
+		end
+
+		unordered_list_html << <<-EOS.html_safe
+			<ul class="rec-ingredients">
+			#{ingredients_list_html}
+			</ul>
+		EOS
+
+		unordered_list_html.html_safe
+
+
+	end
 	
 end

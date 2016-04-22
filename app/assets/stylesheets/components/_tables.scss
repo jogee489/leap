@@ -94,6 +94,28 @@
       margin: 0px 0px 10px 0px;
     }
 
+    ul {
+    	width: inherit;
+    	height: 80px;
+    	overflow: auto;
+    	list-style: none;
+    	margin-left: none;
+
+    	li{
+    		display: block;
+    		margin-right: 20px;
+
+    	}
+	}
+
+	.ingredient-to-avoid {
+		background-color: red;
+	}
+
+	.ingredient-to-have {
+		background-color: brown;
+	}
+
     textarea {
     	resize: none;
   		border: none;

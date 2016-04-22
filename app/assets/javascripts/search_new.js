@@ -156,6 +156,8 @@ $(function () {
     });
     if (result) {
       $(this).attr('data-content', search + " found and selected in " + categoryName);
+      $('#btn-have, #btn-avoid').removeClass('disabled');
+      search = "";
     }
     else {
       $(this).attr('data-content', search + " Food item not found!");

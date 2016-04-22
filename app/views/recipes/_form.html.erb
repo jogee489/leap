@@ -3,7 +3,8 @@
 	<h1 for="title">Title</h1>
 	<textarea name="recipe[title]" class="form-control rec-title" rows="1" required><%= recipe.title %></textarea>
 	<h1 for="ingredients">Ingredients</h1>
-	<textarea name="recipe[ingredients]" class="form-control rec-ingredients" rows="4" required><%= recipe.formatIngredients %></textarea>
+	<%= ingredients_list(recipe.ingredients, parallel) %>
+	<textarea name="recipe[ingredients]" class="form-control rec-ingredients" rows="4" required style="display: none;"><%= recipe.formatIngredients %></textarea>
 	<h1 for="directions">Directions</h1>
 	<textarea name="recipe[directions]" class="form-control rec-directions" rows="4" required><%= recipe.formatDirections %></textarea>
 	<h1 for="tag_id">Tags</h1>
