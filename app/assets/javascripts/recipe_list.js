@@ -85,7 +85,6 @@ $(document).ready(function() {
     var recBox = $(this).closest('.recipe-box');
     var title = recBox.find('.rec-title');
     var ingredientsList = recBox.find('.rec-ingredients').find('li');
-    console.log(ingredientsList);
     var directions = recBox.find('.rec-directions');
     var tags = recBox.find('.rec-tags');
     var id = recBox.find('#recipe_id').val();
@@ -114,7 +113,6 @@ $(document).ready(function() {
           }
         }
 
-      console.log(ingredients);
 
       var json = JSON.stringify({title: title.val(), ingredients: ingredients, directions: directions.val(), tags: tags.val()});
       

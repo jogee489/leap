@@ -101,25 +101,21 @@ $(document).ready(function() {
       var ingredients = recBox.find('.rec-ingredients');
       var directions = recBox.find('.rec-directions');
       var tags = recBox.find('.rec-tags');
-
-      console.log(recBox);
-      console.log(title);
-      console.log(ingredients);
       
       if($(this).hasClass('btn-save-updated')){
         $(this).removeClass('btn-save-updated');
 
         $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
 
+        title.css({"border": "none", "pointer-events": "none"});
+        ingredients.css({"border": "none", "pointer-events": "none"});
+        directions.css({"border": "none", "pointer-events": "none"});
+        tags.css({"border": "none", "pointer-events": "none"});
+
         title.attr('contenteditable', 'false');
         ingredients.attr('contenteditable', 'false');
         directions.attr('contenteditable', 'false');
         tags.attr('contenteditable', 'false');
-
-        title.css({"border": "none"});
-        ingredients.css({"border": "none"});
-        directions.css({"border": "none"});
-        tags.css({"border": "none"});
 
       } else {
         $(this).addClass('btn-save-updated');
@@ -131,18 +127,10 @@ $(document).ready(function() {
         directions.attr('contenteditable', 'true');
         tags.attr('contenteditable', 'true');
 
-        title.css({"border-color": "#C1E0FF", 
-             "border-width":"1px", 
-             "border-style":"solid"});
-        ingredients.css({"border-color": "#C1E0FF", 
-             "border-width":"1px", 
-             "border-style":"solid"});
-        directions.css({"border-color": "#C1E0FF", 
-             "border-width":"1px", 
-             "border-style":"solid"});
-        tags.css({"border-color": "#C1E0FF", 
-             "border-width":"1px", 
-             "border-style":"solid"});
+        title.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
+        ingredients.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
+        directions.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
+        tags.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
 
       }
       
