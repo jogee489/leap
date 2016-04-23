@@ -160,7 +160,7 @@ $(function () {
       search = "";
     }
     else {
-      $(this).attr('data-content', search + " Food item not found!");
+      $(this).attr('data-content', search + " was not found!");
     }
     $(this).popover('show');
 

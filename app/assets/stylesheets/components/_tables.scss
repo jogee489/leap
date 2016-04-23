@@ -5,6 +5,7 @@
 
 	.table {
 		margin: 0;
+		table-layout: fixed;
 
 		.app-table-tr {
 			background-color: $panel-heading-background;
@@ -27,12 +28,12 @@
 			}
 
 			.expand-td {
-				width: 12% !important;
+				width: 10% !important;
 			}
 
 			.app-table-title {
 				font-weight: bold;
-				max-width: 800px;
+				width: 90% !important;
 			}
 
 			.app-table-details {
@@ -46,7 +47,7 @@
 	}
 }
 
-.table-selected-tr {
+.expanded {
 	opacity: 1;
 }
 
@@ -90,45 +91,46 @@
 
 	h1 {
 		font-family: 'Oleo Script', cursive;
-      font-size: 20px;
-      margin: 0px 0px 10px 0px;
+    font-size: 20px;
+    margin: 0px 0px 10px 0px;
+  }
+
+  ul {
+  	width: inherit;
+  	height: 80px;
+  	overflow: auto;
+  	list-style: none;
+  	margin-left: none;
+
+    li {
+    	display: block;
+    	margin-right: 20px;
     }
+  }
 
-    ul {
-    	width: inherit;
-    	height: 80px;
-    	overflow: auto;
-    	list-style: none;
-    	margin-left: none;
-
-    	li{
-    		display: block;
-    		margin-right: 20px;
-
-    	}
+  .ingredient-to-have {
+		background-color: green;
+		color: white;
 	}
 
 	.ingredient-to-avoid {
 		background-color: red;
+		color: white;
 	}
 
-	.ingredient-to-have {
-		background-color: brown;
-	}
-
-    textarea {
-    	resize: none;
-  		border: none;
-  		@include box-shadow(none);
-		  background-color: transparent;
-		  font-size: 15px;
-		  overflow-y: auto;
-		  padding: 0;
-		  color: #333;
-		  pointer-events: none;
-    	margin-bottom: 20px;
-    	width: 862px;
-    }
+  textarea {
+  	resize: none;
+		border: none;
+		@include box-shadow(none);
+	  background-color: transparent;
+	  font-size: 15px;
+	  overflow-y: auto;
+	  padding: 0;
+	  color: #333;
+	  pointer-events: none;
+  	margin-bottom: 20px;
+  	width: 862px;
+  }
 }
 
 /* meal plan table */
