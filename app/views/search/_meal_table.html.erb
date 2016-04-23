@@ -1,3 +1,7 @@
+<% op1 = nil if local_assigns[:op1].nil? %>
+<% op2 = nil if local_assigns[:op2].nil? %>
+<% op3 = nil if local_assigns[:op3].nil? %>
+
 <div class="generate-table-container">
   <table class="table table-bordered">
     <thead>
@@ -14,15 +18,33 @@
       <tr>
         <td>
           <label>Recipes:</label>
-          <ul class="recipe-list list-group" id=<%=id+"Op1" %> ></ul>
+          <ul class="recipe-list list-group" id=<%=id+"Op1" %> >
+            <% if op1 and op1.any? %>
+              <% op1.each do |recipe| %>
+                <li><%= recipe %></li>
+              <% end %>
+            <% end %>
+          </ul>
         </td>
         <td>
           <label>Recipes:</label>
-          <ul class="recipe-list list-group" id=<%=id+"Op2" %> ></ul>
+          <ul class="recipe-list list-group" id=<%=id+"Op2" %> >
+            <% if op2 and op2.any? %>
+              <% op2.each do |recipe| %>
+                <li><%= recipe %></li>
+              <% end %>
+            <% end %>
+          </ul>
         </td>
         <td>
           <label>Recipes:</label>
-          <ul class="recipe-list list-group" id=<%=id+"Op3" %> ></ul>
+          <ul class="recipe-list list-group" id=<%=id+"Op3" %> >
+            <% if op3 and op3.any? %>
+              <% op3.each do |recipe| %>
+                <li><%= recipe %></li>
+              <% end %>
+            <% end %>
+          </ul>
         </td>
       </tr>
       <tr>

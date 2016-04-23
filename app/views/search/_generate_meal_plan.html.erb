@@ -30,15 +30,15 @@
   </div>
   <div class="app-well-container">
     <!-- BREAKFAST TABLE -->
-    <%= render partial: "meal_table", locals: {meal_name: "Breakfast", id: "brk"} %>
+    <%= render partial: "meal_table", locals: {meal_name: "Breakfast", id: "brk", op1: @brkOp1, op2: @brkOp2, op3: @brkOp3} %>
     <!-- SNACK 1 TABLE -->
-    <%= render partial: "meal_table", locals: {meal_name: "Snack 1", id: "snk1"} %>
+    <%= render partial: "meal_table", locals: {meal_name: "Snack 1", id: "snk1", op1: @snk1Op1, op2: @snk1Op2, op3: @snk1Op3} %>
     <!-- LUNCH TABLE -->
-    <%= render partial: "meal_table", locals: {meal_name: "Lunch", id: "lnh"} %>
+    <%= render partial: "meal_table", locals: {meal_name: "Lunch", id: "lnh", op1: @lnhOp1, op2: @lnhOp2, op3: @lnhp3} %>
     <!-- SNACK 2 TABLE -->
-    <%= render partial: "meal_table", locals: {meal_name: "Snack 2", id: "snk2"} %>
+    <%= render partial: "meal_table", locals: {meal_name: "Snack 2", id: "snk2", op1: @snk2Op1, op2: @snk2Op2, op3: @snk2Op3} %>
     <!-- DINNER 2 TABLE -->
-    <%= render partial: "meal_table", locals: {meal_name: "Dinner", id: "dnr"} %>
+    <%= render partial: "meal_table", locals: {meal_name: "Dinner", id: "dnr", op1: @dnrOp1, op2: @dnrOp2, op3: @dnrOp3} %>
   </div>
   <div class="app-well-menu">
     <h3>Food Items To Have/Avoid</h3>

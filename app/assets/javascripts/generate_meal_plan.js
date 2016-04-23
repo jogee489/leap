@@ -17,9 +17,9 @@ $(document).ready(function () {
     // If a recipe in the preview meal plan gets clicked.
     // handles delete event in recipe preview table.
     $('#btn-delete-preview').on('click', function() {
-     var actives = '';
-     actives = $('li.highlight-item');
+     var actives = $('li.highlight-item');
      actives.remove();
+     $(this).addClass(disabled);
     });
      
 });
@@ -97,13 +97,76 @@ function renderGenerateMealPlan() {
     });
 
     // Get recipes for each option
-    var breakfast;
+    var brkOp1 = [];
+    $('#brkOp1 li').each(function() {
+        brkOp1.push($(this).text());
+    });
+    var brkOp2 = [];
+    $('#brkOp2 li').each(function() {
+        brkOp2.push($(this).text());
+    });
+    var brkOp3 = [];
+    $('#brkOp3 li').each(function() {
+        brkOp3.push($(this).text());
+    });
+    var snk1Op1 = [];
+    $('#snk1Op1 li').each(function() {
+        snk1Op1.push($(this).text());
+    });
+    var snk1Op2 = [];
+    $('#snk1Op2 li').each(function(e) {
+        snk1Op2.push($(this).text());
+    });
+    var snk1Op3 = [];
+    $('#snk1Op3 li').each(function() {
+        snk1Op3.push($(this).text());
+    });
+    var lnhOp1 = [];
+    $('#lnhOp1 li').each(function() {
+        lnhOp1.push($(this).text());
+    });
+    var lnhOp2 = [];
+    $('#lnhOp2 li').each(function() {
+        lnhOp2.push($(this).text());
+    });
+    var lnhOp3 = [];
+    $('#lnhOp3 li').each(function() {
+        lnhOp3.push($(this).text());
+    });
+    var snk2Op1 = [];
+    $('#snk2Op1 li').each(function() {
+        snk2Op1.push($(this).text());
+    });
+    var snk2Op2 = [];
+    $('#snk2Op2 li').each(function() {
+        snk2Op2.push($(this).text());
+    });
+    var snk2Op3 = [];
+    $('#snk2Op3 li').each(function() {
+        snk2Op3.push($(this).text());
+    });
+    var dnrOp1 = [];
+    $('#dnrOp1 li').each(function() {
+        dnrOp1.push($(this).text());
+    });
+    var dnrOp2 = [];
+    $('#dnrOp2 li').each(function() {
+        dnrOp2.push($(this).text());
+    });
+    var dnrOp3 = [];
+    $('#dnrOp3 li').each(function() {
+        dnrOp3.push($(this).text());
+    });
+
 
     // JSONify the parameters to be sent.
-    var data = JSON.stringify({to_have: foodsToHave, to_avoid: foodsToAvoid, recipe_ids: idList});
+    var data = JSON.stringify({to_have: foodsToHave, to_avoid: foodsToAvoid, recipe_ids: idList,
+            brkOp1: brkOp1, brkOp2: brkOp2, brkOp3: brkOp3, snk1Op1: snk1Op1, snk1Op2: snk1Op2,
+            snk1Op3: snk1Op3, lnhOp1: lnhOp1, lnhOp2: lnhOp2, lnhOp3: lnhOp3, snk2Op1: snk2Op1,
+            snk2Op2: snk2Op2, snk2Op3: snk2Op3, dnrOp1: dnrOp1, dnrOp2: dnrOp2, dnrOp3: dnrOp3});
     $.ajax({
         url: "/search/generate_meal_plan/",
-        method: "GET",
+        method: "POST",
         dataType: "html",
         timeout: 5000,
         data: {meal_plan_data: data},

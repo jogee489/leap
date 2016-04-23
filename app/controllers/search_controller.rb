@@ -41,8 +41,23 @@ class SearchController < ApplicationController
 		meal_plan_data = JSON.parse(params[:meal_plan_data])
 		@foods_to_have = meal_plan_data['to_have']
 		@foods_to_avoid = meal_plan_data['to_avoid']
+		@brkOp1 = meal_plan_data['brkOp1']
+		@brkOp2 = meal_plan_data['brkOp2']
+		@brkOp3 = meal_plan_data['brkOp3']
+		@snk1Op1 = meal_plan_data['snk1Op1']
+		@snk1Op2 = meal_plan_data['snk1Op2']
+        @snk1Op3 = meal_plan_data['snk1Op3']
+        @lnhOp1 = meal_plan_data['lnhOp1']
+        @lnhOp2 = meal_plan_data['lnhOp2']
+        @lnhOp3 = meal_plan_data['lnhOp3']
+        @snk2Op1 = meal_plan_data['snk2Op1']
+        @snk2Op2 = meal_plan_data['snk2Op2']
+        @snk2Op3 = meal_plan_data['snk2Op3']
+        @dnrOp1 = meal_plan_data['dnrOp1']
+        @dnrOp2 = meal_plan_data['dnrOp2']
+        @dnrOp3 = meal_plan_data['dnrOp3']
 		@recipe_list = Recipe.find(meal_plan_data['recipe_ids'])
-		
+
 		render partial: 'generate_meal_plan'
 	end
 
