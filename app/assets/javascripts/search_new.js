@@ -135,7 +135,8 @@ $(function () {
   });
 
   $('#search-btn').click(function() {
-    var search = $(this).next().val();
+    var searchBar = $(this).next();
+    var search = searchBar.val();
     var result = false;
     var foodList = [];
     var categoryName;
@@ -157,11 +158,11 @@ $(function () {
     if (result) {
       $(this).attr('data-content', search + " found and selected in " + categoryName);
       $('#btn-have, #btn-avoid').removeClass('disabled');
-      search = "";
     }
     else {
       $(this).attr('data-content', search + " was not found!");
     }
+    searchBar.val("");
     $(this).popover('show');
 
     });
