@@ -19,15 +19,15 @@ class SearchController < ApplicationController
 	def find_recipes
 		food_items = JSON.parse(params[:food_items])
 		avoid_items = JSON.parse(params[:avoid_items])
-		recipe_set = Recipe.ingredients_search(food_items) if food_items.present?
-		@recipe_list = []
+		@recipe_list = Recipe.ingredients_search(food_items) if food_items.present?
 
-		if recipe_set.present?
-			recipe_set.each_with_index do |recipe, i|
+		if @recipe_list
+			@recipe_list = @recipe_list.to_a
+			@recipe_list.each_with_index do |recipe, i|
 				@recipe_list[i] = create_parallel_array(recipe, avoid_items, food_items)
 			end
 		end
-		
+	
 		@recipe_list ||= Recipe.all
 		render partial: 'find_recipes' 
 	end

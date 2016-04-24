@@ -103,7 +103,7 @@ class RecipesController < ApplicationController
 		file = params[:recipe][:file]
 		if file
 			doc = Docx::Document.open(params[:recipe][:file].path)
-			$recipe_list = []
+			@recipe_list = []
 			@recipe_data = ''
 			@recipe = Recipe.new
 			@state = 0
@@ -112,7 +112,7 @@ class RecipesController < ApplicationController
 				@recipe_data << temp unless temp.blank?
 				parse_document temp.strip unless temp.blank?
 			end
-			$recipe_list << @recipe
+			@recipe_list << @recipe
 		else
 			render nothing: true
 		end
@@ -156,7 +156,7 @@ class RecipesController < ApplicationController
   		return nil if text.blank?
   		if text == 'TITLE' && @state == 2
   			@state = 0
-  			$recipe_list << @recipe
+  			@recipe_list << @recipe
   			@recipe = Recipe.new
   		elsif text == 'INGREDIENTS'
   			@state = 1

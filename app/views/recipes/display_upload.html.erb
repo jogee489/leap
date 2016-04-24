@@ -1,10 +1,7 @@
 <%= javascript_include_tag 'recipe_results.js' %>
 <%= javascript_include_tag 'recipe_table.js' %>
 
-<% if $recipe_list %>
-  <% @recipe_list = $recipe_list %>
-  <% $recipe_list = nil %>
-<% else %>
+<% unless @recipe_list.any? %>
   <script>
     window.location.href = "/recipes/list"
   </script>
