@@ -12,6 +12,13 @@ $(document).ready(function () {
     $('button.step-app').click(function () {
         var target = $(this).find('a').attr('href');
         showCurrentStep(target);
+
+        // reset stepwizard font weight to normal.
+        $('.stepwizard-step').find('button').css({"font-weight": "normal"});
+        $('.stepwizard-step').find('p').css({"font-weight": "normal"});
+        // set stepwizard font to bold.
+        $(this).css({"font-weight": "bold"});
+        $(this).next().css({"font-weight": "bold"});
     });
 
     // If a recipe in the preview meal plan gets clicked.
@@ -191,6 +198,7 @@ function showCurrentStep(stepNumberDiv) {
 function updateStepLink(stepName) {
     $('div.setup-panel div a').addClass('btn-default');
     $('#' + stepName).removeClass('disabled');
+    stepFontWeightChange(stepName);
 }
 
 function checkErrors() {
@@ -204,4 +212,13 @@ function checkErrors() {
     if (isValid) {
         nextStepWizard.removeAttr('disabled').trigger('click');
     }
+}
+
+function stepFontWeightChange(stepName){
+    // reset stepwizard font weight to normal.
+    $('.stepwizard-step').find('button').css({"font-weight": "normal"});
+    $('.stepwizard-step').find('p').css({"font-weight": "normal"});
+    // set stepwizard font to bold.
+    $('#' + stepName).css({"font-weight": "bold"});
+    $('#' + stepName).next().css({"font-weight": "bold"});
 }
