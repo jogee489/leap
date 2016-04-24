@@ -80,7 +80,9 @@
     <h3>Recipes</h3>
   </div>
   <div class="app-well-container">
-    <%= render partial: "/recipes/recipe_table", locals: {recipe_list: @recipe_list} %>
+    <% @recipe_list.each do |recipe| %>
+      <%= render partial: "/recipes/form", locals: {recipe: recipe, parallel: nil} %>
+    <% end %>
   </div>
   <div class="app-well-menu">
     <h3>Additional Comments</h3>

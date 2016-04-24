@@ -25,7 +25,6 @@
       $('.check-rec:checked').each(function() {
         var recipe_id = $(this).closest('tr').find('#recipe_id').val();
         var recipe_name = $(this).closest('tr').find('td').find('label').text();
-
         selected_recipe_names.push(recipe_name);
         selected_id.push(recipe_id);
         $(this).prop('checked', false);
@@ -36,7 +35,7 @@
         $('<li>').text(value).addClass("food-item list-group-item").appendTo("#" + option);
         // Add id to the list if the recipe is unique.
         if ($.inArray(selected_id[index], current_ids) == -1) {
-          $('<li>').text(selected_id[index]).appendTo('#recipe-id-list');  
+          $('<li>').text(selected_id[index]).appendTo('#recipe-id-list');
         }
         
       });
