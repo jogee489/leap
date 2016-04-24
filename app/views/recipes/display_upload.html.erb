@@ -1,5 +1,15 @@
 <%= javascript_include_tag 'recipe_results.js' %>
 <%= javascript_include_tag 'recipe_table.js' %>
+
+<% if $recipe_list %>
+  <% @recipe_list = $recipe_list %>
+  <% $recipe_list = nil %>
+<% else %>
+  <script>
+    window.location.href = "/recipes/list"
+  </script>
+<% end %>
+
 <h3 class="page-title">Upload Recipe Search Result</h3>
 <div class="page-container container">
   <!-- pagination -->

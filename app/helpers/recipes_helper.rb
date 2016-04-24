@@ -8,8 +8,12 @@ module RecipesHelper
 			recipes.each_with_index do |recipe, index|
 				if recipe.instance_of? Hash
 					puts recipe
-					recipe = Recipe.new(title: recipe[:title], ingredients: recipe[:ingredients], directions: recipe[:directions])
-					puts recipe.ingredients
+					if recipe[:id]
+						recipe = Recipe.find(recipe[:id])
+					else
+						recipe = Recipe.new(title: recipe[:title], ingredients: recipe[:ingredients], directions: recipe[:directions])
+					end
+
 					curr_parallel = recipes[index][:parallel]
 				end
 

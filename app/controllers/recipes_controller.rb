@@ -101,23 +101,26 @@ class RecipesController < ApplicationController
 
 	def display_upload
 		file = params[:recipe][:file]
-		doc = Docx::Document.open(params[:recipe][:file].path)
-		@recipe_list = []
-		@recipe_data = ''
-		@recipe = Recipe.new
-		@state = 0
-		doc.paragraphs.each do |p|
-			temp = "#{p}".strip + "\n"
-			@recipe_data << temp unless temp.blank?
-			parse_document temp.strip unless temp.blank?
+		if file
+			doc = Docx::Document.open(params[:recipe][:file].path)
+			$recipe_list = []
+			@recipe_data = ''
+			@recipe = Recipe.new
+			@state = 0
+			doc.paragraphs.each do |p|
+				temp = "#{p}".strip + "\n"
+				@recipe_data << temp unless temp.blank?
+				parse_document temp.strip unless temp.blank?
+			end
+			$recipe_list << @recipe
+		else
+			render nothing: true
 		end
-		@recipe_list << @recipe
 	end
 
 	def search_online
 		$recipe_list = web_crawl_blog if params[:foods_to_include].present?
 		if $recipe_list
-			puts @recipe_links
 			respond_to do |format|
 				message = { status: 200, recipe_links: @recipe_links }
 				format.json { render json: message }
@@ -153,7 +156,7 @@ class RecipesController < ApplicationController
   		return nil if text.blank?
   		if text == 'TITLE' && @state == 2
   			@state = 0
-  			@recipe_list << @recipe
+  			$recipe_list << @recipe
   			@recipe = Recipe.new
   		elsif text == 'INGREDIENTS'
   			@state = 1
