@@ -61,6 +61,10 @@ $(document).ready(function() {
     var ingredients = recBox.find('.rec-ingredients').val();
     var directions = recBox.find('.rec-directions').val();
     var tags = recBox.find('.rec-tags').val();
+    if(title == "" || ingredients == "" || directions == "" || directions == ""){
+      alert("Please fill out all required fields");
+      return;
+    }
     var json = JSON.stringify({title: title, directions: directions, ingredients: ingredients, tags: tags});
     console.log(tags);
     $.ajax({
@@ -90,31 +94,21 @@ $(document).ready(function() {
     var id = recBox.find('#recipe_id').val();
     
     if($(this).hasClass('btn-save-updated')){
+      var ingredientsTextArea = recBox.find('textarea.rec-ingredients');
+
       $(this).removeClass('btn-save-updated');
       $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
       title.css({"border": "none", "pointer-events": "none"});
-      ingredientsList.css({"border": "none", "pointer-events": "none"});
+      ingredientsTextArea.css({"border": "none", "pointer-events": "none"});
       directions.css({"border": "none", "pointer-events": "none"});
       tags.css({"border": "none", "pointer-events": "none"});
 
       title.attr('contenteditable', 'false');
-      ingredientsList.attr('contenteditable', 'false');
+      ingredientsTextArea.attr('contenteditable', 'false');
       directions.attr('contenteditable', 'false');
       tags.attr('contenteditable', 'false');
 
-      var ingredients = "";
-
-      for(var i = 0; i < ingredientsList.length; i++){
-          if(i != ingredientsList.length - 1){
-            ingredients += (ingredientsList[i].innerText + "\n");
-          }
-          else {
-            ingredients += (ingredientsList[i].innerText);
-          }
-        }
-
-
-      var json = JSON.stringify({title: title.val(), ingredients: ingredients, directions: directions.val(), tags: tags.val()});
+      var json = JSON.stringify({title: title.val(), ingredients: ingredientsTextArea.val(), directions: directions.val(), tags: tags.val()});
       
       $.ajax({
         url: "/recipes/update/" + id,
@@ -131,16 +125,33 @@ $(document).ready(function() {
         }
       });
     } else {
+
+      var ingredients = "";
+    
+      for(var i = 0; i < ingredientsList.length; i++){
+        if(i != ingredientsList.length - 1){
+          ingredients += (ingredientsList[i].innerText + "\n");
+        }
+        else {
+          ingredients += (ingredientsList[i].innerText);
+        }
+      }
+      var ingredientsTextArea = $("<textarea class='form-control rec-ingredients'></textarea>").text(ingredients);
+      ingredientsList.after(ingredientsTextArea);
+      ingredientsList.hide();
+    
+      
       $(this).addClass('btn-save-updated');
       $(this).html('Save <span class="glyphicon glyphicon-save"></span>');
       title.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
-      ingredientsList.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
+      ingredientsTextArea.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
       directions.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
       tags.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
 
 
+
       title.attr('contenteditable', 'true');
-      ingredientsList.attr('contenteditable', 'true');
+      ingredientsTextArea.attr('contenteditable', 'true');
       directions.attr('contenteditable', 'true');
       tags.attr('contenteditable', 'true');
       
