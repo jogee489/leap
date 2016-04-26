@@ -105,6 +105,13 @@ $(document).ready(function() {
         return;
       }
 
+      //ensure that the title wasn't changed
+      var titleBar = recBox.closest('tr').prev().find('label');
+      //if it was, set the titleBar's value to the newTitle
+      if(titleBar.text() != title.val()){
+        titleBar.text(title.val());
+      }
+      
       $(this).removeClass('btn-save-updated');
       $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
       title.css({"border": "none", "pointer-events": "none"});

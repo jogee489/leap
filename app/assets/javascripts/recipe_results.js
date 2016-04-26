@@ -49,11 +49,10 @@ $(document).ready(function() {
       var recipeList = [];
       $(".check-rec:checked").each(function() {
         var recipeData = $(this).closest("tr").next();
-        var title = recipeData.find(".rec-title").text();
+        var title = recipeData.find(".rec-title").val();
         var ingredientsList = recipeData.find("li");
-        console.log(ingredients);
-        var directions = recipeData.find(".rec-directions").text();
-        var tags = recipeData.find(".rec-tags").text();
+        var directions = recipeData.find(".rec-directions").val();
+        var tags = recipeData.find(".rec-tags").val();
 
         var ingredients = "";
 
@@ -101,6 +100,8 @@ $(document).ready(function() {
       
       if($(this).hasClass('btn-save-updated')){
 
+
+
         var ingredients = "";
     
         for(var i = 0; i < ingredientsList.length; i++){
@@ -115,6 +116,13 @@ $(document).ready(function() {
         if(!validateRecipe(title.val(), ingredients, directions.val())){
           alert("Please fill out all required fields");
           return;
+        }
+
+        //ensure that the title wasn't changed
+        var titleBar = recBox.closest('tr').prev().find('label');
+        //if it was, set the titleBar's value to the newTitle
+        if(titleBar.text() != title.val()){
+          titleBar.text(title.val());
         }
 
         $(this).removeClass('btn-save-updated');
