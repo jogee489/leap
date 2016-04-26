@@ -100,21 +100,25 @@ class RecipesController < ApplicationController
 	end
 
 	def display_upload
-		file = params[:recipe][:file]
-		if file
-			doc = Docx::Document.open(params[:recipe][:file].path)
-			@recipe_list = []
-			@recipe_data = ''
-			@recipe = Recipe.new
-			@state = 0
-			doc.paragraphs.each do |p|
-				temp = "#{p}".strip + "\n"
-				@recipe_data << temp unless temp.blank?
-				parse_document temp.strip unless temp.blank?
+		if params[:recipe]
+			file = params[:recipe][:file]
+			if file
+				doc = Docx::Document.open(params[:recipe][:file].path)
+				@recipe_list = []
+				@recipe_data = ''
+				@recipe = Recipe.new
+				@state = 0
+				doc.paragraphs.each do |p|
+					temp = "#{p}".strip + "\n"
+					@recipe_data << temp unless temp.blank?
+					parse_document temp.strip unless temp.blank?
+				end
+				@recipe_list << @recipe
+			else
+				redirect_to(action: 'list')
 			end
-			@recipe_list << @recipe
 		else
-			render nothing: true
+			redirect_to(action: 'list')
 		end
 	end
 

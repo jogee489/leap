@@ -1,12 +1,6 @@
 <%= javascript_include_tag 'recipe_results.js' %>
 <%= javascript_include_tag 'recipe_table.js' %>
 
-<% unless @recipe_list.any? %>
-  <script>
-    window.location.href = "/recipes/list"
-  </script>
-<% end %>
-
 <h3 class="page-title">Upload Recipe Search Result</h3>
 <div class="page-container container">
   <!-- pagination -->
