@@ -136,9 +136,15 @@ $(document).ready(function() {
           ingredients += (ingredientsList[i].innerText);
         }
       }
-      var ingredientsTextArea = $("<textarea class='form-control rec-ingredients'></textarea>").text(ingredients);
-      ingredientsList.after(ingredientsTextArea);
-      ingredientsList.hide();
+      //if the textarea does not exist, convert the ingredients list to an editable textarea
+      if(!recBox.find('textarea.rec-ingredients').length){
+        var ingredientsTextArea = $("<textarea class='form-control rec-ingredients'></textarea>").text(ingredients);
+        ingredientsList.closest('ul').after(ingredientsTextArea);
+        ingredientsList.closest('ul').hide();
+      }
+      else {
+        var ingredientsTextArea = recBox.find('textarea.rec-ingredients');
+      }
     
       
       $(this).addClass('btn-save-updated');
