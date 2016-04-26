@@ -66,9 +66,6 @@ $(document).ready(function() {
           }
         }
 
-        console.log(ingredients);
-
-
         var recipeJSON = JSON.stringify({title: title, ingredients: ingredients, directions: directions, tags: tags});
         recipeList.push(recipeJSON);
       });
@@ -98,37 +95,56 @@ $(document).ready(function() {
     $('.btn-edit-recipe').click(function() {
       var recBox = $(this).closest('.recipe-box');
       var title = recBox.find('.rec-title');
-      var ingredients = recBox.find('.rec-ingredients');
+      var ingredientsList = recBox.find('.rec-ingredients');
       var directions = recBox.find('.rec-directions');
       var tags = recBox.find('.rec-tags');
       
       if($(this).hasClass('btn-save-updated')){
+
+        var ingredients = "";
+    
+        for(var i = 0; i < ingredientsList.length; i++){
+          if(i != ingredientsList.length - 1){
+            ingredients += (ingredientsList[i].innerText + "\n");
+          }
+          else {
+            ingredients += (ingredientsList[i].innerText);
+          }
+        }
+        //if one of the required fields are empty, don't allow the save
+        if(!validateRecipe(title.val(), ingredients, directions.val())){
+          alert("Please fill out all required fields");
+          return;
+        }
+
         $(this).removeClass('btn-save-updated');
 
         $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
 
         title.css({"border": "none", "pointer-events": "none"});
-        ingredients.css({"border": "none", "pointer-events": "none"});
+        ingredientsList.css({"border": "none", "pointer-events": "none"});
         directions.css({"border": "none", "pointer-events": "none"});
         tags.css({"border": "none", "pointer-events": "none"});
 
         title.attr('contenteditable', 'false');
-        ingredients.attr('contenteditable', 'false');
+        ingredientsList.attr('contenteditable', 'false');
         directions.attr('contenteditable', 'false');
         tags.attr('contenteditable', 'false');
 
       } else {
+    
+
         $(this).addClass('btn-save-updated');
 
         $(this).html('Save <span class="glyphicon glyphicon-save"></span>');
 
         title.attr('contenteditable', 'true');
-        ingredients.attr('contenteditable', 'true');
+        ingredientsList.attr('contenteditable', 'true');
         directions.attr('contenteditable', 'true');
         tags.attr('contenteditable', 'true');
 
         title.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
-        ingredients.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
+        ingredientsList.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
         directions.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
         tags.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
 
@@ -239,5 +255,14 @@ function checkListSize() {
   console.log("checking size...")
   if ($(".check-rec").length == 0) {
      window.location.replace("/recipes/list");
+  }
+}
+
+function validateRecipe(title, ingredients, directions){
+  if(title.trim() == "" || ingredients.trim() == "" || directions.trim() == ""){
+    return false;
+  }
+  else {
+    return true;
   }
 }

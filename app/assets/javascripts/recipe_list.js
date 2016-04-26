@@ -61,10 +61,12 @@ $(document).ready(function() {
     var ingredients = recBox.find('.rec-ingredients').val();
     var directions = recBox.find('.rec-directions').val();
     var tags = recBox.find('.rec-tags').val();
-    if(title == "" || ingredients == "" || directions == "" || directions == ""){
+    
+    if(!validateRecipe(title, ingredients, directions)){
       alert("Please fill out all required fields");
       return;
     }
+
     var json = JSON.stringify({title: title, directions: directions, ingredients: ingredients, tags: tags});
     console.log(tags);
     $.ajax({
@@ -94,7 +96,14 @@ $(document).ready(function() {
     var id = recBox.find('#recipe_id').val();
     
     if($(this).hasClass('btn-save-updated')){
+
       var ingredientsTextArea = recBox.find('textarea.rec-ingredients');
+
+      //if one of the required fields are empty, don't allow the save
+      if(!validateRecipe(title.val(), ingredientsTextArea.val(), directions.val())){
+        alert("Please fill out all required fields");
+        return;
+      }
 
       $(this).removeClass('btn-save-updated');
       $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
@@ -173,4 +182,15 @@ $(document).ready(function() {
       var searchBar = $('#search');
       searchBar.attr('placeholder', 'Recipe Title');
     });
+
+    function validateRecipe(title, ingredients, directions){
+      if(title.trim() == "" || ingredients.trim() == "" || directions.trim() == ""){
+        return false;
+      }
+
+      else {
+        return true;
+      }
+
+    }
 });
