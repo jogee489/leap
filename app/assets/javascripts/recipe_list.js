@@ -38,15 +38,16 @@ $(document).ready(function() {
   $('.check-rec').bind('change', function() {
     var numChecked = $('.check-rec:checked').size();
     var maxChecked = $('.check-rec').size();
-    // fabio code
+    var parentTr = $(this).parent().parent().parent();
+
     var row = $(this).closest("tr");
        
     if ($('#btn-delete-recipes').hasClass("disabled") && numChecked > 0) {       
         $('#btn-delete-recipes').removeClass("disabled");
-        row.css({"opacity": "1"});
+        //row.css({"opacity": "1"});
      } else if (numChecked == 0) { // disable delete when 0 checked
         $('#btn-delete-recipes').addClass("disabled");
-        row.css({"opacity": "0.9"});
+        //.css({"opacity": "0.9"});
      } else if (numChecked < maxChecked) { // not all checked
         $('#check-all').prop("checked", false);
     } else if (numChecked == maxChecked) { //checkall when all checked
@@ -111,6 +112,11 @@ $(document).ready(function() {
       if(titleBar.text() != title.val()){
         titleBar.text(title.val());
       }
+
+      // scroll all textareas to top
+      $("textarea").each(function(){
+        $(this).scrollTop(0);
+      });
       
       $(this).removeClass('btn-save-updated');
       $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');

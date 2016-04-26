@@ -14,7 +14,7 @@
 			cursor: pointer;
 
 			&:hover {
-				opacity: 1;
+				//opacity: 1;
 			}
 
 			td {
@@ -45,10 +45,6 @@
 			}
 		}
 	}
-}
-
-.expanded {
-	opacity: 1;
 }
 
 .recipe-table-container {
@@ -84,7 +80,7 @@
 	padding: 20px;
 	background-color: $recipe-box-background;
 	width: 1023px;
-	max-height: 458px;
+	//max-height: 458px;
 	position: relative;
 	
 	color: #333;
@@ -95,18 +91,26 @@
     margin: 0px 0px 10px 0px;
   }
 
-  ul {
-  	width: inherit;
-  	height: 80px;
+  .rec-title, .rec-tags {
+  	//height: 23px;
+  }
+
+  .rec-ingredients {
+  	width: 862px;
+  	height: 84px;
   	overflow: auto;
   	list-style: none;
-	margin: 0;
-	padding: 0;
+  	margin-bottom: 20px;
+  	padding: 0;
 
     li {
     	display: block;
-    	margin-right: 20px;
+    	//margin-right: 20px;
     }
+  }
+
+  .rec-directions {
+  	//height: 84px;
   }
 
   .ingredient-to-have {
@@ -159,12 +163,12 @@
 
 		.recipe-list {
 			margin: 0;
-			width: 335px;
+			width: 368px;
 		}
 
 		.foods-list {
 			margin: 0;
-			width: 514px;
+			width: 564px;
 		}
 	}
 }

@@ -97,10 +97,26 @@ $(function () {
     }
   });
 
+  $(".app-table-tr").on('mouseover', function () {
+    $(this).css({"opacity": "1"});
+  }).on('mouseout', function () {
+    if (!$(this).hasClass("expanded")) {
+      $(this).css({"opacity": "0.9"});
+    }
+  });
+
   /** Logic for expanding food item list. */
   $(".expand-td").unbind('click').click(function() {
     $(this).parent().next().toggle('slow');
-    $(this).toggleClass("expanded"); // Put opacity change in this class
+
+    if ($(this).parent().hasClass("expanded")) {
+      $(this).parent().css({"opacity": "0.9"});
+      $(this).parent().removeClass("expanded");
+    } else {
+      $(this).parent().css({"opacity": "1"});
+      $(this).parent().addClass("expanded");
+    }
+
     $(this).find(".expand-icon").toggleClass("glyphicon-chevron-down").toggleClass("glyphicon-chevron-up");
   });
 

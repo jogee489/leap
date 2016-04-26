@@ -3,7 +3,7 @@ html {
   letter-spacing: 0.2em; }
 
 #app-content {
-  background-color: #E8E0B7;
+  background-color: #e8e0b7;
   margin-top: 50px;
   min-height: 100vh; }
 
@@ -23,7 +23,7 @@ a:hover {
 
 /* highlight item */
 .highlight-item {
-  background-color: #E7EA25;
+  background-color: #e7ea25;
   font-weight: bold; }
 
 li {
@@ -211,7 +211,7 @@ input {
   background-color: #006953; }
 
 footer {
-  background-color: #6B4258;
+  background-color: #6b4258;
   padding-top: 15px;
   height: 60px;
   text-align: center; }
@@ -264,7 +264,7 @@ footer {
     color: white; }
 
 .disabled {
-  background-color: #9E1754;
+  background-color: #9e1754;
   pointer-events: none; }
 
 /* panel delete category button */
@@ -376,7 +376,7 @@ footer {
     -moz-border-radius: 0 !important;
     -ms-border-radius: 0 !important;
     border-radius: 0 !important;
-    background-color: #6B4258; }
+    background-color: #6b4258; }
   .panel-app .panel-body, .foods-panel .panel-body {
     height: 332px; }
   .panel-app .panel-title, .foods-panel .panel-title {
@@ -416,12 +416,10 @@ footer {
     margin: 0;
     table-layout: fixed; }
     .app-table .table .app-table-tr, .recipe-table-container .table .app-table-tr, .food-table-container .table .app-table-tr {
-      background-color: #6B4258;
+      background-color: #6b4258;
       color: white;
       opacity: 0.9;
       cursor: pointer; }
-      .app-table .table .app-table-tr:hover, .recipe-table-container .table .app-table-tr:hover, .food-table-container .table .app-table-tr:hover {
-        opacity: 1; }
       .app-table .table .app-table-tr td, .recipe-table-container .table .app-table-tr td, .food-table-container .table .app-table-tr td {
         font-size: 16px;
         padding: 10px 15px; }
@@ -436,9 +434,6 @@ footer {
         display: none; }
         .app-table .table .app-table-tr .app-table-details td, .recipe-table-container .table .app-table-tr .app-table-details td, .food-table-container .table .app-table-tr .app-table-details td {
           background-color: white; }
-
-.expanded {
-  opacity: 1; }
 
 .recipe-table-container {
   max-height: 517px; }
@@ -469,25 +464,23 @@ footer {
   -ms-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
   box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
   padding: 20px;
-  background-color: #ECF9D4;
+  background-color: #ecf9d4;
   width: 1023px;
-  max-height: 458px;
   position: relative;
   color: #333; }
   .recipe-box h1 {
     font-family: 'Oleo Script', cursive;
     font-size: 20px;
     margin: 0px 0px 10px 0px; }
-  .recipe-box ul {
-    width: inherit;
-    height: 80px;
+  .recipe-box .rec-ingredients {
+    width: 862px;
+    height: 84px;
     overflow: auto;
     list-style: none;
-    margin: 0;
+    margin-bottom: 20px;
     padding: 0; }
-    .recipe-box ul li {
-      display: block;
-      margin-right: 20px; }
+    .recipe-box .rec-ingredients li {
+      display: block; }
   .recipe-box .ingredient-to-have {
     background-color: green;
     color: white; }
@@ -521,7 +514,7 @@ footer {
     overflow: hidden;
     text-overflow: ellipsis; }
   .generate-table-container .table .generate-table-section {
-    background-color: #6B4258;
+    background-color: #6b4258;
     color: white; }
     .generate-table-container .table .generate-table-section td {
       font-weight: bold;
@@ -529,10 +522,10 @@ footer {
       font-size: 16px; }
   .generate-table-container .table .recipe-list {
     margin: 0;
-    width: 335px; }
+    width: 368px; }
   .generate-table-container .table .foods-list {
     margin: 0;
-    width: 514px; }
+    width: 564px; }
 
 .comments-area {
   margin: 0; }
@@ -681,6 +674,12 @@ footer {
   .generate-well h3 {
     font-family: 'Oleo Script', cursive;
     font-weight: bold; }
+  .generate-well .recipe-box {
+    width: auto;
+    height: auto;
+    margin-bottom: 15px; }
+    .generate-well .recipe-box .rec-ingredients {
+      height: auto; }
 
 #btn-search-again {
   margin: 50px 42px 0px 0px; }
@@ -796,5 +795,3 @@ footer {
   margin: 15px 0px 0px 0px; }
   .add-food-input .form-control {
     height: 42px; }
-
-/*# sourceMappingURL=main.css.map */

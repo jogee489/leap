@@ -112,6 +112,20 @@
         font-family: 'Oleo Script', cursive;
         font-weight: bold;
     }
+
+    .recipe-box {
+        width: auto;
+        height: auto;
+        margin-bottom: 15px;
+
+        .rec-ingredients {
+            height: auto;
+        }
+
+        .rec-directions {
+            //height: auto;
+        }
+    }
 }
 
 #btn-search-again {
