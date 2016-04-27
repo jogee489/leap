@@ -47,26 +47,28 @@
           </ul>
         </td>
       </tr>
-      <tr>
-        <td>
-          <div class="form-group comments-area">
-            <label for="comment">Comments:</label>
-            <textarea class="form-control" rows="5"></textarea>
-          </div>
-        </td>
-        <td>
-          <div class="form-group comments-area">
-            <label for="comment">Comments:</label>
-            <textarea class="form-control" rows="5"></textarea>
-          </div>
-        </td>
-        <td>
-          <div class="form-group comments-area">
-            <label for="comment">Comments:</label>
-            <textarea class="form-control" rows="5"></textarea>
-          </div>
-        </td>
-      </tr>
+      <% if params[:action] == 'generate_meal_plan' %>
+        <tr>
+          <td>
+            <div class="form-group comments-area">
+              <label for="comment">Comments:</label>
+              <textarea class="form-control" rows="5"></textarea>
+            </div>
+          </td>
+          <td>
+            <div class="form-group comments-area">
+              <label for="comment">Comments:</label>
+              <textarea class="form-control" rows="5"></textarea>
+            </div>
+          </td>
+          <td>
+            <div class="form-group comments-area">
+              <label for="comment">Comments:</label>
+              <textarea class="form-control" rows="5"></textarea>
+            </div>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 </div>

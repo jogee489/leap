@@ -8,5 +8,5 @@
 	<textarea name="recipe[directions]" class="form-control rec-directions" rows="4" required><%= recipe.formatDirections %></textarea>
 	<h1 for="tag_id">Tags</h1>
 	<textarea name="recipe[tags]" class="form-control rec-tags" rows="1" required><%= recipe.tags %></textarea>	
-	<%= leap_button 'Edit', {class: 'btn-edit-recipe btn-app'}, 'glyphicon-edit' unless params[:action] == 'generate_meal_plan'%>
+	<%= leap_button 'Edit', {class: 'btn-edit-recipe btn-app'}, 'glyphicon-edit' unless ['generate_meal_plan', 'find_recipes'].include? params[:action]%>
 </div>

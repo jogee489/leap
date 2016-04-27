@@ -33,25 +33,25 @@
 
       // Add selcted recipes to desired meal
       $(selected_recipe_names).each(function(index, value) {
-        $('<li>').text(value).addClass("food-item list-group-item").appendTo("#" + option);
+        $('<li>').text(value).addClass("food-item list-group-item").appendTo(".modal-body #" + option);
         // Add id to the list if the recipe is unique.
         if ($.inArray(selected_id[index], current_ids) == -1) {
           $('<li>').text(selected_id[index]).appendTo('#recipe-id-list');
         }
         
-      });
+      }); 
 
-      /* Highlight food item when clicked. */
-      $('div.modal-body .food-item').unbind('click').click(function() {
-        $(this).toggleClass('highlight-item');
-        var numChked = $('div.modal-body .highlight-item').size();
-        if(numChked) {
-          $('#btn-delete-preview').removeClass("disabled");
-        } else if (numChked == 0) {
-          $('#btn-delete-preview').addClass("disabled");
-        }
-      });
+    });
 
+    /* Highlight food item when clicked. */
+    $('div.modal-body .food-item').unbind('click').click(function() {
+      $(this).toggleClass('highlight-item');
+      var numChked = $('div.modal-body .highlight-item').size();
+      if(numChked) {
+        $('#btn-delete-preview').removeClass("disabled");
+      } else if (numChked == 0) {
+        $('#btn-delete-preview').addClass("disabled");
+      }
     });
   });
 </script>

@@ -105,63 +105,63 @@ function renderGenerateMealPlan() {
 
     // Get recipes for each option
     var brkOp1 = [];
-    $('#brkOp1 li').each(function() {
+    $('.modal-body #brkOp1 li').each(function() {
         brkOp1.push($(this).text());
     });
     var brkOp2 = [];
-    $('#brkOp2 li').each(function() {
+    $('.modal-body #brkOp2 li').each(function() {
         brkOp2.push($(this).text());
     });
     var brkOp3 = [];
-    $('#brkOp3 li').each(function() {
+    $('.modal-body #brkOp3 li').each(function() {
         brkOp3.push($(this).text());
     });
     var snk1Op1 = [];
-    $('#snk1Op1 li').each(function() {
+    $('.modal-body #snk1Op1 li').each(function() {
         snk1Op1.push($(this).text());
     });
     var snk1Op2 = [];
-    $('#snk1Op2 li').each(function(e) {
+    $('.modal-body #snk1Op2 li').each(function(e) {
         snk1Op2.push($(this).text());
     });
     var snk1Op3 = [];
-    $('#snk1Op3 li').each(function() {
+    $('.modal-body #snk1Op3 li').each(function() {
         snk1Op3.push($(this).text());
     });
     var lnhOp1 = [];
-    $('#lnhOp1 li').each(function() {
+    $('.modal-body #lnhOp1 li').each(function() {
         lnhOp1.push($(this).text());
     });
     var lnhOp2 = [];
-    $('#lnhOp2 li').each(function() {
+    $('.modal-body #lnhOp2 li').each(function() {
         lnhOp2.push($(this).text());
     });
     var lnhOp3 = [];
-    $('#lnhOp3 li').each(function() {
+    $('.modal-body #lnhOp3 li').each(function() {
         lnhOp3.push($(this).text());
     });
     var snk2Op1 = [];
-    $('#snk2Op1 li').each(function() {
+    $('.modal-body #snk2Op1 li').each(function() {
         snk2Op1.push($(this).text());
     });
     var snk2Op2 = [];
-    $('#snk2Op2 li').each(function() {
+    $('.modal-body #snk2Op2 li').each(function() {
         snk2Op2.push($(this).text());
     });
     var snk2Op3 = [];
-    $('#snk2Op3 li').each(function() {
+    $('.modal-body #snk2Op3 li').each(function() {
         snk2Op3.push($(this).text());
     });
     var dnrOp1 = [];
-    $('#dnrOp1 li').each(function() {
+    $('.modal-body #dnrOp1 li').each(function() {
         dnrOp1.push($(this).text());
     });
     var dnrOp2 = [];
-    $('#dnrOp2 li').each(function() {
+    $('.modal-body #dnrOp2 li').each(function() {
         dnrOp2.push($(this).text());
     });
     var dnrOp3 = [];
-    $('#dnrOp3 li').each(function() {
+    $('.modal-body #dnrOp3 li').each(function() {
         dnrOp3.push($(this).text());
     });
 
