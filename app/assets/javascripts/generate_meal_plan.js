@@ -27,7 +27,7 @@ $(document).ready(function () {
     $('#btn-delete-preview').on('click', function() {
      var actives = $('li.highlight-item');
      actives.remove();
-     $(this).addClass(disabled);
+     $(this).addClass('disabled');
     });
 });
 
