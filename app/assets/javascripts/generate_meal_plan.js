@@ -4,6 +4,7 @@
  */
 
 $(document).ready(function () {
+
     // Render starting point on load.
     renderSelectFoods();
     $('.setup-content').hide();
@@ -28,7 +29,6 @@ $(document).ready(function () {
      actives.remove();
      $(this).addClass(disabled);
     });
-     
 });
 
 /* Logic for rendering and showing step-1: select foods */

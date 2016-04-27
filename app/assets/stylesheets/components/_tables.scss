@@ -13,10 +13,6 @@
 			opacity: 0.9;
 			cursor: pointer;
 
-			&:hover {
-				//opacity: 1;
-			}
-
 			td {
 				font-size: 16px;
 				padding: 10px 15px;
@@ -134,11 +130,16 @@
   	margin-bottom: 20px;
   	width: 862px;
   }
+
   div {
-	background-color: $recipe-box-background;
-	white-space: pre-wrap;
-	height: auto;
-	border: none;
+  	background-color: $recipe-box-background;
+  	white-space: pre-wrap;
+  	height: auto;
+  	border: none;
+    margin-bottom: 20px;
+    padding: 0;
+    @include box-shadow(none);
+    overflow-y: hidden;
   }
 }
 
@@ -167,7 +168,7 @@
 
 		.recipe-list {
 			margin: 0;
-			width: 368px;
+			//width: 368px;
 		}
 
 		.foods-list {

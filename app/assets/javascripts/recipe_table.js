@@ -8,7 +8,7 @@ $(document).ready(function() {
 	$(".app-table-tr").on('mouseover', function () {
     $(this).css({"opacity": "1"});
   }).on('mouseout', function () {
-    if (!$(this).hasClass("expanded")) {
+    if (!$(this).hasClass("expanded") && $(this).find('.check-rec').prop('checked') == false) {
       $(this).css({"opacity": "0.9"});
     }
   });

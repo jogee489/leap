@@ -65,6 +65,16 @@
       tagsArea.after(tagsDiv);
       tagsArea.hide();
     }
+
+    // autosize all textareas
+    $('textarea').addClass('aut');
+
+    $(".aut").keyup(function(e) {
+        while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
+            $(this).height($(this).height()+1);
+        };
+    });
+    $('.aut').css('overflow', 'hidden');
   });
 
 </script>
