@@ -130,6 +130,12 @@ $(document).ready(function() {
       directions.attr('contenteditable', 'false');
       tags.attr('contenteditable', 'false');
 
+      $("h1").each(function(){
+        if ($(this).text() != 'Tags') {
+          $(this).html($(this).html().replace("*",""));
+        }
+      });
+
       var json = JSON.stringify({title: title.val(), ingredients: ingredientsTextArea.val(), directions: directions.val(), tags: tags.val()});
       
       $.ajax({
@@ -182,6 +188,14 @@ $(document).ready(function() {
       ingredientsTextArea.attr('contenteditable', 'true');
       directions.attr('contenteditable', 'true');
       tags.attr('contenteditable', 'true');
+
+      title.focus();
+
+      $("h1").each(function(){
+        if ($(this).text() != 'Tags') {
+          $(this).text('*' + $(this).text());
+        }
+      });
       
     }     
   });

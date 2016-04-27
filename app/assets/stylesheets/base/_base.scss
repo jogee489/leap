@@ -187,3 +187,28 @@ input {
 	border: none;
 	@include border-radius(0 !important);
 }
+
+.pagination {
+  margin: 15px 0px 0px 0px;
+
+  a, em, span {
+    @extend .btn-app;
+
+    
+    text-decoration: none;
+    
+
+    font-style: normal;
+    cursor: pointer;
+
+  }
+
+  .disabled {
+    background-color: $btn-background;
+    pointer-events: none;
+  }
+
+  .current {
+    opacity: 1;
+  }
+}

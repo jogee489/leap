@@ -125,6 +125,11 @@ $(document).ready(function() {
           titleBar.text(title.val());
         }
 
+        // scroll all textareas to top
+        $("textarea").each(function(){
+          $(this).scrollTop(0);
+        });
+
         $(this).removeClass('btn-save-updated');
 
         $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
@@ -138,6 +143,12 @@ $(document).ready(function() {
         ingredientsList.attr('contenteditable', 'false');
         directions.attr('contenteditable', 'false');
         tags.attr('contenteditable', 'false');
+
+        $("h1").each(function(){
+          if ($(this).text() != 'Tags') {
+            $(this).html($(this).html().replace("*",""));
+          }
+        });
 
       } else {
     
@@ -155,6 +166,14 @@ $(document).ready(function() {
         ingredientsList.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
         directions.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
         tags.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
+
+        title.focus();
+
+        $("h1").each(function(){
+          if ($(this).text() != 'Tags') {
+            $(this).text('*' + $(this).text());
+          }
+        });
 
       }
       
@@ -204,8 +223,10 @@ $(document).ready(function() {
        // Update select all button
        if (numChecked == maxChecked){
         $(".btn-select-all").html('Select All <span class="glyphicon glyphicon-check"></span>');
+        
        } else {
         $(".btn-select-all").html('Select All <span class="glyphicon glyphicon-unchecked"></span>');
+        
        }
     });
 
@@ -223,6 +244,7 @@ $(document).ready(function() {
       if ($(this).is(':has(span.glyphicon-unchecked)')) {
         $(".check-rec").prop('checked', true);
         selectAll.html('Select All <span class="glyphicon glyphicon-check"></span>');
+        //$(".btn-select-all").next().find(".app-table-tr").css({"opacity": "1"});
         // Enable delete and save if they are disabled.
         if ($('#btn-delete-recipes').hasClass("disabled")) {
           $('#btn-delete-recipes').removeClass("disabled");
@@ -230,6 +252,8 @@ $(document).ready(function() {
         }
       } else {
         selectAll.html('Select All <span class="glyphicon glyphicon-unchecked"></span>');
+        //var temps = $(".btn-select-all").next().find(".app-table-tr");
+        //$(".btn-select-all").next().find(".app-table-tr").css({"opacity": "0.9"});
         $(".check-rec").prop('checked', false);
         $('#btn-delete-recipes').addClass("disabled");
         $('#btn-save-recipes').addClass("disabled");

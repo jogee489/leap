@@ -68,7 +68,7 @@ input {
   position: relative;
   display: inline-block;
   vertical-align: middle; }
-  .app-search .btn-app {
+  .app-search .btn-app, .app-search .pagination a, .pagination .app-search a, .app-search .pagination em, .pagination .app-search em, .app-search .pagination span, .pagination .app-search span {
     position: relative;
     float: left; }
   .app-search .form-control {
@@ -142,6 +142,18 @@ input {
   -moz-border-radius: 0 !important;
   -ms-border-radius: 0 !important;
   border-radius: 0 !important; }
+
+.pagination {
+  margin: 15px 0px 0px 0px; }
+  .pagination a, .pagination em, .pagination span {
+    text-decoration: none;
+    font-style: normal;
+    cursor: pointer; }
+  .pagination .disabled {
+    background-color: #9e1754;
+    pointer-events: none; }
+  .pagination .current {
+    opacity: 1; }
 
 .navbar-inverse {
   background-color: #009c7b;
@@ -217,14 +229,14 @@ footer {
   text-align: center; }
 
 /* main page button */
-.btn, .btn-main, .btn-app {
+.btn, .btn-main, .btn-app, .pagination a, .pagination em, .pagination span {
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
   -ms-border-radius: 0 !important;
   border-radius: 0 !important;
   text-transform: uppercase;
   letter-spacing: 0.2em; }
-  .btn:focus, .btn-main:focus, .btn-app:focus {
+  .btn:focus, .btn-main:focus, .btn-app:focus, .pagination a:focus, .pagination em:focus, .pagination span:focus {
     outline: 0 !important; }
 
 .btn-main {
@@ -247,7 +259,7 @@ footer {
     color: white; }
 
 /* default-button */
-.btn-app {
+.btn-app, .pagination a, .pagination em, .pagination span {
   border: none;
   background-color: #009c7b;
   opacity: 0.5;
@@ -257,10 +269,10 @@ footer {
   transition: all 0.1s ease-in-out 0s;
   color: white;
   padding: 10px; }
-  .btn-app:hover {
+  .btn-app:hover, .pagination a:hover, .pagination em:hover, .pagination span:hover {
     opacity: 1;
     color: white; }
-  .btn-app:focus {
+  .btn-app:focus, .pagination a:focus, .pagination em:focus, .pagination span:focus {
     color: white; }
 
 .disabled {
@@ -436,7 +448,10 @@ footer {
           background-color: white; }
 
 .recipe-table-container {
-  max-height: 517px; }
+  max-height: -webkit-calc(43px * 10);
+  max-height: -moz-calc(43px * 10);
+  max-height: -ms-calc(43px * 10);
+  max-height: calc(43px * 10); }
   .recipe-table-container .check-app label {
     font-weight: bold;
     white-space: nowrap;

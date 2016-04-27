@@ -53,11 +53,11 @@ $(document).ready(function() {
     var trOpacity = titleTr.css('opacity');
 
     if (!$(this).closest(".app-table-tr").hasClass("expanded")) {
-    	if (trOpacity == '0.9'){
-      	$(this).closest(".app-table-tr").css({"opacity": "1"});
-    	} else if (trOpacity == '1') {
-      	$(this).closest(".app-table-tr").css({"opacity": "0.9"});
-    	}
+      if ($(this).is(':checked')) {
+        $(this).closest(".app-table-tr").css({"opacity": "1"});
+      } else {
+        $(this).closest(".app-table-tr").css({"opacity": "0.9"});
+      }
     }
 			 
 		if ($('#btnDelete').hasClass("disabled") && numChecked > 0) {       

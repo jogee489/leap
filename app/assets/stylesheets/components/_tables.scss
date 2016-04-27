@@ -45,7 +45,7 @@
 
 .recipe-table-container {
   @extend .app-table;
-  max-height: 517px;
+  @include calc(max-height, '43px * 10');
 
 	.check-app {
 		label {

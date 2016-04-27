@@ -3,7 +3,7 @@
 <h3 class="page-title">Manage Your Recipes</h3>
 <div class="page-container container">
   <!-- pagination -->
-  <%= will_paginate @recipe_list %>
+  
   <div class="well recipe-well">
     <div class="app-well-menu">
       <%= leap_button 'Quick Add', {class: 'btn-app', data_toggle: 'modal', data_target: '#new-recipe-modal'}, 'glyphicon-plus' %>
@@ -30,6 +30,7 @@
     <div class="app-well-container">
       <%= render partial: "recipe_table", locals: {recipe_list: @recipe_list} %>
     </div>
+    <%= will_paginate @recipe_list, :previous_label => 'Previous', :next_label => 'Next' %>
   </div>
 </div>
 <div>
