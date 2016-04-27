@@ -3,7 +3,7 @@ html {
   letter-spacing: 0.2em; }
 
 #app-content {
-  background-color: #e8e0b7;
+  background-color: #E8E0B7;
   margin-top: 50px;
   min-height: 100vh; }
 
@@ -23,7 +23,7 @@ a:hover {
 
 /* highlight item */
 .highlight-item {
-  background-color: #e7ea25;
+  background-color: #E7EA25;
   font-weight: bold; }
 
 li {
@@ -211,7 +211,7 @@ input {
   background-color: #006953; }
 
 footer {
-  background-color: #6b4258;
+  background-color: #6B4258;
   padding-top: 15px;
   height: 60px;
   text-align: center; }
@@ -264,7 +264,7 @@ footer {
     color: white; }
 
 .disabled {
-  background-color: #9e1754;
+  background-color: #9E1754;
   pointer-events: none; }
 
 /* panel delete category button */
@@ -376,7 +376,7 @@ footer {
     -moz-border-radius: 0 !important;
     -ms-border-radius: 0 !important;
     border-radius: 0 !important;
-    background-color: #6b4258; }
+    background-color: #6B4258; }
   .panel-app .panel-body, .foods-panel .panel-body {
     height: 332px; }
   .panel-app .panel-title, .foods-panel .panel-title {
@@ -416,7 +416,7 @@ footer {
     margin: 0;
     table-layout: fixed; }
     .app-table .table .app-table-tr, .recipe-table-container .table .app-table-tr, .food-table-container .table .app-table-tr {
-      background-color: #6b4258;
+      background-color: #6B4258;
       color: white;
       opacity: 0.9;
       cursor: pointer; }
@@ -464,7 +464,7 @@ footer {
   -ms-box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
   box-shadow: 0px 2px 11px 2px rgba(209, 209, 209, 0.49);
   padding: 20px;
-  background-color: #ecf9d4;
+  background-color: #ECF9D4;
   width: 1023px;
   position: relative;
   color: #333; }
@@ -503,9 +503,10 @@ footer {
     margin-bottom: 20px;
     width: 862px; }
   .recipe-box div {
-    background-color: #ecf9d4;
+    background-color: #ECF9D4;
     white-space: pre-wrap;
     height: auto;
+    min-height: 10px;
     border: none;
     margin-bottom: 20px;
     padding: 0;
@@ -526,7 +527,7 @@ footer {
     overflow: hidden;
     text-overflow: ellipsis; }
   .generate-table-container .table .generate-table-section {
-    background-color: #6b4258;
+    background-color: #6B4258;
     color: white; }
     .generate-table-container .table .generate-table-section td {
       font-weight: bold;
@@ -806,3 +807,5 @@ footer {
   margin: 15px 0px 0px 0px; }
   .add-food-input .form-control {
     height: 42px; }
+
+/*# sourceMappingURL=main.css.map */

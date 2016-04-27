@@ -44,25 +44,29 @@
     var titleDiv = $("<div class='rec-title form-control'></div>").text(titleArea.val());
     var ingredientsDiv = $("<div class='rec-ingredients form-control'></div>").text(ingredients);
     var directionsDiv = $("<div class='rec-directions form-control'></div>").text(directionsArea.val());
-    var tagsDiv = $("<div class='rec-tags form-control'></div>").text(tagsArea.val());
+    var tagsDiv = $("<div class='rec-tags form-control aut'></div>").text(tagsArea.val());
 
     if(!$(this).find('div.rec-title').length){
       titleArea.after(titleDiv);
+      titleDiv.attr('contenteditable', 'true');
       titleArea.hide();
     }
 
     if(!$(this).find('div.rec-ingredients').length){
       ingredientsList.after(ingredientsDiv);
+      ingredientsDiv.attr('contenteditable', 'true');
       ingredientsList.hide();
     }
 
     if(!$(this).find('div.rec-directions').length){
       directionsArea.after(directionsDiv);
+      directionsDiv.attr('contenteditable', 'true');
       directionsArea.hide();
     }
 
-    if(!$(this).find('div.rec-title').length){
+    if(!$(this).find('div.rec-tags').length){
       tagsArea.after(tagsDiv);
+      tagsDiv.attr('contenteditable', 'true');
       tagsArea.hide();
     }
 
