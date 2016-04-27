@@ -80,7 +80,6 @@
 	padding: 20px;
 	background-color: $recipe-box-background;
 	width: 1023px;
-	//max-height: 458px;
 	position: relative;
 	
 	color: #333;
@@ -105,7 +104,6 @@
 
     li {
     	display: block;
-    	//margin-right: 20px;
     }
   }
 
@@ -135,6 +133,12 @@
 	  pointer-events: none;
   	margin-bottom: 20px;
   	width: 862px;
+  }
+  div {
+	background-color: $recipe-box-background;
+	white-space: pre-wrap;
+	height: auto;
+	border: none;
   }
 }
 

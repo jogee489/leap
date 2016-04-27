@@ -22,6 +22,51 @@
     $(this).toggleClass("expanded"); // Put opacity change in this class
     $(this).find(".expand-icon").toggleClass("glyphicon-chevron-down").toggleClass("glyphicon-chevron-up");
   });
+
+  /** Convert all recipe contents to divs so that they can easily be printed  **/
+  $(document).find('.recipe-box').each(function(){
+    var titleArea = $(this).find('.rec-title');
+    var ingredientsList = $(this).find('.rec-ingredients');
+    var ingredientsListElements = ingredientsList.find('li');
+    var directionsArea = $(this).find('.rec-directions');
+    var tagsArea = $(this).find('.rec-tags');
+
+    var ingredients = "";
+    for(var i = 0; i < ingredientsListElements.length; i++){
+      if(i != ingredientsListElements.length - 1){
+        ingredients += (ingredientsListElements[i].innerText + "\n");
+      }
+      else {
+        ingredients += (ingredientsListElements[i].innerText);
+      }
+    }
+
+    var titleDiv = $("<div class='rec-title form-control'></div>").text(titleArea.val());
+    var ingredientsDiv = $("<div class='rec-ingredients form-control'></div>").text(ingredients);
+    var directionsDiv = $("<div class='rec-directions form-control'></div>").text(directionsArea.val());
+    var tagsDiv = $("<div class='rec-tags form-control'></div>").text(tagsArea.val());
+
+    if(!$(this).find('div.rec-title').length){
+      titleArea.after(titleDiv);
+      titleArea.hide();
+    }
+
+    if(!$(this).find('div.rec-ingredients').length){
+      ingredientsList.after(ingredientsDiv);
+      ingredientsList.hide();
+    }
+
+    if(!$(this).find('div.rec-directions').length){
+      directionsArea.after(directionsDiv);
+      directionsArea.hide();
+    }
+
+    if(!$(this).find('div.rec-title').length){
+      tagsArea.after(tagsDiv);
+      tagsArea.hide();
+    }
+  });
+
 </script>
 
 <div class="well generate-well">
