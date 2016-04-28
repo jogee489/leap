@@ -528,6 +528,7 @@ footer {
   .recipe-box div {
     background-color: #ecf9d4;
     white-space: pre-wrap;
+    overflow-x: hidden;
     height: auto;
     min-height: 10px;
     border: none;
@@ -559,8 +560,7 @@ footer {
   .generate-table-container .table .recipe-list {
     margin: 0; }
   .generate-table-container .table .foods-list {
-    margin: 0;
-    width: 564px; }
+    margin: 0; }
 
 .comments-area {
   margin: 0; }
@@ -684,7 +684,8 @@ footer {
   height: -moz-calc(42px * 5);
   height: -ms-calc(42px * 5);
   height: calc(42px * 5);
-  overflow-y: auto; }
+  overflow-y: auto;
+  width: 334px; }
   #meal-plan-preview-modal .recipe-list li {
     cursor: pointer; }
 
@@ -709,6 +710,10 @@ footer {
   .generate-well h3 {
     font-family: 'Oleo Script', cursive;
     font-weight: bold; }
+  .generate-well .recipe-list {
+    width: 368px; }
+  .generate-well .foods-list {
+    width: 565px; }
   .generate-well .recipe-box {
     width: auto;
     height: auto;
