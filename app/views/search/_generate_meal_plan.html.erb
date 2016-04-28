@@ -24,7 +24,7 @@
   });
 
   /** Convert all recipe contents to divs so that they can easily be printed  **/
-  $(document).find('.recipe-box').each(function(){
+  $(document).find('.generate-well').find('.recipe-box').each(function(){
     var titleArea = $(this).find('.rec-title');
     var ingredientsList = $(this).find('.rec-ingredients');
     var ingredientsListElements = ingredientsList.find('li');

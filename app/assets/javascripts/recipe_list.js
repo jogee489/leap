@@ -95,6 +95,17 @@ $(document).ready(function() {
     var directions = recBox.find('.rec-directions');
     var tags = recBox.find('.rec-tags');
     var id = recBox.find('#recipe_id').val();
+
+    var ingredients = "";
+    
+    for(var i = 0; i < ingredientsList.length; i++){
+      if(i != ingredientsList.length - 1){
+        ingredients += (ingredientsList[i].innerText + "\n");
+      }
+      else {
+        ingredients += (ingredientsList[i].innerText);
+      }
+    }
     
     if($(this).hasClass('btn-save-updated')){
 
@@ -136,6 +147,17 @@ $(document).ready(function() {
         }
       });
 
+      ingredientsTextArea.hide();
+      ingredientsList.closest('ul').show();
+      
+      var i = 0;
+      var ingredientsSplit = ingredientsTextArea.val().split('\n');
+      ingredientsList.each(function() {
+        $(this).text(ingredientsSplit[i]);
+        i++;
+      });
+      
+
       var json = JSON.stringify({title: title.val(), ingredients: ingredientsTextArea.val(), directions: directions.val(), tags: tags.val()});
       
       $.ajax({
@@ -152,18 +174,10 @@ $(document).ready(function() {
           console.log(errorThrown);
         }
       });
+
     } else {
 
-      var ingredients = "";
-    
-      for(var i = 0; i < ingredientsList.length; i++){
-        if(i != ingredientsList.length - 1){
-          ingredients += (ingredientsList[i].innerText + "\n");
-        }
-        else {
-          ingredients += (ingredientsList[i].innerText);
-        }
-      }
+      
       //if the textarea does not exist, convert the ingredients list to an editable textarea
       if(!recBox.find('textarea.rec-ingredients').length){
         var ingredientsTextArea = $("<textarea class='form-control rec-ingredients'></textarea>").text(ingredients);
@@ -172,6 +186,8 @@ $(document).ready(function() {
       }
       else {
         var ingredientsTextArea = recBox.find('textarea.rec-ingredients');
+        ingredientsTextArea.show();
+        ingredientsList.closest('ul').hide();
       }
     
       
