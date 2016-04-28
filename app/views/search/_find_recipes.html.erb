@@ -33,6 +33,7 @@
         selected_recipe_names.push(recipe_name);
         selected_id.push(recipe_id);
         $(this).prop('checked', false);
+        $(this).closest(".app-table-tr").css({"opacity": "0.9"});
       });
 
       // Add selcted recipes to desired meal

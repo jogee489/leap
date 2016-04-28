@@ -66,6 +66,7 @@
         /* recipes * 5 */
         @include calc(height, '42px * 5');
         overflow-y: auto;
+        width: 334px;
 
         li {
             cursor: pointer;
@@ -111,6 +112,14 @@
     h3 {
         font-family: 'Oleo Script', cursive;
         font-weight: bold;
+    }
+
+    .recipe-list {
+        width: 368px;
+    }
+
+    .foods-list {
+        width: 565px;
     }
 
     .recipe-box {

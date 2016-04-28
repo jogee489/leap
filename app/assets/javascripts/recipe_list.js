@@ -95,6 +95,22 @@ $(document).ready(function() {
     var directions = recBox.find('.rec-directions');
     var tags = recBox.find('.rec-tags');
     var id = recBox.find('#recipe_id').val();
+
+    // scroll all textareas to top
+    $("textarea, ul").each(function(){
+      $(this).scrollTop(0);
+    });
+
+    var ingredients = "";
+    
+    for(var i = 0; i < ingredientsList.length; i++){
+      if(i != ingredientsList.length - 1){
+        ingredients += (ingredientsList[i].innerText + "\n");
+      }
+      else {
+        ingredients += (ingredientsList[i].innerText);
+      }
+    }
     
     if($(this).hasClass('btn-save-updated')){
 
@@ -113,28 +129,36 @@ $(document).ready(function() {
         titleBar.text(title.val());
       }
 
-      // scroll all textareas to top
-      $("textarea").each(function(){
-        $(this).scrollTop(0);
-      });
+      
       
       $(this).removeClass('btn-save-updated');
       $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
-      title.css({"border": "none", "pointer-events": "none"});
-      ingredientsTextArea.css({"border": "none", "pointer-events": "none"});
-      directions.css({"border": "none", "pointer-events": "none"});
-      tags.css({"border": "none", "pointer-events": "none"});
+      title.css({"border": "none"});
+      ingredientsTextArea.css({"border": "none"});
+      directions.css({"border": "none"});
+      tags.css({"border": "none"});
 
-      title.attr('contenteditable', 'false');
-      ingredientsTextArea.attr('contenteditable', 'false');
-      directions.attr('contenteditable', 'false');
-      tags.attr('contenteditable', 'false');
+      title.prop("readonly", true);
+      ingredientsTextArea.prop("readonly", true);
+      directions.prop("readonly", true);
+      tags.prop("readonly", true);
 
-      $("h1").each(function(){
+      recBox.find("h1").each(function(){
         if ($(this).text() != 'Tags') {
-          $(this).html($(this).html().replace("*",""));
+          $(this).html($(this).html().replace("* ",""));
         }
       });
+
+      ingredientsTextArea.hide();
+      ingredientsList.closest('ul').show();
+      
+      var i = 0;
+      var ingredientsSplit = ingredientsTextArea.val().split('\n');
+      ingredientsList.each(function() {
+        $(this).text(ingredientsSplit[i]);
+        i++;
+      });
+      
 
       var json = JSON.stringify({title: title.val(), ingredients: ingredientsTextArea.val(), directions: directions.val(), tags: tags.val()});
       
@@ -152,18 +176,10 @@ $(document).ready(function() {
           console.log(errorThrown);
         }
       });
+
     } else {
 
-      var ingredients = "";
-    
-      for(var i = 0; i < ingredientsList.length; i++){
-        if(i != ingredientsList.length - 1){
-          ingredients += (ingredientsList[i].innerText + "\n");
-        }
-        else {
-          ingredients += (ingredientsList[i].innerText);
-        }
-      }
+      
       //if the textarea does not exist, convert the ingredients list to an editable textarea
       if(!recBox.find('textarea.rec-ingredients').length){
         var ingredientsTextArea = $("<textarea class='form-control rec-ingredients'></textarea>").text(ingredients);
@@ -172,28 +188,30 @@ $(document).ready(function() {
       }
       else {
         var ingredientsTextArea = recBox.find('textarea.rec-ingredients');
+        ingredientsTextArea.show();
+        ingredientsList.closest('ul').hide();
       }
     
       
       $(this).addClass('btn-save-updated');
       $(this).html('Save <span class="glyphicon glyphicon-save"></span>');
-      title.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
-      ingredientsTextArea.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
-      directions.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
-      tags.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
+      title.css({"border":" rgb(193, 224, 255) 1px solid"});
+      ingredientsTextArea.css({"border":" rgb(193, 224, 255) 1px solid"});
+      directions.css({"border":" rgb(193, 224, 255) 1px solid"});
+      tags.css({"border":" rgb(193, 224, 255) 1px solid"});
 
 
 
-      title.attr('contenteditable', 'true');
-      ingredientsTextArea.attr('contenteditable', 'true');
-      directions.attr('contenteditable', 'true');
-      tags.attr('contenteditable', 'true');
+      title.prop("readonly", false);
+      ingredientsTextArea.prop("readonly", false);
+      directions.prop("readonly", false);
+      tags.prop("readonly", false);
 
       title.focus();
 
-      $("h1").each(function(){
+      recBox.find("h1").each(function(){
         if ($(this).text() != 'Tags') {
-          $(this).text('*' + $(this).text());
+          $(this).text('* ' + $(this).text());
         }
       });
       

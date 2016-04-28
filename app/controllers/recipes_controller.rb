@@ -4,7 +4,7 @@ require 'nokogiri'
 require 'open-uri'
 
 class RecipesController < ApplicationController
-	MAX_NUM_OF_RECIPES = 3
+	MAX_NUM_OF_RECIPES = 5
 
 	def save_recipe_json
 		@recipe = Recipe.new(JSON.parse(params[:recipe]))
