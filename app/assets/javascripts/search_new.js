@@ -232,8 +232,10 @@ $(document).click(function(e) {
     if ($id.hasClass("glyphicon-chevron-up")) {
       /* This should be handled by css, not js */
       $categoryToExpand.css({"opacity": '1'});
+      $categoryToExpand.addClass("expanded");
     } else {
       /* This should be handled by css, not js */
       $categoryToExpand.css({"opacity": '0.9'});
+      $categoryToExpand.removeClass("expanded");
     }
   }

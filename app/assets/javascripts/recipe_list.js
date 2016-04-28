@@ -120,15 +120,15 @@ $(document).ready(function() {
       
       $(this).removeClass('btn-save-updated');
       $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
-      title.css({"border": "none", "pointer-events": "none"});
-      ingredientsTextArea.css({"border": "none", "pointer-events": "none"});
-      directions.css({"border": "none", "pointer-events": "none"});
-      tags.css({"border": "none", "pointer-events": "none"});
+      title.css({"border": "none"});
+      ingredientsTextArea.css({"border": "none"});
+      directions.css({"border": "none"});
+      tags.css({"border": "none"});
 
-      title.attr('contenteditable', 'false');
-      ingredientsTextArea.attr('contenteditable', 'false');
-      directions.attr('contenteditable', 'false');
-      tags.attr('contenteditable', 'false');
+      title.prop("readonly", true);
+      ingredientsTextArea.prop("readonly", true);
+      directions.prop("readonly", true);
+      tags.prop("readonly", true);
 
       $("h1").each(function(){
         if ($(this).text() != 'Tags') {
@@ -177,17 +177,17 @@ $(document).ready(function() {
       
       $(this).addClass('btn-save-updated');
       $(this).html('Save <span class="glyphicon glyphicon-save"></span>');
-      title.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
-      ingredientsTextArea.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
-      directions.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
-      tags.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
+      title.css({"border":"rgb(193, 224, 255) 1px solid"});
+      ingredientsTextArea.css({"border":"rgb(193, 224, 255) 1px solid"});
+      directions.css({"border":"rgb(193, 224, 255) 1px solid"});
+      tags.css({"border":"rgb(193, 224, 255) 1px solid"});
 
 
 
-      title.attr('contenteditable', 'true');
-      ingredientsTextArea.attr('contenteditable', 'true');
-      directions.attr('contenteditable', 'true');
-      tags.attr('contenteditable', 'true');
+      title.prop("readonly", false);
+      ingredientsTextArea.prop("readonly", false);
+      directions.prop("readonly", false);
+      tags.prop("readonly", false);
 
       title.focus();
 
