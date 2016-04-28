@@ -97,6 +97,11 @@ $(document).ready(function() {
       var ingredientsList = recBox.find('.rec-ingredients');
       var directions = recBox.find('.rec-directions');
       var tags = recBox.find('.rec-tags');
+
+      // scroll all textareas to top
+      $("textarea, ul").each(function(){
+        $(this).scrollTop(0);
+      });
       
       if($(this).hasClass('btn-save-updated')){
 
@@ -125,28 +130,23 @@ $(document).ready(function() {
           titleBar.text(title.val());
         }
 
-        // scroll all textareas to top
-        $("textarea").each(function(){
-          $(this).scrollTop(0);
-        });
-
         $(this).removeClass('btn-save-updated');
 
         $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
 
-        title.css({"border": "none", "pointer-events": "none"});
-        ingredientsList.css({"border": "none", "pointer-events": "none"});
-        directions.css({"border": "none", "pointer-events": "none"});
-        tags.css({"border": "none", "pointer-events": "none"});
+        title.css({"border": "none"});
+        ingredientsList.css({"border": "none"});
+        directions.css({"border": "none"});
+        tags.css({"border": "none"});
 
-        title.attr('contenteditable', 'false');
-        ingredientsList.attr('contenteditable', 'false');
-        directions.attr('contenteditable', 'false');
-        tags.attr('contenteditable', 'false');
+        title.prop("readonly", true);
+        ingredientsList.prop("readonly", true);
+        directions.prop("readonly", true);
+        tags.prop("readonly", true);
 
-        $("h1").each(function(){
+        recBox.find("h1").each(function(){
           if ($(this).text() != 'Tags') {
-            $(this).html($(this).html().replace("*",""));
+            $(this).html($(this).html().replace("* ",""));
           }
         });
 
@@ -157,21 +157,21 @@ $(document).ready(function() {
 
         $(this).html('Save <span class="glyphicon glyphicon-save"></span>');
 
-        title.attr('contenteditable', 'true');
-        ingredientsList.attr('contenteditable', 'true');
-        directions.attr('contenteditable', 'true');
-        tags.attr('contenteditable', 'true');
+        title.prop("readonly", false);
+        ingredientsList.prop("readonly", false);
+        directions.prop("readonly", false);
+        tags.prop("readonly", false);
 
-        title.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
-        ingredientsList.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
-        directions.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
-        tags.css({"border":"#C1E0FF 1px solid", "pointer-events":"auto"});
+        title.css({"border":" rgb(193, 224, 255) 1px solid"});
+        ingredientsList.css({"border":" rgb(193, 224, 255) 1px solid"});
+        directions.css({"border":" rgb(193, 224, 255) 1px solid"});
+        tags.css({"border":" rgb(193, 224, 255) 1px solid"});
 
         title.focus();
 
-        $("h1").each(function(){
+        recBox.find("h1").each(function(){
           if ($(this).text() != 'Tags') {
-            $(this).text('*' + $(this).text());
+            $(this).text('* ' + $(this).text());
           }
         });
 

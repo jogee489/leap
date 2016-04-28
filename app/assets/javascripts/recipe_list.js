@@ -96,6 +96,11 @@ $(document).ready(function() {
     var tags = recBox.find('.rec-tags');
     var id = recBox.find('#recipe_id').val();
 
+    // scroll all textareas to top
+    $("textarea, ul").each(function(){
+      $(this).scrollTop(0);
+    });
+
     var ingredients = "";
     
     for(var i = 0; i < ingredientsList.length; i++){
@@ -124,10 +129,7 @@ $(document).ready(function() {
         titleBar.text(title.val());
       }
 
-      // scroll all textareas to top
-      $("textarea").each(function(){
-        $(this).scrollTop(0);
-      });
+      
       
       $(this).removeClass('btn-save-updated');
       $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
@@ -141,9 +143,9 @@ $(document).ready(function() {
       directions.prop("readonly", true);
       tags.prop("readonly", true);
 
-      $("h1").each(function(){
+      recBox.find("h1").each(function(){
         if ($(this).text() != 'Tags') {
-          $(this).html($(this).html().replace("*",""));
+          $(this).html($(this).html().replace("* ",""));
         }
       });
 
@@ -193,10 +195,10 @@ $(document).ready(function() {
       
       $(this).addClass('btn-save-updated');
       $(this).html('Save <span class="glyphicon glyphicon-save"></span>');
-      title.css({"border":"rgb(193, 224, 255) 1px solid"});
-      ingredientsTextArea.css({"border":"rgb(193, 224, 255) 1px solid"});
-      directions.css({"border":"rgb(193, 224, 255) 1px solid"});
-      tags.css({"border":"rgb(193, 224, 255) 1px solid"});
+      title.css({"border":" rgb(193, 224, 255) 1px solid"});
+      ingredientsTextArea.css({"border":" rgb(193, 224, 255) 1px solid"});
+      directions.css({"border":" rgb(193, 224, 255) 1px solid"});
+      tags.css({"border":" rgb(193, 224, 255) 1px solid"});
 
 
 
@@ -207,9 +209,9 @@ $(document).ready(function() {
 
       title.focus();
 
-      $("h1").each(function(){
+      recBox.find("h1").each(function(){
         if ($(this).text() != 'Tags') {
-          $(this).text('*' + $(this).text());
+          $(this).text('* ' + $(this).text());
         }
       });
       
