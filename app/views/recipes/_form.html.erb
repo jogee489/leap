@@ -1,7 +1,7 @@
 <div class="recipe-box">
 	<%= add_form_element 'recipe', 'id', { type: 'hidden' }, { value: recipe.try(:id) } %>
 	<h1 for="title">Title</h1>
-	<textarea name="recipe[title]" class="form-control rec-title" rows="1" required><%= recipe.title %></textarea>
+	<textarea name="recipe[title]" class="form-control rec-title" rows="1" required readonly><%= recipe.title %></textarea>
 	<h1 for="ingredients">Ingredients</h1>
 	<%= ingredients_list(recipe.formatIngredients, parallel) %>
 	<h1 for="directions">Directions</h1>

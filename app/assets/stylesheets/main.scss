@@ -3,7 +3,6 @@
 // 1. Configuration and helpers
 @import
   'utils/variables',
-  'utils/functions',
   'utils/mixins';
 
 // 2. Vendors
@@ -12,8 +11,7 @@
 
 // 3. Base stuff
 @import
-  'base/base',
-  'base/helpers';
+  'base/base';
 
 // 4. Layout-related sections
 @import
@@ -40,4 +38,3 @@
 // 7. Themes
 @import
   'themes/default';
-

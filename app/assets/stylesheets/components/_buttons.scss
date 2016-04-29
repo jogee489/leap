@@ -41,7 +41,7 @@
 	@extend .btn;
 	border: none;
 
-	background-color: $navbar-background;
+	background-color: $app-cyan-background;
 	opacity: 0.5;
 	@include transition(all 0.1s ease-in-out 0s);
 	color: white;
@@ -58,7 +58,7 @@
 }
 
 .disabled {
-	background-color: $btn-background;
+	background-color: $btn-disabled-background;
 	pointer-events: none;
 }
 

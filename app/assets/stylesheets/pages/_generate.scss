@@ -78,7 +78,7 @@
 
     .btn-add-to:focus {
         opacity: 1;
-        background-color: darken($navbar-background, 10%);
+        background-color: darken($app-cyan-background, 10%);
     }
 
     .dropdown-menu {
@@ -91,13 +91,13 @@
             width: 100%;
 
             &:hover {
-                background-color: darken($navbar-background, 5%);
+                background-color: darken($app-cyan-background, 5%);
                 color: $navbar-font-hover;
             }
         }
     }
 
-    //background-color: darken($navbar-background, 5%);
+    //background-color: darken($app-cyan-background, 5%);
 }
 
 /* step-3 content */

@@ -1,5 +1,5 @@
 .navbar-inverse {
-  background-color: $navbar-background;
+  background-color: $app-cyan-background;
   border: none;
   margin-bottom: 0;
   height: 50px;
@@ -18,7 +18,7 @@
 .dropdown-menu{
   text-transform: uppercase;
   @include border-radius(0);
-  background-color: rgba($navbar-background, 0.9);
+  background-color: rgba($app-cyan-background, 0.9);
   border: none;
   min-width: 130px;
   right: auto;
@@ -33,7 +33,7 @@
 
       &:hover {
         color: $navbar-font-hover;
-        background-color: darken($navbar-background, 10%);
+        background-color: darken($app-cyan-background, 10%);
       }
     }
   }
@@ -68,14 +68,14 @@
 
   &:hover {
     color: $navbar-font-hover;
-    background-color: darken($navbar-background, 5%);
+    background-color: darken($app-cyan-background, 5%);
   }
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: darken($navbar-background, 10%);
+    background-color: darken($app-cyan-background, 10%);
 }
 
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-  background-color: darken($navbar-background, 10%);
+  background-color: darken($app-cyan-background, 10%);
 }

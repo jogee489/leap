@@ -1,3 +1,33 @@
+/**
+ * Variables partial contains all variables for the application.
+ */
+/**
+ * Application's colors.
+ */
+/**
+ * Mixin partial used for browser compability.
+ */
+/**
+ * Calculates $expression and assigns it to $property.
+ */
+/**
+ * Border radius.
+ */
+/**
+ * Transition.
+ */
+/**
+ * Box shadow.
+ */
+/**
+ * Abbreviates text of an element.
+ */
+/**
+ * Centers an element.
+ */
+/**
+ * Base partial contains basic styles.
+ */
 @import url(https://fonts.googleapis.com/css?family=Oleo+Script:400,700|Quicksand:300,400,700);
 html {
   letter-spacing: 0.2em; }
@@ -149,9 +179,6 @@ input {
     text-decoration: none;
     font-style: normal;
     cursor: pointer; }
-  .pagination .disabled {
-    background-color: #9e1754;
-    pointer-events: none; }
   .pagination .current {
     opacity: 1; }
 
@@ -448,10 +475,7 @@ footer {
           background-color: white; }
 
 .recipe-table-container {
-  max-height: -webkit-calc(43px * 10);
-  max-height: -moz-calc(43px * 10);
-  max-height: -ms-calc(43px * 10);
-  max-height: calc(43px * 10); }
+  max-height: 517px; }
   .recipe-table-container .check-app label {
     font-weight: bold;
     white-space: nowrap;
@@ -760,7 +784,7 @@ footer {
 .recipe-well {
   margin: 0 auto;
   width: 1084px;
-  max-height: 629px; }
+  max-height: 667px; }
   .recipe-well .app-well-menu .app-input, .recipe-well .app-well-menu .app-search, .recipe-well .app-well-menu .add-category-input {
     display: inline-block; }
 

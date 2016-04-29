@@ -1,6 +1,8 @@
-// -----------------------------------------------------------------------------
-// This file contains very basic styles.
-// -----------------------------------------------------------------------------
+/**
+ * Base partial contains basic styles.
+ */
+
+// 
 @import url(https://fonts.googleapis.com/css?family=Oleo+Script:400,700|Quicksand:300,400,700);
 
 html{
@@ -33,7 +35,7 @@ a:hover {
 
 /* highlight item */
 .highlight-item {
-	background-color: $list-selected;
+	background-color: $highlight-background;
 	font-weight: bold;
 }
 
@@ -173,7 +175,7 @@ input {
     margin: 0;
 
     .progress-bar {
-      background-color: $navbar-background;
+      background-color: $app-cyan-background;
       opacity: 0.5;
       border: none;
       @include border-radius(0 !important);
@@ -201,11 +203,6 @@ input {
     font-style: normal;
     cursor: pointer;
 
-  }
-
-  .disabled {
-    background-color: $btn-background;
-    pointer-events: none;
   }
 
   .current {

@@ -1,11 +1,14 @@
-// -----------------------------------------------------------------------------
-// This file contains all application-wide Sass variables.
-// -----------------------------------------------------------------------------
+/**
+ * Variables partial contains all variables for the application.
+ */
 
-$app-content-background: #E8E0B7;
-$btn-background: #9E1754;
-$navbar-background: #009c7b;
-$navbar-font-hover: #e0e0e0;
-$panel-heading-background: #6B4258;
-$list-selected: #E7EA25;
-$recipe-box-background: #ECF9D4;
+/**
+ * Application's colors.
+ */
+$app-content-background: #e8e0b7; // application's background color
+$app-cyan-background: #009c7b; // application's cyan background color
+$navbar-font-hover: #e0e0e0; // navbar font hover color
+$app-purple-background: #6b4258; // application's purple background color
+$highlight-background: #e7ea25; // highlighted element color
+$btn-disabled-background: #9e1754; // disabled button color
+$recipe-box-background: #ecf9d4; // recipe box background color

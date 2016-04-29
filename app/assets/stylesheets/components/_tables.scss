@@ -8,7 +8,7 @@
     table-layout: fixed;
 
     .app-table-tr {
-      background-color: $panel-heading-background;
+      background-color: $app-purple-background;
       color: white;
       opacity: 0.9;
       cursor: pointer;
@@ -45,7 +45,8 @@
 
 .recipe-table-container {
   @extend .app-table;
-  @include calc(max-height, '43px * 10');
+  max-height: 517px;
+  //@include calc(max-height, '43px * 10');
 
   .check-app {
     label {
@@ -167,7 +168,7 @@
     }
 
     .generate-table-section {
-      background-color: $panel-heading-background;
+      background-color: $app-purple-background;
       color: white;
       td {
         font-weight: bold;

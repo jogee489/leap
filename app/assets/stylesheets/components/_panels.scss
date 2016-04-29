@@ -7,7 +7,7 @@
     height: 52px;
     border: none;
     @include border-radius(0 !important);
-    background-color: $panel-heading-background;
+    background-color: $app-purple-background;
   }
 
   .panel-body {
