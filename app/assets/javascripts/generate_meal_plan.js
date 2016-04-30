@@ -2,33 +2,53 @@
  * Javascript file for rendering and handling events
  * on the generate meal plan page.
  */
-
 $(document).ready(function () {
 
-    // Render starting point on load.
-    renderSelectFoods();
-    $('.setup-content').hide();
+    var amountScrolled = 300;
 
-    /* Go to a new step when nav item clicked. */
-    $('button.step-app').click(function () {
-        var target = $(this).find('a').attr('href');
-        showCurrentStep(target);
+  $(window).scroll(function() {
+    if ( $(window).scrollTop() > amountScrolled ) {
+      $('.btn-back-to-top').fadeIn('slow');
+    } else {
+      $('.btn-back-to-top').fadeOut('slow');
+    }
+  });
 
-        // reset stepwizard font weight to normal.
-        $('.stepwizard-step').find('button').css({"font-weight": "normal"});
-        $('.stepwizard-step').find('p').css({"font-weight": "normal"});
-        // set stepwizard font to bold.
-        $(this).css({"font-weight": "bold"});
-        $(this).next().css({"font-weight": "bold"});
-    });
+  $('.btn-back-to-top').click(function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 700);
+    return false;
+  });
 
-    // If a recipe in the preview meal plan gets clicked.
-    // handles delete event in recipe preview table.
-    $('#btn-delete-preview').on('click', function() {
-     var actives = $('li.highlight-item');
-     actives.remove();
-     $(this).addClass('disabled');
-    });
+  /** Logic for expanding food item list. */
+  $(".expand-td").unbind('click').click(function() {
+    $(this).parent().next().toggle('slow');
+    $(this).toggleClass("expanded"); // Put opacity change in this class
+    $(this).find(".expand-icon").toggleClass("glyphicon-chevron-down").toggleClass("glyphicon-chevron-up");
+  });
+
+  // Render starting point on load.
+  renderSelectFoods();
+  $('.setup-content').hide();  
+  /* Go to a new step when nav item clicked. */
+  $('button.step-app').click(function () {
+      var target = $(this).find('a').attr('href');
+      showCurrentStep(target);  
+      // reset stepwizard font weight to normal.
+      $('.stepwizard-step').find('button').css({"font-weight": "normal"});
+      $('.stepwizard-step').find('p').css({"font-weight": "normal"});
+      // set stepwizard font to bold.
+      $(this).css({"font-weight": "bold"});
+      $(this).next().css({"font-weight": "bold"});
+  });  
+  // If a recipe in the preview meal plan gets clicked.
+  // handles delete event in recipe preview table.
+  $('#btn-delete-preview').on('click', function() {
+   var actives = $('li.highlight-item');
+   actives.remove();
+   $(this).addClass('disabled');
+  });
 });
 
 /* Logic for rendering and showing step-1: select foods */

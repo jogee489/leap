@@ -1,7 +1,6 @@
 <%= javascript_include_tag 'search_new.js' %>
 <h3 class="page-title">Search New Recipes From The Web</h3>
 <div class="page-container container">
-  
   <%= render partial: "search_new" %>
   <div class="search-new-container">
     <%= leap_button 'Search ', {class: 'btn-app disabled pull-right', id: 'btn-search-recipe', type: 'button', data_toggle: 'modal', data_target: '#loading-modal'}, 'glyphicon-search' %>
