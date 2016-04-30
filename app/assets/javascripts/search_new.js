@@ -31,11 +31,34 @@ $(function () {
 
   /** Highlight selected food item. */
   $('body').on('click', '.have-avoid-list .list-group-item', function () {
+    var thisList = $(this).parent();
+    var delButton = thisList.prev().find('.panel-delete');
+
+    //Toggle the highlight class for this food item
     $(this).toggleClass('highlight-item');
+
+    //if this list has any highlighted items, enable delete button
+    if(thisList.find('.highlight-item').length > 0){
+      delButton.removeClass('disabled');
+      if(thisList.hasClass('have-list')) {
+        $('#btn-move-right').removeClass('disabled');
+      }
+      if(thisList.hasClass('avoid-list')) {
+        $('#btn-move-left').removeClass('disabled');
+      }
+    }
+    else {
+      delButton.addClass('disabled');
+      $('#btn-move-right').addClass('disabled');
+      $('#btn-move-left').addClass('disabled');
+    }
+
   });
 
   /** Move food items from have list to avoid list */
   $('#btn-move-right').click(function() {
+    $(this).addClass('disabled');
+    $(this).parent().find('#btn-move-left').removeClass('disabled');
     var $foodItems = $('ul.have-list li.highlight-item');
     // Check to see if food items need moved, return otherwise.
     if ($foodItems.length == 0) {
@@ -48,10 +71,13 @@ $(function () {
       $('#delete-to-have').addClass('disabled');
     }
     $('#delete-to-avoid').removeClass('disabled');
+
   });
 
   /** Move food items from avoid list to have list */
   $('#btn-move-left').click(function() {
+    $(this).addClass('disabled');
+    $(this).parent().find('#btn-move-right').removeClass('disabled');
     var $foodItems = $('ul.avoid-list li.highlight-item');
     // Check to see if food items need moved, return otherwise.
     if ($foodItems.length == 0) {
@@ -86,14 +112,13 @@ $(function () {
     highlighted.each(function() {
       $(this).remove();
     });
-    // Disable this button if no more food items remain.
-    if ($ul.children().length == 0) {
-      $(this).addClass('disabled');
-      // Disable buttons if both lists are empty.
-      if ($('ul.have-avoid-list li').length == 0) {
-        // Disable buttons
-        $('#btn-move-left, #btn-move-right, #btn-search-recipe').addClass('disabled');
-      }
+
+    // Disable this button since no more items are selected
+    $(this).addClass('disabled');
+    // Disable buttons if both lists are empty.
+    if ($('ul.have-avoid-list li').length == 0) {
+      // Disable buttons
+      $('#btn-move-left, #btn-move-right, #btn-search-recipe').addClass('disabled');
     }
   });
 
@@ -120,6 +145,7 @@ $(function () {
     $(this).find(".expand-icon").toggleClass("glyphicon-chevron-down").toggleClass("glyphicon-chevron-up");
   });
 
+
   /** Hightlist food items in category list and toggle have/avoid buttons. */
   $('.food-item').unbind('click').click(function() {
     $(this).toggleClass('highlight-item');
@@ -135,14 +161,12 @@ $(function () {
   $('#btn-have').click(function() {
     $foodsToHaveList = retriveFoodItemList();
     $foodsToHaveList.clone().appendTo('ul.have-list');
-    $('#delete-to-have').removeClass("disabled");
   });
 
   /** Add selected foods to 'to avoid' list. */
   $('#btn-avoid').click(function() {
     $foodsToAvoidList = retriveFoodItemList();
     $foodsToAvoidList.clone().appendTo($('ul.avoid-list'));
-    $('#delete-to-avoid').removeClass("disabled");
   });
   
   /** Reload page when cancel button is pressed. */
@@ -211,7 +235,7 @@ $(document).click(function(e) {
   // Update classes of buttons and unhighlight food items.
   $foodItems.removeClass('highlight-item');
   $('#btn-have, #btn-avoid').addClass("disabled");
-  $('#btn-move-left, #btn-move-right, #btn-search-recipe').removeClass("disabled");
+  $('#btn-search-recipe').removeClass("disabled");
   return $foodsToAdd;
 }
 

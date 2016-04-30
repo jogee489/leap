@@ -123,7 +123,7 @@ class RecipesController < ApplicationController
 	end
 
 	def search_online
-		$recipe_list = web_crawl_blog if params[:foods_to_include].present?
+		$recipe_list = web_crawl if params[:foods_to_include].present?
 		if $recipe_list
 			respond_to do |format|
 				message = { status: 200, recipe_links: @recipe_links }
