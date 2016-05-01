@@ -188,12 +188,14 @@ $(function () {
   /** Search button pressed. */
   $('#search-btn').click(function() {
     var searchBar = $(this).next();
-    var search = searchBar.val();
+    var search = $.trim(searchBar.val());
     var result = false;
     var foodList = [];
     var categoryName;
     
     $('td li').each(function() { 
+      console.log(search);
+      console.log($(this).text());
       if(search.toLowerCase() == $(this).text().toLowerCase()) {
         $(this).addClass('highlight-item');
         var cat = $(this).closest('tr').prev();

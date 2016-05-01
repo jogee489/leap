@@ -20,7 +20,8 @@ class SearchController < ApplicationController
 		food_items = JSON.parse(params[:food_items])
 		avoid_items = JSON.parse(params[:avoid_items])
 		@recipe_list = Recipe.ingredients_search(food_items) if food_items.present?
-
+		
+		@recipe_list ||= Recipe.all
 		if @recipe_list
 			@recipe_list = @recipe_list.to_a
 			@recipe_list.each_with_index do |recipe, i|
@@ -28,7 +29,7 @@ class SearchController < ApplicationController
 			end
 		end
 	
-		@recipe_list ||= Recipe.all
+		
 		render partial: 'find_recipes' 
 	end
 
