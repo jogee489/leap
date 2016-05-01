@@ -54,6 +54,7 @@
   max-height: 517px;
 
   .app-checkbox label {
+    vertical-align: middle;
     @include abbreviate-text();
   }
 }
