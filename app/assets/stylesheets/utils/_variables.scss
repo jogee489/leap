@@ -2,13 +2,15 @@
  * Variables partial contains all variables for the application.
  */
 
-/**
- * Application's colors.
- */
+/* Application's colors. */
 $app-content-background: #e8e0b7; // application's background color
 $app-cyan-background: #009c7b; // application's cyan background color
 $navbar-font-hover: #e0e0e0; // navbar font hover color
+$app-font: #333333; // application's font color
+$app-border: rgba(209,209,209,0.50); // application's border color
+$app-textarea-border: rgb(193, 224, 255); // application's textarea border color
 $app-purple-background: #6b4258; // application's purple background color
+$app-purple-modal-background: rgba(107,66,88,0.90); // modal background color
 $highlight-background: #e7ea25; // highlighted element color
 $btn-disabled-background: #9e1754; // disabled button color
 $recipe-box-background: #ecf9d4; // recipe box background color

@@ -1,18 +1,21 @@
+/**
+ * Search new page partial contains all Search new page styles.
+ */
+
+/* Have-avoid list. */
 .have-avoid-list {
 	margin-top: 15px;
 }
 
 .have-avoid-well {
+  @extend .app-well;
+  width: 900px; // custom width
+  max-height: 394px; // custom max-height
 	margin: 0 auto;
-	@extend .app-well;
-	width: 900px;
-	max-height: 394px;
 }
 
 .food-item {
   cursor: pointer;
-  //width: 839px;
-  //margin: 0;
 }
 
 #btn-cancel-search {
@@ -23,14 +26,9 @@
 	margin: 0 auto;
 	position: relative;
 
-	.list-left {
+	.list-left, .list-right {
+    vertical-align: middle;
 		display: inline-block;
-  		vertical-align: middle;
-	}
-
-	.list-right {
-		display: inline-block;
-  		vertical-align: middle;
 	}
 
 	.foods-panel {
@@ -38,12 +36,44 @@
 	}
 
 	.list-arrows {
+    margin: 0px 40px 40px 40px;
+    vertical-align: middle;
 		display: inline-block;
-  		vertical-align: middle;
-		margin: 0px 40px 40px 40px;
 	}
 }
 
 .search-new-container {
 	margin: 50px 134px 0px 0px;
+}
+
+/* Loading modal. */
+#loading-modal {
+  @extend .app-modal;
+  cursor: wait;
+
+  .modal-dialog {
+    @include center-obj();
+  }
+
+  .modal-header {
+    padding: 0;
+    border: none;
+  }
+
+  /* Loading progress bar. */
+  .progress {
+    margin: 0;
+
+    .progress-bar {
+      border: none;
+      @include border-radius(0 !important);
+      background-color: $app-cyan-background;
+      opacity: 0.5;
+    }
+  }
+}
+
+/* Search again button. */
+#btn-search-again {
+  margin: 50px 42px 0px 0px;
 }

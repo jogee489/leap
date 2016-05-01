@@ -153,19 +153,20 @@ $(document).ready(function() {
 
   /* Handle select all pressed */
   $(".btn-select-all").click(function() {
-    var ingredients = $(document).find('li.ingredient');
-    var selectAll = $(".btn-select-all");
-
+    var selectAll = $(this);
     // Select all when text is 'Select All' otherwise deselect all.
-    if ($(this).is(':has(span.glyphicon-unchecked)')) {
+    if (selectAll.is(':has(span.glyphicon-unchecked)')) {
       $(".check-rec").prop('checked', true);
       selectAll.html('Select All <span class="glyphicon glyphicon-check"></span>');
+      $(".btn-select-all").parent().next().find(".app-table-tr").css({"opacity": "1"});
+      // Enable delete and save if they are disabled.
       if ($('#btn-delete-recipes').hasClass("disabled")) {
         $('#btn-delete-recipes').removeClass("disabled");
         $('#btn-save-recipes').removeClass("disabled");
       }
     } else {
       selectAll.html('Select All <span class="glyphicon glyphicon-unchecked"></span>');
+      $(".btn-select-all").parent().next().find(".app-table-tr").css({"opacity": "0.9"});
       $(".check-rec").prop('checked', false);
       $('#btn-delete-recipes').addClass("disabled");
       $('#btn-save-recipes').addClass("disabled");

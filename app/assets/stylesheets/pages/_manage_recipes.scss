@@ -1,57 +1,57 @@
+/**
+ * Manage recipes partial contains all Manage recipes page styles.
+ */
+
+/* Recipe well. */
 .recipe-well {
-	margin: 0 auto;
 	@extend .app-well;
-	width: 1084px;
-	max-height: 667px;
+	width: 1084px; // custom width
+	max-height: 667px; // custom max-height to fit all elements
+	margin: 0 auto;
 
 	.app-well-menu .app-input {
 		display: inline-block;
 	}
 }
 
+/* Recipe expanded detail view. */
 .detail-view {
-	position:relative;
-	height: 335px;
+	height: 335px; // custom height to fit recipe content
+	position: relative;
 }
 
+/* New recipe form modal. */
 #new-recipe-modal {
 	@extend .app-modal;
 
 	.modal-dialog {
-    //margin: auto;
-    width: 1153px;
-    height: 555px;
-   }
-
-	.modal-content {
-		//margin: 50px;
-		//width: 1053px;
-		//height: 555px;
-		//@include center-obj();
-	}
+  	width: 1153px; // custom modal width
+  	height: 555px; // custom modal height
+  }
 
 	.recipe-box {
-		//margin-top: 15px;
-		height: 458px;
+		height: 458px; // custom recipe height
 	}
 
 	textarea {
-		border:#C1E0FF 1px solid;
-		pointer-events:auto;
+		border: $app-textarea-border 1px solid;
+		pointer-events: auto;
 	}
 }
 
+/* Upload modal. */
 #upload-modal {
 	@extend .app-modal;
 }
 
+/* Search by title/tag toggle. */
 .search-toggle {
-	//width: 120px;
 	.active {                
 		display: none;		
 	}
 }
 
+/* Application's open file. */
 .openfile-app {
 	padding-bottom: 15px;
 
@@ -63,22 +63,22 @@
 	.form-control {
 		height: 40px;
 		@include abbreviate-text();
-		background-color: white !important;
 		pointer-events: none;
+		background-color: white !important;
 	}
 
 	.btn-file input[type=file] {
+		min-width: 100%;
+		min-height: 100%;
 		position: absolute;
 		top: 0;
 		right: 0;
-		min-width: 100%;
-		min-height: 100%;
+		display: block;
 		font-size: 100px;
 		text-align: right;
+		cursor: inherit;
+		background: red;
 		filter: alpha(opacity=0);
 		opacity: 0;
-		background: red;
-		cursor: inherit;
-		display: block;
 	}
 }
