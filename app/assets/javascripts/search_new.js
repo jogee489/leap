@@ -113,6 +113,16 @@ $(function () {
       $(this).remove();
     });
 
+    // Disable buttons if a list has no highlighted items
+    if ($('.have-list .highlight-item').length == 0) {
+      $('#btn-move-left').addClass('disabled');
+    }
+
+    // Disable buttons if a list has no highlighted items
+    if ($('.avoid-list .highlight-item').length == 0) {
+      $('#btn-move-right').addClass('disabled');
+    }
+
     // Disable this button since no more items are selected
     $(this).addClass('disabled');
     // Disable buttons if both lists are empty.
