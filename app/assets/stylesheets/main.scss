@@ -9,19 +9,17 @@
 @import
   'vendor/normalize';
 
-// 3. Base stuff
+// 3. Base
 @import
   'base/base';
 
 // 4. Layout-related sections
 @import
-  'layout/header',
   'layout/footer';
 
 // 5. Components
 @import
   'components/navigation',
-  'components/footer',
   'components/buttons',
   'components/checkboxes',
   'components/panels',
@@ -36,5 +34,3 @@
   'pages/foods_page';
 
 // 7. Themes
-@import
-  'themes/default';

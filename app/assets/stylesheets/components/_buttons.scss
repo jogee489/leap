@@ -1,7 +1,8 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the button component.
-// -----------------------------------------------------------------------------
-/* main page button */
+/**
+ * Buttons partial contains all button styles.
+ */
+
+/* Default button. */
 .btn {
 	@include border-radius(0 !important);
 	text-transform: uppercase;
@@ -12,19 +13,18 @@
 	}
 }
 
+/* Main page button. */
 .btn-main {
-	
-	@extend .btn;
-
-	background: none;
+	@extend .btn; // inherits from btn
+  min-width: 175px;
+  height: 49px;
+  padding: 10px;
+  border: 3px solid white;
 	font-size: 1.2em;
-	min-width: 175px;
-	height: 49px;
-	padding: 10px;
-	color: white;
-	@include transition(all 0.1s ease-in-out 0s);
-	font-weight: bold;
-	border: 3px solid white;
+  font-weight: bold;
+  color: white;
+	background: none;
+  @include transition(all 0.1s ease-in-out 0s);
 
 	&:hover {
 		color: white;
@@ -36,20 +36,19 @@
 	}
 }
 
-/* default-button */
+/* Application's button. */
 .btn-app {
-	@extend .btn;
+	@extend .btn; // inherits from btn
+  padding: 10px;
 	border: none;
-
 	background-color: $app-cyan-background;
-	opacity: 0.5;
-	@include transition(all 0.1s ease-in-out 0s);
 	color: white;
-	padding: 10px;
+  opacity: 0.5;
+  @include transition(all 0.1s ease-in-out 0s);
 
 	&:hover {
-		opacity: 1;
 		color: white;
+    opacity: 1;
 	}
 
 	&:focus {
@@ -57,21 +56,20 @@
 	}
 }
 
+/* Disabled button. */
 .disabled {
+  pointer-events: none;
 	background-color: $btn-disabled-background;
-	pointer-events: none;
 }
 
-/* panel delete category button */
+/* Panel delete category button. */
 .btn-delete-cat {
   border: none;
-  //padding: 6px 9px 3px 12px;
-  background-color: transparent;
-  @include transition(all 0.1s ease-in-out 0s);
   color: white;
+  background-color: transparent;
+  @include transition(all 0.1s ease-in-out 0s); 
 
   &:hover {
-    //background-color: darken($panel-heading-background, 10%);
     color: $navbar-font-hover;
   }
 
@@ -80,37 +78,36 @@
 	}
 }
 
+/* Add category button. */
 .btn-add-cat {
-	//padding: 12px 7px 10px 10px;
+  width: 36px;
+  height: 42px;
 	position: absolute;
-	width: 36px;
-	height: 42px;
 }
 
-.btn-edit-recipe, .btn-save-updated, .btn-save-recipe{
+/* Add add new food item button. */
+.btn-plus-food {
+  cursor: pointer; 
+}
+
+/* Recipe toggle edit/save button. */
+.btn-edit-recipe, .btn-save-updated, .btn-save-recipe {
+  margin: 20px;
 	position: absolute;
 	top: 0;
 	right: 0;
-	margin: 20px;
 }
 
-.check-app {
-	margin: 0;
-}
-
-.btn-plus-food {
-    //padding: 10px 7px 10px 10px;
-    cursor: pointer; 
-  }
-
+/* Generate's next button. */
 .btn-next {
   margin-top: 50px;
 }
 
+/* Generate's back to top button. */
 .btn-back-to-top {
-  display: none;
+  padding: 10px;
   position: fixed;
   bottom: 15px;
   right: 15px;
-  padding: 10px;
+  display: none;  
 }

@@ -1,139 +1,137 @@
+/**
+ * Generate partial contains all Generate Meal Plan page styles.
+ */
+
+/* Step next buttons. */
 #step-1 .btn-next {
-    margin-right: 150px;
+  margin-right: 150px;
 }
 
 #step-2 .btn-next {
-    margin-right: 58px;
+  margin-right: 58px;
 }
 
+/* Stepwizard styles. */
 .stepwizard-step p {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .stepwizard-row {
-    display: table-row;
+  display: table-row;
 }
 
 .stepwizard {
-    display: table;
-    width: 100%;
-    position: relative;
-    margin-bottom: 50px;
+  width: 100%;
+  margin-bottom: 50px;
+  position: relative;
+  display: table;
 }
 
 .stepwizard-row:before {
-    top: 14px;
-    bottom: 0;
-    position: absolute;
-    content: " ";
-    width: 100%;
-    height: 1px;
-    background-color: #ccc;
-    z-order: 0;
-
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 14px;
+  bottom: 0;
+  content: " ";
+  z-order: 0; 
+  background-color: $app-border;  
 }
 
 .stepwizard-step {
-    display: table-cell;
-    text-align: center;
-    font-size: 16px;
-    position: relative;
+  position: relative;
+  display: table-cell;
+  font-size: 16px;
+  text-align: center;  
 }
 
+/* Step button. */
 .step-app {
-    font-size: 16px;
-    padding: 10px 15px;
+  padding: 10px 15px;
+  font-size: 16px;
 }
 
+/* Meal plan Preview. */
 #meal-plan-preview-modal {
-    @extend .app-modal;
+  @extend .app-modal; // inherits app-modal
 
-    .modal-dialog {
-        //margin: auto;
-        @include calc(width, '100vw - 100px');
+  .modal-dialog {
+    // modal is as wide as the browser with 50px left and right margins 
+    @include calc(width, '100vw - 100px');
+  }
+
+  #btn-delete-preview {
+    margin-bottom: 15px;
+  }
+
+  .recipe-list {
+    width: 334px;
+    // Custom height. It displays 5 recipes
+    @include calc(height, '42px * 5');
+    overflow-y: auto;
+
+    li {
+      cursor: pointer;
     }
-
-    .modal-content {
-        //@include center-obj();
-        //margin: 50px;
-    }
-
-    #btn-delete-preview {
-        margin-bottom: 15px;
-    }
-
-    .recipe-list {
-        /* recipes * 5 */
-        @include calc(height, '42px * 5');
-        overflow-y: auto;
-        width: 334px;
-
-        li {
-            cursor: pointer;
-        }
-    }
+  }
 }
 
+/* Step 2 option dropdown. */
 .dropdown-add-to {
+  .btn-add-to:focus {
+    background-color: darken($app-cyan-background, 10%);
+    opacity: 1;
+  }
 
-    .btn-add-to:focus {
-        opacity: 1;
-        background-color: darken($app-cyan-background, 10%);
+  .dropdown-menu {
+    color: white;
+    background-color: white;
+
+    button {
+      width: 100%;
+      opacity: 1;
+
+      &:hover {
+        color: $navbar-font-hover;
+        background-color: darken($app-cyan-background, 5%);
+      }
     }
-
-    .dropdown-menu {
-        background-color: white;
-        
-        color: white;
-
-        button {
-            opacity: 1;
-            width: 100%;
-
-            &:hover {
-                background-color: darken($app-cyan-background, 5%);
-                color: $navbar-font-hover;
-            }
-        }
-    }
-
-    //background-color: darken($app-cyan-background, 5%);
+  }
 }
 
-/* step-3 content */
+/* Step 3 content. */
 .generate-well {
-    @extend .app-well;
-    padding-top: 0;
+  @extend .app-well;
+  padding-top: 0;
 
-    .app-well-menu {
-        padding-top: 15px;
+  .app-well-menu {
+    padding-top: 15px;
+  }
+
+  h3 {
+    font-family: 'Oleo Script', cursive;
+    font-weight: bold;
+  }
+
+  .recipe-list {
+    // Custom width to have the list
+    // end matching the header center
+    width: 368px;
+  }
+
+  .foods-list {
+    // Custom width to have the list
+    // end matching the header center
+    width: 565px;
+  }
+
+  .recipe-box {
+    width: auto;
+    height: auto;
+    margin-bottom: 15px;
+
+    .rec-ingredients {
+      height: auto;
     }
-
-    h3 {
-        font-family: 'Oleo Script', cursive;
-        font-weight: bold;
-    }
-
-    .recipe-list {
-        width: 368px;
-    }
-
-    .foods-list {
-        width: 565px;
-    }
-
-    .recipe-box {
-        width: auto;
-        height: auto;
-        margin-bottom: 15px;
-
-        .rec-ingredients {
-            height: auto;
-            //overflow-y: hidden;
-        }
-    }
-}
-
-#btn-search-again {
-    margin: 50px 42px 0px 0px;
+  }
 }

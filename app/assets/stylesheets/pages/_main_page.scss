@@ -1,26 +1,25 @@
+/**
+ * Main page partial contains all Main page styles.
+ */
 
-// -----------------------------------------------------------------------------
-// This file contains styles that are specific to the home page.
-// -----------------------------------------------------------------------------
-
+/* Main page header. */
 #main-header {
   background-image: url('main_image.png');
-  background-position: center center;
   background-size: cover;
-  //width: 100vw;
-  /* browser height - navbar height */
+  background-position: center center;
+  // Custom min-height. Browser height - navbar height
   @include calc(min-height, '100vh - 50px');
 
   .container {
+    width: 100%;
     position: absolute;
     top: 40%;
-    width: 100%;
 
     h1 {
       font-family: 'Oleo Script', cursive;
       font-size: 5rem;
-      color: white;
       font-weight: bold;
+      color: white;
     }
 
     .scroll-link {
@@ -29,28 +28,25 @@
   }
 }
 
+/* Main content will be always centered. */
 #main-content-container {
   margin: 0 auto;
   position: relative;
 }
 
 .main-thumbnail {
-  display: inline-block;
-  vertical-align: middle;
+  width: 378px; // custom width
   margin: 50px 20px;
-  text-align: left;
-  width: 378px;
   border: none;
-  @include box-shadow(0px 2px 11px 2px rgba(209,209,209,0.49));
+  vertical-align: middle;
+  display: inline-block;
+  text-align: left;  
+  @include box-shadow(0px 2px 11px 2px $app-border);
 
   h3 {
-    font-size: 2em;
     font-family: 'Oleo Script', cursive;
+    font-size: 2em;
     font-weight: bold;
-  }
-
-  p {
-    //height: 120px;
   }
 
   a {
@@ -58,17 +54,19 @@
   }
 }
 
+/* Thumbnail image box. */
 .img-box {
-  background-color: rgba(107, 66, 88, 0.90);
-  opacity: 1;
   position: relative;
+  background-color: $app-purple-modal-background;
+  opacity: 1;
   
+  /* Image box transition. */
   .main-thumbnail-img {
     @include transition(all 0.3s ease-in-out 0s);
   }
 
+  /* Change opacity and show main buttons. */
   &:hover {
-
     .main-thumbnail-img {
       opacity: 0.1;
     }
@@ -79,13 +77,12 @@
   }
 }
 
+/* Center main buttons. */
 .btn-main-container {
   @include center-obj();
 
   .btn-main {
-    //display: block;
     margin-bottom: 20px;
-    //margin-right: 0;
     display: none;
   }  
 }

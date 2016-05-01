@@ -1,35 +1,40 @@
-.navbar-inverse {
-  background-color: $app-cyan-background;
-  border: none;
-  margin-bottom: 0;
-  height: 50px;
+/**
+ * Navigation partial contains the application's navbar styles.
+ */
 
+.navbar-inverse {
+  height: 50px;
+  margin-bottom: 0;
+  border: none;
+  background-color: $app-cyan-background;
+  
+  // navbar's upperleft-hand logo
   .navbar-brand {
-    color: white;
     font-family: 'Oleo Script', cursive;
-    font-weight: bold;
     font-size: 1.7em;
+    font-weight: bold;
+    color: white;
+
     &:hover, focus {
       color: $navbar-font-hover;
     }
   }
 }
 
-.dropdown-menu{
-  text-transform: uppercase;
-  @include border-radius(0);
-  background-color: rgba($app-cyan-background, 0.9);
-  border: none;
+/* Navbar's dropdown menu. */
+.dropdown-menu {
   min-width: 130px;
-  right: auto;
   padding: 0;
-
+  text-transform: uppercase;
+  border: none;
+  @include border-radius(0);
+  right: auto;
+  background-color: rgba($app-cyan-background, 0.9);
+  
   > li {
-
     > a {
-      color: white;
-      //font-weight: bold;
       padding: 12px;
+      color: white;
 
       &:hover {
         color: $navbar-font-hover;
@@ -41,8 +46,8 @@
 
 .dropdown-toggle {
   text-transform: uppercase;
-  @include transition(all 0.1s ease-in-out 0s);
   color: white;
+  @include transition(all 0.1s ease-in-out 0s);
 }
 
 .navbar-toggle {
@@ -51,20 +56,20 @@
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color: white;
+  color: white;
 
-    &:hover {
-      color: $navbar-font-hover;
-    }
+  &:hover {
+    color: $navbar-font-hover;
+  }
 }
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    border-color: $navbar-font-hover;
+  border-color: $navbar-font-hover;
 }
 
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-  color: white;
   padding: 12px;
+  color: white;
 
   &:hover {
     color: $navbar-font-hover;
@@ -73,7 +78,7 @@
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: darken($app-cyan-background, 10%);
+  background-color: darken($app-cyan-background, 10%);
 }
 
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {

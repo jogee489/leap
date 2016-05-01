@@ -1,35 +1,39 @@
-/* recipe table */
+/**
+ * Tables partial contains all table styles.
+ */
+
+/* Application's table. */
 .app-table {
-  //margin-top: 15px;
   overflow-y: auto;
 
   .table {
     margin: 0;
-    table-layout: fixed;
+    table-layout: fixed; // don't allow td expansion
 
     .app-table-tr {
-      background-color: $app-purple-background;
-      color: white;
-      opacity: 0.9;
       cursor: pointer;
+      color: white;
+      background-color: $app-purple-background;
+      opacity: 0.9;
 
       td {
-        font-size: 16px;
         padding: 10px 15px;
+        font-size: 16px;
       }
 
       .expand-icon {
-        
-        vertical-align: middle;
+        vertical-align: middle; // center expand icon
       }
 
       .expand-td {
         width: 10% !important;
       }
 
-      .app-table-title {
-        font-weight: bold;
+      .app-table-title {        
         width: 90% !important;
+        vertical-align: middle;
+        font-weight: bold;
+        @include abbreviate-text();
       }
 
       .app-table-details {
@@ -43,124 +47,108 @@
   }
 }
 
+/* Recipe table. */
 .recipe-table-container {
   @extend .app-table;
+  // custom max-height. It displays one recipe at the time
   max-height: 517px;
-  //@include calc(max-height, '43px * 10');
 
-  .check-app {
-    label {
-      font-weight: bold;
-      @include abbreviate-text();
-      vertical-align: middle;
-    }
+  .app-checkbox label {
+    @include abbreviate-text();
   }
 }
 
+/* Food table. */
 .food-table-container {
   @extend .app-table;
+  // custom height. It displays 5 categories
   @include calc(height, '43px * 5');
-
-  .app-table-title {
-    font-weight: bold;
-    @include abbreviate-text();
-    vertical-align: middle;
-  }
-
-  .app-table-details {
-    max-height: 440px;
-  }
 }
 
+/* Recipe box. */
 .recipe-box {
-  @include box-shadow(0px 2px 11px 2px rgba(209,209,209,0.49));
+  width: 1023px; // custom width
   padding: 20px;
-  background-color: $recipe-box-background;
-  width: 1023px;
   position: relative;
+  @include box-shadow(0px 2px 11px 2px $app-border);
+  color: $app-font;
+  background-color: $recipe-box-background;
   
-  color: #333;
-
   h1 {
+    margin: 0px 0px 10px 0px;
     font-family: 'Oleo Script', cursive;
     font-size: 20px;
-    margin: 0px 0px 10px 0px;
-  }
-
-  .rec-title, .rec-tags {
-    //height: 23px;
   }
 
   .rec-ingredients {
-    width: 862px;
-    height: 84px;
+    width: 862px; // stops before the edit button
+    @include calc(height, '21px * 4');
+    margin-bottom: 20px;
+    padding: 0;
+    // custom height. It displays 4 ingredients   
     overflow-y: auto;
     font-size: 15px;
     letter-spacing: 3px;
     list-style: none;
-    margin-bottom: 20px;
-    padding: 0;
 
     li {
       display: block;
     }
   }
 
-  .rec-directions {
-    //height: 84px;
-  }
-
+  /* To have highlighted in green. */
   .ingredient-to-have {
+    color: white;
     background-color: green;
-    color: white;
   }
 
+  /* To avoid highlighted in red. */
   .ingredient-to-avoid {
-    background-color: red;
     color: white;
+    background-color: red;
   }
 
+  /* Ingredients textarea. */
   textarea {
-    resize: none;
-    border: none;
-    @include box-shadow(none);
-    background-color: transparent;
-    font-size: 15px;
-    overflow-y: auto;
-    padding: 0;
-    color: #333;
-    //pointer-events: none;
-    margin-bottom: 20px;
     width: 862px;
+    margin-bottom: 20px;
+    padding: 0;
+    border: none;
+    resize: none;
+    overflow-y: auto;
+    font-size: 15px;
+    @include box-shadow(none);
+    color: $app-font;
+    background-color: transparent; 
   }
 
   textarea[readonly] {
-    background-color: transparent;
     border: none;
     @include box-shadow(none);
+    background-color: transparent;
   }
 
+  /* Ingredients div. */
   div {
-    background-color: $recipe-box-background;
-    white-space: pre-wrap;
-    overflow-x: hidden;
     height: auto;
     min-height: 10px;
-    border: none;
     margin-bottom: 20px;
     padding: 0;
-    @include box-shadow(none);
+    border: none;
+    white-space: pre-wrap;
+    overflow-x: hidden;
     overflow-y: hidden;
+    @include box-shadow(none);
+    background-color: $recipe-box-background;    
   }
 }
 
-/* meal plan table */
+/* Meal plan table. */
 .generate-table-container {
   .table {
     margin: 0;
-    background-color: white;
-    //width: 900px;
-    border: 2px solid rgba(209,209,209,0.50);
+    border: 2px solid $app-border;
+    background-color: white;    
 
     td, th {
       padding: 10px;
@@ -168,27 +156,23 @@
     }
 
     .generate-table-section {
-      background-color: $app-purple-background;
       color: white;
+      background-color: $app-purple-background;
+      
       td {
+        font-size: 16px;
         font-weight: bold;
         text-transform: uppercase;
-        font-size: 16px;
       }
     }
 
-    .recipe-list {
+    .recipe-list, .foods-list {
       margin: 0;
-      //width: 334px;
-    }
-
-    .foods-list {
-      margin: 0;
-      //width: 564px;
     }
   }
 }
 
+/* Meal plan comments-area. */
 .comments-area {
   margin: 0;
 

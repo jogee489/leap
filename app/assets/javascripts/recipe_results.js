@@ -244,7 +244,7 @@ $(document).ready(function() {
       if ($(this).is(':has(span.glyphicon-unchecked)')) {
         $(".check-rec").prop('checked', true);
         selectAll.html('Select All <span class="glyphicon glyphicon-check"></span>');
-        //$(".btn-select-all").next().find(".app-table-tr").css({"opacity": "1"});
+        $(".btn-select-all").parent().next().find(".app-table-tr").css({"opacity": "1"});
         // Enable delete and save if they are disabled.
         if ($('#btn-delete-recipes').hasClass("disabled")) {
           $('#btn-delete-recipes').removeClass("disabled");
@@ -253,7 +253,7 @@ $(document).ready(function() {
       } else {
         selectAll.html('Select All <span class="glyphicon glyphicon-unchecked"></span>');
         //var temps = $(".btn-select-all").next().find(".app-table-tr");
-        //$(".btn-select-all").next().find(".app-table-tr").css({"opacity": "0.9"});
+        $(".btn-select-all").parent().next().find(".app-table-tr").css({"opacity": "0.9"});
         $(".check-rec").prop('checked', false);
         $('#btn-delete-recipes').addClass("disabled");
         $('#btn-save-recipes').addClass("disabled");

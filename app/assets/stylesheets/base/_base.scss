@@ -2,209 +2,173 @@
  * Base partial contains basic styles.
  */
 
-// 
+/* Google fonts import. */
 @import url(https://fonts.googleapis.com/css?family=Oleo+Script:400,700|Quicksand:300,400,700);
 
+/* Letter spacing for all pages. */
 html{
-    //font-family: 'Quicksand', sans-serif !important;
-    letter-spacing: 0.2em;
+  letter-spacing: 0.2em;
 }
 
-#app-content {
-	background-color: $app-content-background;
-	margin-top: 50px;
-	min-height: 100vh;
-}
-
-.page-title {
-  font-family: 'Oleo Script', cursive;
-  font-weight: bold;
-  font-size: 2em;
-  font-weight: bold;
-  padding: 50px 0px 0px 50px;
-  margin: 0;
-}
-
-.page-container {
-	padding: 50px 0px;
-}
-
+/* Remove the text decoration for all anchors */
 a:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 
-/* highlight item */
-.highlight-item {
-	background-color: $highlight-background;
-	font-weight: bold;
-}
-
+/* Customized li. */
 li {
-	@include border-radius(0 !important);
-  border-color: rgba(209,209,209,0.50);
+  @include border-radius(0 !important); // remove rounded edges
+  border-color: $app-border;
 }
 
+/* Remove rounded edges for all inputs. */
+input {
+  @include border-radius(0 !important);
+}
+
+/* Customized form-control. */
 .form-control {
   @include border-radius(0 !important);
-  border-color: rgba(209,209,209,0.50);
-  letter-spacing: 0.2em;
-  color: #333;
   font-size: 15px;
+  letter-spacing: 0.2em;
+  color: $app-font;
+  border-color: $app-border;
 }
 
+/* Abbreviate text for all list-group-items. */
 .list-group-item {
   @include abbreviate-text();
 }
 
-input {
-	@include border-radius(0 !important);
+/* Modify thumbnail's border. */
+.thumbnail {
+  border: none;
+  @include border-radius(0 !important);
 }
 
+/* Application content properties. */
+#app-content {
+  min-height: 100vh;
+  margin-top: 50px; // margin for navbar
+  background-color: $app-content-background;
+}
+
+/* Page title. */
+.page-title {
+  margin: 0;
+  padding: 50px 0px 0px 50px;
+  font-family: 'Oleo Script', cursive;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* Page container. */
+.page-container {
+  padding: 50px 0px;
+}
+
+/* Highlight item. */
+.highlight-item {
+  background-color: $highlight-background;
+  font-weight: bold;
+}
+
+/* Application's custom input. */
 .app-input {
+  width: auto;
 	margin: 0;
   padding: 0;
-  width: auto;
 
   .form-control {
+    width: 264px; // custom form-control width
+    height: 40px; // matches the btn-app height
     vertical-align: bottom;
-    width: 264px;
-    height: 40px;
     display: inline-block;
   }
 }
 
+/* Application's search element. */
 .app-search {
-	@extend .app-input;
+	@extend .app-input; // inherits from app-input
+  vertical-align: middle;
   position: relative;
   display: inline-block;
-  vertical-align: middle;
   
   .btn-app {
     position: relative;
-    float: left;
+    float: left; // search button's position relative to input
   }
-
-	.form-control {
-		width: 264px;
-		//@include transition(width 0.7s);
-		//padding: 0; 
-	}
-
-
-
-	//&:hover .form-control, .form-control:focus {
-	//	width: 264px;
-	//	padding: 6px 12px;
-	//}
 }
 
-/* default modal box */
+/* Application's modal box. */
 .app-modal {
-	background-color: rgba(107,66,88,0.90);
-
-  .modal-body {
-    padding: 15px 0px 0px 0px;
-  }
+	background-color: $app-purple-modal-background;
 
   .modal-dialog {
     margin: auto;
   }
 
   .modal-content {
-    //@include center-obj();
     margin: 50px;
+    padding: 15px;
     border: none;
     @include border-radius(0 !important);
-    padding: 15px;
-  }
-
-	.modal-header {
-		border-bottom: 2px groove rgba(209,209,209,0.50);
-		padding: 0px 0px 15px 0px;
-		font-size: 1.5em;
-    font-weight: bold;
-
-  	.modal-title {
-  		font-family: 'Oleo Script', cursive;
-      font-weight: bold;
-      //margin: 0;
-  	}
-
-		.close {
-			
-			color: #333;
-			border: none;
-			margin: 0;
-			opacity: 0.3;
-			//padding: 0;
-			padding: 6px 12px;
-			//margin-bottom: 15px;
-			@include transition(all 0.1s ease-in-out 0s);
-
-			.glyphicon {
-				font-size: 0.7em;
-			}
-
-			&:hover {
-				opacity: 0.8;
-			}
-
-			&:focus {
-				outline: 0;
-			}		
-		}
-	}
-}
-
-/* loading modal */
-
-#loading-modal {
-  @extend .app-modal;
-  cursor: wait;
-
-  .modal-dialog {
-    @include center-obj();
   }
 
   .modal-header {
-    border: none;
-    padding: 0;
-  }
+    padding: 0px 0px 15px 0px;
+    border-bottom: 2px groove $app-border;
+    font-size: 1.5em;
+    font-weight: bold;
 
-  .progress {
-    margin: 0;
+    .modal-title {
+      font-family: 'Oleo Script', cursive;
+      font-weight: bold;
+    }
 
-    .progress-bar {
-      background-color: $app-cyan-background;
-      opacity: 0.5;
+    /* Modal close button. */
+    .close {
+      margin: 0;
+      padding: 6px 12px;
       border: none;
-      @include border-radius(0 !important);
+      color: $app-font;
+      opacity: 0.3;
+      // add transition for hover
+      @include transition(all 0.1s ease-in-out 0s);
+
+      .glyphicon {
+        font-size: 0.7em;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      // remove outline when focused
+      &:focus {
+        outline: 0;
+      }   
     }
   }
+
+  .modal-body {
+    padding: 15px 0px 0px 0px;
+  }	
 }
 
-
-
-.thumbnail {
-	border: none;
-	@include border-radius(0 !important);
-}
-
+/* Custom pagination. */
 .pagination {
   margin: 15px 0px 0px 0px;
 
+  // change button's style
   a, em, span {
     @extend .btn-app;
-
-    
-    text-decoration: none;
-    
-
     font-style: normal;
+    text-decoration: none;    
     cursor: pointer;
-
   }
 
+  // current page
   .current {
     opacity: 1;
   }

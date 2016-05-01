@@ -1,3 +1,10 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the footer of the site/application.
-// -----------------------------------------------------------------------------
+/**
+ * Footer partial contains the application's footer style.
+ */
+
+footer {
+  height: 60px;
+  padding-top: 15px;
+  text-align: center;
+  background-color: $app-purple-background;
+}

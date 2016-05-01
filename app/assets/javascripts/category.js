@@ -91,6 +91,9 @@ $(document).click(function(e) {
   function selectRow() {
     $('body').on('click', '.list-group .list-group-item', function () {
       $(this).toggleClass('highlight-item');
+      var delButton = $(this).parent().prev().prev().find('.btn-delete-food');
+
+      delButton.toggleClass('disabled');
     });
   }
 

@@ -1,39 +1,45 @@
+/**
+ * Panels partial contains panels styles.
+ */
+
+/* Application's panel style. */
 .panel-app {
   border: none;
-  @include box-shadow(0px 2px 11px 2px rgba(209,209,209,0.49));
   @include border-radius(0 !important);
+  @include box-shadow(0px 2px 11px 2px $app-border);
 
   .panel-heading {
-    height: 52px;
+    height: 52px; // custom panel heading height
     border: none;
     @include border-radius(0 !important);
     background-color: $app-purple-background;
   }
 
   .panel-body {
-    height: 332px;
+    height: 332px; // custom panel body height
   }
 
   .panel-title {
+    max-width: 220px;
     padding-top: 7.5px;
     font-weight: bold;
-    max-width: 220px;
     @include abbreviate-text();
   }
 }
 
+/* Application's custom well. */
 .app-well {
   width: auto;
   margin: 0;
-  border: none;
-  @include box-shadow(0px 2px 11px 2px rgba(209,209,209,0.49));
-  @include border-radius(0 !important);
-  background-color: white;
   padding: 15px;
-
+  border: none;
+  @include border-radius(0 !important);
+  @include box-shadow(0px 2px 11px 2px $app-border);
+  background-color: white;
+  
   .app-well-menu {
     padding-bottom: 15px;
-    border-bottom: 2px groove rgba(209,209,209,0.49);
+    border-bottom: 2px groove $app-border;
 
     h3 {
       margin: 0;
