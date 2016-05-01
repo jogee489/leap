@@ -91,7 +91,8 @@ $(document).ready(function() {
   $('.btn-edit-recipe').click(function() {
     var recBox = $(this).closest('.recipe-box');
     var title = recBox.find('.rec-title');
-    var ingredientsList = recBox.find('.rec-ingredients').find('li');
+    var ingredientsUL = recBox.find('.rec-ingredients');
+    var ingredientsLI = ingredientsUL.find('li');
     var directions = recBox.find('.rec-directions');
     var tags = recBox.find('.rec-tags');
     var id = recBox.find('#recipe_id').val();
@@ -103,21 +104,19 @@ $(document).ready(function() {
 
     var ingredients = "";
     
-    for(var i = 0; i < ingredientsList.length; i++){
-      if(i != ingredientsList.length - 1){
-        ingredients += (ingredientsList[i].innerText + "\n");
+    for(var i = 0; i < ingredientsLI.length; i++){
+      if(i != ingredientsLI.length - 1){
+        ingredients += (ingredientsLI[i].innerText + "\n");
       }
       else {
-        ingredients += (ingredientsList[i].innerText);
+        ingredients += (ingredientsLI[i].innerText);
       }
     }
     
     if($(this).hasClass('btn-save-updated')){
 
-      var ingredientsTextArea = recBox.find('textarea.rec-ingredients');
-
       //if one of the required fields are empty, don't allow the save
-      if(!validateRecipe(title.val(), ingredientsTextArea.val(), directions.val())){
+      if(!validateRecipe(title.val(), ingredients, directions.val())){
         alert("Please fill out all required fields");
         return;
       }
@@ -134,12 +133,12 @@ $(document).ready(function() {
       $(this).removeClass('btn-save-updated');
       $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
       title.css({"border": "none"});
-      ingredientsTextArea.css({"border": "none"});
+      ingredientsUL.css({"border": "none"});
       directions.css({"border": "none"});
       tags.css({"border": "none"});
 
       title.prop("readonly", true);
-      ingredientsTextArea.prop("readonly", true);
+      ingredientsUL.attr("contenteditable", "false");
       directions.prop("readonly", true);
       tags.prop("readonly", true);
 
@@ -149,18 +148,7 @@ $(document).ready(function() {
         }
       });
 
-      ingredientsTextArea.hide();
-      ingredientsList.closest('ul').show();
-      
-      var i = 0;
-      var ingredientsSplit = ingredientsTextArea.val().split('\n');
-      ingredientsList.each(function() {
-        $(this).text(ingredientsSplit[i]);
-        i++;
-      });
-      
-
-      var json = JSON.stringify({title: title.val(), ingredients: ingredientsTextArea.val(), directions: directions.val(), tags: tags.val()});
+      var json = JSON.stringify({title: title.val(), ingredients: ingredients, directions: directions.val(), tags: tags.val()});
       
       $.ajax({
         url: "/recipes/update/" + id,
@@ -178,32 +166,19 @@ $(document).ready(function() {
       });
 
     } else {
-
-      
-      //if the textarea does not exist, convert the ingredients list to an editable textarea
-      if(!recBox.find('textarea.rec-ingredients').length){
-        var ingredientsTextArea = $("<textarea class='form-control rec-ingredients'></textarea>").text(ingredients);
-        ingredientsList.closest('ul').after(ingredientsTextArea);
-        ingredientsList.closest('ul').hide();
-      }
-      else {
-        var ingredientsTextArea = recBox.find('textarea.rec-ingredients');
-        ingredientsTextArea.show();
-        ingredientsList.closest('ul').hide();
-      }
     
       
       $(this).addClass('btn-save-updated');
       $(this).html('Save <span class="glyphicon glyphicon-save"></span>');
       title.css({"border":" rgb(193, 224, 255) 1px solid"});
-      ingredientsTextArea.css({"border":" rgb(193, 224, 255) 1px solid"});
+      ingredientsUL.css({"border":" rgb(193, 224, 255) 1px solid"});
       directions.css({"border":" rgb(193, 224, 255) 1px solid"});
       tags.css({"border":" rgb(193, 224, 255) 1px solid"});
 
 
 
       title.prop("readonly", false);
-      ingredientsTextArea.prop("readonly", false);
+      ingredientsUL.attr("contenteditable", "true");
       directions.prop("readonly", false);
       tags.prop("readonly", false);
 

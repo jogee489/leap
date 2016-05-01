@@ -38,7 +38,7 @@ class Recipe < ActiveRecord::Base
         ingredients.each { |item| string << "#{item}\n" }
         string.strip
       else
-        ingredients.gsub('", "', "\n").delete('"[]')
+        ingredients.gsub(", ", "\n").delete('"[]')
       end
     end
 

@@ -156,22 +156,40 @@ class RecipesController < ApplicationController
       params.require(:recipe).permit(:title, :ingredients, :directions)
     end
 
+    #Document structure:
+    #TitleHeader
+    #recipeTitle
+    #IngredientsHeader
+    #ing1
+    #ing2
+    #...
+    #ing(n)
+    #DirectionsHeader
+    #recipeDirections
   	def parse_document(text)
+  		#return if no text is grabbed
   		return nil if text.blank?
+  		#if we just grabbed directions, we start over
   		if text == 'TITLE' && @state == 2
   			@state = 0
   			@recipe_list << @recipe
   			@recipe = Recipe.new
+  		#if we are at ingredientsHeader, we update the state
   		elsif text == 'INGREDIENTS'
   			@state = 1
+  		#if we are at the DirectionsHeader, we update the state, 
+  		#and have already grabbed ingredients, so we format them
   		elsif text == 'DIRECTIONS'
-  			@recipe.ingredients = @recipe.ingredients.chomp ', '
+  			@recipe.ingredients = @recipe.formatIngredients
   			@state = 2
+  		#if we are at recipeTitle, we put it into the recipe variable
   		elsif @state == 0 && text != 'TITLE'
   			@recipe.title = text
+  		#if we are at the newline separated list of ings, we append the to the list
   		elsif @state == 1
   			@recipe.ingredients ||= ''
-  			@recipe.ingredients << "#{text}, "
+  			@recipe.ingredients << "#{text}\n "
+  		#if we are at the directions, we put it into the recipe
   		elsif @state == 2
   			@recipe.directions ||= ''
   			@recipe.directions << text
