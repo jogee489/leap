@@ -4,7 +4,7 @@
  */
 
 $(document).ready(function() {
-
+  /* JQuery for hover */
 	$(".app-table-tr").on('mouseover', function () {
     $(this).css({"opacity": "1"});
   }).on('mouseout', function () {
@@ -13,7 +13,7 @@ $(document).ready(function() {
     }
   });
 
-	// Logic for expanding recipe details when chevron pressed.
+	/* Logic for expanding recipe details when chevron pressed. */
 	$(".expand-td").unbind('click').click(function() {
 		$(this).parent().next().toggle('slow');
 		
@@ -32,18 +32,10 @@ $(document).ready(function() {
       $(this).parent().addClass("expanded");
     }
 
-    //if (trOpacity == '0.9'){
-    //  $(this).parent().css({"opacity": "1"});
-    //  $(this).parent().addClass("expanded");
-    //} else if(trOpacity == '1') {
-    //  $(this).parent().css({"opacity": "0.9"});
-    //  $(this).parent().removeClass("expanded");
-    //}
-
 		$(this).find(".expand-icon").toggleClass("glyphicon-chevron-down").toggleClass("glyphicon-chevron-up");
 	});
 
-	// Individual checkbox click. DUPLICATE???
+	/* Individual checkbox click. */
 	$('.check-rec').bind('change', function() {
 		var numChecked = $('.check-rec:checked').size();
 		var maxChecked = $('.check-rec').size();
@@ -59,7 +51,7 @@ $(document).ready(function() {
         $(this).closest(".app-table-tr").css({"opacity": "0.9"});
       }
     }
-			 
+		// Update delete and check-all buttons.
 		if ($('#btnDelete').hasClass("disabled") && numChecked > 0) {       
 		  	$('#btnDelete').removeClass("disabled");
 		 } else if (numChecked == 0) { // disable delete when 0 checked

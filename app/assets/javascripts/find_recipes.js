@@ -3,7 +3,6 @@ $(document).ready(function () {
     /* Logic for moving onto the next step. */
     $('#btn-find-food-next').click(function() {
       renderGenerateMealPlan();
-      
     });
 
     /* Add selected recipes to the specified section of the meal plan */

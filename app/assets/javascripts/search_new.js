@@ -38,12 +38,12 @@ $(function () {
     $(this).toggleClass('highlight-item');
 
     //if this list has any highlighted items, enable delete button
-    if(thisList.find('.highlight-item').length > 0){
+    if (thisList.find('.highlight-item').length > 0) {
       delButton.removeClass('disabled');
-      if(thisList.hasClass('have-list')) {
+      if (thisList.hasClass('have-list')) {
         $('#btn-move-right').removeClass('disabled');
       }
-      if(thisList.hasClass('avoid-list')) {
+      if (thisList.hasClass('avoid-list')) {
         $('#btn-move-left').removeClass('disabled');
       }
     }
@@ -92,7 +92,7 @@ $(function () {
     $('#delete-to-have').removeClass('disabled');
   });
 
-  /******* I have no idea what this is used for **************/
+  /* */
   $('.dual-list .selector').click(function () {
     var $checkBox = $(this);
     if (!$checkBox.hasClass('highlight-item')) {
@@ -122,6 +122,7 @@ $(function () {
     }
   });
 
+  /* JQuery for css hover.*/
   $(".app-table-tr").on('mouseover', function () {
     $(this).css({"opacity": "1"});
   }).on('mouseout', function () {
@@ -174,6 +175,7 @@ $(function () {
     location.reload();
   });
 
+  /** Search button pressed. */
   $('#search-btn').click(function() {
     var searchBar = $(this).next();
     var search = searchBar.val();
@@ -220,7 +222,7 @@ $(document).click(function(e) {
  *
  * @return A list of foodItems to be added to the 'to have' or 'to avoid' list.
  */
- function retriveFoodItemList() {
+function retriveFoodItemList() {
   $foodItems = $('td li.highlight-item');
   currentFoods = []; // Array containing text of each food item
 
@@ -239,27 +241,24 @@ $(document).click(function(e) {
   return $foodsToAdd;
 }
 
-
-
 /**
  * Show the food items for the clicked Category
  *
  * @params $categoryToExpand the tr jquery object.
  */
- function showFoodItemList($categoryToExpand) {
+function showFoodItemList($categoryToExpand) {
   // Show that recipe detail clicked tr.
   $categoryToExpand.next().toggle('fast');
-    // Change gliphicon arrow up and down.
-    var $id = $categoryToExpand.find('.glyphicon');
-    $id.toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
-
-    if ($id.hasClass("glyphicon-chevron-up")) {
-      /* This should be handled by css, not js */
-      $categoryToExpand.css({"opacity": '1'});
-      $categoryToExpand.addClass("expanded");
-    } else {
-      /* This should be handled by css, not js */
-      $categoryToExpand.css({"opacity": '0.9'});
-      $categoryToExpand.removeClass("expanded");
-    }
+  // Change gliphicon arrow up and down.
+  var $id = $categoryToExpand.find('.glyphicon');
+  $id.toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
+  if ($id.hasClass("glyphicon-chevron-up")) {
+    /* This should be handled by css, not js */
+    $categoryToExpand.css({"opacity": '1'});
+    $categoryToExpand.addClass("expanded");
+  } else {
+    /* This should be handled by css, not js */
+    $categoryToExpand.css({"opacity": '0.9'});
+    $categoryToExpand.removeClass("expanded");
   }
+}

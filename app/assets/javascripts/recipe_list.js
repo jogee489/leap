@@ -39,7 +39,6 @@ $(document).ready(function() {
     var numChecked = $('.check-rec:checked').size();
     var maxChecked = $('.check-rec').size();
     var parentTr = $(this).parent().parent().parent();
-
     var row = $(this).closest("tr");
        
     if ($('#btn-delete-recipes').hasClass("disabled") && numChecked > 0) {       
@@ -69,7 +68,6 @@ $(document).ready(function() {
     }
 
     var json = JSON.stringify({title: title, directions: directions, ingredients: ingredients, tags: tags});
-    console.log(tags);
     $.ajax({
       url: "/recipes/save_recipe_json",
       method: "POST",
@@ -128,8 +126,6 @@ $(document).ready(function() {
         titleBar.text(title.val());
       }
 
-      
-      
       $(this).removeClass('btn-save-updated');
       $(this).html('Edit <span class="glyphicon glyphicon-edit"></span>');
       title.css({"border": "none"});
@@ -142,7 +138,7 @@ $(document).ready(function() {
       directions.prop("readonly", true);
       tags.prop("readonly", true);
 
-      recBox.find("h1").each(function(){
+      recBox.find("h1").each(function() {
         if ($(this).text() != 'Tags') {
           $(this).html($(this).html().replace("* ",""));
         }
@@ -167,16 +163,12 @@ $(document).ready(function() {
 
     } else {
     
-      
       $(this).addClass('btn-save-updated');
       $(this).html('Save <span class="glyphicon glyphicon-save"></span>');
       title.css({"border":" rgb(193, 224, 255) 1px solid"});
       ingredientsUL.css({"border":" rgb(193, 224, 255) 1px solid"});
       directions.css({"border":" rgb(193, 224, 255) 1px solid"});
       tags.css({"border":" rgb(193, 224, 255) 1px solid"});
-
-
-
       title.prop("readonly", false);
       ingredientsUL.attr("contenteditable", "true");
       directions.prop("readonly", false);
@@ -189,28 +181,27 @@ $(document).ready(function() {
           $(this).text('* ' + $(this).text());
         }
       });
-      
     }     
   });
 
-    $('.title-toggle').click(function() {
-      var searchBar = $('#search');
-      searchBar.attr('placeholder', 'Tag Names');
-    });
+  $('.title-toggle').click(function() {
+    var searchBar = $('#search');
+    searchBar.attr('placeholder', 'Tag Names');
+  });
 
-    $('.tag-toggle').click(function() {
-      var searchBar = $('#search');
-      searchBar.attr('placeholder', 'Recipe Title');
-    });
-
-    function validateRecipe(title, ingredients, directions){
-      if(title.trim() == "" || ingredients.trim() == "" || directions.trim() == ""){
-        return false;
-      }
-
-      else {
-        return true;
-      }
-
+  $('.tag-toggle').click(function() {
+    var searchBar = $('#search');
+    searchBar.attr('placeholder', 'Recipe Title');
+  });
+  
+  /* Function is a clone from recipe_results. */
+  function validateRecipe(title, ingredients, directions){
+    if(title.trim() == "" || ingredients.trim() == "" || directions.trim() == ""){
+      return false;
     }
+
+    else {
+      return true;
+    }
+  }
 });
