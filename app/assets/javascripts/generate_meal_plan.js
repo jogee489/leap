@@ -4,7 +4,10 @@
  */
 $(document).ready(function () {
 
-    var amountScrolled = 300;
+  var amountScrolled = 300;
+  // Render starting point on load.
+  renderSelectFoods();
+  $('.setup-content').hide();
 
   $(window).scroll(function() {
     if ( $(window).scrollTop() > amountScrolled ) {
@@ -28,20 +31,24 @@ $(document).ready(function () {
     $(this).find(".expand-icon").toggleClass("glyphicon-chevron-down").toggleClass("glyphicon-chevron-up");
   });
 
-  // Render starting point on load.
-  renderSelectFoods();
-  $('.setup-content').hide();  
   /* Go to a new step when nav item clicked. */
   $('button.step-app').click(function () {
-      var target = $(this).find('a').attr('href');
-      showCurrentStep(target);  
-      // reset stepwizard font weight to normal.
-      $('.stepwizard-step').find('button').css({"font-weight": "normal"});
-      $('.stepwizard-step').find('p').css({"font-weight": "normal"});
-      // set stepwizard font to bold.
-      $(this).css({"font-weight": "bold"});
-      $(this).next().css({"font-weight": "bold"});
-  });  
+    var target = $(this).find('a').attr('href');
+    if (target == "#step-2") {
+      renderFindRecipes();
+    } else if (target == "#step-3") {
+      renderGenerateMealPlan();
+    } else {
+      showCurrentStep(target);
+    }
+    // reset stepwizard font weight to normal.
+    $('.stepwizard-step').find('button').css({"font-weight": "normal"});
+    $('.stepwizard-step').find('p').css({"font-weight": "normal"});
+    // set stepwizard font to bold.
+    $(this).css({"font-weight": "bold"});
+    $(this).next().css({"font-weight": "bold"});
+  });
+
   // If a recipe in the preview meal plan gets clicked.
   // handles delete event in recipe preview table.
   $('#btn-delete-preview').on('click', function() {
